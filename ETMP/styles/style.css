@@ -22,7 +22,20 @@ h1{
     margin: 2vw;
 }
 
-input[type=text] {
+fieldset {
+	border-radius: 10px;
+	background-color: #fff;
+	margin: 2% auto;
+	text-align: center;
+	width: 65%;
+	border: 2px solid black;
+}
+
+fieldset p,fieldset p label, fieldset p a{
+    background-color: #fff;
+}
+
+input[type=text], select{
 	width: 30%;
 	height: 3vw;
 	margin: 1vw;
@@ -32,7 +45,7 @@ input[type=text] {
 	font-size: 1.5vw;
 }
 
-input[type=submit]{
+input[type=submit],button{
 	background-color: #0070ff;
 	border: none;
 	color: white;
@@ -42,6 +55,16 @@ input[type=submit]{
 	cursor: pointer;
 	text-align: center;
 	border-radius: 1vw;
+    margin-bottom: 100px;
+}
+
+button a{
+    background-color: #0070ff;
+	border: none;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
 }
 
 .link{

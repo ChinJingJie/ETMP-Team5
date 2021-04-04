@@ -1,0 +1,99 @@
+/* Description:  ETMP Presenation Styling*/
+/* Author: Chin Jing Jie, George Can Tze Hui, Liew Woun Kai, Nicholas Lim Tun Yang */
+/* Date: 31/03/2021 */
+/* Validated: */
+
+/* general setting */
+*{
+	box-sizing: border-box;
+    text-align: center;
+	z-index: auto;
+	font-family: Arial, sans-serif;
+    background-color: #e7feff;
+}
+
+.logo{
+    margin-top: 5vw;
+    height: 10vw;
+}
+
+h1{
+	font-size: 2vw;
+    margin: 2vw;
+}
+
+input[type=text] {
+	width: 30%;
+	height: 3vw;
+	margin: 1vw;
+	box-sizing: border-box;
+	border: 2px solid #000;
+    border-radius: 0.5vw;
+	font-size: 1.5vw;
+}
+
+input[type=submit]{
+	background-color: #0070ff;
+	border: none;
+	color: white;
+	padding: 1vw 5vw;
+	text-decoration: none;
+	margin: 1vw;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 1vw;
+}
+
+.link{
+    font-size: 12px;
+}
+
+.link a{
+    color: #0070ff;
+}
+
+footer>address{
+    margin-top: 10px;
+	padding: 1%;
+	background-color: #0070ff;
+    font-size: 1vw;
+	color: #fff;
+	clear: both;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-decoration: none;
+}
+
+/* media query when the screen reduct to half */
+@media (max-width: 800px){
+    .logo{
+        margin-top: 15vw;
+        height: 15vw;
+    }
+    h1{
+        font-size: 3vw;
+        margin: 2vw;
+    }
+    input[type=text] {
+	   width: 30%;
+	   height: 4vw;
+	   margin: 1vw;
+	   box-sizing: border-box;
+	   border: 2px solid #000;
+       border-radius: 0.5vw;
+	   font-size: 2vw;
+    }
+    footer>address{
+        margin-top: 10px;
+        padding: 1%;
+        background-color: #0070ff;
+        font-size: 1.5vw;
+        color: #fff;
+        clear: both;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-decoration: none;
+    }
+}

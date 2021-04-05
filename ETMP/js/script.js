@@ -22,27 +22,48 @@ function openTab(evt, tabName) {
 }
 
 // Form Validation by Nicholas Lim Tun Yang 
-// refer form Lab6 COS10011 sample code
-/*var gErrorMsg = "";
+var gErrorMsg = "";
 
 function validateForm(){
     "use strict";  
     var isAllOK = false;  
     gErrorMsg = ""; 
 	var fNameOK = fName();
-    var emailOK = chkEmail();
+	var emailOK = chkEmail();
 	var phoneOK = chkPhone();
-	var staffIdOK = chkStaffID();
 	var occupationOK = chkOccupation();
-	var term&condOK = chkTerm&Cond();
-
-    if (fNameOK && emailOK && phoneOK && staffIdOK && occupationOK = false && term&condOK){
-        isAllOK = true;
-    }
+	var termcondOK = chkTermCond();
 	
-	else if (fNameOK && emailOK && phoneOK && staffIdOK = false && occupationOK && term&condOK){
+	if(fNameOK && emailOK && phoneOK && occupationOK && termcondOK)
+	{
 		isAllOK = true;
 	}
+	
+   else{
+       alert(gErrorMsg); 
+       gErrorMsg = "";  
+       isAllOK = false;
+   }
+   return isAllOK;
+}
+
+function validateForm2(){
+    "use strict";  
+    var isAllOK = false;  
+    gErrorMsg = ""; 
+	var fNameOK = fName();
+	var emailOK = chkEmail();
+	var phoneOK = chkPhone();
+	var staffidOK = chkStaffID();
+	var termcondOK = chkTermCond();
+	
+	
+	
+	if(fNameOK && emailOK && phoneOK && staffidOK && termcondOK)
+	{
+		isAllOK = true;
+	}
+	
    else{
        alert(gErrorMsg); 
        gErrorMsg = "";  
@@ -67,12 +88,12 @@ function fName() {  //Full Name
             document.getElementById("name").style.borderColor = "red";
 		}
 	}
-	if ((name.length >= 25)){
-		gErrorMsg = gErrorMsg + "Please enter your Full name not more than 25 characters\n"
+	if ((name.length >= 50)){
+		gErrorMsg = gErrorMsg + "Please enter your Full name not more than 50 characters\n"
 		nameOk = false;
         document.getElementById("name").style.borderColor = "red";
 	}
-	return  nameOk;
+	return nameOk;
 }
 
 function chkEmail() {  //Email
@@ -123,30 +144,13 @@ function chkPhone() {  //Phone Number
 	return num;
 }
 
-function chkStaffID() {  //Staff ID
-	var code = document.getElementById("staffid").value;
-	var staffid = true;
-	if ((code.length == 0)){
-		gErrorMsg = gErrorMsg + "Please enter your Staff ID\n"
-        staffid = false;
-        document.getElementById("staffid").style.borderColor = "red";
-	}
-	else{
-		if ((code.length >= 5)){
-			gErrorMsg = gErrorMsg + "Please enter your Staff ID with not more than 5 digits\n"
-			staffid = false;
-            document.getElementById("staffid").style.borderColor = "red";
-		}
-	}
-	return staffid;
-}
-
 function chkOccupation() {  // Occupation
 	var selected = false;
 	
 	var occupation = document.getElementById("occupation").value;
 	if (occupation!=""){
 		selected = true;
+		document.getElementById("occupation").style.borderColor = "black";
 	}
 	else{
 		selected = false;
@@ -156,18 +160,44 @@ function chkOccupation() {  // Occupation
 	return selected;
 }
 
-function chkTerm&Cond() {  // Terms and Condition
+function chkStaffID() {  //Phone Number
+	var staffid = document.getElementById("staffid").value;
+	var id = false;
+    if (staffid.length == 0){
+        gErrorMsg = gErrorMsg + "Please enter your Staff Id\n"
+        id = false;
+        document.getElementById("staffid").style.borderColor = "red";
+    }
+	
+	else{
+        if ((staffid.length > 6)){
+              gErrorMsg = gErrorMsg + "Please enter your Staff Id not more than 5 digits\n"
+              id = false;
+              document.getElementById("staffid").style.borderColor = "red";
+        }
+        else if ((staffid.length < 5)){
+            gErrorMsg = gErrorMsg + "Please enter your Staff Id for not less than 5 digits\n"
+            id = false;
+            document.getElementById("staffid").style.borderColor = "red";
+        }
+        else{
+            id = true;
+        }
+    }            
+	return id;
+}
+
+function chkTermCond() {  // Terms and Condition
 	var selected = false;
 	
-	var T&C = document.getElementById("t&c").value;
-	if (T&C!=""){
+	if (document.getElementById("t&c").checked){
 		selected = true;
 	}
 	else{
+		gErrorMsg = gErrorMsg + "Please agree to the Terms and Condition\n"
 		selected = false;
-        document.getElementById("t&c").style.borderColor = "red";
-		gErrorMsg = gErrorMsg + "Please Agree to the Terms and Condtions\n"
 	}
+	
 	return selected;
 }
 
@@ -192,9 +222,6 @@ function validateInputOnBlur(){
 		case "occupation":
 			isOk = chkOccupation();
 			break;
-		case "T&C":
-			isOk = chkTerm&Cond();
-			break;
             }
 	if (!isOk) {
         document.getElementById(objectLostFocus_id).style.borderColor = ""; 
@@ -210,16 +237,26 @@ function resetFormat(){
 }
 
 
-function registerInputsOnBlur(){   
-	var inputElements = document.getElementById("myForm").getElementsByTagName("input");
+function registerInputsOnBlur(){  
+	var myForm = document.getElementById("clientRegistrationForm");
+	if(myForm == null)
+    { 
+		myForm = document.getElementById("adminRegistrationForm");
+	}
+	var inputElements = myForm.getElementsByTagName("input");
 	for (var i = 0; i < inputElements.length; i++){
 		inputElements[i].onblur = validateInputOnBlur;
 	}
 }
 
 
-function registerInputsOnClick(){   
-	var inputElements = document.getElementById("myForm").getElementsByTagName("input");
+function registerInputsOnClick(){  
+	var myForm = document.getElementById("clientRegistrationForm");
+	if(myForm == null)
+    { 
+		myForm = document.getElementById("adminRegistrationForm");
+	}
+	var inputElements = myForm.getElementsByTagName("input");
 	for (var i = 0; i < inputElements.length; i++){
 		inputElements[i].onclick = resetFormat;
 	}
@@ -227,13 +264,21 @@ function registerInputsOnClick(){
 
 function init() {
    var myForm = document.getElementById("clientRegistrationForm");
-   if (myForm == ""){
-		 myForm = document.getElementById("adminRegistrationForm");
-		 }
-   registerInputsOnBlur();
-   registerInputsOnClick();
-   myForm.onsubmit = validateForm;
+   if(myForm != null)
+   {
+	  registerInputsOnBlur();
+	  registerInputsOnClick();
+      myForm.onsubmit = validateForm;
+   }
+   
+   else
+   {
+	  myForm = document.getElementById("adminRegistrationForm");
+	  registerInputsOnBlur();
+	  registerInputsOnClick();
+      myForm.onsubmit = validateForm2;
+   }
 }
 
-window.onload = init; 
-*/
+
+window.onload = init;

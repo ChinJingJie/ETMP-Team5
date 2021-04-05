@@ -22,6 +22,7 @@ h1{
     margin: 2vw;
 }
 
+/*form*/
 fieldset {
 	border-radius: 10px;
 	background-color: #fff;
@@ -45,7 +46,7 @@ input[type=text], select{
 	font-size: 1.5vw;
 }
 
-input[type=submit],button{
+input[type=submit]{
 	background-color: #0070ff;
 	border: none;
 	color: white;
@@ -56,6 +57,19 @@ input[type=submit],button{
 	text-align: center;
 	border-radius: 1vw;
     margin-bottom: 100px;
+}
+
+button{
+	background-color: #0070ff;
+	border: none;
+	color: white;
+	padding: 1vw 5vw;
+	text-decoration: none;
+	margin: 1vw;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 1vw;
+    margin-bottom: 10px;
 }
 
 button a{
@@ -119,4 +133,113 @@ footer>address{
         width: 100%;
         text-decoration: none;
     }
+}
+
+/* navigation*/
+nav{
+    box-sizing: border-box;
+    background-color: #fff;
+	padding: 1%;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+nav ul{
+    text-align: left;
+    background-color: #fff;
+}
+
+nav>ul>li, nav>ul>li>a{
+    background-color: #fff;
+	display: inline;
+	list-style-type: none;
+    padding: 1% 4%;
+    position: relative;
+    right: 3%;
+    margin-top: 4vw;
+    vertical-align: top;
+}
+
+nav ul a, nav ul a img{
+    margin: 2vw;
+    background-color: #fff;
+    text-align: left;
+	height: 8vw;
+}
+
+nav a{
+	text-decoration: none;
+	color: #000;
+}
+
+nav a:hover{
+	color: #0070ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.parent:hover .child{
+	display: block;
+}
+
+.parent{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.parent:hover{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.child{
+	display: none;
+    position: absolute;
+	top: 100%;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+    text-align: left;
+    line-height: 4vw;
+	padding: 1px 16px;
+    font-size: 2vw;
+}
+
+.child li{
+	text-align: left;
+	display: block;
+	width: inherit;
+	padding: 1% 6%;
+    background-color: #fff;
+}
+
+/*tab*/
+.tab {
+  overflow: hidden;
+  border: 0 solid #ccc;
+  background-color: #0070ff;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: .5svw;
+}
+
+.tab button:hover {
+  text-decoration: underline;
+}
+
+.tab button.active {
+  text-decoration: underline;
+}
+
+.tabcontent {
+  display: none;
+  border: 0 solid #ccc;
+  border-top: none;
 }

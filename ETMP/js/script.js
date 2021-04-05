@@ -6,9 +6,24 @@
    Revisions: 31/03/2021
 */
 
+//tab content by Chin Jing Jie
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
 // Form Validation by Nicholas Lim Tun Yang 
 // refer form Lab6 COS10011 sample code
-var gErrorMsg = "";
+/*var gErrorMsg = "";
 
 function validateForm(){
     "use strict";  
@@ -221,19 +236,4 @@ function init() {
 }
 
 window.onload = init; 
-
-
-//tab content by Chin Jing Jie
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+*/

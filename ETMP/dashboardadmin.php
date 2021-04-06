@@ -4,11 +4,11 @@
 <?php include "header.php";?>
 <body>
     <header>
-        <?php include "navigation.php";?>
+        <?php include "navigationadmin.php";?>
     </header>
     <section>
         <h1>Welcome to Expert Training Management Portal</h1>
-        <h2>Training Requisition in Progress</h2>
+        <h2>Overview of Training Requisition In Charged</h2>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck1"/>
@@ -64,9 +64,10 @@
             </div>
         </div>
         <br/>
-        <h2>Notifications</h2>
+        <h2>Notifications Sent</h2>
+        <p class="newmsg"><a>+ Add new notification</a></p>
         <div class="notification-space">
-            <p>No new updates.</p>
+            <p>No history.</p>
         </div>
     </section>
     <div class="sticky">

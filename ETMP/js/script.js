@@ -6,6 +6,16 @@
    Revisions: 31/03/2021
 */
 
+//Alert Box by Liew Woun Kai
+function box(){
+	var logout; 
+	logout = confirm("Do you want to continue your action");
+	if (logout == true)
+	{
+		location.href = "login.php";
+	}
+}
+
 //tab content by Chin Jing Jie
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;

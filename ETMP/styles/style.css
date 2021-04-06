@@ -22,6 +22,13 @@ h1{
     margin: 2vw;
 }
 
+h2{
+    font-size: 1.5vw;
+    text-align: left;
+    margin-left: 5vw;
+    color: #0070ff;
+}
+
 /*form*/
 fieldset {
 	border-radius: 10px;
@@ -266,7 +273,79 @@ div.sticky a i {
   border: 2px solid #fff;
   border-radius: 100%;
   background-color: #0070ff;
-  padding: 2vw;
+  padding: 1vw;
   color: #fff;
 }
 
+/*collapse or accordin bar*/
+input#chck1, input#chck2, input#chck3, input#chck4, input#chck5, input#chck6{
+    position: absolute;
+    opacity: 0;
+}
+
+.accordion{
+    overflow: hidden;
+    padding: 0;
+}
+
+.progress-tab{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    overflow: hidden;
+}
+ 
+.progress-label{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: #0070ff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2vw;
+    border: solid #fff 1px;
+}
+
+.progress-label::after{
+    content: "\0002B";   
+}
+
+.tab-content p{
+    font-size: 1.2vw;
+}
+
+.tab-content{
+    max-height: 0;
+    color: #000;
+    border-left: dotted #0070ff 1px;
+    border-right: dotted #0070ff 1px;
+    border-bottom: dotted #0070ff 1px;
+}
+
+.tab-content ul li{
+    list-style-type: none;
+    background-color: #fff;
+}
+
+.tab-content p{
+    background: #fff;
+    margin: 0;
+    padding: 2% 0;
+}
+
+input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#chck3:checked ~ .tab-content, input#chck4:checked ~ .tab-content, input#chck5:checked ~ .tab-content, input#chck6:checked ~ .tab-content{
+    max-height: 100vw;
+}
+
+/*notification*/
+.notification-space p{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid #0070ff 2px;
+    background: #fff;
+    padding: 2% 0.5%;
+    font-size: 1.2vw;
+    text-align: left;
+}

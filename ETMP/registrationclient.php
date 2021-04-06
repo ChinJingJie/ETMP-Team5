@@ -34,11 +34,11 @@
                     </select>
                 </p>
                 <p class="link">
-                    <input type="checkbox"/>
+                    <input type="checkbox" id = "t&c"/>
                     I agree with the <a href="#">Terms and Conditions</a> applied
                 </p>
             </fieldset>
-            <button type="button"><a href="#">Cancel</a></button>
+            <button type="button"><a href="login.php">Cancel</a></button>
             <input type="submit" value="Register"/>
         </form>
     </section>

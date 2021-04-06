@@ -22,6 +22,14 @@ h1{
     margin: 2vw;
 }
 
+h2{
+    font-size: 1.5vw;
+    text-align: left;
+    margin-left: 5vw;
+    color: #0070ff;
+}
+
+/*form*/
 fieldset {
 	border-radius: 10px;
 	background-color: #fff;
@@ -45,7 +53,7 @@ input[type=text], select{
 	font-size: 1.5vw;
 }
 
-input[type=submit],button{
+input[type=submit]{
 	background-color: #0070ff;
 	border: none;
 	color: white;
@@ -56,6 +64,19 @@ input[type=submit],button{
 	text-align: center;
 	border-radius: 1vw;
     margin-bottom: 100px;
+}
+
+button{
+	background-color: #0070ff;
+	border: none;
+	color: white;
+	padding: 1vw 5vw;
+	text-decoration: none;
+	margin: 1vw;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 1vw;
+    margin-bottom: 10px;
 }
 
 button a{
@@ -119,4 +140,213 @@ footer>address{
         width: 100%;
         text-decoration: none;
     }
+}
+
+/* navigation*/
+nav{
+    box-sizing: border-box;
+    background-color: #fff;
+	padding: 1%;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+nav ul{
+    text-align: left;
+    background-color: #fff;
+}
+
+nav>ul>li, nav>ul>li>a{
+    background-color: #fff;
+	display: inline;
+	list-style-type: none;
+    padding: 1% 4%;
+    position: relative;
+    right: 3%;
+    margin-top: 4vw;
+    vertical-align: top;
+}
+
+
+nav ul a, nav ul a img{
+    margin: 2vw;
+    background-color: #fff;
+    text-align: left;
+	height: 8vw;
+}
+
+nav a{
+	text-decoration: none;
+	color: #000;
+}
+
+nav a:hover{
+	color: #0070ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.parent:hover .child{
+	display: block;
+}
+
+.parent{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.parent:hover{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.child{
+	display: none;
+    position: absolute;
+	top: 100%;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+    text-align: left;
+    line-height: 4vw;
+	padding: 1px 16px;
+    font-size: 2vw;
+}
+
+.child li{
+	text-align: left;
+	display: block;
+	width: inherit;
+	padding: 1% 6%;
+    background-color: #fff;
+}
+
+/*tab*/
+.tab {
+  overflow: hidden;
+  background-color: #0070ff;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: .5svw;
+}
+
+.tab button:hover {
+  text-decoration: underline;
+}
+
+.tab button.active {
+  text-decoration: underline;
+}
+
+.tabcontent {
+  display: none;
+  border: 2px solid #0070ff;
+  padding: 6px 12px;
+  border-top: none;
+  background-color: #fff;
+}
+
+.tabcontent p{
+    background-color: #fff;
+}
+
+/*stick position*/
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 5vw;
+  float: right;
+  border-radius: 100%;
+}
+
+div.sticky a i {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 5vw;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  background-color: #0070ff;
+  padding: 1vw;
+  color: #fff;
+}
+
+/*collapse or accordin bar*/
+input#chck1, input#chck2, input#chck3, input#chck4, input#chck5, input#chck6{
+    position: absolute;
+    opacity: 0;
+}
+
+.accordion{
+    overflow: hidden;
+    padding: 0;
+}
+
+.progress-tab{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    overflow: hidden;
+}
+ 
+.progress-label{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: #0070ff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2vw;
+    border: solid #fff 1px;
+}
+
+.progress-label::after{
+    content: "\0002B";   
+}
+
+.tab-content p{
+    font-size: 1.2vw;
+}
+
+.tab-content{
+    max-height: 0;
+    color: #000;
+    border-left: dotted #0070ff 1px;
+    border-right: dotted #0070ff 1px;
+    border-bottom: dotted #0070ff 1px;
+}
+
+.tab-content ul li{
+    list-style-type: none;
+    background-color: #fff;
+}
+
+.tab-content p{
+    background: #fff;
+    margin: 0;
+    padding: 2% 0;
+}
+
+input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#chck3:checked ~ .tab-content, input#chck4:checked ~ .tab-content, input#chck5:checked ~ .tab-content, input#chck6:checked ~ .tab-content{
+    max-height: 100vw;
+}
+
+/*notification*/
+.notification-space p{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid #0070ff 2px;
+    background: #fff;
+    padding: 2% 0.5%;
+    font-size: 1.2vw;
+    text-align: left;
 }

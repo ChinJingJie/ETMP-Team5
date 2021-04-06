@@ -11,6 +11,6 @@
       </ul>
     </li>
     <li class="parent"><a href="#">Profile</a></li>
-    <li class="parent"><a href="enquiry.php">Logout</a></li>
+    <li class="parent"><a href="#">Logout</a></li>
   </ul>
 </nav>

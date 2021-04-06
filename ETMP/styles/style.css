@@ -217,7 +217,6 @@ nav a:hover{
 /*tab*/
 .tab {
   overflow: hidden;
-  border: 0 solid #ccc;
   background-color: #0070ff;
 }
 
@@ -249,3 +248,25 @@ nav a:hover{
 .tabcontent p{
     background-color: #fff;
 }
+
+/*stick position*/
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 5vw;
+  float: right;
+  border-radius: 100%;
+}
+
+div.sticky a i {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 5vw;
+  font-size: 30px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  background-color: #0070ff;
+  padding: 2vw;
+  color: #fff;
+}
+

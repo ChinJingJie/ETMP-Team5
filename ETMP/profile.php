@@ -26,8 +26,11 @@
             <p>Display training History</p>
         </div>
     </section>
-    <div>
-        <!--chat icon-->
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class="sticky">
+        <a href="#">
+	       <i class="fa fa-comment"></i>
+        </a>
     </div>
   <?php include "footer.php"; ?>
   

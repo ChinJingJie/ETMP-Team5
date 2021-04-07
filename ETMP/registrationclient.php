@@ -21,7 +21,7 @@
                 </p>
                 <p>
                     <label for="phone">Phone Number:</label>
-                    <input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="10"/>
+                    <input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="11"/>
                 </p>
                 <p><label>Occupation:</label>
                     <select name="occupations" id="occupation">

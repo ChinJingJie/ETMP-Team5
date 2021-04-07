@@ -1,3 +1,4 @@
+<?php include "registrationclientprocess.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
         <h1>Client Account Registration Form</h1>
     </header>
     <section>
-        <form id="clientRegistrationForm" method="post" action="mailto:expertdotcom@hotmail.com" novalidate="novalidate">
+        <form id="clientRegistrationForm" method="post" action="registrationclient.php" novalidate="novalidate">
             <fieldset>	
                 <p>
                     <label for="name">Full Name:</label>

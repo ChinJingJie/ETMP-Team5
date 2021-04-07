@@ -23,8 +23,16 @@
                     <input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="10"/>
                 </p>
                 <p>
-                    <label for="name">Staff ID:</label>
+                    <label for="staffid">Staff ID:</label>
                     <input type="text" id="staffid" name="staffid" placeholder="staff ID" maxlength="25"/>
+                </p>
+                <p>
+                    <label for="pwsd">Password:</label>
+                    <input type="text" id="staffid" name="pwsd" placeholder="password" maxlength="25"/>
+                </p>
+                <p>
+                    <label for="pwsd1">Re-confim Password:</label>
+                    <input type="text" id="staffid" name="pwsd1" placeholder="re-enter password" maxlength="25"/>
                 </p>
                 <p class="link">
                     <input type="checkbox" id = "t&c"/>

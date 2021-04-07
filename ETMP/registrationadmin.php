@@ -8,7 +8,7 @@
         <h1>Admin Account Registration Form</h1>
     </header>
     <section>
-        <form id="adminRegistrationForm" method="post" action="mailto:expertdotcom@hotmail.com" novalidate="novalidate">
+        <form id="adminRegistrationForm" method="post" action="registrationclientprocess.php" novalidate="novalidate">
             <fieldset>	
                 <p>
                     <label for="name">Full Name:</label>
@@ -28,11 +28,11 @@
                 </p>
                 <p>
                     <label for="pwsd">Password:</label>
-                    <input type="text" id="staffid" name="pwsd" placeholder="password" maxlength="25"/>
+                    <input type="text" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
                 </p>
                 <p>
                     <label for="pwsd1">Re-confim Password:</label>
-                    <input type="text" id="staffid" name="pwsd1" placeholder="re-enter password" maxlength="25"/>
+                    <input type="text" id="pwsd1" name="pwsd1" placeholder="re-enter password" maxlength="25"/>
                 </p>
                 <p class="link">
                     <input type="checkbox" id = "t&c"/>

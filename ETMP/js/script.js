@@ -39,12 +39,14 @@ function validateForm(){
     var isAllOK = false;  
     gErrorMsg = ""; 
 	var fNameOK = fName();
+	var passwordOK = chkPswd();
+	var recpasswordOK = chkReconfirmPassword();
 	var emailOK = chkEmail();
 	var phoneOK = chkPhone();
 	var occupationOK = chkOccupation();
 	var termcondOK = chkTermCond();
 	
-	if(fNameOK && emailOK && phoneOK && occupationOK && termcondOK)
+	if(fNameOK && passwordOK &&  recpasswordOK && emailOK && phoneOK && occupationOK && termcondOK)
 	{
 		isAllOK = true;
 	}
@@ -62,14 +64,15 @@ function validateForm2(){
     var isAllOK = false;  
     gErrorMsg = ""; 
 	var fNameOK = fName();
+	var passwordOK = chkPswd();
+	var recpasswordOK = chkReconfirmPassword();
 	var emailOK = chkEmail();
 	var phoneOK = chkPhone();
 	var staffidOK = chkStaffID();
 	var termcondOK = chkTermCond();
 	
 	
-	
-	if(fNameOK && emailOK && phoneOK && staffidOK && termcondOK)
+	if(fNameOK && passwordOK &&  recpasswordOK && emailOK && phoneOK && staffidOK && termcondOK)
 	{
 		isAllOK = true;
 	}
@@ -104,6 +107,40 @@ function fName() {  //Full Name
         document.getElementById("name").style.borderColor = "red";
 	}
 	return nameOk;
+}
+
+function chkPswd(){
+	var pwsd = document.getElementById("pwsd").value;     
+	var pwsdOk = true;	
+	if ((pwsd.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter a Password\n" 
+        pwsdOk = false; 
+        document.getElementById("pwsd").style.borderColor = "red";
+	}
+	
+	return pwsdOk;
+}
+
+function chkReconfirmPassword(){
+	var pwsd1 = document.getElementById("pwsd1").value;
+	var pwsd = document.getElementById("pwsd").value;    
+	var pwsd1Ok = true;	
+	if ((pwsd1.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter reconfirmation Password\n" 
+        pwsd1Ok = false; 
+        document.getElementById("pwsd1").style.borderColor = "red";
+	}
+	
+	else {
+		if(pwsd != pwsd1)
+		{
+			gErrorMsg = gErrorMsg + "Reconfirmation Password is not the same as Password\n"
+			pwsd1Ok = false;
+		}
+		
+	}
+	
+	return pwsd1Ok;
 }
 
 function chkEmail() {  //Email
@@ -219,6 +256,12 @@ function validateInputOnBlur(){
 	switch (objectLostFocus_id){
 		case "name": 
 			isOk = fName();
+			break;
+		case "pwsd": 
+			isOk = chkPassword();
+			break;
+		case "pwsd1": 
+			isOk = chkReconfirmPassword();
 			break;
 		case "email": 
 			isOk = chkEmail();

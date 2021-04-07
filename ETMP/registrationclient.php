@@ -1,4 +1,4 @@
-<?php //include "registrationclientprocess.php"; ?>
+<?php include "registrationclientprocess.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +48,7 @@
                 </p>
             </fieldset>
             <button type="button"><a href="login.php">Cancel</a></button>
-            <input type="submit" value="Register"/>
+            <input type="submit" name ="submit" value="Register"/>
         </form>
     </section>
   <?php include "footer.php"; ?>

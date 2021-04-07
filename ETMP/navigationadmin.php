@@ -11,6 +11,6 @@
       </ul>
     </li>
     <li class="parent"><a href="profileadmin.php">Profile</a></li>
-    <li class="parent"><a href="#">Logout</a></li>
+    <li class="parent"><a href="#" onclick = "box()">Logout</a></li>
   </ul>
 </nav>

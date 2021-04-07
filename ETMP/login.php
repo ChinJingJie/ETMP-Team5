@@ -18,7 +18,7 @@
 		$username = "username"; // "username"
 		$password = "password"; // "password"
 		
-		$conn = mysqli_connect("localhost","root","root","");
+		$conn = mysqli_connect("localhost",$username,$password);
 		$result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
 		
 		if (mysqli_num_rows($result) > 0)
@@ -54,7 +54,7 @@
         <h1>Expert Training Management Portal</h1>
     </header>
     <section>
-        <form id="myForm" method="post" action="" novalidate="novalidate">
+        <form id="myForm" method="post" action="" novalidate>
 			<?php if (isset($_SESSION["error"])) { ?>
 				<p style = "color: red;"><?= $_SESSION["error"]; ?></p>
 			<?php unset($_SESSION["error"]); } ?>

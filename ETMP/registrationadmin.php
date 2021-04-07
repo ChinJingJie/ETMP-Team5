@@ -1,3 +1,4 @@
+<?php include "registrationadminprocess.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
         <h1>Admin Account Registration Form</h1>
     </header>
     <section>
-        <form id="adminRegistrationForm" method="post" action="registrationclientprocess.php" novalidate="novalidate">
+        <form id="adminRegistrationForm" method="post" action="registrationadminprocess.php" novalidate="novalidate">
             <fieldset>	
                 <p>
                     <label for="name">Full Name:</label>
@@ -20,7 +21,7 @@
                 </p>
                 <p>
                     <label for="phone">Phone Number:</label>
-                    <input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="10"/>
+                    <input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="11"/>
                 </p>
                 <p>
                     <label for="staffid">Staff ID:</label>
@@ -40,7 +41,7 @@
                 </p>
             </fieldset>
             <button type="button"><a href="login.php">Cancel</a></button>
-            <input type="submit" value="Register"/>
+            <input type="submit" name="submit" value="Register"/>
         </form>
     </section>
   <?php include "footer.php"; ?>

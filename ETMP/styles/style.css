@@ -12,8 +12,16 @@
     background-color: #e7feff;
 }
 
+.link{
+    font-size: 12px;
+}
+
+.link a{
+    color: #0070ff;
+}
+
 .logo{
-    margin-top: 5vw;
+    margin-top: 2vw;
     height: 10vw;
 }
 
@@ -63,7 +71,6 @@ input[type=submit], input[type=reset]{
 	cursor: pointer;
 	text-align: center;
 	border-radius: 1vw;
-    margin-bottom: 100px;
 }
 
 button{
@@ -88,12 +95,8 @@ button a{
 	text-align: center;
 }
 
-.link{
-    font-size: 12px;
-}
-
-.link a{
-    color: #0070ff;
+footer{
+    margin-top: 4%;
 }
 
 footer>address{
@@ -107,39 +110,6 @@ footer>address{
     bottom: 0;
     width: 100%;
     text-decoration: none;
-}
-
-/* media query when the screen reduct to half */
-@media (max-width: 800px){
-    .logo{
-        margin-top: 15vw;
-        height: 15vw;
-    }
-    h1{
-        font-size: 3vw;
-        margin: 2vw;
-    }
-    input[type=text] {
-	   width: 30%;
-	   height: 4vw;
-	   margin: 1vw;
-	   box-sizing: border-box;
-	   border: 2px solid #000;
-       border-radius: 0.5vw;
-	   font-size: 2vw;
-    }
-    footer>address{
-        margin-top: 10px;
-        padding: 1%;
-        background-color: #0070ff;
-        font-size: 1.5vw;
-        color: #fff;
-        clear: both;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        text-decoration: none;
-    }
 }
 
 /* navigation*/
@@ -469,4 +439,115 @@ input#course1:checked ~ .tab-content1{
 
 .row {
   display: flex;
+}
+
+/* media query */
+/* max-width=browser width is less than / euqual to value */
+/* min-width=browser width is greater than / euqual to value */
+@media (max-width: 767px){
+    .logo{
+        margin-top: 8vw;
+        height: 15vw;
+    }
+
+    h1{
+        font-size: 3vw;
+        padding: 1vw;
+    }
+
+    h2{
+        font-size: 2vw;
+    }
+    
+    input[type=text], select {
+	   height: 5vw;
+	   font-size: 1.8vw;
+    }
+    
+    input[type=submit], button{
+        padding: 1.5vw 5vw;
+        margin-bottom: 20px;
+    }
+    
+    /*form*/
+    fieldset {
+        width: 85%;
+    }
+
+    /* navigation*/
+    nav ul a, nav ul a img{
+        margin: 1vw;
+        height: 10vw;
+    }
+    
+    .parent, .child{
+        font-size: 2.5vw;
+    }
+    
+    .child li{
+        padding: 8%;
+    }
+    
+    footer{
+        margin-top: 5%;
+    }
+    
+    footer>address{
+        padding: 1.2%;
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 550px){
+    .logo{
+        margin-top: 13vw;
+        height: 20vw;
+    }
+
+    h1{
+        font-size: 3.5vw;
+        padding: 2vw;
+    }
+
+    h2{
+        font-size: 3vw;
+    }
+    
+    input[type=text], select {
+	   width: 50%;
+	   height: 6vw;
+	   font-size: 2.5vw;
+    }
+    
+    input[type=submit], button{
+        padding: 2vw 8vw;
+        margin-bottom: 20px;
+    }
+    
+    /*form*/
+    fieldset {
+        width: 90%;
+    }
+    
+    /* navigation*/
+    nav ul a, nav ul a img{
+        height: 10vw;
+    }
+    
+    .parent, .child{
+        font-size: 2.8vw;
+    }
+    
+    .child li{
+        padding: 8%;
+    }
+    
+    footer{
+        margin-top: 6%;
+    }
+    
+    footer>address{
+        padding: 1.5%;
+        font-size: 2vw;
+    }
 }

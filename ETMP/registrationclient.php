@@ -1,4 +1,4 @@
-<?php include "registrationclientprocess.php"; ?>
+<?php //include "registrationclientprocess.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -27,6 +27,24 @@
                 <button>Apply</button>
               </div>
             </div>
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course3">
+              <div class="text">
+                <p><b>Training name2</b></p> 
+                <p>training description in a few sentences 2</p> 
+                <p><a href="#" target="_blank">training template link 2</a></p> 
+                <button>Apply</button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course4">
+              <div class="text">
+                <p><b>Training name3</b></p> 
+                <p>training description in a few sentences 3</p> 
+                <p><a href="#" target="_blank">training template link 3</a></p> 
+                <button>Apply</button>
+              </div>
+            </div>
         </div>
     </section>
     <div class="sticky">

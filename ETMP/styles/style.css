@@ -348,8 +348,8 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 40%;
-    padding: 2%;
+    width: 22%;
+    padding: 1%;
     background-color: #fff;
     margin: 1% auto;
 }
@@ -363,13 +363,13 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 }
 
 .text {
-    padding: 1vw 5vw;
+    padding: 1vw;
     background-color: #fff;
     color: #0070ff;
 }
 
 .text p, .text p b, .text p a{
-    font-size: 2vw;
+    font-size: 1.2vw;
     background-color: #fff;
 }
 

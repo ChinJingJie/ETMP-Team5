@@ -87,7 +87,7 @@ if($user) {
 //Register the user if no error
 
 if(count($errors) == 0){
-	
+
 	//encrypts the password before saving into the DB
 	$password = md5($password_1); 
 

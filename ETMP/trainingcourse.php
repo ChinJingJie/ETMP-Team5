@@ -8,13 +8,24 @@
     </header>
     <section>
         <h1>Training Course</h1>
-        <div class="accordion1">
-            <div class="progress-tab1">
-                <input type="checkbox" id="course1"/>
-                <label class="progress-label1" for="course1"><img src="images/couse_leadership.jpeg" alt="logo"/>Build Your Confidence</label>
-                <div class="tab-content1">
-                    <p>Details of the course</p>
-                </div>
+        <div class="row">
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course1">
+              <div class="text">
+                <p><b>Training name</b></p> 
+                <p>training description in a few sentences</p> 
+                <p><a href="#" target="_blank">training template link</a></p> 
+                <button>Apply</button>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course2">
+              <div class="text">
+                <p><b>Training name1</b></p> 
+                <p>training description in a few sentences 1</p> 
+                <p><a href="#" target="_blank">training template link 1</a></p> 
+                <button>Apply</button>
+              </div>
             </div>
         </div>
     </section>

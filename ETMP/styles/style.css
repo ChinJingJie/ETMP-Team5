@@ -53,7 +53,7 @@ input[type=text], select{
 	font-size: 1.5vw;
 }
 
-input[type=submit]{
+input[type=submit], input[type=reset]{
 	background-color: #0070ff;
 	border: none;
 	color: white;

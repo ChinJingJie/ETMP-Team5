@@ -51,14 +51,24 @@ fieldset p,fieldset p label, fieldset p a{
     background-color: #fff;
 }
 
-input[type=text], select{
-	width: 30%;
+input[type=text],select{
+	width: 40%;
 	height: 3vw;
 	margin: 1vw;
 	box-sizing: border-box;
 	border: 2px solid #000;
     border-radius: 0.5vw;
 	font-size: 1.5vw;
+}
+
+input[type=file]{
+    background-color: #fff;
+    font-size: 1.3vw;
+}
+
+textarea{
+    border: 2px solid #000;
+    font-size: 1.3vw;
 }
 
 input[type=submit], input[type=reset]{
@@ -347,11 +357,13 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 /*card view*/
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position:relative;
+    float: left;
     transition: 0.3s;
-    width: 22%;
+    width: 23%;
     padding: 1%;
     background-color: #fff;
-    margin: 1% auto;
+    margin: 1%;
 }
 
 .card img{
@@ -374,7 +386,10 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 }
 
 .row {
-  display: flex;
+  content: "";
+  clear: both;
+  display: inline-block;
+  margin:0 auto;
 }
 
 /* media query */
@@ -398,6 +413,10 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     input[type=text], select {
 	   height: 5vw;
 	   font-size: 1.8vw;
+    }
+    
+    input[type=file], textarea{
+        font-size: 1.8vw;
     }
     
     input[type=submit], button{
@@ -447,6 +466,16 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
       padding: 1vw 1vw 0 3vw;
     }
     
+    /*card view*/
+    .card {
+        width: 40%;
+        margin: 4%;
+    }
+    
+    .text p, .text p b, .text p a{
+        font-size: 1.8vw;
+    }
+    
     /*footer*/
     footer{
         margin-top: 5%;
@@ -477,6 +506,10 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 	   width: 50%;
 	   height: 6vw;
 	   font-size: 2.5vw;
+    }
+    
+    input[type=file], textarea{
+        font-size: 2.5vw;
     }
     
     input[type=submit], button{
@@ -527,6 +560,16 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     .tab button {
       font-size: 3vw;
       padding: 2vw 1vw 0 3vw;
+    }
+    
+    /*card view*/
+    .card {
+        width: 85%;
+        margin: 2% 8%;
+    }
+    
+    .text p, .text p b, .text p a{
+        font-size: 2.5vw;
     }
     
     /*footer*/

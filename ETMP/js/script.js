@@ -31,7 +31,7 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-// Form Validation by Nicholas Lim Tun Yang 
+// Registration Form and Training Form Validation by Nicholas Lim Tun Yang 
 var gErrorMsg = "";
 
 function validateForm(){
@@ -56,6 +56,7 @@ function validateForm(){
        gErrorMsg = "";  
        isAllOK = false;
    }
+   
    return isAllOK;
 }
 
@@ -82,6 +83,41 @@ function validateForm2(){
        gErrorMsg = "";  
        isAllOK = false;
    }
+   return isAllOK;
+}
+
+function validateForm3(){
+    "use strict";  
+	
+    var isAllOK = false;
+	gErrorMsg = "";	
+	var fNameOK = fName();
+	var emailOK = chkEmail();
+	var phoneOK = chkPhone();
+	var vNameOK= chkVenueName();
+	var stAddressOK = chkStreetAddress();
+	var cityOK = chkCity();
+	var postcodeOK = chkPostcode();
+	var trProgramOK = chkTrainingProgram();
+	var trCategoryOK = chkTrainingCategory();
+	var trStDateOK = chkTrainingStartDate();
+	var trEndDateOK = chkTrainingEndDate();
+	var trStTimeOK = chkTrainingStartTime();
+	var trEndTimeOK = chkTrainingEndTime();
+	
+	if(fNameOK && emailOK && phoneOK && vNameOK && stAddressOK && cityOK && postcodeOK && trCategoryOK && trStDateOK
+			&& trEndDate && trStTimeOk && trEndTimeOK)
+	{
+		isAllOK = true;
+	}
+	
+	else
+	{
+	   alert(gErrorMsg); 
+       gErrorMsg = "";  
+       isAllOK = false;
+	}
+   
    return isAllOK;
 }
 
@@ -248,6 +284,150 @@ function chkTermCond() {  // Terms and Condition
 	return selected;
 }
 
+
+function chkVenueName() {  //Venue Name
+	var vname = document.getElementById("venue").value;
+	var pattern = /^[a-zA-Z ]+$/      
+	var vnameOk = true;
+	if ((vname.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter your Venue name\n" 
+        vnameOk = false; 
+        document.getElementById("venue").style.borderColor = "red";
+	}
+
+	return vnameOk;
+}
+
+function chkStreetAddress() {  //Street Address
+	var street = document.getElementById("street").value;
+	//var pattern = /^[a-zA-Z ]+$/      
+	var streetOk = true;
+	if ((street.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter your Street Address\n" 
+        cityOk = false; 
+        document.getElementById("street").style.borderColor = "red";
+	}
+
+	return streetOk;
+}
+
+function chkCity() {  //Street Address
+	var city = document.getElementById("city").value;
+	var pattern = /^[a-zA-Z ]+$/      
+	var cityOk = true;
+	if ((city.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter the City\n" 
+        cityOk = false; 
+        document.getElementById("city").style.borderColor = "red";
+	}
+
+	return cityOk;
+}
+
+function chkPostcode() {  //Postcode
+	var postcode = document.getElementById("code").value;
+	var pattern = /^[a-zA-Z ]+$/      
+	var postcodeOk = true;
+	if ((postcode.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter the Postcode\n" 
+        postcodeOk = false; 
+        document.getElementById("code").style.borderColor = "red";
+	}
+	return postcodeOk; 
+}
+
+function chkTrainingProgram() {  // Training Program
+	var selected = false;
+	var trpr = document.getElementById("tcourse").value;
+
+	if (trpr!=""){
+		selected = true;
+		document.getElementById("tcourse").style.borderColor = "black";
+	}
+	else{
+		selected = false;
+        document.getElementById("tcourse").style.borderColor = "red";
+		gErrorMsg = gErrorMsg + "Please Choose a Training Program\n"
+	}
+	return selected;
+}
+
+function chkTrainingCategory() {  //Training Category
+	var tCat = document.getElementById("category").value;   
+	var tCatOk = true;
+	if ((tCat.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter the Training Category\n" 
+        tCat = false; 
+        document.getElementById("category").style.borderColor = "red";
+	}
+
+	return tCatOk;  
+}
+
+function chkTrainingStartDate() {  //Training Start Date
+	var selected = false;
+	var trStDate = document.getElementById("Stdays").value;
+
+	if (trStDate!=""){
+		selected = true;
+		document.getElementById("Stdays").style.borderColor = "black";
+	}
+	else{
+		selected = false;
+        document.getElementById("Stdays").style.borderColor = "red";
+		gErrorMsg = gErrorMsg + "Please Choose a Training Start Date\n"
+	}
+	return selected; 
+}
+
+function chkTrainingEndDate() {  //Training End Date
+	var selected = false;
+	var trEDate = document.getElementById("Edays").value;
+
+	if (trEDate!=""){
+		selected = true;
+		document.getElementById("Edays").style.borderColor = "black";
+	}
+	else{
+		selected = false;
+        document.getElementById("Edays").style.borderColor = "red";
+		gErrorMsg = gErrorMsg + "Please Choose a Training End Date\n"
+	}
+	return selected; 
+}
+
+function chkTrainingStartTime() {  //Training Start Time
+	var selected = false;
+	var trSTime = document.getElementById("Stime").value;
+
+	if (trSTime!=""){
+		selected = true;
+		document.getElementById("Stime").style.borderColor = "black";
+	}
+	else{
+		selected = false;
+        document.getElementById("Stime").style.borderColor = "red";
+		gErrorMsg = gErrorMsg + "Please Choose a Training Start Time\n"
+	}
+	return selected; 
+}
+
+function chkTrainingEndTime() {  //Training End Time
+	var selected = false;
+	var trETime = document.getElementById("Etime").value;
+
+	if (trETime!=""){
+		selected = true;
+		document.getElementById("Etime").style.borderColor = "black";
+	}
+	else{
+		selected = false;
+        document.getElementById("Etime").style.borderColor = "red";
+		gErrorMsg = gErrorMsg + "Please Choose a Training End Time\n"
+	}
+	return selected; 
+}
+
 function validateInputOnBlur(){
 	
 	var objectLostFocus_id = this.id;
@@ -275,6 +455,36 @@ function validateInputOnBlur(){
 		case "occupation":
 			isOk = chkOccupation();
 			break;
+		case "venue":
+			isOK = chkVenueName();
+			break;
+		case "street":
+			isOK = chkStreetAddress();
+			break;
+		case "city":
+			isOK = chkCity();
+			break;
+		case "code":
+			isOK = chkPostcode();
+			break;
+		case "tcourse":
+			isOK = chkTrainingCategory();
+			break;
+		case "category":
+			isOK = chkTrainingProgram();
+			break;
+		case "Stdays":
+			isOK = chkTrainingStartDate();
+			break;
+		case "Edays":
+			isOK = chkTrainingEndDate();
+			break;
+		case "Stime":
+			isOK = chkTrainingStartTime();
+			break;
+		case "Etime":
+			isOK = chkTrainingEndTime();
+			break;
             }
 	if (!isOk) {
         document.getElementById(objectLostFocus_id).style.borderColor = ""; 
@@ -291,10 +501,14 @@ function resetFormat(){
 
 
 function registerInputsOnBlur(){  
-	var myForm = document.getElementById("clientRegistrationForm");
+	var myForm = document.getElementById("applicationForm");
 	if(myForm == null)
     { 
 		myForm = document.getElementById("adminRegistrationForm");
+		if(myForm == null)
+		{
+			myForm = document.getElementById("clientRegistrationForm");
+		}
 	}
 	var inputElements = myForm.getElementsByTagName("input");
 	for (var i = 0; i < inputElements.length; i++){
@@ -304,10 +518,14 @@ function registerInputsOnBlur(){
 
 
 function registerInputsOnClick(){  
-	var myForm = document.getElementById("clientRegistrationForm");
+	var myForm = document.getElementById("applicationForm");
 	if(myForm == null)
     { 
 		myForm = document.getElementById("adminRegistrationForm");
+		if(myForm == null)
+		{
+			myForm = document.getElementById("clientRegistrationForm");
+		}
 	}
 	var inputElements = myForm.getElementsByTagName("input");
 	for (var i = 0; i < inputElements.length; i++){
@@ -316,22 +534,31 @@ function registerInputsOnClick(){
 }
 
 function init() {
-   var myForm = document.getElementById("clientRegistrationForm");
+    var myForm = document.getElementById("applicationForm");
+   
+	registerInputsOnBlur();
+	registerInputsOnClick();
+   
    if(myForm != null)
    {
-	  registerInputsOnBlur();
-	  registerInputsOnClick();
-      myForm.onsubmit = validateForm;
+      myForm.onsubmit = validateForm3;
    }
    
    else
    {
-	  myForm = document.getElementById("adminRegistrationForm");
-	  registerInputsOnBlur();
-	  registerInputsOnClick();
-      myForm.onsubmit = validateForm2;
+	  myForm = document.getElementById("clientRegistrationForm");
+	  if(myForm != null)
+	  {	
+			
+			myForm.onsubmit = validateForm;
+	  }
+	  
+	  else
+	  {
+		   myForm = document.getElementById("adminRegistrationForm");
+		   myForm.onsubmit = validateForm2;
+	  }
    }
 }
-
 
 window.onload = init;

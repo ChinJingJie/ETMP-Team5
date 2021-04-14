@@ -26,8 +26,8 @@
 				</tr> <br>
 				<?php
 				//connection or link to database
-				$conn = mysqli_connect('localhost','root','');
-				$db = mysqli_select_db($conn, 'registration');
+				$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
+				$db = mysqli_select_db($conn, 'sql6405286');
 					
 				if(isset($_POST['search'])) {
 					$name = $_POST['name'];

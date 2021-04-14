@@ -1,5 +1,7 @@
 <?php
 
+include "sessionstart.php";
+
 //variables
 $isAdmin = "";
 $name = "";  

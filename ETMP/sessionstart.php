@@ -4,8 +4,6 @@
 	
 ?>
 
-<?php include "registrationadminprocess.php";?>
-<?php include "registrationclientprocess.php";?>
 
 
 

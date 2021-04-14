@@ -29,7 +29,6 @@
 			  </div>
 			  <form id="adminProfileEditForm" method="post" action="profileadminfunction.php">
 				  <div class="modal-body">
-					
 					<div class="form-group">
 						<label for="name">Full Name:</label>
 						<input type="text" id="name" name="name" value="<?php echo $_SESSION['name']?>" placeholder="full name" maxlength="25"/>

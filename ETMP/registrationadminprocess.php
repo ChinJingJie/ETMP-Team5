@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 //variables
 $isAdmin = "";
 $name = "";  
@@ -103,7 +101,17 @@ if(count($errors) == 0){
 }
 }
 
-// log user in from login page by Liew Woun Kai
+// Attempts on Login
+if (isset($_SESSION['locked'])) {
+	$difference  = time() - $_SESSION['locked'];
+	if ($difference > 300)
+	{
+		unset($_SESSION['locked']);
+		unset($_SESSION['login_attempts']);
+	}
+}
+
+// log user in from login page to admin dashboard page by Liew Woun Kai
 if (isset($_POST['login'])) {
 	$name = $_POST['name'];
 	$password_1 = $_POST['pwsd'];
@@ -115,6 +123,7 @@ if (isset($_POST['login'])) {
 	if (empty($password_1)) {
 		array_push($errors, "Password is required to login");
 	}
+	
 	if (count($errors) == 0) {
 		$password_1 = md5($password_1);
 		$user_check_query = "SELECT * FROM admins WHERE name = '$name' AND password = '$password_1'";
@@ -124,7 +133,8 @@ if (isset($_POST['login'])) {
 			$_SESSION['success'] = "You are now logged in";
 			header('location: dashboardadmin.php');
 		}else{
-			array_push($errors, "wrong Email or Password, Please try again");
+			$_SESSION['login_attempts'] += 1;
+			array_push($errors, "Invalid Username or Password, Please try again");
 		}
 	}
 }

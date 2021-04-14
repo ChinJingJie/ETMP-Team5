@@ -1,4 +1,4 @@
-<?php include "registrationadminprocess.php";?>
+<?php include "sessionstart.php";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,14 @@
             <br/>
             <input type="text" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
             <br/>
-			<input type="submit" name="login" value="Login"/>
+	    <?php
+		if ($_SESSION['login_attempts'] > 5) { // numbers of attempts to Login
+			$_SESSION['locked'] = time();
+			echo "<p>Please wait for 5 minutes to continue Login</p>";
+		}else{
+	     ?>
+		<input type="submit" name="login" value="Login"/>
+	     <?php } ?>
         </form>
         <p class="link">Forget password? <a href="forgetpwsd.php">Reset now</a></p>
         <p class="link">New user? <a href="registration.php">Register here</a></p>

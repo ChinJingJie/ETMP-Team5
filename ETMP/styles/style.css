@@ -587,3 +587,12 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
         font-size: 2vw;
     }
 }
+
+/*Database Table*/
+table,th,td{
+	font-size: 1vw;
+    margin: 2vw;
+	border: 2px solid black;
+	width: 1100px;
+	background-color: #0070ff;
+}

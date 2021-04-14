@@ -8,6 +8,7 @@
     </header>
     <section>
         <h1>Training Course</h1>
+        <p>View the course below to apply, if no favourable coure, apply for a self proposed training course <a href="application.php">here</a>.</p>
         <div class="row">
             <div class="card">
               <img src="images/couse_leadership.jpeg" alt="Course1">

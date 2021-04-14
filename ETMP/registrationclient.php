@@ -1,4 +1,3 @@
-<?php //include "registrationclientprocess.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 

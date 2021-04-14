@@ -1,7 +1,5 @@
 <?php
 
-include "sessionstart.php";
-
 //variables
 $isAdmin = "";
 $name = "";  
@@ -25,7 +23,6 @@ if (!$conn) {
 if(isset($_POST["submit"])){
 
 //register user
-$id = $_POST['id'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -68,7 +65,7 @@ if($password_1 != $password_2){
 }
 
 //check db for same details
-$user_check_query = "SELECT * FROM admins WHERE email = '$email' or phone = '$phone' LIMIT 1";
+$user_check_query = "SELECT * FROM admins WHERE name = '$name' or email = '$email' or phone = '$phone' LIMIT 1";
 
 $result = mysqli_query($conn, $user_check_query);
 
@@ -76,6 +73,9 @@ $user = mysqli_fetch_assoc($result);
 
 if($user) {
 
+	if($user['name'] === $name){
+		array_push($errors, "This name has already been used");
+	}
 	if($user['email'] === $email){
 		array_push($errors, "This email has already been used");
 	}
@@ -97,7 +97,6 @@ if(count($errors) == 0){
 
 	mysqli_query($conn,$query);
 	$_SESSION['name'] =  $name;
-	$_SESSION['id'] = $id;
 	$_SESSION['success'] = "You are now logged in";
 	header('location: login.php'); //redirect to login page
 }

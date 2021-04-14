@@ -1,4 +1,8 @@
-<?php include "sessionstart.php";?>
+<?php 
+include "sessionstart.php";
+include "registrationadminprocess.php";
+include "registrationclientprocess.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">

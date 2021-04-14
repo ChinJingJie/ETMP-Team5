@@ -1,6 +1,6 @@
 <?php
 include "sessionstart.php";
-include "registrationadminprocess.php";
+include "registrationclientprocess.php";
 
 $conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
 
@@ -9,7 +9,7 @@ function getUsersData(){
 	
 	$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
 	$name = $_SESSION['name'];
-	$user_query = "SELECT * FROM admins WHERE name ='$name'";
+	$user_query = "SELECT * FROM users WHERE name ='$name'";
 	$result = mysqli_query($conn, $user_query);
 	
 	while($user = mysqli_fetch_assoc($result)){
@@ -17,7 +17,7 @@ function getUsersData(){
 		$array['name'] = $user['name'];
 		$array['email'] = $user['email'];
 		$array['phone'] = $user['phone'];
-		$array['staffid'] = $user['staffid'];
+		$array['occupation'] = $user['occupation'];
 	}
 	return $array;
 	
@@ -28,19 +28,19 @@ if(isset($_POST["updateprofile"])){
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$phone = $_POST['phone'];
-	$staffid = $_POST['staffid'];
+	$occupation = $_POST['occupations'];
 	
-	$user_query = "UPDATE admins SET email = '$email',phone = '$phone',staffid = '$staffid' WHERE name = '$name'"
+	$user_query = "UPDATE users SET email = '$email',phone = '$phone',occupation = '$occupation' WHERE name = '$name'"
 	or die($user_query->error());
 	$result = mysqli_query($conn, $user_query);
 	
-	header('location: profileadmin.php');
+	header('location: profile.php');
 	
 }
 
 if(isset($_POST["delete"])){
 	$name = $_SESSION['name'];
-	$user_query = "DELETE FROM admins WHERE name='$name'" or die($user_query->error());
+	$user_query = "DELETE FROM users WHERE name='$name'" or die($user_query->error());
 	$result = mysqli_query($conn, $user_query);
 	
 	header('location: login.php');

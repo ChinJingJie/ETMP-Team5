@@ -1,6 +1,5 @@
 <?php
 
-
 //variables
 $isAdmin = "";
 $name = "";  

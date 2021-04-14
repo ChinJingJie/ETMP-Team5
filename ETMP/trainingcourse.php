@@ -15,7 +15,7 @@
                 <p><b>Training name</b></p> 
                 <p>training description in a few sentences</p> 
                 <p><a href="#" target="_blank">training template link</a></p> 
-                <button>Apply</button>
+                <button type="button"><a href="application.php">Apply</a></button>
               </div>
             </div>
             <div class="card">
@@ -24,7 +24,7 @@
                 <p><b>Training name1</b></p> 
                 <p>training description in a few sentences 1</p> 
                 <p><a href="#" target="_blank">training template link 1</a></p> 
-                <button>Apply</button>
+                <button type="button"><a href="application.php">Apply</a></button>
               </div>
             </div>
             <div class="card">
@@ -33,7 +33,7 @@
                 <p><b>Training name2</b></p> 
                 <p>training description in a few sentences 2</p> 
                 <p><a href="#" target="_blank">training template link 2</a></p> 
-                <button>Apply</button>
+                <button type="button"><a href="application.php">Apply</a></button>
               </div>
             </div>
             <div class="card">
@@ -42,7 +42,7 @@
                 <p><b>Training name3</b></p> 
                 <p>training description in a few sentences 3</p> 
                 <p><a href="#" target="_blank">training template link 3</a></p> 
-                <button>Apply</button>
+                <button type="button"><a href="application.php">Apply</a></button>
               </div>
             </div>
         </div>

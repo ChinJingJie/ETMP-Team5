@@ -8,7 +8,7 @@
     </header>
     <section>
         <h1>Training Course Application Form</h1>
-        <form id="applicationForm" method="post" action="mailto:expertdotcom@hotmail.com" novalidate="novalidate">        
+        <form id="applicationForm" method="post" action="mailto:expertdotcom@hotmail.com" onSubmit="if(!confirm('Proceed to form submission?')){return false;}">       
 	  <fieldset>	
         <legend>Details of Person In Charge</legend>
           <p>
@@ -82,7 +82,7 @@
       <div class="button">
         <input type="submit" value="Booking"/>
         <button>Save</button>
-        <button>Cancel</button>
+        <button type="button"><a href="trainingcourse.php">Cancel</a></button>
         <?php include "enquiry_processr.php"; ?>
       </div>
 	</form>

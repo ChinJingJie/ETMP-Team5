@@ -31,7 +31,6 @@ include "registrationclientprocess.php";
         </form>
         <p class="link">Forget password? <a href="forgetpwsd.php">Reset now</a></p>
         <p class="link">New user? <a href="registration.php">Register here</a></p>
-        <br/><br/><br/>
     </section>
   <?php include "footer.php"; ?>
   

@@ -27,7 +27,10 @@
 
 h1{
 	font-size: 2vw;
-    margin: 2vw;
+    margin: 0;
+    padding: 2%;
+    font-weight: bold; 
+    background-color: #e7feff;
 }
 
 h2{
@@ -41,7 +44,8 @@ h2{
 fieldset {
 	border-radius: 10px;
 	background-color: #fff;
-	margin: 2% auto;
+    margin: 0 auto;
+	padding: 2%;
 	text-align: center;
 	width: 65%;
 	border: 2px solid black;
@@ -111,6 +115,7 @@ footer{
 
 footer>address{
     margin-top: 10px;
+    margin-bottom: 0;
 	padding: 1%;
 	background-color: #0070ff;
     font-size: 1vw;
@@ -403,7 +408,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 
     h1{
         font-size: 3vw;
-        padding: 1vw;
+        padding: 2vw;
     }
 
     h2{
@@ -495,7 +500,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 
     h1{
         font-size: 3.5vw;
-        padding: 2vw;
+        padding: 3vw;
     }
 
     h2{

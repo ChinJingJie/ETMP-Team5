@@ -8,14 +8,41 @@
     </header>
     <section>
         <h1>Training Course</h1>
-        <p class="newcourse"><a>+ Add new course</a></p>
-        <div class="accordion1">
-            <div class="progress-tab1">
-                <input type="checkbox" id="course1"/>
-                <label class="progress-label1" for="course1"><img src="images/couse_leadership.jpeg" alt="logo"/>Build Your Confidence</label>
-                <div class="tab-content1">
-                    <p>Details of the course</p>
-                </div>
+        <button>+ Add new course</button>
+        <button>Edit existing course</button>
+        <h2>Course Listing</h2>
+        <div class="row">
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course1">
+              <div class="text">
+                <p><b>Training name</b></p> 
+                <p>training description in a few sentences</p> 
+                <p><a href="#" target="_blank">training template link</a></p> 
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course2">
+              <div class="text">
+                <p><b>Training name1</b></p> 
+                <p>training description in a few sentences 1</p> 
+                <p><a href="#" target="_blank">training template link 1</a></p> 
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course3">
+              <div class="text">
+                <p><b>Training name2</b></p> 
+                <p>training description in a few sentences 2</p> 
+                <p><a href="#" target="_blank">training template link 2</a></p> 
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/couse_leadership.jpeg" alt="Course4">
+              <div class="text">
+                <p><b>Training name3</b></p> 
+                <p>training description in a few sentences 3</p> 
+                <p><a href="#" target="_blank">training template link 3</a></p> 
+              </div>
             </div>
         </div>
     </section>

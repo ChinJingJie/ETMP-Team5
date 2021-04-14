@@ -5,6 +5,7 @@
 <body>
     <header>
         <img class="logo" src="images/company_logo.png" alt="Expert.com logo"/>
+        <h1>Expert Training Management Portal</h1>
     </header>
     <section>
         <p>Type registered email to get the password reset link</p>

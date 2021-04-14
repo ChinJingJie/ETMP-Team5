@@ -12,14 +12,25 @@
     background-color: #e7feff;
 }
 
+.link{
+    font-size: 12px;
+}
+
+.link a{
+    color: #0070ff;
+}
+
 .logo{
-    margin-top: 5vw;
+    margin-top: 2vw;
     height: 10vw;
 }
 
 h1{
 	font-size: 2vw;
-    margin: 2vw;
+    margin: 0;
+    padding: 2%;
+    font-weight: bold; 
+    background-color: #e7feff;
 }
 
 h2{
@@ -33,7 +44,8 @@ h2{
 fieldset {
 	border-radius: 10px;
 	background-color: #fff;
-	margin: 2% auto;
+    margin: 0 auto;
+	padding: 2%;
 	text-align: center;
 	width: 65%;
 	border: 2px solid black;
@@ -43,8 +55,8 @@ fieldset p,fieldset p label, fieldset p a{
     background-color: #fff;
 }
 
-input[type=text], select{
-	width: 30%;
+input[type=text],select{
+	width: 40%;
 	height: 3vw;
 	margin: 1vw;
 	box-sizing: border-box;
@@ -53,7 +65,17 @@ input[type=text], select{
 	font-size: 1.5vw;
 }
 
-input[type=submit]{
+input[type=file]{
+    background-color: #fff;
+    font-size: 1.3vw;
+}
+
+textarea{
+    border: 2px solid #000;
+    font-size: 1.3vw;
+}
+
+input[type=submit], input[type=reset]{
 	background-color: #0070ff;
 	border: none;
 	color: white;
@@ -63,7 +85,6 @@ input[type=submit]{
 	cursor: pointer;
 	text-align: center;
 	border-radius: 1vw;
-    margin-bottom: 100px;
 }
 
 button{
@@ -88,16 +109,13 @@ button a{
 	text-align: center;
 }
 
-.link{
-    font-size: 12px;
-}
-
-.link a{
-    color: #0070ff;
+footer{
+    margin-top: 4%;
 }
 
 footer>address{
     margin-top: 10px;
+    margin-bottom: 0;
 	padding: 1%;
 	background-color: #0070ff;
     font-size: 1vw;
@@ -107,39 +125,6 @@ footer>address{
     bottom: 0;
     width: 100%;
     text-decoration: none;
-}
-
-/* media query when the screen reduct to half */
-@media (max-width: 800px){
-    .logo{
-        margin-top: 15vw;
-        height: 15vw;
-    }
-    h1{
-        font-size: 3vw;
-        margin: 2vw;
-    }
-    input[type=text] {
-	   width: 30%;
-	   height: 4vw;
-	   margin: 1vw;
-	   box-sizing: border-box;
-	   border: 2px solid #000;
-       border-radius: 0.5vw;
-	   font-size: 2vw;
-    }
-    footer>address{
-        margin-top: 10px;
-        padding: 1%;
-        background-color: #0070ff;
-        font-size: 1.5vw;
-        color: #fff;
-        clear: both;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        text-decoration: none;
-    }
 }
 
 /* navigation*/
@@ -233,7 +218,7 @@ nav a:hover{
   outline: none;
   cursor: pointer;
   transition: 0.3s;
-  font-size: .5svw;
+  font-size: 1.5vw;
 }
 
 .tab button:hover {
@@ -258,17 +243,13 @@ nav a:hover{
 
 /*stick position*/
 div.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 5vw;
-  float: right;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
   border-radius: 100%;
 }
 
 div.sticky a i {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 5vw;
   font-size: 30px;
   border: 2px solid #fff;
   border-radius: 100%;
@@ -338,70 +319,10 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     max-height: 100vw;
 }
 
-/* accordian 1*/
-input#course1{
-    position: absolute;
-    opacity: 0;
-}
-
-.accordion1{
-    overflow: hidden;
-    padding: 0;
-}
-
-.progress-tab1{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #0070ff;
-    overflow: hidden;
-}
- 
-.progress-label1{
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-    background: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1.2vw;
-    border: solid #fff 1px;
-}
-
-.progress-label1::after{
-    content: "\0002B";   
-}
-
-.tab-content1 p{
-    font-size: 1.2vw;
-}
-
-.tab-content1{
-    max-height: 0;
-    color: #e7feff;
-}
-
-.tab-content1 ul li{
-    list-style-type: none;
-    background-color: #0070ff;
-}
-
-.tab-content1 p{
-    background-color: #0070ff;
-    margin: 0;
-    padding: 2% 0;
-}
-
-input#course1:checked ~ .tab-content1{
-    max-height: 100vw;
-}
-
 /*notification*/
 .notification-space p{
     width: 90%;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 50px auto;
     border: solid #0070ff 2px;
     background: #fff;
     padding: 2% 0.5%;
@@ -436,4 +357,242 @@ input#course1:checked ~ .tab-content1{
 .newcourse a{
     background-color: #0070ff;
     color: #fff;
+}
+
+/*card view*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position:relative;
+    float: left;
+    transition: 0.3s;
+    width: 23%;
+    padding: 1%;
+    background-color: #fff;
+    margin: 1%;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.text {
+    padding: 1vw;
+    background-color: #fff;
+    color: #0070ff;
+}
+
+.text p, .text p b, .text p a{
+    font-size: 1.2vw;
+    background-color: #fff;
+}
+
+.row {
+  content: "";
+  clear: both;
+  display: inline-block;
+  margin:0 auto;
+}
+
+/* media query */
+/* max-width=browser width is less than / euqual to value */
+/* min-width=browser width is greater than / euqual to value */
+@media (max-width: 767px){
+    .logo{
+        margin-top: 8vw;
+        height: 15vw;
+    }
+
+    h1{
+        font-size: 3vw;
+        padding: 2vw;
+    }
+
+    h2{
+        font-size: 2vw;
+    }
+    
+    input[type=text], select {
+	   height: 5vw;
+	   font-size: 1.8vw;
+    }
+    
+    input[type=file], textarea{
+        font-size: 1.8vw;
+    }
+    
+    input[type=submit], button{
+        padding: 1.5vw 5vw;
+        margin-bottom: 20px;
+    }
+    
+    /*form*/
+    fieldset {
+        width: 85%;
+    }
+
+    /* navigation*/
+    nav ul a, nav ul a img{
+        margin: 1vw;
+        height: 10vw;
+    }
+    
+    .parent, .child{
+        font-size: 2.5vw;
+    }
+    
+    .child li{
+        padding: 8%;
+    }
+        
+    /*stick position*/
+    div.sticky a i {
+      font-size: 25px;
+      padding: 1.5vw;
+    }
+    
+    /*collapse or accordin bar*/
+    .progress-label, .tab-content p{
+        font-size: 1.8vw;
+    }
+    
+    /*notification*/
+    .notification-space p{
+        padding: 2%;
+        font-size: 1.8vw;
+    }
+    
+    /*tab*/
+    .tab button {
+      font-size: 2vw;
+      padding: 1vw 1vw 0 3vw;
+    }
+    
+    /*card view*/
+    .card {
+        width: 40%;
+        margin: 4%;
+    }
+    
+    .text p, .text p b, .text p a{
+        font-size: 1.8vw;
+    }
+    
+    /*footer*/
+    footer{
+        margin-top: 5%;
+    }
+    
+    footer>address{
+        padding: 1.2%;
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 550px){
+    .logo{
+        margin-top: 13vw;
+        height: 20vw;
+    }
+
+    h1{
+        font-size: 3.5vw;
+        padding: 3vw;
+    }
+
+    h2{
+        font-size: 3vw;
+    }
+    
+    input[type=text], select {
+	   width: 50%;
+	   height: 6vw;
+	   font-size: 2.5vw;
+    }
+    
+    input[type=file], textarea{
+        font-size: 2.5vw;
+    }
+    
+    input[type=submit], button{
+        padding: 2vw 8vw;
+        margin-bottom: 20px;
+    }
+    
+    /*form*/
+    fieldset {
+        width: 90%;
+    }
+    
+    /* navigation*/
+    nav ul a, nav ul a img{
+        height: 9vw;
+    }
+    
+    .parent, .child{
+        font-size: 2.8vw;
+    }
+    
+    .child li{
+        padding: 8%;
+    }
+    
+    /*stick position*/
+    div.sticky {
+      bottom: 40px;
+    }
+    
+    div.sticky a i {
+      font-size: 25px;
+      padding: 1.5vw;
+    }
+    
+    /*collapse or accordin bar*/
+    .progress-label, .tab-content p{
+        font-size: 2.5vw;
+    }
+    
+    /*notification*/
+    .notification-space p{
+        padding: 2%;
+        font-size: 2.5vw;
+    }
+    
+    /*tab*/
+    .tab button {
+      font-size: 3vw;
+      padding: 2vw 1vw 0 3vw;
+    }
+    
+    /*card view*/
+    .card {
+        width: 85%;
+        margin: 2% 8%;
+    }
+    
+    .text p, .text p b, .text p a{
+        font-size: 2.5vw;
+    }
+    
+    /*footer*/
+    footer{
+        margin-top: 6%;
+    }
+    
+    footer>address{
+        padding: 1.5%;
+        font-size: 2vw;
+    }
+}
+
+/*Database Table*/
+table,th,td{
+	font-size: 1vw;
+    margin: 2vw;
+	border: 2px solid black;
+	width: 1100px;
+	background-color: #0070ff;
 }

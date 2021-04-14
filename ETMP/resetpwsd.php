@@ -5,8 +5,10 @@
 <body>
     <header>
         <img class="logo" src="images/company_logo.png" alt="Expert.com logo"/>
+        <h1>Expert Training Management Portal</h1>
     </header>
     <section>
+        <p>Reset the password and proceed to login again</p>
         <form id="resetpwsdForm" method="post" action="mailto:expertdotcom@hotmail.com" novalidate="novalidate">
             <input type="text" id="pwsd" name="pswd" placeholder="new password" maxlength="25"/>
             <br/>

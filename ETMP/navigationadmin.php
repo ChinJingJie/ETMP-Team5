@@ -6,7 +6,7 @@
     <a href="dashboardadmin.php"><img src="images/company_logo.png" alt="logo"/></a>
     <li class="parent"><a href="#">Course</a>
       <ul class="child">
-        <li><a href="#">Training</a></li>
+        <li><a href="trainingcourseadmin.php">Training</a></li>
         <li><a href="#">Current</a></li>
       </ul>
     </li>

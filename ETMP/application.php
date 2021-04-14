@@ -8,12 +8,12 @@
     </header>
     <section>
         <h1>Training Course Application Form</h1>
-        <form id="applicationForm" method="post" action="mailto:expertdotcom@hotmail.com" onSubmit="if(!confirm('Proceed to form submission?')){return false;}">       
+        <form id="applicationForm" method="post" action = ""; novalidate="novalidate">     
 	  <fieldset>	
         <legend>Details of Person In Charge</legend>
           <p>
 		    <label for="picName">Full Name:</label>
-			<input type="text" id="picName" name="picName" placeholder="Profile name" maxlength="25"/>
+			<input type="text" id="name" name="picName" placeholder="Profile name" maxlength="25"/>
 		  </p>
           <p>
 		    <label for="email">Email:</label>
@@ -48,7 +48,7 @@
       <fieldset>   
         <legend>Training Course</legend>
         <p><label>Training Program:</label>
-          <select name="products" id="product">
+          <select name="tcourse" id="tcourse">
               <option>Training 1</option>
               <option>Training 2</option>
               <option>Training 3</option>
@@ -59,15 +59,15 @@
         </p>
         <p>
 		  <label for="days">Training Start Date:</label>
-		  <input type="date" id="days" name="days"/>
+		  <input type="date" id="Stdays" name="days"/>
           <label for="days">End Date:</label>
-		  <input type="date" id="days" name="days"/>
+		  <input type="date" id="Edays" name="days"/>
 		</p>
         <p>
 		  <label for="time">Training Start Time:</label>
-		  <input type="time" id="time" name="time"/>
+		  <input type="time" id="Stime" name="time"/>
           <label for="time">End Time:</label>
-		  <input type="time" id="time" name="time"/>
+		  <input type="time" id="Etime" name="time"/>
 		</p>
         <p>
 		  <label for="template">Training Template:</label>
@@ -83,7 +83,6 @@
         <input type="submit" value="Booking"/>
         <button>Save</button>
         <button type="button"><a href="trainingcourse.php">Cancel</a></button>
-        <?php include "enquiry_processr.php"; ?>
       </div>
 	</form>
     </section>

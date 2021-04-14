@@ -14,8 +14,8 @@
             <br/>
             <input type="submit" value="Confirm"/>
         </form>
-        <p class="link">Login existing account? <a href="#">Click here</a></p>
-        <p class="link">New user? <a href="#">Register here</a></p>
+        <p class="link">Login existing account? <a href="login.php">Click here</a></p>
+        <p class="link">New user? <a href="registration.php">Register here</a></p>
         <br/><br/><br/>
     </section>
   <?php include "footer.php"; ?>

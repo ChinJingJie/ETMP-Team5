@@ -1,3 +1,5 @@
+<?php include "registrationclientprocess.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +11,7 @@
     <section>
         <h1>Welcome to Expert Training Management Portal</h1>
         <h2>Training Requisition in Progress</h2>
+		
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck1"/>

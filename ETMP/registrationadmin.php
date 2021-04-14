@@ -9,7 +9,7 @@
         <h1>Admin Account Registration Form</h1>
     </header>
     <section>
-        <form id="adminRegistrationForm" method="post" action="registrationadminprocess.php" novalidate="novalidate">
+        <form id="adminRegistrationForm" method="post" action="" novalidate="novalidate">
             <fieldset>	
                 <p>
                     <label for="name">Full Name:</label>
@@ -24,7 +24,7 @@
                     <input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="11"/>
                 </p>
                 <p>
-                    <label for="staffid">Staff ID:</label>
+                    <label for="staffid">Staff ID:</label> 
                     <input type="text" id="staffid" name="staffid" placeholder="staff ID" maxlength="25"/>
                 </p>
                 <p>

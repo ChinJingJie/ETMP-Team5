@@ -31,7 +31,7 @@
                     <input type="text" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
                 </p>
                 <p>
-                    <label for="pwsd1">Re-confim Password:</label>
+                    <label for="pwsd1">Re-confirm Password:</label>
                     <input type="text" id="pwsd1" name="pwsd1" placeholder="re-enter password" maxlength="25"/>
                 </p>
                 <p class="link">

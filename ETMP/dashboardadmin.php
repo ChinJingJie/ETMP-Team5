@@ -1,3 +1,5 @@
+<?php include('registrationadminprocess.php')?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +11,22 @@
     <section>
         <h1>Welcome to Expert Training Management Portal</h1>
         <h2>Overview of Training Requisition In Charged</h2>
+		<div class="content">
+			<?php if (isset($_SESSION['success'])): ?>
+				<div class="error success">
+					<h3>
+						<?php
+							//echo $_SESSION['success'];
+							//unset($_SESSION['success']);
+						?>
+					</h3>
+				</div>
+			<?php endif ?>
+		
+			<?php if (isset($_SESSION["name"])): ?>
+				<p>Welcome <strong><?php echo $_SESSION['name']; ?></strong></p>
+			<?php endif ?>
+		</div>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck1"/>

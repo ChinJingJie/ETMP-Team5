@@ -97,6 +97,7 @@ if(count($errors) == 0){
 	mysqli_query($conn,$query);
 	$_SESSION['name'] =  $name;
 	$_SESSION['success'] = "You are now logged in";
+	header('location:login.php'); //redirect to login page
 }
 }
 

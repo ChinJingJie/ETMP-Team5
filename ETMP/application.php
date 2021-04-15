@@ -1,3 +1,4 @@
+<?php include ('userdata.php');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,21 +10,29 @@
     <section>
         <h1>Training Course Application Form</h1>
         <form id="applicationForm" method="post" action = "applicationprocess.php"; novalidate="novalidate" onSubmit="if(!confirm('Proceed to form submission?')){return false;}">     
+	  <?php
+		if(isset($_SESSION['name'])){
+			$userData = getUsersData($_SESSION['name']);
+			?>
 	  <fieldset>	
         <legend>Details of Person In Charge</legend>
           <p>
 		    <label for="picName">Full Name:</label>
-			<input type="text" id="picName" name="picName" placeholder="Profile name" maxlength="25"/>
+			<input type="text" id="picName" name="picName" value="<?php echo $userData['name']?>" placeholder="Profile name" maxlength="25" readonly/>
 		  </p>
           <p>
 		    <label for="email">Email:</label>
-			<input type="text" id="email" name="email" placeholder="KennyOmega29@Gmail.com"/>
+			<input type="text" id="email" name="email" value="<?php echo $userData['email']?>" placeholder="KennyOmega29@Gmail.com" readonly/>
 		  </p>
           <p>
 		    <label for="phone">Phone Number:</label>
-			<input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="10"/>
+			<input type="text" id="phone" name="phone" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="10" readonly/>
 		  </p>
       </fieldset>
+	  <?php
+		}
+		?>
+		
 	
 	  <fieldset>
 		<legend>Training Venue</legend>

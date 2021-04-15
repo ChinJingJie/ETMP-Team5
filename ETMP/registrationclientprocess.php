@@ -21,7 +21,7 @@ if (!$conn) {
 }
 
 
-if(isset($_POST["submit"])){
+if(isset($_POST["clientsubmit"])){
 
 //register user
 $name = $_POST['name'];
@@ -65,27 +65,6 @@ if($password_1 != $password_2){
 	array_push($errors, "The passwords do not match");
 }
 
-//check db for same details in users table
-$user_check_query = "SELECT * FROM users WHERE name = '$name' or email = '$email' or phone = '$phone' LIMIT 1";
-
-$result = mysqli_query($conn, $user_check_query);
-
-$user = mysqli_fetch_assoc($result);
-
-if($user) {
-	
-	if($user['name'] === $name){
-		array_push($errors, "This name has already been used");
-	}
-	if($user['email'] === $email){
-		array_push($errors, "This email has already been used");
-	}
-	if($user['phone'] === $phone){
-		array_push($errors, "This phone number has already been used");
-	}
-
-}
-
 //check db for same details in admins table
 $admin_check_query = "SELECT * FROM admins WHERE name = '$name' or email = '$email' or phone = '$phone' LIMIT 1";
 
@@ -107,8 +86,28 @@ if($admin) {
 
 }
 
-//Register the user if no error
+//check db for same details in users table
+$user_check_query = "SELECT * FROM users WHERE name = '$name' or email = '$email' or phone = '$phone' LIMIT 1";
 
+$result = mysqli_query($conn, $user_check_query);
+
+$user = mysqli_fetch_assoc($result);
+
+if($user) {
+	
+	if($user['name'] === $name){
+		array_push($errors, "This name has already been used");
+	}
+	if($user['email'] === $email){
+		array_push($errors, "This email has already been used");
+	}
+	if($user['phone'] === $phone){
+		array_push($errors, "This phone number has already been used");
+	}
+
+}
+
+//Register the user if no error
 if(count($errors) == 0){
 
 	//encrypts the password before saving into the DB

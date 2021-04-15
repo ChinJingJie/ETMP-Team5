@@ -65,7 +65,7 @@ if($password_1 != $password_2){
 	array_push($errors, "The passwords do not match");
 }
 
-//check db for same details
+//check db for same details in users table
 $user_check_query = "SELECT * FROM users WHERE name = '$name' or email = '$email' or phone = '$phone' LIMIT 1";
 
 $result = mysqli_query($conn, $user_check_query);
@@ -81,6 +81,27 @@ if($user) {
 		array_push($errors, "This email has already been used");
 	}
 	if($user['phone'] === $phone){
+		array_push($errors, "This phone number has already been used");
+	}
+
+}
+
+//check db for same details in admins table
+$admin_check_query = "SELECT * FROM admins WHERE name = '$name' or email = '$email' or phone = '$phone' LIMIT 1";
+
+$resultadmin = mysqli_query($conn, $admin_check_query);
+
+$admin = mysqli_fetch_assoc($resultadmin);
+
+if($admin) {
+	
+	if($admin['name'] === $name){
+		array_push($errors, "This name has already been used");
+	}
+	if($admin['email'] === $email){
+		array_push($errors, "This email has already been used");
+	}
+	if($admin['phone'] === $phone){
 		array_push($errors, "This phone number has already been used");
 	}
 
@@ -143,3 +164,12 @@ if (isset($_POST['login'])) {
 }
 
 ?>
+
+
+<?php if (count($errors) > 0): ?>
+	<div class ="error">
+		<?php foreach ($errors as $error): ?>
+			<p><?php echo $error; ?></p>
+		<?php endforeach ?>
+	</div>
+<?php endif ?> 

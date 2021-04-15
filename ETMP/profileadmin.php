@@ -1,4 +1,4 @@
-<?php include('profileadminfunction.php')?>
+<?php include('admindata.php')?>
 <!DOCTYPE html>
 <html lang="en">
 

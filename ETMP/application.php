@@ -8,12 +8,12 @@
     </header>
     <section>
         <h1>Training Course Application Form</h1>
-        <form id="applicationForm" method="post" action = ""; novalidate="novalidate">     
+        <form id="applicationForm" method="post" action = "applicationprocess.php"; novalidate="novalidate">   
 	  <fieldset>	
         <legend>Details of Person In Charge</legend>
           <p>
 		    <label for="picName">Full Name:</label>
-			<input type="text" id="name" name="picName" placeholder="Profile name" maxlength="25"/>
+			<input type="text" id="picName" name="picName" placeholder="Profile name" maxlength="25"/>
 		  </p>
           <p>
 		    <label for="email">Email:</label>
@@ -55,19 +55,19 @@
           </select>
         </p>
         <p><label>Category:</label>
-          <input type="text" id="category" placeholder="Sports" readonly/>
+          <input type="text" id="category" name="category" value="Sports" placeholder="Sports" readonly/>
         </p>
         <p>
 		  <label for="days">Training Start Date:</label>
-		  <input type="date" id="Stdays" name="days"/>
+		  <input type="date" id="Stdays" name="Stdays"/>
           <label for="days">End Date:</label>
-		  <input type="date" id="Edays" name="days"/>
+		  <input type="date" id="Edays" name="Edays"/>
 		</p>
         <p>
 		  <label for="time">Training Start Time:</label>
-		  <input type="time" id="Stime" name="time"/>
+		  <input type="time" id="Stime" name="Stime"/>
           <label for="time">End Time:</label>
-		  <input type="time" id="Etime" name="time"/>
+		  <input type="time" id="Etime" name="Etime"/>
 		</p>
         <p>
 		  <label for="template">Training Template:</label>
@@ -80,9 +80,9 @@
 		</p>           
       </fieldset>   
       <div class="button">
-        <input type="submit" value="Booking"/>
-        <button>Save</button>
-        <button type="button"><a href="trainingcourse.php">Cancel</a></button>
+        <input type="submit" name="booking" class="btn btn-primary" value="Booking"/>
+        <input type="submit" name="save" class="btn btn-secondary" value="Save"/>
+        <input type="submit" name="cancel" class="btn btn-danger" value="Cancel"/>
       </div>
 	</form>
     </section>

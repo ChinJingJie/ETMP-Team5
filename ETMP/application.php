@@ -2,13 +2,13 @@
 <html lang="en">
 
 <?php include "header.php";?>
-<body>
+<body onload="autoProductName()">
     <header>
         <?php include "navigation.php";?>
     </header>
     <section>
         <h1>Training Course Application Form</h1>
-        <form id="applicationForm" method="post" action = ""; novalidate="novalidate">     
+        <form id="applicationForm" method="post" action = ""; novalidate="novalidate" onSubmit="if(!confirm('Proceed to form submission?')){return false;}">     
 	  <fieldset>	
         <legend>Details of Person In Charge</legend>
           <p>
@@ -48,11 +48,14 @@
       <fieldset>   
         <legend>Training Course</legend>
         <p><label>Training Program:</label>
-          <select name="tcourse" id="tcourse">
+          <select name="tcourse" id="tcourse" onchange="dynamicTextBox(this)">
               <option>Training 1</option>
               <option>Training 2</option>
               <option>Training 3</option>
+              <option>Training 4</option>
+              <option value="1">Others</option>
           </select>
+          <input type="text" id="dynamicName" style="display: none;" placeholder="program name">
         </p>
         <p><label>Category:</label>
           <input type="text" id="category" placeholder="Sports" readonly/>

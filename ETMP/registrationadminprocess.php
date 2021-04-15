@@ -102,6 +102,7 @@ if(count($errors) == 0){
 }
 }
 
+
 // Attempts on Login
 if (isset($_SESSION['locked'])) {
 	$difference  = time() - $_SESSION['locked'];
@@ -116,6 +117,7 @@ if (isset($_SESSION['locked'])) {
 if (isset($_POST['login'])) {
 	$name = $_POST['name'];
 	$password_1 = $_POST['pwsd'];
+	$login_attempts = "";
 	
 	//validation
 	if (empty($name)) {

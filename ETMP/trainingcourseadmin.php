@@ -8,7 +8,16 @@
     </header>
     <section>
         <h1>Training Course</h1>
-        <button>+ Add new course</button>
+        <!-- Trigger Modal -->
+        <button id="addBtn" onclick="createNew()">+ Add new course</button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Form building in contruction...</p>
+            </div>
+        </div>
         <button>Edit existing course</button>
         <h2>Course Listing</h2>
         <div class="row">

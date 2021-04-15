@@ -116,6 +116,7 @@ if (isset($_SESSION['locked'])) {
 if (isset($_POST['login'])) {
 	$name = $_POST['name'];
 	$password_1 = $_POST['pwsd'];
+	$login_attempts = "";
 	
 	//validation
 	if (empty($name)) {

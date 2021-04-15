@@ -31,6 +31,67 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
+// Dynamic Text Box by Chin Jing Jie
+function dynamicTextBox(text) {
+    var selectedValue = text.value;
+    if(selectedValue=="1")
+    {
+        document.getElementById("dynamicName").style.display = "";
+    }
+    else
+    {
+        document.getElementById("dynamicName").style.display = "none";
+    }
+}
+
+//Data transfer between pages by Chin Jing Jie
+function storePrograms(programName) {
+    var myprograms = ["Training 1","Training 2","Training 3","Training 4","Others"];
+    
+    myprograms.forEach(array);
+    
+    function array(value) {
+        if (value == programName) {
+            sessionStorage.productIndex = myprograms.indexOf(value);
+        }
+    }
+}
+
+//Autoload select dropdown by Chin Jing Jie
+function autoProductName() {
+    document.getElementById("tcourse").selectedIndex = sessionStorage.productIndex;
+    var product = document.getElementById("tcourse").value;
+    sessionStorage.product = product;
+    if (product == "1"){
+        document.getElementById("dynamicName").style.display = "";
+    }
+    else
+    {
+        document.getElementById("dynamicName").style.display = "none";
+    }
+}
+
+//Pop up modal by Chin Jing Jie
+function createNew(){
+    var modal= document.getElementById("myModal");
+	var btn= document.getElementById("addBtn");
+	var span= document.getElementsByClassName("close")[0];
+	
+	btn.onclick = function(){
+		modal.style.display="block";
+	}
+
+	span.onclick = function(){
+		modal.style.display= "none";
+	}
+	
+	window.onclick = function(event){
+		if (event.target==modal) {
+			modal.style.display ="none";
+		}
+	}
+}
+
 // Registration Form and Training Form Validation by Nicholas Lim Tun Yang 
 var gErrorMsg = "";
 

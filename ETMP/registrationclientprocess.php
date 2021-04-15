@@ -117,6 +117,7 @@ if (isset($_SESSION['locked'])) {
 if (isset($_POST['login'])) {
 	$name = $_POST['name'];
 	$password_1 = $_POST['pwsd'];
+	$login_attempts = "";
 	
 	//validation
 	if (empty($name)) {
@@ -135,7 +136,7 @@ if (isset($_POST['login'])) {
 			$_SESSION['success'] = "You are now logged in";
 			header('location: dashboard.php');
 		}else{
-			$_SESSION['login_attempts'] += 1;
+			$_SESSION['login_attempts'] += 0;
 			array_push($errors, "Invalid Username or Password, Please try again");
 		}
 	}

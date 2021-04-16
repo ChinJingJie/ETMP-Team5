@@ -18,12 +18,7 @@
 		</form>
 		<center>
 			<table>
-				<tr>
-					<th>Full Name </th>
-					<th>Email Address </th>
-					<th>Phone Number </th>
-					<th>Occupation </th>
-				</tr> <br>
+		
 				<?php
 				//connection or link to database
 				$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
@@ -33,10 +28,17 @@
 					$name = $_POST['name'];
 					$user_check_query = "SELECT * FROM users WHERE name = '$name'";
 					$query_run = mysqli_query($conn, $user_check_query);
-						
+					
+					
 					while($row = mysqli_fetch_array($query_run))
 					{
 						?>
+						<tr>
+							<th>Full Name </th>
+							<th>Email Address </th>
+							<th>Phone Number </th>
+							<th>Occupation </th>
+						</tr> <br>
 						<tr>
 							<td><?php echo $row['name']; ?></td>
 							<td><?php echo $row['email']; ?></td>

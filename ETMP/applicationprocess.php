@@ -43,11 +43,38 @@ if(isset($_POST["booking"])){
 	$date_end = $_POST['Edays'];
 	$time_start = $_POST['Stime'];
 	$time_end = $_POST['Etime'];
-	$template = $_POST['template'];
 	$remarks = $_POST['comment'];
+	
+	$template = $_FILES['template'];
+	$templateName = $_FILES['template']['name'];
+	$templateTmpName = $_FILES['template']['tmp_name'];
+	$templateSize = $_FILES['template']['size'];
+	$templateError = $_FILES['template']['error'];
+	$templateType = $_FILES['template']['type'];
+	
+	$templateExt = explode('.', $templateName);
+	$templateActualExt = strtolower(end($templateExt));
+	
+	$allowed = array('jpg','jpeg', 'png', 'pdf');
 	
 	$isAccepted = 0;
 	$isComplete = 1;
+	
+	if(in_array($templateActualExt, $allowed)){
+		if($templateError === 0){
+			if($templateSize < 1000000){
+				$templateNewName = uniqid('', true).".".$templateActualExt;
+				$templateDestination = 'uploads/'.$templateNewName;
+				move_uploaded_file($templateTmpName, $templateDestination);
+			} else {
+				array_push($errors, "You file is too big");
+			}
+		}else{
+			array_push($errors, "Upload file error");
+		}
+	} else {
+		array_push($errors, "You cannot upload files of this type");
+	}
 	
 	if(empty($name)) {
 		array_push($errors, "Please enter your name");
@@ -72,20 +99,12 @@ if(isset($_POST["booking"])){
 	}
 	if(empty($venue)) {
 		array_push($errors, "Please enter your venue");
-	} else {
-		if (!preg_match("/^[a-zA-Z ]*$/",$_POST["venue"])) {
-			array_push($errors, "Only letters and white space allowed");
-		};
 	}
 	if(empty($street)) {
 		array_push($errors, "Please enter your address");
 	}
 	if(empty($city)) {
 		array_push($errors, "Please enter your city");
-	} else {
-		if (!preg_match("/^[a-zA-Z ]*$/",$_POST["city"])) {
-			array_push($errors, "Only letters and white space allowed");
-		};
 	}
 	if(empty($postcode)) {
 		array_push($errors, "Please enter your postcode");
@@ -111,7 +130,7 @@ if(isset($_POST["booking"])){
 	
 	if(count($errors) == 0){
 		$query = "INSERT INTO application (isAccepted, isComplete, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
-					VALUES ('$isAccepted', '$isComplete', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$template', '$remarks')";
+					VALUES ('$isAccepted', '$isComplete', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
 		
 		mysqli_query($conn, $query);
 		$_SESSION['id'] = $id;
@@ -136,14 +155,41 @@ if(isset($_POST['save'])){
 	$date_end = $_POST['Edays'];
 	$time_start = $_POST['Stime'];
 	$time_end = $_POST['Etime'];
-	$template = $_POST['template'];
 	$remarks = $_POST['comment'];
+	
+	$template = $_FILES['template'];
+	$templateName = $_FILES['template']['name'];
+	$templateTmpName = $_FILES['template']['tmp_name'];
+	$templateSize = $_FILES['template']['size'];
+	$templateError = $_FILES['template']['error'];
+	$templateType = $_FILES['template']['type'];
+	
+	$templateExt = explode('.', $templateName);
+	$templateActualExt = strtolower(end($templateExt));
+	
+	$allowed = array('jpg','jpeg', 'png', 'pdf');
 	
 	$isAccepted = 0;
 	$isComplete = 0;
 	
+	if(in_array($templateActualExt, $allowed)){
+		if($templateError === 0){
+			if($templateSize < 1000000){
+				$templateNewName = uniqid('', true).".".$templateActualExt;
+				$templateDestination = 'uploads/'.$templateNewName;
+				move_uploaded_file($templateTmpName, $templateDestination);
+			} else {
+				array_push($errors, "You file is too big");
+			}
+		}else{
+			array_push($errors, "Upload file error");
+		}
+	} else {
+		array_push($errors, "You cannot upload files of this type");
+	}
+	
 	$query = "INSERT INTO application (isAccepted, isComplete, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
-					VALUES ('$isAccepted', '$isComplete', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$template', '$remarks')";
+					VALUES ('$isAccepted', '$isComplete', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
 		
 	mysqli_query($conn, $query);
 	$_SESSION['id'] = $id;

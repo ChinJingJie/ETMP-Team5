@@ -9,7 +9,7 @@
     </header>
     <section>
         <h1>Training Course Application Form</h1>
-        <form id="applicationForm" method="post" action = "applicationprocess.php"; novalidate="novalidate" onSubmit="if(!confirm('Proceed to form submission?')){return false;}">     
+        <form id="applicationForm" method="post" action = "applicationprocess.php" enctype="multipart/form-data" novalidate="novalidate" onSubmit="if(!confirm('Proceed to form submission?')){return false;}">     
 	  <?php
 		if(isset($_SESSION['name'])){
 			$userData = getUsersData($_SESSION['name']);

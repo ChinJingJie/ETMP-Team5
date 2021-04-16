@@ -615,3 +615,8 @@ table,th,td{
 .modal-footer{
     background-color: #fff;
 }
+
+.left div{
+    text-align: left;
+    margin-left: 20px;
+}

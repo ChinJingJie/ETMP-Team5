@@ -15,20 +15,80 @@
           <div class="modal-dialog box">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title" id="staticBackdropLabel">Add New Training Course</h1>
+                <h1 class="modal-title" id="staticBackdropLabel">Add New Training Course Details</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
-                form content
+              <form id="addCourseForm" method="post" action = "addcourseprocess.php">
+                <div class="modal-body left">
+                  <div class="form-group">
+                    <label for="addIMG">Cover Image:</label>
+				    <input type="file" id="addIMG" name="addIMG"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="addNAME">Course Name:</label>
+				    <input type="text" id="addNAME" name="addNAME" placeholder="course name" maxlength="25"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="addDESC">Description:</label>
+				    <textarea id="addDESC" name="addDESC" rows="4" cols="50" placeholder="Enter short description and occupation that suits the course/program"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="addCAT">Category:</label>
+				    <select name="addCAT" id="addCAT">
+                        <option> Business </option>    
+                        <option> Customer Services </option> 
+                        <option> Environment </option>
+                        <option> Healthcare </option>
+                        <option> Science </option>         
+                        <option> Technology </option>         
+                        <option> Animals </option>         
+                        <option> Others </option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="addTemp">Template:</label>
+				    <input type="file" id="addTemp" name="addTemp"/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" name="addNEW" class="btn btn-info">Add</button>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Add</button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
         <button>Edit existing course</button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">+ Delete existing course</button>
+        <!-- Modal -->
+        <div class="modal fade design" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog box">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="staticBackdropLabel">Delete Existing Training Course</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form id="deleteCourseForm" method="post" action = "addcourseprocess.php">
+                <div class="modal-body left">
+                  <div class="form-group">
+                    <label for="addCAT">Program Name:</label>
+				    <select name="addCAT" id="addCAT">
+                        <!-- need to load from database -->
+                        <option> Sample1 </option>    
+                        <option> Sample2 </option> 
+                        <option> Sample3 </option>
+                      </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" name="addNEW" class="btn btn-info">Delete</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
         <h2>Course Listing</h2>
         <div class="row">
             <div class="card">

@@ -26,7 +26,7 @@
                   </div>
                   <div class="form-group">
                     <label for="addNAME">Course Name:</label>
-				    <input type="text" id="addNAME" name="addNAME" placeholder="course name" maxlength="25"/>
+				    <input type="text" id="addNAME" name="addNAME" placeholder="course name" maxlength="50"/>
                   </div>
                   <div class="form-group">
                     <label for="addDESC">Description:</label>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                  <button type="submit" name="addNEW" class="btn btn-info">Add</button>
+                  <input type="submit" name="addNEW" class="btn btn-info" value="Add">
               </div>
               </form>
             </div>

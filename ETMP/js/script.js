@@ -71,7 +71,7 @@ function autoProductName() {
     }
 }
 
-// Registration Form and Training Form Validation by Nicholas Lim Tun Yang 
+// Registration Form and Training Form Validation by Nicholas Lim Tun Yang and Chin Jing Jie
 var gErrorMsg = "";
 
 function validateForm(){
@@ -145,8 +145,7 @@ function validateForm3(){
 	var trStTimeOK = chkTrainingStartTime();
 	var trEndTimeOK = chkTrainingEndTime();
 	
-	if(fNameOK && emailOK && phoneOK && vNameOK && stAddressOK && cityOK && postcodeOK && trCategoryOK && trStDateOK
-			&& trEndDate && trStTimeOk && trEndTimeOK)
+	if(fNameOK && emailOK && phoneOK && vNameOK && stAddressOK && cityOK && postcodeOK && trCategoryOK && trStDateOK && trEndDate && trStTimeOk && trEndTimeOK)
 	{
 		isAllOK = true;
 	}
@@ -158,7 +157,30 @@ function validateForm3(){
        isAllOK = false;
 	}
    
-   return isAllOK;
+    return isAllOK;
+}
+
+function validateForm4(){
+    "use strict";  
+    var isAllOK = false;
+	gErrorMsg = "";	
+	var addImageOK = chkCoverImage();
+	var addCourseOK = chkCourseName();
+	var addDescOK = chkDescription();
+	var addTempOK = chkTemplate();
+	
+	if(addImageOK && addCourseOK && addDescOK && addTempOK)
+	{
+		isAllOK = true;
+	}
+	else
+	{
+	   alert(gErrorMsg); 
+       gErrorMsg = "";  
+       isAllOK = false;
+	}
+   
+    return isAllOK;
 }
 
 function fName() {  //Full Name
@@ -466,6 +488,48 @@ function chkTrainingEndTime() {  //Training End Time
 		gErrorMsg = gErrorMsg + "Please Choose a Training End Time\n"
 	}
 	return selected; 
+}
+
+function chkCoverImage(){
+    //validate there is a file uploaded for adding new training course
+}
+
+function chkCourseName(){
+    //validate name is exist for adding new training course
+    var cName = document.getElementById("addNAME").value;  
+	var cNameOk = true;
+	if ((cName.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter a name for the training course\n" 
+        cNameOk = false; 
+        document.getElementById("addNAME").style.borderColor = "red";
+	}
+	if ((cName.length >= 50)){
+		gErrorMsg = gErrorMsg + "Please limit the name for the training course within 50 characters\n"
+		cNameOk = false;
+        document.getElementById("addNAME").style.borderColor = "red";
+	}
+	return cNameOk;
+}
+
+function chkDescription(){
+    //validate description is exist for adding new training course
+    var cDesc = document.getElementById("addDESC").value;  
+	var cDescOk = true;
+	if ((cDesc.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter a description for the training course\n" 
+        cDescOk = false; 
+        document.getElementById("addDESC").style.borderColor = "red";
+	}
+	if ((cDesc.length >= 200)){
+		gErrorMsg = gErrorMsg + "Please limit the description for the training course within 200 characters\n"
+		cDescOk = false;
+        document.getElementById("addDESC").style.borderColor = "red";
+	}
+	return cDescOk;
+}
+
+function chkTemplate(){
+    //validate there is a file uploaded for adding new training course
 }
 
 function validateInputOnBlur(){

@@ -8,15 +8,25 @@
     </header>
     <section>
         <h1>Training Course</h1>
-        <!-- Trigger Modal -->
-        <button id="addBtn" onclick="createNew()">+ Add new course</button>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Add new course</button>
+        <!-- Modal -->
+        <div class="modal fade design" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog box">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Form building in contruction...</p>
+              <div class="modal-header">
+                <h1 class="modal-title" id="staticBackdropLabel">Add New Training Course</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                form content
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Add</button>
+              </div>
             </div>
+          </div>
         </div>
         <button>Edit existing course</button>
         <h2>Course Listing</h2>

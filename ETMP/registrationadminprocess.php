@@ -6,6 +6,7 @@ $name = "";
 $email = "";
 $phone = "";
 $staffid ="";
+$login_attempts = 0;
 
 $errors = array();
 
@@ -168,7 +169,7 @@ if (isset($_POST['login'])) {
 <?php if (count($errors) > 0): ?>
 	<div class ="error">
 		<?php foreach ($errors as $error): ?>
-			<p><?php echo $error; ?></p>
+			<p><?php $error; ?></p>
 		<?php endforeach ?>
 	</div>
 <?php endif ?> 

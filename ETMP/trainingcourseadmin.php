@@ -18,7 +18,7 @@
                 <h1 class="modal-title" id="staticBackdropLabel">Add New Training Course Details</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form id="addCourseForm" method="post" action = "addcourseprocess.php">
+              <form id="addCourseForm" method="post" action = "trainingdb.php">
                 <div class="modal-body left">
                   <div class="form-group">
                     <label for="addIMG">Cover Image:</label>
@@ -69,7 +69,7 @@
                 <h1 class="modal-title" id="staticBackdropLabel">Delete Existing Training Course</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form id="deleteCourseForm" method="post" action = "addcourseprocess.php">
+              <form id="deleteCourseForm" method="post" action = "trainingdb.php">
                 <div class="modal-body left">
                   <div class="form-group">
                     <label for="addCAT">Program Name:</label>

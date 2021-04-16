@@ -591,7 +591,8 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 /*Database Table*/
 table,th,td{
 	font-size: 1vw;
-    margin: 2vw;
+    margin-left: auto;
+	margin-right: auto;
 	border: 2px solid black;
 	width: 1100px;
 	background-color: #0070ff;

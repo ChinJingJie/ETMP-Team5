@@ -41,7 +41,7 @@
 					  
 					<div class="form-group">
 						<label for="phone">Phone Number:</label>
-						<input type="text" id="phone" name="phone" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="11"/>
+						<input type="text" id="phone" name="phoneno" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="11"/>
 					</div>
 					  
 					<div class="form-group">

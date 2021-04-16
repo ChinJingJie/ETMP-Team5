@@ -8,7 +8,7 @@ if(isset($_POST["updateprofile"])){
 	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$email = $_POST['email'];
-	$phone = $_POST['phone'];
+	$phone = $_POST['phoneno'];
 	$occupation = $_POST['occupations'];
 	
 	$user_query = "UPDATE users SET email = '$email',phone = '$phone',occupation = '$occupation' WHERE name = '$name'"

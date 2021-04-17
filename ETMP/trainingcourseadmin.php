@@ -90,40 +90,27 @@
           </div>
         </div>
         <h2>Course Listing</h2>
-        <div class="row">
-            <div class="card">
-              <img src="images/couse_leadership.jpeg" alt="Course1">
-              <div class="text">
-                <p><b>Training name</b></p> 
-                <p>training description in a few sentences</p> 
-                <p><a href="#" target="_blank">training template link</a></p> 
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/couse_leadership.jpeg" alt="Course2">
-              <div class="text">
-                <p><b>Training name1</b></p> 
-                <p>training description in a few sentences 1</p> 
-                <p><a href="#" target="_blank">training template link 1</a></p> 
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/couse_leadership.jpeg" alt="Course3">
-              <div class="text">
-                <p><b>Training name2</b></p> 
-                <p>training description in a few sentences 2</p> 
-                <p><a href="#" target="_blank">training template link 2</a></p> 
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/couse_leadership.jpeg" alt="Course4">
-              <div class="text">
-                <p><b>Training name3</b></p> 
-                <p>training description in a few sentences 3</p> 
-                <p><a href="#" target="_blank">training template link 3</a></p> 
-              </div>
-            </div>
-        </div>
+        <?php
+            $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+            $db = mysqli_select_db($connection,'sql6405286');
+            
+            $query = " SELECT * FROM training ";
+            $query_run = mysqli_query($connection,$query);
+        
+            while($row = mysqli_fetch_array($query_run)){
+                ?>
+                <div class="card">
+                  *need to print image here*
+                  <div class="text">
+                    <p><b><?php echo $row['tname']; ?></b></p> 
+                    <p><?php echo $row['tdesc']; ?></p> 
+                    <p>Category: <?php echo $row['category']; ?></p>
+                    <p><a href="#" target="_blank"><?php echo $row['tTemplate']; ?></a></p> 
+                  </div>
+                </div>
+                <?php
+            }
+        ?>
     </section>
     <div class="sticky">
         <a href="#">

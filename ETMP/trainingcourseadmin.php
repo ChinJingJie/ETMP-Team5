@@ -73,7 +73,7 @@
                 <div class="modal-body left">
                   <div class="form-group">
                     <label for="addCAT">Program Name:</label>
-				    <select name="addCAT" id="addCAT">
+				    <select name="selection" id="selection">
                         <!-- need to load from database -->
                         <?php
                             $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
@@ -93,7 +93,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                  <button type="submit" name="addNEW" class="btn btn-info">Delete</button>
+                  <button type="submit" name="deleteNOW" class="btn btn-info">Delete</button>
               </div>
               </form>
             </div>

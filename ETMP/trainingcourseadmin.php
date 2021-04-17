@@ -100,12 +100,12 @@
             while($row = mysqli_fetch_array($query_run)){
                 ?>
                 <div class="card">
-                  *need to print image here*
+                  <?php echo '<img src="data:image;base64,'.base64_encode($row['pic']).'" alt="Cover" >'; ?>
                   <div class="text">
                     <p><b><?php echo $row['tname']; ?></b></p> 
                     <p><?php echo $row['tdesc']; ?></p> 
                     <p>Category: <?php echo $row['category']; ?></p>
-                    <p><a href="#" target="_blank"><?php echo $row['tTemplate']; ?></a></p> 
+                    <p><a href="<?php echo $row['tTemplate']; ?>" target="_blank"><?php echo $row['tTemplate']; ?></a></p> 
                   </div>
                 </div>
                 <?php

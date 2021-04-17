@@ -7,7 +7,7 @@
     <li class="parent"><a href="#">Course</a>
       <ul class="child">
         <li><a href="trainingcourse.php">Training</a></li>
-        <li><a href="#">Current</a></li>
+        <li><a href="current.php">Current</a></li>
       </ul>
     </li>
     <li class="parent"><a href="profile.php">Profile</a></li>

@@ -202,8 +202,158 @@ if(isset($_POST['cancel'])){
 	header('location: trainingcourse.php');
 }
 
+if(isset($_POST['bookfromsaved'])){
+	$id = $_POST['id'];
+	$venue = $_POST['venue'];
+	$street = $_POST['address'];
+	$city = $_POST['city'];
+	$postcode = $_POST['postcode'];
+	$program = $_POST['tcourse'];
+	$category = $_POST['category'];
+	$date_start = $_POST['Stdays'];
+	$date_end = $_POST['Edays'];
+	$time_start = $_POST['Stime'];
+	$time_end = $_POST['Etime'];
+	$remarks = $_POST['comment'];
+	
+	$template = $_FILES['template'];
+	$templateName = $_FILES['template']['name'];
+	$templateTmpName = $_FILES['template']['tmp_name'];
+	$templateSize = $_FILES['template']['size'];
+	$templateError = $_FILES['template']['error'];
+	$templateType = $_FILES['template']['type'];
+	
+	$templateExt = explode('.', $templateName);
+	$templateActualExt = strtolower(end($templateExt));
+	
+	$allowed = array('jpg','jpeg', 'png', 'pdf');
+	
+	$isComplete = 1;
+	
+	if(in_array($templateActualExt, $allowed)){
+		if($templateError === 0){
+			if($templateSize < 1000000){
+				$templateNewName = uniqid('', true).".".$templateActualExt;
+				$templateDestination = 'uploads/'.$templateNewName;
+				move_uploaded_file($templateTmpName, $templateDestination);
+			} else {
+				array_push($errors, "You file is too big");
+			}
+		}else{
+			array_push($errors, "Upload file error");
+		}
+	} else {
+		array_push($errors, "You cannot upload files of this type");
+	}
+	
+	
+	if(empty($venue)) {
+		array_push($errors, "Please enter your venue");
+	}
+	if(empty($street)) {
+		array_push($errors, "Please enter your address");
+	}
+	if(empty($city)) {
+		array_push($errors, "Please enter your city");
+	}
+	if(empty($postcode)) {
+		array_push($errors, "Please enter your postcode");
+	}
+	if(empty($program)) {
+		array_push($errors, "Please choose your training program");
+	}
+	if(empty($category)) {
+		array_push($errors, "Please enter your category");
+	}
+	if(empty($date_start)) {
+		array_push($errors, "Please select your starting date");
+	}
+	if(empty($date_end)) {
+		array_push($errors, "Please select your ending date");
+	}
+	if(empty($time_start)) {
+		array_push($errors, "Please select your starting time");
+	}
+	if(empty($time_end)) {
+		array_push($errors, "Please select your ending time");
+	}
+	
+	if(count($errors) == 0){
+		$query = "UPDATE application SET isComplete='$isComplete', venue='$venue', street='$street', city='$city' , postcode='$postcode' 
+					, program='$program' , category='$category' , date_start='$date_start' , date_end='$date_end', time_start='$time_start'
+					,time_end='$time_end', template='$templateNewName', remarks='$remarks'  WHERE id='$id'";
+		$result = mysqli_query($conn, $query);
+		
+		header('location: current.php');
+	}
+}
+
+if(isset($_POST['resave'])){
+	
+	$id = $_POST['id'];
+	$venue = $_POST['venue'];
+	$street = $_POST['address'];
+	$city = $_POST['city'];
+	$postcode = $_POST['postcode'];
+	$program = $_POST['tcourse'];
+	$category = $_POST['category'];
+	$date_start = $_POST['Stdays'];
+	$date_end = $_POST['Edays'];
+	$time_start = $_POST['Stime'];
+	$time_end = $_POST['Etime'];
+	$remarks = $_POST['comment'];
+	
+	$template = $_FILES['template'];
+	$templateName = $_FILES['template']['name'];
+	$templateTmpName = $_FILES['template']['tmp_name'];
+	$templateSize = $_FILES['template']['size'];
+	$templateError = $_FILES['template']['error'];
+	$templateType = $_FILES['template']['type'];
+	
+	$templateExt = explode('.', $templateName);
+	$templateActualExt = strtolower(end($templateExt));
+	
+	$allowed = array('jpg','jpeg', 'png', 'pdf');
+	
+	
+	if(in_array($templateActualExt, $allowed)){
+		if($templateError === 0){
+			if($templateSize < 1000000){
+				$templateNewName = uniqid('', true).".".$templateActualExt;
+				$templateDestination = 'uploads/'.$templateNewName;
+				move_uploaded_file($templateTmpName, $templateDestination);
+			} else {
+				array_push($errors, "You file is too big");
+			}
+		}else{
+			array_push($errors, "Upload file error");
+		}
+	} else {
+		array_push($errors, "You cannot upload files of this type");
+	}
+	
+	$query = "UPDATE application SET venue='$venue', street='$street', city='$city' , postcode='$postcode' 
+				, program='$program' , category='$category' , date_start='$date_start' , date_end='$date_end', time_start='$time_start'
+				,time_end='$time_end', template='$templateNewName', remarks='$remarks'  WHERE id='$id'";
+	$result = mysqli_query($conn, $query);
+		
+	header('location: current.php');
+}
+
+if(isset($_POST["delete"])){
+	$id = $_POST['id'];
+	$user_query = "DELETE FROM application WHERE id='$id'";
+	$result = mysqli_query($conn, $user_query);
+	
+	header('location: current.php');
+}
+
+
+
 
 ?>
+
+
 
 
 <?php if (count($errors) > 0): ?>

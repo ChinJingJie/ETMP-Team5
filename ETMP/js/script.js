@@ -492,6 +492,14 @@ function chkTrainingEndTime() {  //Training End Time
 
 function chkCoverImage(){
     //validate there is a file uploaded for adding new training course
+	var tImage = document.getElementById("addIMG").value;
+	var cImageOk = true;
+	if(tImage == ""){
+		gErrorMsg = gErrorMsg + "Please upload an Image\n";
+		tImage = false;
+		document.getElementById("addIMG").style.borderColor = "red";
+	}
+	return cImageOk;
 }
 
 function chkCourseName(){
@@ -530,6 +538,14 @@ function chkDescription(){
 
 function chkTemplate(){
     //validate there is a file uploaded for adding new training course
+	var tTemp = document.getElementById("addTemp").value;
+	var cTempOk = true;
+	if(tTemp == ""){
+		gErrorMsg = gErrorMsg + "Please upload a Template Link\n";
+		tImage = false;
+		document.getElementById("addTemp").style.borderColor = "red";
+	}
+	return cTempOk;
 }
 
 function validateInputOnBlur(){
@@ -589,6 +605,18 @@ function validateInputOnBlur(){
 		case "Etime":
 			isOK = chkTrainingEndTime();
 			break;
+		case "addIMG":
+			isOK = chkCoverImage();
+			break;
+		case "addNAME":
+			isOK = chkCourseName();
+			break;
+		case "addDESC":
+			isOK = chkDescription();
+			break;
+		case "addTemp":
+			isOK = chkTemplate();
+			break;
             }
 	if (!isOk) {
         document.getElementById(objectLostFocus_id).style.borderColor = ""; 
@@ -612,6 +640,12 @@ function registerInputsOnBlur(){
 		if(myForm == null)
 		{
 			myForm = document.getElementById("clientRegistrationForm");
+			if(myForm == null)
+			{
+				myForm = document.getElementById("addCourseForm");
+				
+			}
+			
 		}
 	}
 	var inputElements = myForm.getElementsByTagName("input");
@@ -629,6 +663,12 @@ function registerInputsOnClick(){
 		if(myForm == null)
 		{
 			myForm = document.getElementById("clientRegistrationForm");
+			if(myForm == null)
+			{
+				myForm = document.getElementById("addCourseForm");
+				
+			}
+			
 		}
 	}
 	var inputElements = myForm.getElementsByTagName("input");
@@ -653,14 +693,22 @@ function init() {
 	  myForm = document.getElementById("clientRegistrationForm");
 	  if(myForm != null)
 	  {	
-			
 			myForm.onsubmit = validateForm;
 	  }
 	  
 	  else
 	  {
 		   myForm = document.getElementById("adminRegistrationForm");
-		   myForm.onsubmit = validateForm2;
+		   if(myForm != null)
+			{	
+					myForm.onsubmit = validateForm2;
+			}
+			
+		  else
+		  {
+				myForm = document.getElementById("addCourseForm");
+				myForm.onsubmit = validateForm4;
+		  }
 	  }
    }
 }

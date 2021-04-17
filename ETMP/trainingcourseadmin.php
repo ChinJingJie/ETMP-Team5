@@ -18,7 +18,7 @@
                 <h1 class="modal-title" id="staticBackdropLabel">Add New Training Course Details</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form id="addCourseForm" method="post" action = "trainingdb.php">
+              <form id="addCourseForm" method="post" enctype="multipart/form-data" action = "trainingdb.php" >
                 <div class="modal-body left">
                   <div class="form-group">
                     <label for="addIMG">Cover Image:</label>
@@ -47,7 +47,7 @@
                   </div>
                   <div class="form-group">
                     <label for="addTemp">Template:</label>
-				    <input type="file" id="addTemp" name="addTemp"/>
+				    <input type="text" id="addTemp" name="addTemp" placeholder="Template Link"/>
                   </div>
                 </div>
                 <div class="modal-footer">

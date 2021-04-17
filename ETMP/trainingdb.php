@@ -26,4 +26,20 @@ if(isset($_POST["deleteNOW"])){
 	
 	header('location: trainingcourseadmin.php');
 }
+
+if(isset($_POST["addNEW"])){
+	
+	//$id = $_POST['id'];
+	$pic = addslashes(file_get_contents($_FILES['addIMG']['tmp_name']));
+	$tname = $_POST['addNAME'];
+	$tdesc = $_POST['addDESC'];
+	$category = $_POST['addCAT'];
+	$tTemplate = $_POST['addTemp'];
+	
+	$user_query = "INSERT INTO training (pic, tname, tdesc, category, tTemplate) 
+				VALUES ('$pic', '$tname', '$tdesc', '$category', '$tTemplate')";
+	mysqli_query($conn, $user_query);
+	
+	header('location: trainingcourseadmin.php');
+}
 ?>

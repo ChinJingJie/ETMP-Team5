@@ -22,10 +22,10 @@
                   <?php echo '<img src="data:image;base64,'.base64_encode($row['pic']).'" alt="Cover" >'; ?>
                   <div class="text">
                     <p><b><?php echo $row['tname']; ?></b></p> 
-                    <p><?php echo $row['tdesc']; ?></p> 
+                    <p><?php echo $row['tdesc']; ?></p> <!-- need to set htmlspecial character -->
                     <p>Category: <?php echo $row['category']; ?></p>
                     <p><a href="<?php echo $row['tTemplate']; ?>" target="_blank"><?php echo $row['tTemplate']; ?></a></p> 
-                    <button type="button"><a href="application.php" onclick="storePrograms('<?php $row['tname']?>')">Apply</a></button>
+                    <button type="button"><a href="application.php" onclick="storePrograms(<?php echo $row['tname']; ?>)">Apply</a></button>
                   </div>
                 </div>
                 <?php

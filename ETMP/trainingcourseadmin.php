@@ -75,9 +75,19 @@
                     <label for="addCAT">Program Name:</label>
 				    <select name="addCAT" id="addCAT">
                         <!-- need to load from database -->
-                        <option> Sample1 </option>    
-                        <option> Sample2 </option> 
-                        <option> Sample3 </option>
+                        <?php
+                            $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+                            $db = mysqli_select_db($connection,'sql6405286');
+
+                            $query = " SELECT * FROM training ";
+                            $query_run = mysqli_query($connection,$query);
+
+                            while($row = mysqli_fetch_array($query_run)){
+                                ?>
+                                <option><?php echo $row['tname']; ?></option>
+                                <?php
+                            }
+                      ?>
                       </select>
                   </div>
                 </div>

@@ -58,10 +58,19 @@
         <legend>Training Course</legend>
         <p><label>Training Program:</label>
           <select name="tcourse" id="tcourse" onchange="dynamicTextBox(this)">
-              <option>Training 1</option>
-              <option>Training 2</option>
-              <option>Training 3</option>
-              <option>Training 4</option>
+              <?php
+                    $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+                    $db = mysqli_select_db($connection,'sql6405286');
+
+                    $query = " SELECT * FROM training ";
+                    $query_run = mysqli_query($connection,$query);
+
+                    while($row = mysqli_fetch_array($query_run)){
+                        ?>
+                        <option><?php echo $row['tname']; ?></option>
+                        <?php
+                    }
+              ?>
               <option value="1">Others</option>
               <input type="text" id="dynamicName" style="display: none;" placeholder="program name">
           </select>

@@ -57,7 +57,7 @@
       <fieldset>   
         <legend>Training Course</legend>
         <p><label>Training Program:</label>
-          <select name="tcourse" id="tcourse" onchange="dynamicTextBox(this)">
+          <select name="tcourse" id="tcourse" onchange="programSelection(this)">
               <?php
                     $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
                     $db = mysqli_select_db($connection,'sql6405286');
@@ -76,7 +76,7 @@
           </select>
         </p>
         <p><label>Category:</label>
-          <input type="text" id="category" name="category" value="Sports" placeholder="Sports" readonly/>
+          <input type="text" id="category" name="category" placeholder="Sports"/>
         </p>
         <p>
 		  <label for="days">Training Start Date:</label>

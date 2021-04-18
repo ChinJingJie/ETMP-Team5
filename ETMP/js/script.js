@@ -32,7 +32,7 @@ function openTab(evt, tabName) {
 }
 
 // Dynamic Text Box by Chin Jing Jie
-function dynamicTextBox(text) {
+function programSelection(text) {
     var selectedValue = text.value;
     if(selectedValue=="1")
     {
@@ -45,21 +45,20 @@ function dynamicTextBox(text) {
 }
 
 //Data transfer between pages by Chin Jing Jie
-function storePrograms(programName) {
-    var myprograms = ["Training 1","Training 2","Training 3","Training 4","Others"];
-    
-    myprograms.forEach(array);
-    
-    function array(value) {
-        if (value == programName) {
-            sessionStorage.productIndex = myprograms.indexOf(value);
-        }
+function storePrograms(programID,programCat) {
+    if (programID == 'others'){
+        sessionStorage.productIndex = document.getElementById("courses").selectedIndex + 1;
+        sessionStorage.category = "Others";
+    }
+    else{
+        sessionStorage.productIndex = programID;
+        sessionStorage.category = programCat;
     }
 }
 
 //Autoload select dropdown by Chin Jing Jie
 function autoProductName() {
-    document.getElementById("tcourse").selectedIndex = sessionStorage.productIndex;
+    document.getElementById("tcourse").selectedIndex = sessionStorage.productIndex - 1;
     var product = document.getElementById("tcourse").value;
     sessionStorage.product = product;
     if (product == "1"){
@@ -69,6 +68,7 @@ function autoProductName() {
     {
         document.getElementById("dynamicName").style.display = "none";
     }
+    document.getElementById("category").value = sessionStorage.category;
 }
 
 // Registration Form and Training Form Validation by Nicholas Lim Tun Yang and Chin Jing Jie

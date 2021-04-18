@@ -34,14 +34,22 @@ function openTab(evt, tabName) {
 // Dynamic Text Box by Chin Jing Jie
 function programSelection(text) {
     var selectedValue = text.value;
+    sessionStorage.productIndex = document.getElementById("tcourse").selectedIndex + 1;
+    document.getElementById("tcats").selectedIndex = sessionStorage.productIndex - 1;
+    var categories = document.getElementById("tcats").value;
+    sessionStorage.category = categories;
+    var product = document.getElementById("tcourse").value;
+    sessionStorage.product = product;
     if(selectedValue=="1")
     {
         document.getElementById("dynamicName").style.display = "";
+        sessionStorage.category = "Others";
     }
     else
     {
         document.getElementById("dynamicName").style.display = "none";
     }
+    document.getElementById("category").value = sessionStorage.category;
 }
 
 //Data transfer between pages by Chin Jing Jie

@@ -1,3 +1,5 @@
+<?php include 'forgetpwsdprocess.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,13 +11,14 @@
     </header>
     <section>
         <p>Type registered email to get the password reset link</p>
-        <form id="forgetpwsdForm" method="post" action="mailto:expertdotcom@hotmail.com" novalidate="novalidate">
+		<?php if(isset($msg)){echo $msg;}?>
+        <form id="forgetpwsdForm" method="post" action="forgetpwsd.php" novalidate="novalidate">
             <input type="text" id="email" name="email" placeholder="email address" maxlength="25"/>
             <br/>
-            <input type="submit" value="Confirm"/>
+            <input type="submit" name="forgetbtn" value="Confirm"/>
         </form>
-        <p class="link">Login existing account? <a href="#">Click here</a></p>
-        <p class="link">New user? <a href="#">Register here</a></p>
+        <p class="link">Login existing account? <a href="login.php">Click here</a></p>
+        <p class="link">New user? <a href="registration.php">Register here</a></p>
         <br/><br/><br/>
     </section>
   <?php include "footer.php"; ?>

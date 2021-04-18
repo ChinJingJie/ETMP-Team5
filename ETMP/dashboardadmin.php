@@ -78,6 +78,11 @@
         <form method="post" action="viewdata.php">
 		<input type="submit" name="confirm" value="Click Here"/>
 	</form>
+	<h3>Training Application Database</h3>
+	<p>To view all the training Application submitted, push the button below</p>
+        <form method="post" action="viewtrainingapplicationdata.php">
+			<input type="submit" name="confirm" value="Click Here"/>
+		</form>
     </section>
     <div class="sticky">
         <a href="#">

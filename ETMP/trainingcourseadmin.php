@@ -30,7 +30,7 @@
                   </div>
                   <div class="form-group">
                     <label for="addDESC">Description:</label>
-				    <textarea id="addDESC" name="addDESC" rows="4" placeholder="Enter short description and occupation that suits the course/program"></textarea>
+				    <textarea id="addDESC" name="addDESC" rows="4" cols="50" placeholder="Enter short description and occupation that suits the course/program"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="addCAT">Category:</label>
@@ -58,9 +58,11 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary">Edit existing course</button>
+        <form method="post" action="viewtrainingdata.php">
+		<input type="submit" name="confirm" value="Edit existing course"/>
+		</form>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">- Delete existing course</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">+ Delete existing course</button>
         <!-- Modal -->
         <div class="modal fade design" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog box">

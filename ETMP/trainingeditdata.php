@@ -11,7 +11,6 @@ $result = mysqli_query($conn, $app_query);
 	
 while($app = mysqli_fetch_assoc($result)){
 	$array['id'] = $app['id'];
-	//$array['pic'] = $app['pic'];
 	$array['tname'] = $app['tname'];
 	$array['tdesc'] = $app['tdesc'];
 	$array['category'] = $app['category'];

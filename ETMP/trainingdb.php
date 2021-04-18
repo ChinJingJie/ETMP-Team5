@@ -42,4 +42,25 @@ if(isset($_POST["addNEW"])){
 	
 	header('location: trainingcourseadmin.php');
 }
+
+	if(isset($_POST["updatetrainingdata"])){
+		$id = $_POST['id'];
+		//$pic = $_FILES['picture'];
+		$pic = addslashes(file_get_contents($_FILES['picture']['tmp_name']));
+		$tname = $_POST['tName'];
+		$tdesc = $_POST['tDesc'];
+		$category = $_POST['tCat'];
+		$tTemplate = $_POST['tTemp'];
+	
+		$user_query = "UPDATE training SET 
+		pic = '$pic', tdesc = '$tdesc',
+		tname = '$tname',category = '$category',
+		tTemplate = '$tTemplate'
+		WHERE id= '$id'"
+		or die($user_query->error());
+		$result = mysqli_query($conn, $user_query);
+		
+		header('location: viewtrainingdata.php');
+		
+	}	
 ?>

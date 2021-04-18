@@ -124,17 +124,17 @@
 					
 					<div class="form-group">
 						<label for="phone">Phone Number:</label>
-						<label id ="phone" value ="">				
+						<label id ="phone" value =""/>				
 					</div>  
 					
 					<div class="form-group">
 						<label for="email">Email Address:</label>
-						<label id ="email" value ="">
+						<label id ="email" value =""/>
 					</div>
 					
 					<div class="form-group">
 						<label for="venue">Venue:</label>
-						<label id ="venue" value ="">
+						<label id ="venue" value =""/>
 					</div>
 					  
 					<div class="form-group">
@@ -149,47 +149,47 @@
 					  
 					<div class="form-group">
 						<label for="postcode">Postcode:</label>
-						<label id ="postcode" value ="">
+						<label id ="postcode" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="program">Program:</label>
-						<label id ="program" value ="">
+						<label id ="program" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="category">Category:</label>
-						<label id ="category" value ="">
+						<label id ="category" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="date_start">Date Start:</label>
-						<label id ="Sdate" value ="">
+						<label id ="Sdate" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="date_end">Date End:</label>
-						<label id ="Edate" value ="">
+						<label id ="Edate" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="time_start">Time Start:</label>
-						<label id ="Stime" value ="">
+						<label id ="Stime" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="time_end">Time End:</label>
-						<label id ="Etime" value ="">
+						<label id ="Etime" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="template">Template:</label>
-						<label id ="template" value ="">
+						<label id ="template" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="remarks">Remarks:</label>
-						<label id ="remarks" value ="">
+						<label id ="remarks" value =""/>
 					</div>
 					
 				  </div>
@@ -206,7 +206,8 @@
 			$result = mysqli_query($conn, $book_query);
 			?>
 			
-			<div class="row justify-content-center">
+			<p class="highlight">List of application submitted:</p>
+            <div class="row justify-content-center tabClr">
 				<table class="table">
 					<thead>
 						<tr>
@@ -401,7 +402,8 @@
 			$result = mysqli_query($conn, $book_query);
 			?>
 			
-			<div class="row justify-content-center">
+			<p class="highlight">List of application saved:</p>
+            <div class="row justify-content-center tabClr">
 				<table class="table">
 					<thead>
 						<tr>

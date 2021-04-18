@@ -107,7 +107,7 @@
 		</p>
         <p>
 		  <label for="template">Training Template:</label>
-		  <input type="file" id="template" name="template"/>
+		  <input type="text" id="template" name="template" placeholder="URL link"/>
 		</p>
         <p>
 		  <label class="comment" for="comment">Remarks</label>

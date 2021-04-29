@@ -3,13 +3,13 @@
 <html lang="en">
 
 <?php include "header.php";?>
-<body onload="autoProductName()">
+<body>
     <header>
         <?php include "navigation.php";?>
     </header>
     <section>
         <h1>Training Course Application Form</h1>
-        <form id="applicationForm" method="post" action = "applicationprocess.php" enctype="multipart/form-data" novalidate="novalidate" onSubmit="if(!confirm('Proceed to form submission?')){return false;}">     
+        <form id="applicationForm" method="post" action = "applicationprocess.php" enctype="multipart/form-data" novalidate="novalidate">     
 	  <?php
 		if(isset($_SESSION['name'])){
 			$userData = getUsersData($_SESSION['name']);
@@ -71,7 +71,7 @@
                         <?php
                     }
               ?>
-              <option value="1">Others</option>
+              <option>Others</option>
               <input type="text" id="dynamicName" style="display: none;" placeholder="program name">
           </select>
         </p>
@@ -107,7 +107,7 @@
 		</p>
         <p>
 		  <label for="template">Training Template:</label>
-		  <input type="text" id="template" name="template" placeholder="URL link"/>
+		  <input type="file" id="template" name="template" placeholder="URL link"/>
 		</p>
         <p>
 		  <label class="comment" for="comment">Remarks</label>
@@ -116,9 +116,11 @@
 		</p>           
       </fieldset>   
       <div class="button">
-        <input type="submit" name="booking" class="btn btn-primary" value="Booking"/>
-        <input type="submit" name="save" class="btn btn-secondary" value="Save"/>
-        <input type="submit" name="cancel" class="btn btn-danger" value="Cancel"/>
+        <!--<input type="submit" name="booking" class="btn btn-primary" value="Booking"/>
+        <input type="submit" name="save" class="btn btn-primary" value="Save"/>-->
+        <button type="submit" name="booking" onclick="btnSelect('book')">Booking</button>
+        <button type="submit" name="save" onclick="btnSelect('save')">Save</button>
+        <button type="button"><a href="trainingcourse.php">Cancel</a></button>
       </div>
 	</form>
     </section>

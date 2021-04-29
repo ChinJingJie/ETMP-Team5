@@ -41,6 +41,22 @@ h2{
     font-weight: bold;
 }
 
+.left{
+    margin-left: 5vw;
+    text-align: left;
+}
+
+.desc{
+    float: left;
+    margin-left: 5vw;
+    display: inline-flex;
+}
+
+.line{
+    display: inline-flex;
+    vertical-align: text-bottom;
+}
+
 /*form*/
 fieldset {
 	border-radius: 10px;
@@ -89,6 +105,11 @@ input[type=submit], input[type=reset]{
 	border-radius: 1vw;
 }
 
+input[type=submit]:hover, input[type=reset]:hover{
+	font-weight: bold;
+	text-decoration: none;
+}
+
 button{
 	background-color: #0070ff;
 	border: none;
@@ -102,7 +123,7 @@ button{
     margin-bottom: 10px;
 }
 
-button a{
+button a, button a:hover{
     background-color: #0070ff;
 	border: none;
 	color: white;
@@ -111,8 +132,13 @@ button a{
 	text-align: center;
 }
 
+button:hover{
+	font-weight: bold;
+	text-decoration: none;
+}
+
 footer{
-    margin-top: 4%;
+    margin-top: 12%;
 }
 
 footer>address{
@@ -336,6 +362,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     width: 90%;
     margin: 0 auto;
     padding: 1vw;
+    color: #fff;
     border: solid #0070ff 2px;
     text-align: right;
     background-color: #0070ff;
@@ -344,6 +371,10 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 .newmsg a{
     background-color: #0070ff;
     color: #fff;
+}
+
+.newmsg a:hover{
+    font-weight: bold;
 }
 
 /*course adding*/
@@ -368,13 +399,34 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     float: left;
     transition: 0.3s;
     width: 23%;
+    height: 40vw;
     padding: 1%;
     background-color: #fff;
     margin: 1%;
 }
 
+
+.scroll{
+    padding: 1% 0;
+    border-top: 1px solid #0070ff;
+    border-bottom: 1px solid #0070ff;
+    background: #fff;
+    max-height: 15vw;
+    overflow-y: auto;
+}
+
+.scrolls{
+    padding: 1% 0;
+    border-top: 1px solid #0070ff;
+    border-bottom: 1px solid #0070ff;
+    background: #fff;
+    max-height: 9vw;
+    overflow-y: auto;
+}
+
 .card img{
     width: 100%;
+    height: 15vw;
 }
 
 .card:hover {
@@ -397,6 +449,81 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
   clear: both;
   display: inline-block;
   margin:0 auto;
+}
+
+/*Database Table*/
+table,th,td{
+	font-size: 1vw;
+    margin-left: auto;
+	margin-right: auto;
+	border: 2px solid black;
+    width: 1100px;
+	background-color: #0070ff;
+}
+
+.table{
+    margin: 1vw auto;
+    width: 95%;
+    border: 2px solid #000;
+}
+
+.tables{
+    margin: 1vw auto;
+    width: 95%;
+    border: 2px solid #000;
+}
+
+.table tr th, .tables tr th{
+    background-color: #0070ff;
+    color: #fff;
+}
+
+.table tr td, .tables tr td{
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+.tables tr th, tables, tr td{
+    width:15%;
+}
+
+.tabClr{
+    background-color: #e7feff;
+}
+
+.result{
+    overflow-x:auto;
+}
+
+.highlight{
+    text-align: left;
+    padding-left: 2.5vw;
+    padding-top: 1vw;
+    font-weight: bold; 
+}
+
+/*Pop Ups*/
+.design{
+    background: none;
+}
+
+.modal-header{
+    margin: 1px;
+    background-color: #0070ff;
+}
+
+.modal-title{
+    background-color: #0070ff;
+    color: #fff;
+}
+
+.modal-footer{
+    background-color: #fff;
+}
+
+.left div{
+    text-align: left;
+    margin-left: 20px;
 }
 
 /* media query */
@@ -427,6 +554,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     }
     
     input[type=submit], button{
+        font-size: 2vw;
         padding: 1.5vw 5vw;
         margin-bottom: 20px;
     }
@@ -476,16 +604,32 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     /*card view*/
     .card {
         width: 40%;
-        margin: 4%;
+        height: 60vw;
+        margin: 5%;
     }
     
-    .text p, .text p b, .text p a{
+    .scroll{
+        max-height: 25vw;
+        overflow-y: auto;
+    }
+    
+    .scrolls{
+        max-height: 15vw;
+        overflow-y: auto;
+    }
+
+    .card img{
+        width: 100%;
+        height: 25vw;
+    }
+    
+    p, .text p, .text p b, .text p a, .highlight, th, td{
         font-size: 1.8vw;
     }
     
     /*footer*/
     footer{
-        margin-top: 5%;
+        margin-top: 17%;
     }
     
     footer>address{
@@ -520,6 +664,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     }
     
     input[type=submit], button{
+        font-size: 2.5vw;
         padding: 2vw 8vw;
         margin-bottom: 20px;
     }
@@ -571,84 +716,30 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     
     /*card view*/
     .card {
+        height: auto;
         width: 85%;
-        margin: 2% 8%;
+        margin: 3% 8%;
     }
     
-    .text p, .text p b, .text p a{
+    .scroll{
+        max-height: auto;
+    }
+
+    .card img{
+        height: auto;
+    }
+    
+    p, .text p, .text p b, .text p a, .highlight, th, td{
         font-size: 2.5vw;
     }
     
     /*footer*/
     footer{
-        margin-top: 6%;
+        margin-top: 22%;
     }
     
     footer>address{
         padding: 1.5%;
         font-size: 2vw;
     }
-}
-
-/*Database Table*/
-table,th,td{
-	font-size: 1vw;
-    margin-left: auto;
-	margin-right: auto;
-	border: 2px solid black;
-	width: 1100px;
-	background-color: #0070ff;
-}
-
-.table{
-    margin: 1vw auto;
-    width: 95%;
-    border: 2px solid #000;
-}
-
-
-.table tr th{
-    background-color: #0070ff;
-    color: #fff;
-}
-
-.table tr td{
-    background-color: #fff;
-    vertical-align: middle;
-}
-
-.tabClr{
-    background-color: #e7feff;
-}
-
-.highlight{
-    text-align: left;
-    padding-left: 2.5vw;
-    padding-top: 1vw;
-    font-weight: bold; 
-    font-size: 1.5vw;
-}
-
-/*Pop Ups*/
-.design{
-    background: none;
-}
-
-.modal-header{
-    margin: 1px;
-    background-color: #0070ff;
-}
-
-.modal-title{
-    background-color: #0070ff;
-    color: #fff;
-}
-
-.modal-footer{
-    background-color: #fff;
-}
-
-.left div{
-    text-align: left;
-    margin-left: 20px;
 }

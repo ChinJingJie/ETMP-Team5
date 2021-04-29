@@ -197,11 +197,6 @@ if(isset($_POST['save'])){
 	header('location: trainingcourse.php');
 }
 
-
-if(isset($_POST['cancel'])){
-	header('location: trainingcourse.php');
-}
-
 if(isset($_POST['bookfromsaved'])){
 	$id = $_POST['id'];
 	$venue = $_POST['venue'];

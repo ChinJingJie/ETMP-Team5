@@ -11,47 +11,50 @@
         <?php include "navigationadmin.php";?>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script>
-	$(document).ready(function(){
-	  $(".edit").click(function(){
-		$.ajax({url: "trainingeditdata.php?id="+$(this).data('id'), success: function(result){
-		   //result not empty
-		   if (result) {
-			// assign result  to each label/ text
-			var resu = JSON.parse(result);
-			
-			$("#id3").val(resu.id);
-			$("#picture3").val(resu.pic);
-			$("#tName3").val(resu.tname);
-			$("#tDesc3").val(resu.tdesc);
-			$("#tCat3").val(resu.category);
-			$("#tTemp3").val(resu.tTemplate);
-			
-		   }
-		 
-		}});
-	  });
-	});
+        $(document).ready(function(){
+          $(".edit").click(function(){
+            $.ajax({url: "trainingeditdata.php?id="+$(this).data('id'), success: function(result){
+               //result not empty
+               if (result) {
+                // assign result  to each label/ text
+                var resu = JSON.parse(result);
+
+                $("#id3").val(resu.id);
+                $("#picture3").val(resu.pic);
+                $("#tName3").val(resu.tname);
+                $("#tDesc3").val(resu.tdesc);
+                $("#tCat3").val(resu.category);
+                $("#tTemp3").val(resu.tTemplate);
+
+               }
+
+            }});
+          });
+        });
 		
-		</script>
+    </script>
     </header>
     <section>
         <h1>Welcome to Expert Training Management Portal</h1>
         <h2>Search Data from Training Database by Training Name</h2>
 		
-		<form action="" method="POST">
+		<form action="" method="POST" class="left">
 			<input type ="text" name="tname" placeholder="Enter Training Name"/>
 			<input type="submit" name="search" value="Search"/>
 		</form>
-		<center>
-			<table class = "table">
-				<tr>
-					<th>Picture</th>
-					<th>Training Name</th>
-					<th>Training Description </th>
-					<th>Training Category</th>
-					<th>Training Template </th>
-					<th>Selection </th>
-				</tr> <br>
+        <p class="highlight">Result:</p>
+        <div class="result">
+			<table class="tables">
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>Training Name</th>
+                        <th>Training Description</th>
+                        <th>Training Category</th>
+                        <th>Training Template</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
 				<?php
 				//connection or link to database
 				$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
@@ -77,9 +80,9 @@
 								<td><?php echo $row['category']; ?></td>
 								<td><?php echo $row['tTemplate']; ?></td>
 								<td>
-								<button type="button" class ="edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editsavemodal" data-id ="<?php echo $row['id'];?>" >
-								Edit
-								</button>
+                                    <button type="button" class ="edit" data-bs-toggle="modal" data-bs-target="#editsavemodal" data-id ="<?php echo $row['id'];?>" >
+                                    Edit
+                                    </button>
 								</td>
 							</tr>
 							<?php
@@ -97,9 +100,9 @@
 								<td><?php echo $row['category']; ?></td>
 								<td><?php echo $row['tTemplate']; ?></td>
 								<td>
-								<button type="button" class ="edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editsavemodal" data-id ="<?php echo $row['id'];?>">
-								Edit
-								</button>
+                                    <button type="button" class ="edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editsavemodal" data-id ="<?php echo $row['id'];?>">
+                                    Edit
+                                    </button>
 								</td>
 							</tr>
 							<?php
@@ -165,8 +168,8 @@
 				
 				?>
 			</table>
-		</center>
-		
+        </div>
+    </section>
     <div class="sticky">
         <a href="#">
 	       <i class="fa fa-comment"></i>

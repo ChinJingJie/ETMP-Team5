@@ -116,7 +116,6 @@
             <p>Display training History</p>
         </div>
     </section>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <div class="sticky">
         <a href="#">
 	       <i class="fa fa-comment"></i>

@@ -87,34 +87,36 @@
         <h1>Welcome to Expert Training Management Portal</h1>
         <h2>Search Data from Training Application Database by Name</h2>
 		
-		<form action="" method="POST">
-			<input type ="text" name="Taname" placeholder="Enter Training Application Name"/>
+		<form action="" method="POST" class="left">
+			<input type ="text" name="Taname" placeholder="Enter Client Name"/>
 			<input type="submit" name="search" value="Search"/>
 		</form>
-		
-		<center>
+		<p class="highlight">Result:</p>
+        <div class="result">
 			<table class = "table">
-				<tr>
-					<th>ID</th>
-					<th>Pending</th>
-					<th>Client Name </th>
-					<th>Phone </th>
-					<th>Venue</th>
-					<th>Program</th>
-					<th>Start Date</th>
-					<th>Selection</th>
-		</tr> <br>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Pending</th>
+                        <th>Client Name </th>
+                        <th>Phone </th>
+                        <th>Venue</th>
+                        <th>Program</th>
+                        <th>Start Date</th>
+                        <th>Selection</th>
+		            </tr>
+                </thead>
 		
-		<?php 
-		//connection or link to database
-		$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
-		$db = mysqli_select_db($conn, 'sql6405286');
-		$sql = "SELECT id, isAccepted, isComplete, name, email, phone, venue, street, city, postcode, program, category,
-		date_start, date_end, time_start, time_end, template, remarks FROM application";
-		$result = $conn->query($sql);	
-		?>	
+                <?php 
+                //connection or link to database
+                $conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
+                $db = mysqli_select_db($conn, 'sql6405286');
+                $sql = "SELECT id, isAccepted, isComplete, name, email, phone, venue, street, city, postcode, program, category,
+                date_start, date_end, time_start, time_end, template, remarks FROM application";
+                $result = $conn->query($sql);	
+                ?>	
 		
-		<?php 
+		        <?php 
 				while($row = $result->fetch_assoc()) {
 				if(isset($_POST['search'])) {
 					$taname = $_POST['Taname'];
@@ -124,46 +126,47 @@
 					
 					while($row = mysqli_fetch_array($query_run))
 					{
-							?>
-							<tr>
-								<td>
-								<?php 
-								echo $row['id']; ?>
-								</td>
-								<td>
-								<?php if(($row['isAccepted']) == 0 ){
-									echo "Pending";
-									}else {
-										echo "Accepted";
-									};
-								?>
-								</td>
-								<td><?php echo $row['name']; ?></td>
-								<td><?php echo $row['phone']; ?></td>
-								<td><?php echo $row['venue']; ?></td>
-								<td><?php 
-								if($row['program'] == "1")
-								{
-									echo "Others"; 
-								}
-								else
-								{
-									echo $row['program']; 
-								}
-								
-								?>
-								</td>
-								<td><?php echo $row['date_start']; ?></td>
-								<td>
+						?>
+				        <tr>
+				            <td>
+				            <?php 
+								echo $row['id'];
+                            ?>
+				            </td>
+				            <td>
+				            <?php 
+                            if(($row['isAccepted']) == 0 ){
+								echo "Pending";
+				            }else {
+								echo "Accepted";
+				            };
+				            ?>
+				            </td>
+				            <td><?php echo $row['name']; ?></td>
+				            <td><?php echo $row['phone']; ?></td>
+				            <td><?php echo $row['venue']; ?></td>
+				            <td><?php 
+				            if($row['program'] == "1")
+				            {
+								echo "Others"; 
+				            }
+				            else
+				            {
+                                echo $row['program']; 
+				            }	
+				            ?>
+				            </td>
+				            <td><?php echo $row['date_start']; ?></td>
+				            <td>
 								<button type="submit" class = "view" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewapplicationmodal" data-id ="<?php echo $row['id'];?>">
 								View
 								</button>
 								<button type="button" class ="edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editsavedmodal" data-id ="<?php echo $row['id'];?>">
 								Edit
 								</button>
-								</td>
-							</tr>
-							<?php
+				            </td>
+				        </tr>
+				        <?php
 							
 					}
 						break;
@@ -257,12 +260,12 @@
 					
 					<div class="form-group">
 						<label for="email">Email Address:</label>
-						<label id ="email" value ="">
+						<label id ="email" value =""/>
 					</div>
 					
 					<div class="form-group">
 						<label for="venue">Venue:</label>
-						<label id ="venue" value ="">
+						<label id ="venue" value =""/>
 					</div>
 					  
 					<div class="form-group">
@@ -272,52 +275,52 @@
 					
 					<div class="form-group">
 						<label for="city">City:</label>
-						<label id ="city" value ="">
+						<label id ="city" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="postcode">Postcode:</label>
-						<label id ="postcode" value ="">
+						<label id ="postcode" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="program">Program:</label>
-						<label id ="program" value ="">
+						<label id ="program" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="category">Category:</label>
-						<label id ="category" value ="">
+						<label id ="category" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="date_start">Date Start:</label>
-						<label id ="Sdate" value ="">
+						<label id ="Sdate" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="date_end">Date End:</label>
-						<label id ="Edate" value ="">
+						<label id ="Edate" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="time_start">Time Start:</label>
-						<label id ="Stime" value ="">
+						<label id ="Stime" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="time_end">Time End:</label>
-						<label id ="Etime" value ="">
+						<label id ="Etime" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="template">Template:</label>
-						<label id ="template" value ="">
+						<label id ="template" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="remarks">Remarks:</label>
-						<label id ="remarks" value ="">
+						<label id ="remarks" value =""/>
 					</div>
 
 				  </div>
@@ -325,7 +328,6 @@
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				  </div>
 				  
-	
 			</div>
 		  </div>
 		</div>
@@ -458,13 +460,12 @@
 			</div>
 		  </div>
 		</div>
-				<?php
-				$conn->close();
-				?>
-			</table>
-		</center>	
-		
-
+        <?php
+            $conn->close();
+        ?>
+        </table>
+        </div>
+    </section>
     <div class="sticky">
         <a href="#">
 	       <i class="fa fa-comment"></i>

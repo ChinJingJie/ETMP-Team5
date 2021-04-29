@@ -216,7 +216,7 @@
 							<th>Venue</th>
 							<th>Program</th>
 							<th>Date Start</th>
-							<th colspan="1">View</th>
+							<th>View</th>
 						</tr>
 					</thead>
 					<?php
@@ -371,7 +371,7 @@
 		</div>
 		
 		
-		<div class="modal fade" id="deletesavedmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade design" id="deletesavedmodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">

@@ -9,17 +9,17 @@
         <?php include "navigationadmin.php";?>
     </header>
     <section>
-        <h1>Welcome to Expert Training Management Portal</h1>
+        <h1>Client Database</h1>
         <h2>Search Data from Database by Name</h2>
 		
-		<form action="" method="POST">
+		<form action="" method="POST" class="left">
 			<input type ="text" name="name" placeholder="Enter Client Full Name"/>
 			<input type="submit" name="search" value="Search"/>
 		</form>
-		<center>
-			<table>
-		
-				<?php
+        <p class="highlight">Search result:</p>
+        <div class="row justify-content-center tabClr">
+            <table class="table">
+            <?php
 				//connection or link to database
 				$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
 				$db = mysqli_select_db($conn, 'sql6405286');
@@ -33,12 +33,14 @@
 					while($row = mysqli_fetch_array($query_run))
 					{
 						?>
-						<tr>
-							<th>Full Name </th>
-							<th>Email Address </th>
-							<th>Phone Number </th>
-							<th>Occupation </th>
-						</tr> <br>
+                        <thead>
+                            <tr>
+                                <th>Full Name </th>
+                                <th>Email Address </th>
+                                <th>Phone Number </th>
+                                <th>Occupation </th>
+                            </tr>
+                        </thead>
 						<tr>
 							<td><?php echo $row['name']; ?></td>
 							<td><?php echo $row['email']; ?></td>
@@ -50,8 +52,8 @@
 				}
 				?>
 			</table>
-		</center>
-		
+        </div>
+    </section>
     <div class="sticky">
         <a href="#">
 	       <i class="fa fa-comment"></i>

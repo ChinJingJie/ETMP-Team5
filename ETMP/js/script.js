@@ -34,13 +34,12 @@ function openTab(evt, tabName) {
 // Dynamic Text Box by Chin Jing Jie
 function programSelection(text) {
     var selectedValue = text.value;
+    sessionStorage.product = document.getElementById("tcourse").value;
     sessionStorage.productIndex = document.getElementById("tcourse").selectedIndex + 1;
     document.getElementById("tcats").selectedIndex = sessionStorage.productIndex - 1;
     var categories = document.getElementById("tcats").value;
     sessionStorage.category = categories;
-    var product = document.getElementById("tcourse").value;
-    sessionStorage.product = product;
-    if(selectedValue=="1")
+    if(selectedValue=="Others")
     {
         document.getElementById("dynamicName").style.display = "";
         sessionStorage.category = "Others";
@@ -53,23 +52,26 @@ function programSelection(text) {
 }
 
 //Data transfer between pages by Chin Jing Jie
-function storePrograms(programID,programCat) {
-    if (programID == 'others'){
-        sessionStorage.productIndex = document.getElementById("courses").selectedIndex + 1;
-        sessionStorage.category = "Others";
+function storePrograms(programCat,programName) {
+    if (programName == 'Others'){
+        sessionStorage.category = "others";
+        sessionStorage.product = programName;
     }
     else{
-        sessionStorage.productIndex = programID;
         sessionStorage.category = programCat;
+        sessionStorage.product = programName;
     }
+}
+
+//Submit type button selected in a single form by Chin Jing Jie
+function btnSelect(slt) {
+    sessionStorage.selection = slt;
 }
 
 //Autoload select dropdown by Chin Jing Jie
 function autoProductName() {
-    document.getElementById("tcourse").selectedIndex = sessionStorage.productIndex - 1;
-    var product = document.getElementById("tcourse").value;
-    sessionStorage.product = product;
-    if (product == "1"){
+    document.getElementById("tcourse").value = sessionStorage.product;
+    if (sessionStorage.product == "Others"){
         document.getElementById("dynamicName").style.display = "";
     }
     else
@@ -135,35 +137,42 @@ function validateForm2(){
 }
 
 function validateForm3(){
-    "use strict";  
-	
+    "use strict"; 
     var isAllOK = false;
 	gErrorMsg = "";	
-	var fNameOK = fName();
-	var emailOK = chkEmail();
-	var phoneOK = chkPhone();
 	var vNameOK= chkVenueName();
 	var stAddressOK = chkStreetAddress();
 	var cityOK = chkCity();
 	var postcodeOK = chkPostcode();
-	var trProgramOK = chkTrainingProgram();
-	var trCategoryOK = chkTrainingCategory();
 	var trStDateOK = chkTrainingStartDate();
 	var trEndDateOK = chkTrainingEndDate();
 	var trStTimeOK = chkTrainingStartTime();
 	var trEndTimeOK = chkTrainingEndTime();
-	
-	if(fNameOK && emailOK && phoneOK && vNameOK && stAddressOK && cityOK && postcodeOK && trCategoryOK && trStDateOK && trEndDate && trStTimeOk && trEndTimeOK)
+	var trTempOK = chkTrainingTemplate();
+    var proceed; 
+	proceed = confirm("Proceed on with current form?");
+	if (proceed == true)
 	{
-		isAllOK = true;
-	}
-	
-	else
-	{
-	   alert(gErrorMsg); 
-       gErrorMsg = "";  
-       isAllOK = false;
-	}
+        if (sessionStorage.selection == "book"){
+            if(vNameOK && stAddressOK && cityOK && postcodeOK && trEndDateOK && trStDateOK && trStTimeOK && trEndTimeOK && trTempOK)
+            {
+
+                isAllOK = true;
+            }else{
+                alert(gErrorMsg); 
+                gErrorMsg = "";  
+                isAllOK = false;
+            }
+        }
+        if (sessionStorage.selection == "save"){
+            gErrorMsg = "";  
+            isAllOK = true;
+        }
+    }
+	else{
+        gErrorMsg = "";  
+        isAllOK = false;
+    }
    
     return isAllOK;
 }
@@ -395,43 +404,21 @@ function chkCity() {  //Street Address
 }
 
 function chkPostcode() {  //Postcode
-	var postcode = document.getElementById("code").value;
-	var pattern = /^[a-zA-Z ]+$/      
-	var postcodeOk = true;
-	if ((postcode.length == 0)){        
-		gErrorMsg = gErrorMsg + "Please enter the Postcode\n" 
-        postcodeOk = false; 
+	var code = document.getElementById("code").value;
+	var postcode = true;
+	if ((code.length == 0)){
+		gErrorMsg = gErrorMsg + "Please enter your Postcode\n"
+        postcode = false;
         document.getElementById("code").style.borderColor = "red";
 	}
-	return postcodeOk; 
-}
-
-function chkTrainingProgram() {  // Training Program
-	var selected = false;
-	var trpr = document.getElementById("tcourse").value;
-
-	if (trpr!=""){
-		selected = true;
-		document.getElementById("tcourse").style.borderColor = "black";
-	}
 	else{
-		selected = false;
-        document.getElementById("tcourse").style.borderColor = "red";
-		gErrorMsg = gErrorMsg + "Please Choose a Training Program\n"
+		if ((code.length < 5)){
+			gErrorMsg = gErrorMsg + "Please enter your Postcode with not less than 5 digits\n"
+			postcode = false;
+            document.getElementById("code").style.borderColor = "red";
+		}
 	}
-	return selected;
-}
-
-function chkTrainingCategory() {  //Training Category
-	var tCat = document.getElementById("category").value;   
-	var tCatOk = true;
-	if ((tCat.length == 0)){        
-		gErrorMsg = gErrorMsg + "Please enter the Training Category\n" 
-        tCat = false; 
-        document.getElementById("category").style.borderColor = "red";
-	}
-
-	return tCatOk;  
+	return postcode;
 }
 
 function chkTrainingStartDate() {  //Training Start Date
@@ -494,6 +481,22 @@ function chkTrainingEndTime() {  //Training End Time
 		selected = false;
         document.getElementById("Etime").style.borderColor = "red";
 		gErrorMsg = gErrorMsg + "Please Choose a Training End Time\n"
+	}
+	return selected; 
+}
+
+function chkTrainingTemplate() {  //Training Template
+	var selected = false;
+	var trTemp = document.getElementById("template").value;
+
+	if (trTemp!=""){
+		selected = true;
+		document.getElementById("template").style.borderColor = "black";
+	}
+	else{
+		selected = false;
+        document.getElementById("template").style.borderColor = "red";
+		gErrorMsg = gErrorMsg + "Please Upload a Training Template\n"
 	}
 	return selected; 
 }
@@ -613,6 +616,9 @@ function validateInputOnBlur(){
 		case "Etime":
 			isOK = chkTrainingEndTime();
 			break;
+		case "template":
+			isOK = chkTrainingTemplate();
+			break;
 		case "addIMG":
 			isOK = chkCoverImage();
 			break;
@@ -693,6 +699,7 @@ function init() {
    
    if(myForm != null)
    {
+      autoProductName();
       myForm.onsubmit = validateForm3;
    }
    

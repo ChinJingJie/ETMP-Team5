@@ -104,10 +104,10 @@
 					<?php echo $userData['occupation'];?>
 				</p>
 			</fieldset>
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editprofilemodal">
+			<button type="button" data-bs-toggle="modal" data-bs-target="#editprofilemodal">
 			  Edit Profile
 			</button>
-			<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteprofilemodal">
+			<button type="button" class="btn-danger" data-bs-toggle="modal" data-bs-target="#deleteprofilemodal">
 			  Delete
 			</button>
 		<?php
@@ -124,7 +124,6 @@
             <p>Display training History</p>
         </div>
     </section>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <div class="sticky">
         <a href="#">
 	       <i class="fa fa-comment"></i>

@@ -72,17 +72,16 @@
         <div class="notification-space">
             <p>No history.</p>
         </div>
-	<br/>
-	<h2>Client Database</h2>
-	<p>To view the Client's data, push the button below</p>
-        <form method="post" action="viewdata.php">
-		<input type="submit" name="confirm" value="Click Here"/>
-	</form>
-	<h3>Training Application Database</h3>
-	<p>To view all the training Application submitted, push the button below</p>
-        <form method="post" action="viewtrainingapplicationdata.php">
-			<input type="submit" name="confirm" value="Click Here"/>
-		</form>
+        <h2>Databases</h2>
+        <p class="left">Push the button below to proceed to respective database</p>
+        <div class="desc">
+            <form method="post" action="viewdata.php">
+                <input type="submit" name="confirm" value="Client Database"/>
+            </form>
+            <form method="post" action="viewtrainingapplicationdata.php">
+                <input type="submit" name="confirm" value="Training Application Database"/>
+            </form>
+        </div>
     </section>
     <div class="sticky">
         <a href="#">

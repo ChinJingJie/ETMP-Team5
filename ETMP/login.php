@@ -18,7 +18,7 @@ include "registrationclientprocess.php";
 			<?php include"errors.php";?>
             <input type="text" id="name" name="name" placeholder="username" maxlength="25"/>
             <br/>
-            <input type="text" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
+            <input type="password" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
             <br/>
 	    <?php
 		if ($_SESSION['login_attempts'] > 5) { // numbers of attempts to Login

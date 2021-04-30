@@ -41,7 +41,6 @@ h2{
     font-size: 1.5vw;
     text-align: left;
     margin-left: 5vw;
-    color: #0070ff;
     font-weight: bold;
 }
 
@@ -103,7 +102,7 @@ fieldset p, fieldset p a{
     background-color: #fff;
 }
 
-input[type=text],input[type=date],input[type=time],select{
+input[type=text],input[type=date],input[type=time],input[type=password],select{
 	width: 40%;
 	height: 3vw;
 	margin: 1vw;
@@ -484,7 +483,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 .text {
     padding: 1vw;
     background-color: #fff;
-    color: #0070ff;
+    color: #000;
 }
 
 .text p, .text p b, .text p a{

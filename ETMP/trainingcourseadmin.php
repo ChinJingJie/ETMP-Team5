@@ -30,10 +30,6 @@
                         <input type="text" id="addNAME" name="addNAME" placeholder="course name" maxlength="50"/>
                       </div>
                       <div class="form-group">
-                        <label for="addDESC">Description:</label>
-                        <textarea id="addDESC" name="addDESC" rows="4" cols="50" placeholder="Enter short description and occupation that suits the course/program"></textarea>
-                      </div>
-                      <div class="form-group">
                         <label for="addCAT">Category:</label>
                         <select name="addCAT" id="addCAT">
                             <option> Business </option>    
@@ -49,6 +45,11 @@
                       <div class="form-group">
                         <label for="addTemp">Template:</label>
                         <input type="text" id="addTemp" name="addTemp" placeholder="Template Link"/>
+                      </div>
+                      <div class="form-group">
+                        <div class="hLine"></div>
+                        <label class="labelling" for="addDESC">Description</label>
+                        <textarea id="addDESC" name="addDESC" rows="4" cols="20" placeholder="Enter short description and occupation that suits the course/program"></textarea>
                       </div>
                     </div>
                     <div class="modal-footer">

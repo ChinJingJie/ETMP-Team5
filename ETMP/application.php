@@ -96,12 +96,16 @@
         <p>
 		  <label for="days">Training Start Date:</label>
 		  <input type="date" id="Stdays" name="Stdays"/>
+        </p>
+        <p>
           <label for="days">End Date:</label>
 		  <input type="date" id="Edays" name="Edays"/>
 		</p>
         <p>
 		  <label for="time">Training Start Time:</label>
 		  <input type="time" id="Stime" name="Stime"/>
+        </p>
+        <p>
           <label for="time">End Time:</label>
 		  <input type="time" id="Etime" name="Etime"/>
 		</p>

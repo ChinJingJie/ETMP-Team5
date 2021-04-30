@@ -12,6 +12,10 @@
     background-color: #e7feff;
 }
 
+.error{
+    color: red;
+}
+
 .link{
     font-size: 12px;
 }
@@ -68,11 +72,38 @@ fieldset {
 	border: 2px solid black;
 }
 
-fieldset p,fieldset p label, fieldset p a{
+fieldset p label{
+    text-align: right;
+    width: 20%;
+    vertical-align: middle;
     background-color: #fff;
 }
 
-input[type=text],select{
+.form-group label{
+    width: 30%;
+    text-align: right;
+}
+
+label.content{
+    text-align: left;
+	box-sizing: border-box;
+    margin-right: 10vw;
+}
+
+.form-group input[type=text],.form-group input[type=date],.form-group input[type=time],.form-group input[type=file],.form-group select{
+    width: 40%;
+    text-align: left;
+	box-sizing: border-box;
+    margin-right: 5vw;
+}
+
+fieldset p, fieldset p a{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+}
+
+input[type=text],input[type=date],input[type=time],select{
 	width: 40%;
 	height: 3vw;
 	margin: 1vw;
@@ -83,8 +114,25 @@ input[type=text],select{
 }
 
 input[type=file]{
+    width: 40%;
+	height: 3vw;
+	margin: 1vw;
+	box-sizing: border-box;
     background-color: #fff;
     font-size: 1.3vw;
+}
+
+.hLine{
+    width:80%; 
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-right: 5vw;
+    height:1px; 
+    background: #000;
+}
+
+.form-group label.labelling{
+    text-align: left;
 }
 
 textarea{

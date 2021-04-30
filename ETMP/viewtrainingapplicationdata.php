@@ -239,88 +239,88 @@
 				  
 					<div class="form-group">
 						<label for="id">Application ID:</label>
-						<label id ="id" value=""/>
+						<label class="content" id ="id" value=""/>
 
 					</div>
 					
 					<div class="form-group">
 						<label for="status">Status:</label>
-						<label id ="status" value=""/>
+						<label class="content" id ="status" value=""/>
 					</div>
 					
 					<div class="form-group">
 						<label for="name">Full Name:</label>
-						<label id ="name" value =""/>
+						<label class="content" id ="name" value =""/>
 					</div>
 					
 					<div class="form-group">
 						<label for="phone">Phone Number:</label>
-						<label id ="phone" value =""/>				
+						<label class="content" id ="phone" value =""/>				
 					</div>  
 					
 					<div class="form-group">
 						<label for="email">Email Address:</label>
-						<label id ="email" value =""/>
+						<label class="content" id ="email" value =""/>
 					</div>
 					
 					<div class="form-group">
 						<label for="venue">Venue:</label>
-						<label id ="venue" value =""/>
+						<label class="content" id ="venue" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="address">Address:</label>
-						<label id ="address" value=""/>
+						<label class="content" id ="address" value=""/>
 					</div>
 					
 					<div class="form-group">
 						<label for="city">City:</label>
-						<label id ="city" value =""/>
+						<label class="content" id ="city" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="postcode">Postcode:</label>
-						<label id ="postcode" value =""/>
+						<label class="content" id ="postcode" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="program">Program:</label>
-						<label id ="program" value =""/>
+						<label class="content" id ="program" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="category">Category:</label>
-						<label id ="category" value =""/>
+						<label class="content" id ="category" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="date_start">Date Start:</label>
-						<label id ="Sdate" value =""/>
+						<label class="content" id ="Sdate" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="date_end">Date End:</label>
-						<label id ="Edate" value =""/>
+						<label class="content" id ="Edate" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="time_start">Time Start:</label>
-						<label id ="Stime" value =""/>
+						<label class="content" id ="Stime" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="time_end">Time End:</label>
-						<label id ="Etime" value =""/>
+						<label class="content" id ="Etime" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="template">Template:</label>
-						<label id ="template" value =""/>
+						<label class="content" id ="template" value =""/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="remarks">Remarks:</label>
-						<label id ="remarks" value =""/>
+						<label class="content" id ="remarks" value =""/>
 					</div>
 
 				  </div>

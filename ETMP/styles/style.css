@@ -92,7 +92,9 @@ fieldset {
 
 .form-group label{
     width: 30%;
-    text-align: right;
+    text-align: left;
+    margin-left: 5%;
+    vertical-align: middle;
 }
 
 label.content{
@@ -129,8 +131,46 @@ fieldset p label{
     background-color: #fff;
 }
 
-fieldset p span{
+.deleteAcc b{
+    margin-left: 10%;
+    width:90%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.deleteAccWarn{
+    margin-left: 10%;
+    text-align: center;
+}
+
+.label{
+    margin-left: 10%;
+    width:90%;
+    text-align: left;
+}
+
+p label.labeldetails{
+    text-align: left;
+    background-color: #fff;
+}
+
+p span.details{
+    background-color: #fff;
+}
+
+span.labelcolon{
     text-align: right;
+    background-color: #fff;
+}
+
+span.labelcolons{
+    text-align: right;
+}
+
+fieldset p div{
+    width: 40%;
+    box-sizing: border-box;
+    text-align: left;
     background-color: #fff;
 }
 

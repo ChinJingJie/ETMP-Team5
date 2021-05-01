@@ -13,6 +13,7 @@
             <button class="tablinks" onclick="openTab(event, 'Info')">Basic Information</button>
             <button class="tablinks" onclick="openTab(event, 'Password')">Password</button>
             <button class="tablinks" onclick="openTab(event, 'History')">Training History</button>
+			<button class="tablinks" onclick="openTab(event, 'Delete')">Delete Account</button>
         </div>
 		
 		<?php
@@ -59,25 +60,6 @@
 		  </div>
 		</div>
 		
-		<div class="modal fade design" id="deleteprofilemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-			<div class="modal-content">
-			  <div class="modal-header">
-				<h3 class="modal-title" id="exampleModalLabel">Delete Profile</h3>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			  </div>
-			  <form id="admindeleteProfile" method="post" action="profileadminfunction.php">
-				  <div class="modal-body">
-					Are you sure?
-				  </div>
-				  <div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-					<button type="submit" name="delete" class="btn btn-primary">Yes</button>
-				  </div>
-			  </form>
-			</div>
-		  </div>
-		</div>
 			<fieldset>
 				<p>
 					<label for="name">Name:</label>
@@ -99,9 +81,6 @@
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editprofilemodal">
 			  Edit Profile
 			</button>
-			<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteprofilemodal">
-			  Delete
-			</button>
 		<?php
 		}
 		?>
@@ -115,6 +94,45 @@
         <div id="History" class="tabcontent">
             <p>Display training History</p>
         </div>
+		
+		<?php
+		if(isset($_SESSION['name'])){
+			$userData = getUsersData($_SESSION['name']);
+			?>
+		<div id="Delete" class="tabcontent">
+		
+		<div class="modal fade design" id="deleteprofilemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Delete Profile</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <form id="admindeleteProfile" method="post" action="profileclientfunction.php">
+				  <div class="modal-body">
+					Are you sure?
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+					<button type="submit" name="delete" class="btn btn-primary">Yes</button>
+				  </div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+		
+		<fieldset>
+            <p><b>Delete Account</b></p>
+			<p>***NOTE***<br> All deleted data will not be able to be restored</p>
+		</fieldset>
+			<button type="button" class="btn-danger" data-bs-toggle="modal" data-bs-target="#deleteprofilemodal">
+			  Delete
+			</button>
+        </div>
+		<?php
+		}
+		?>
+		
     </section>
     <div class="sticky">
         <a href="#">

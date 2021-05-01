@@ -60,6 +60,19 @@ h2{
     vertical-align: text-bottom;
 }
 
+/*eye*/
+.eye{
+	position: absolute;
+	cursor: pointer;
+	margin-top: 1.9vw;
+	left: 67.5vw;
+}
+
+#hide1{
+	display: none;
+}
+
+
 /*form*/
 fieldset {
 	border-radius: 10px;

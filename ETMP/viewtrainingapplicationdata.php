@@ -238,88 +238,105 @@
 				  <div class="modal-body">
 				  
 					<div class="form-group">
-						<label for="id">Application ID:</label>
+						<label for="id">Application ID</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="id" value=""/>
 
 					</div>
 					
 					<div class="form-group">
-						<label for="status">Status:</label>
+						<label for="status">Status</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="status" value=""/>
 					</div>
 					
 					<div class="form-group">
-						<label for="name">Full Name:</label>
+						<label for="name">Full Name</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="name" value =""/>
 					</div>
 					
 					<div class="form-group">
-						<label for="phone">Phone Number:</label>
+						<label for="phone">Phone Number</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="phone" value =""/>				
 					</div>  
 					
 					<div class="form-group">
-						<label for="email">Email Address:</label>
+						<label for="email">Email Address</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="email" value =""/>
 					</div>
 					
 					<div class="form-group">
-						<label for="venue">Venue:</label>
+						<label for="venue">Venue</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="venue" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="address">Address:</label>
+						<label for="address">Address</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="address" value=""/>
 					</div>
 					
 					<div class="form-group">
-						<label for="city">City:</label>
+						<label for="city">City</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="city" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="postcode">Postcode:</label>
+						<label for="postcode">Postcode</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="postcode" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="program">Program:</label>
+						<label for="program">Program</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="program" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="category">Category:</label>
+						<label for="category">Category</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="category" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="date_start">Date Start:</label>
+						<label for="date_start">Date Start</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="Sdate" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="date_end">Date End:</label>
+						<label for="date_end">Date End</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="Edate" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="time_start">Time Start:</label>
+						<label for="time_start">Time Start</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="Stime" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="time_end">Time End:</label>
+						<label for="time_end">Time End</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="Etime" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="template">Template:</label>
+						<label for="template">Template</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="template" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="remarks">Remarks:</label>
+						<label for="remarks">Remarks</label>
+                        <span class="labelcolons">:</span>
 						<label class="content" id ="remarks" value =""/>
 					</div>
 
@@ -343,52 +360,61 @@
 				  <div class="modal-body">
 				  
 					<div class="form-group">
-						<label for="id">Application ID:</label>
+						<label for="id">Application ID</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" id ="id1" name="id" value="" readonly/>
 					</div>
 					
 					<div class="form-group">
-						<label for="name">Full Name:</label>
+						<label for="name">Full Name</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "fName" id ="fName1" value =""/>
 					</div>
 					
 					<div class="form-group">
-						<label for="phone">Phone Number:</label>
+						<label for="phone">Phone Number</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "phone" id ="phone1" value =""/>					
 					</div>  
 					
 					<div class="form-group">
-						<label for="email">Email Address:</label>
+						<label for="email">Email Address</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "email" id ="email1" value =""/>
 						
 					</div>
 					
 					<div class="form-group">
-						<label for="venue">Venue:</label>
+						<label for="venue">Venue</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name ="venue" id ="venue1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="address">Address:</label>
+						<label for="address">Address</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "address" id ="address1" value=""/>
 						
 					</div>
 					
 					<div class="form-group">
-						<label for="address">City:</label>
+						<label for="address">City</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "city" id ="city1" value=""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="postcode">Postcode:</label>
+						<label for="postcode">Postcode</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name ="postcode" id ="postcode1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="program">Training Program:</label>
+						<label for="program">Training Program</label>
+                        <span class="labelcolons">:</span>
 						<input type="hidden" id="oriprogram" name="oriprogram" value="">
 						<select name="tcourse" id="tcourse" onchange="dynamicTextBox(this)">
 							  <?php
@@ -409,43 +435,50 @@
 					</div>
 					  
 					<div class="form-group">
-						<label for="category">Category:</label>
+						<label for="category">Category</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "category" id ="category1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="date_start">Date Start:</label>
+						<label for="date_start">Date Start</label>
+                        <span class="labelcolons">:</span>
 						<input type = "date" name = "Sdate" id ="Sdate1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="date_end">Date End:</label>
+						<label for="date_end">Date End</label>
+                        <span class="labelcolons">:</span>
 						<input type = "date" name = "Edate" id ="Edate1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="time_start">Time Start:</label>
+						<label for="time_start">Time Start</label>
+                        <span class="labelcolons">:</span>
 						<input type = "time" name = "Stime" id ="Stime1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="time_end">Time End:</label>
+						<label for="time_end">Time End</label>
+                        <span class="labelcolons">:</span>
 						<input type = "time" name = "Etime" id ="Etime1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="template">Template:</label>
+						<label for="template">Template</label>
+                        <span class="labelcolons">:</span>
 						<input type="text" name="template" id="template1" value =""/>
 						
 					</div>
 					  
 					<div class="form-group">
-						<label for="remarks">Remarks:</label>
+						<label for="remarks">Remarks</label>
+                        <span class="labelcolons">:</span>
 					<input type = "text" name ="remarks" id ="remarks1" value =""/>
 						
 					</div>

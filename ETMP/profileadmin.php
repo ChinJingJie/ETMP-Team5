@@ -31,22 +31,26 @@
 			  <form id="adminProfileEditForm" method="post" action="profileadminfunction.php">
 				  <div class="modal-body">
 					<div class="form-group">
-						<label for="name">Full Name:</label>
+						<label for="name" class="required">Full Name</label>
+                        <span class="labelcolons">:</span>
 						<input type="text" id="name" name="name" value="<?php echo $_SESSION['name']?>" placeholder="full name" maxlength="25"/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="email">Email Address:</label>
+						<label for="email" class="required">Email Address</label>
+                        <span class="labelcolons">:</span>
 						<input type="text" id="email" name="email" value="<?php echo $userData['email']?>" placeholder="Your email"/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="phone">Phone Number:</label>
+						<label for="phone" class="required">Phone Number</label>
+                        <span class="labelcolons">:</span>
 						<input type="text" id="phone" name="phone" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="11"/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="staffid">Staff ID:</label>
+                        <label for="staffid" class="required">Staff ID</label>
+                        <span class="labelcolons">:</span>
 						<input type="text" id="staffid" name="staffid" value="<?php echo $userData['staffid']?>" placeholder="staff ID" maxlength="25"/>
 					</div>
 				
@@ -61,21 +65,25 @@
 		</div>
 		
 			<fieldset>
-				<p>
-					<label for="name">Name:</label>
-					<?php echo $userData['name'];?>
+				<p class="label">
+					<label class="labeldetails">Name</label>
+                    <span class="labelcolon">:</span>
+                    <span class="details"><?php echo $userData['name'];?></span>
 				</p>
-				<p>
-					<label for="name">Email:</label>
-					<?php echo $userData['email'];?>
+				<p class="label">
+					<label class="labeldetails">Email</label>
+                    <span class="labelcolon">:</span>
+                    <span class="details"><?php echo $userData['email'];?></span>
 				</p>
-				<p>
-					<label for="name">Phone Number:</label>
-					<?php echo $userData['phone'];?>
+				<p class="label">
+					<label class="labeldetails">Phone Number</label>
+                    <span class="labelcolon">:</span>	
+                    <span class="details"><?php echo $userData['phone'];?></span>
 				</p>
-				<p>
-					<label for="name">Staff ID:</label>
-					<?php echo $userData['staffid'];?>
+                <p class="label">
+					<label class="labeldetails">Staff ID</label>
+                    <span class="labelcolon">:</span>
+                    <span class="details"><?php echo $userData['staffid'];?></span>
 				</p>
 			</fieldset>
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editprofilemodal">
@@ -101,11 +109,11 @@
 			?>
 		<div id="Delete" class="tabcontent">
 		
-		<div class="modal fade design" id="deleteprofilemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade design" id="deleteprofilemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
-				<h3 class="modal-title" id="exampleModalLabel">Delete Profile</h3>
+				<h3 class="modal-title" id="exampleModalLabel">Delete Account</h3>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			  </div>
 			  <form id="admindeleteProfile" method="post" action="profileclientfunction.php">
@@ -122,8 +130,9 @@
 		</div>
 		
 		<fieldset>
-            <p><b>Delete Account</b></p>
-			<p>***NOTE***<br> All deleted data will not be able to be restored</p>
+            <p class="deleteAcc"><b>Delete Account</b></p>
+            <p class="deleteAccWarn">***NOTE***</p>
+            <p class="deleteAccWarn">All deleted data will not be able to be restored</p>
 		</fieldset>
 			<button type="button" class="btn-danger" data-bs-toggle="modal" data-bs-target="#deleteprofilemodal">
 			  Delete

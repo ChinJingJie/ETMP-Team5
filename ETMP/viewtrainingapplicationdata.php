@@ -368,19 +368,19 @@
 					<div class="form-group">
 						<label for="name">Full Name</label>
                         <span class="labelcolons">:</span>
-						<input type = "text" name = "fName" id ="fName1" value =""/>
+						<input type = "text" name = "fName" id ="fName1" value ="" readonly/>
 					</div>
 					
 					<div class="form-group">
 						<label for="phone">Phone Number</label>
                         <span class="labelcolons">:</span>
-						<input type = "text" name = "phone" id ="phone1" value =""/>					
+						<input type = "text" name = "phone" id ="phone1" value ="" readonly/>					
 					</div>  
 					
 					<div class="form-group">
 						<label for="email">Email Address</label>
                         <span class="labelcolons">:</span>
-						<input type = "text" name = "email" id ="email1" value =""/>
+						<input type = "text" name = "email" id ="email1" value ="" readonly/>
 						
 					</div>
 					
@@ -472,17 +472,14 @@
 					<div class="form-group">
 						<label for="template">Template</label>
                         <span class="labelcolons">:</span>
-						<input type="text" name="template" id="template1" value =""/>
-						
+                        <input type="file" id="template1" name="template"/>
 					</div>
 					  
 					<div class="form-group">
+                        <div class="hLine"></div>
 						<label for="remarks">Remarks</label>
-                        <span class="labelcolons">:</span>
-					<input type = "text" name ="remarks" id ="remarks1" value =""/>
-						
+                        <textarea id="remarks1" name="remarks" rows="4" cols="20" placeholder="Enter remarks if any"></textarea>
 					</div>
-					
 				  </div>
 				 
 				  <div class="modal-footer">

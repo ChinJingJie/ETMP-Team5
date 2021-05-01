@@ -22,15 +22,18 @@
                   <form id="addCourseForm" method="post" enctype="multipart/form-data" action = "trainingdb.php" >
                     <div class="modal-body left">
                       <div class="form-group">
-                        <label for="addIMG">Cover Image:</label>
+                        <label for="addIMG" class="required">Cover Image</label>
+                        <span class="labelcolons">:</span>
                         <input type="file" id="addIMG" name="addIMG"/>
                       </div>
                       <div class="form-group">
-                        <label for="addNAME">Course Name:</label>
+                        <label for="addNAME" class="required">Course Name</label>
+                        <span class="labelcolons">:</span>
                         <input type="text" id="addNAME" name="addNAME" placeholder="course name" maxlength="50"/>
                       </div>
                       <div class="form-group">
-                        <label for="addCAT">Category:</label>
+                        <label for="addCAT" class="required">Category</label>
+                        <span class="labelcolons">:</span>
                         <select name="addCAT" id="addCAT">
                             <option> Business </option>    
                             <option> Customer Services </option> 
@@ -43,12 +46,13 @@
                           </select>
                       </div>
                       <div class="form-group">
-                        <label for="addTemp">Template:</label>
+                        <label for="addTemp" class="required">Template</label>
+                        <span class="labelcolons">:</span>
                         <input type="text" id="addTemp" name="addTemp" placeholder="Template Link"/>
                       </div>
                       <div class="form-group">
-                        <div class="hLine"></div>
-                        <label class="labelling" for="addDESC">Description</label>
+                        <div class="hLine1"></div>
+                        <label class="labelling required" for="addDESC">Description</label>
                         <textarea id="addDESC" name="addDESC" rows="4" cols="20" placeholder="Enter short description and occupation that suits the course/program"></textarea>
                       </div>
                     </div>
@@ -76,7 +80,8 @@
                   <form id="deleteCourseForm" method="post" action = "trainingdb.php">
                     <div class="modal-body left">
                       <div class="form-group">
-                        <label for="addCAT">Program Name:</label>
+                        <label for="addCAT">Program Name</label>
+                        <span class="labelcolons">:</span>
                         <select name="selection" id="selection">
                             <!-- need to load from database -->
                             <?php

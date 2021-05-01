@@ -32,25 +32,25 @@
 				  <div class="modal-body">
 					<div class="form-group">
 						<label for="name" class="required">Full Name</label>
-                        <span class="labelcolon">:</span>
+                        <span class="labelcolons">:</span>
 						<input type="text" id="name" name="name" value="<?php echo $_SESSION['name']?>" placeholder="full name" maxlength="25"/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="email" class="required">Email Address</label>
-                        <span class="labelcolon">:</span>
+                        <span class="labelcolons">:</span>
 						<input type="text" id="email" name="email" value="<?php echo $userData['email']?>" placeholder="Your email"/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="phone" class="required">Phone Number</label>
-                        <span class="labelcolon">:</span>
+                        <span class="labelcolons">:</span>
 						<input type="text" id="phone" name="phoneno" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="11"/>
 					</div>
 					  
 					<div class="form-group">
 						<label for="occupation" class="required">Occupation</label>
-                        <span class="labelcolon">:</span>
+                        <span class="labelcolons">:</span>
 						<select name="occupations" id="occupation">
                         <option> Student </option>  
                         <option> Teacher </option>  

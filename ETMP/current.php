@@ -383,11 +383,10 @@
                         <span class="labelcolons">:</span>
 						<input type = "file" id ="template1" name="template" value =""/>
 					</div>
-					  
 					<div class="form-group">
+                        <div class="hLine1"></div>
 						<label for="remarks">Remarks</label>
-                        <span class="labelcolons">:</span>
-						<input type = "text" id ="remarks1" name="comment" value =""/>
+                        <textarea id="remarks1" name="comment" rows="4" cols="20" placeholder="Enter remarks if any"></textarea>
 					</div>
 					
 				  </div>

@@ -123,35 +123,41 @@
 				  <div class="modal-body">
 				  
 					<div class="form-group">
-						<label for="id">Training ID:</label>
+						<label for="id" class="required">Training ID</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text"  name="id" id ="id3" value="" readonly/>
 					</div>
 					
 					<div class="form-group">
-						<label for="picture">Picture:</label>
+						<label for="picture" class="required">Picture</label>
+                        <span class="labelcolons">:</span>
 						<input type = "file" name = "picture" id ="picture3" value=""/>
 					</div>
 					
 					<div class="form-group">
-						<label for="tName">Training Name:</label>
+						<label for="tName" class="required">Training Name</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "tName" id ="tName3" value =""/>					
 					</div>  
 					
 					<div class="form-group">
-						<label for="tDesc">Training Description:</label>
-						<input type = "text" name = "tDesc" id ="tDesc3" value =""/>
-					</div>
-					
-					<div class="form-group">
-						<label for="tCat">Training Category:</label>
+						<label for="tCat" class="required">Training Category</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name ="tCat" id ="tCat3" value =""/>
 					</div>
 					  
 					<div class="form-group">
-						<label for="tTemp">Training Template:</label>
+						<label for="tTemp" class="required">Training Template</label>
+                        <span class="labelcolons">:</span>
 						<input type = "text" name = "tTemp" id ="tTemp3" value=""/>
 						
-					</div>
+					</div>  
+                      
+                    <div class="form-group">
+                        <div class="hLine"></div>
+                        <label class="labelling required" for="tDesc">Description</label>
+                        <textarea id="tDesc3" name="tDesc" rows="4" cols="20" placeholder="Enter short description and occupation that suits the course/program"></textarea>
+                      </div>
 				  </div>
 				 
 				  <div class="modal-footer">

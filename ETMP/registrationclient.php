@@ -11,18 +11,22 @@
         <form id="clientRegistrationForm" method="post" action="registrationclientprocess.php" novalidate="novalidate">
             <fieldset>	
                 <p>
-                    <label for="name">Full Name:</label>
+                    <label for="name" class="required">Full Name</label>
+                    <span class="labelcolon">:</span>
                     <input type="text" id="name" name="name" placeholder="full name" maxlength="25"/>
                 </p>
                 <p>
-                    <label for="email">Email Address:</label>
+                    <label for="email" class="required">Email Address</label>
+                    <span class="labelcolon">:</span>
                     <input type="text" id="email" name="email" placeholder="Your email"/>
                 </p>
                 <p>
-                    <label for="phone">Phone Number:</label>
+                    <label for="phone" class="required">Phone Number</label>
+                    <span class="labelcolon">:</span>
                     <input type="text" id="phone" name="phone" placeholder="0123456789" maxlength="11"/>
                 </p>
-                <p><label>Occupation:</label>
+                <p><label class="required">Occupation</label>
+                    <span class="labelcolon">:</span>
                     <select name="occupations" id="occupation">
                         <option> Student </option>  
                         <option> Teacher </option>  
@@ -34,14 +38,16 @@
                     </select>
                 </p>
                 <p>
-                    <label for="pwsd">Password:</label>
+                    <label for="pwsd" class="required">Password</label>
+                    <span class="labelcolon">:</span>
                     <input type="text" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
                 </p>
                 <p>
-                    <label for="pwsd1">Re-confirm Password:</label>
+                    <label for="pwsd1" class="required">Re-confirm Password</label>
+                    <span class="labelcolon">:</span>
                     <input type="text" id="pwsd1" name="pwsd1" placeholder="re-enter password" maxlength="25"/>
                 </p>
-                <p class="link">
+                <p class="chklink">
                     <input type="checkbox" id = "t&c"/>
                     I agree with the <a href="#">Terms and Conditions</a> applied
                 </p>

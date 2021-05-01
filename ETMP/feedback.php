@@ -17,19 +17,23 @@
 	  <fieldset>	
         <legend>Details of Completed Training</legend>
           <p>
-		    <label for="picName">Full Name:</label>
+		    <label for="picName">Full Name</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="picName" name="picName" value="<?php echo $userData['name']?>" placeholder="Profile name" maxlength="25" readonly/>
 		  </p>
           <p>
-		    <label for="email">Email:</label>
+		    <label for="email">Email</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="email" name="email" value="<?php echo $userData['email']?>" placeholder="KennyOmega29@Gmail.com" readonly/>
 		  </p>
           <p>
-		    <label for="phone">Phone Number:</label>
+		    <label for="phone">Phone Number</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="phone" name="phone" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="10" readonly/>
 		  </p>
 		  <p>
-		    <label for="phone">Training Name:</label>
+		    <label for="phone">Training Name</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="phone" name="phone" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="10" readonly/>
 		  </p>
       </fieldset>
@@ -40,7 +44,7 @@
 	  <fieldset>
 		<legend>Feedback</legend>
 		 <p>
-		 <label for="rating" id ="rating">Rating</label>
+		 <label for="rating" id ="rating" class="required rate">Rating</label>
 		 </p>
 		<div class="stars">
 		  <form action="">
@@ -56,16 +60,17 @@
 			<label class="star star-1" for="star-1"></label>
 		  </form>
 		</div>
+          <p class="hLine1"></p>
           <p>
-		    <label for="experience" id = "experiences">Overall Experience</label>
+		    <label for="experience" id = "experiences"  class="required comment">Overall Experience</label>
 			<textarea id="experience" name="experience" rows="4" cols="50" placeholder="Describe the Attractive and Uninteresting parts of the training"></textarea>
 		  </p>
           <p>
-		    <label for="improvement">Improvements</label>
+		    <label for="improvement" class="required comment">Improvements</label>
 			<textarea id="improvement" name="improvement" rows="4" cols="50" placeholder="Suggestions for improvements in future training"></textarea>
 		  </p>
           <p>
-		    <label for="TrainPerform">Comments on Trainer Performance</label>
+		    <label for="TrainPerform" class="required comment">Comments on Trainer Performance</label>
 			<textarea id="TrainPerform" name="TrainPerform" rows="4" cols="50" placeholder="What do you think about your trainer's performance"></textarea>
 		  </p>  	  
       </fieldset> 

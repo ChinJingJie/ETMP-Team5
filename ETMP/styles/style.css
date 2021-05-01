@@ -17,6 +17,7 @@
 }
 
 .link{
+    text-align: center;
     font-size: 12px;
 }
 
@@ -73,6 +74,12 @@ h2{
 }
 
 /*form*/
+form label.required:after
+{
+    color: red;
+    content: " *";
+}
+
 fieldset {
 	border-radius: 10px;
 	background-color: #fff;
@@ -81,13 +88,6 @@ fieldset {
 	text-align: center;
 	width: 65%;
 	border: 2px solid black;
-}
-
-fieldset p label{
-    text-align: right;
-    width: 20%;
-    vertical-align: middle;
-    background-color: #fff;
 }
 
 .form-group label{
@@ -108,9 +108,29 @@ label.content{
     margin-right: 5vw;
 }
 
-fieldset p, fieldset p a{
-    margin-left: auto;
-    margin-right: auto;
+fieldset p{
+    margin-right: 15%;
+    background-color: #fff;
+} 
+
+p.chklink{
+    margin-left: 15%;
+}
+
+fieldset p a{
+    background-color: #fff;
+}
+
+fieldset p label{
+    width: 28%;
+    text-align: left;
+    margin-left: 12%;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+fieldset p span{
+    text-align: right;
     background-color: #fff;
 }
 
@@ -133,6 +153,26 @@ input[type=file]{
     font-size: 1.3vw;
 }
 
+#dynamicName{
+    margin-left: 43%;
+}
+
+input:read-only {
+  background-color: #d3d3d3;
+}
+
+.comment{
+    text-align: left;
+    margin-left: 10%;
+    width: 100%;
+}
+
+.rate{
+    text-align: center;
+    margin-left: 10%;
+    width: 100%;
+}
+
 .hLine{
     width:80%; 
     margin-top: 2vw;
@@ -142,11 +182,22 @@ input[type=file]{
     background: #000;
 }
 
+.hLine1{
+    width:100%; 
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-right: 5vw;
+    height:1px; 
+    background: #000;
+}
+
+
 .form-group label.labelling{
     text-align: left;
 }
 
 textarea{
+    margin-left: 10%;
     border: 2px solid #000;
     font-size: 1.3vw;
     width: 90%;
@@ -638,12 +689,17 @@ label.star:before {
         font-size: 2vw;
     }
     
-    input[type=text], select {
+    input[type=text], input[type=date],input[type=time],input[type=password],select {
 	   height: 5vw;
 	   font-size: 1.8vw;
     }
     
-    input[type=file], textarea{
+    input[type=file]{
+        height: 5vw;
+        font-size: 1.8vw;
+    }
+    
+    textarea{
         font-size: 1.8vw;
     }
     
@@ -656,6 +712,14 @@ label.star:before {
     /*form*/
     fieldset {
         width: 85%;
+    }
+    
+    fieldset p label{
+        width: 25%;
+    }
+    
+    #dynamicName{
+        margin-left: 40%;
     }
 
     /* navigation*/
@@ -747,13 +811,19 @@ label.star:before {
         font-size: 3vw;
     }
     
-    input[type=text], select {
+    input[type=text], input[type=date],input[type=time],input[type=password],select {
 	   width: 50%;
 	   height: 6vw;
 	   font-size: 2.5vw;
     }
     
-    input[type=file], textarea{
+    input[type=file]{
+        width: 50%;
+        height: 6vw;
+        font-size: 2.5vw;
+    }
+    
+    textarea{
         font-size: 2.5vw;
     }
     
@@ -768,6 +838,10 @@ label.star:before {
         width: 90%;
     }
     
+    fieldset p{
+        margin-right: 10%;
+    } 
+
     /* navigation*/
     nav ul a, nav ul a img{
         height: 9vw;

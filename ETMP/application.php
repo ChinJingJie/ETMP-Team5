@@ -17,15 +17,18 @@
 	  <fieldset>	
         <legend>Details of Person In Charge</legend>
           <p>
-		    <label for="picName">Full Name:</label>
+		    <label for="picName">Full Name</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="picName" name="picName" value="<?php echo $userData['name']?>" placeholder="Profile name" maxlength="25" readonly/>
 		  </p>
           <p>
-		    <label for="email">Email:</label>
+		    <label for="email">Email</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="email" name="email" value="<?php echo $userData['email']?>" placeholder="KennyOmega29@Gmail.com" readonly/>
 		  </p>
           <p>
-		    <label for="phone">Phone Number:</label>
+		    <label for="phone">Phone Number</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="phone" name="phone" value="<?php echo $userData['phone']?>" placeholder="0123456789" maxlength="10" readonly/>
 		  </p>
       </fieldset>
@@ -37,26 +40,31 @@
 	  <fieldset>
 		<legend>Training Venue</legend>
           <p>
-		    <label for="venue">Venue Name:</label>
+		    <label for="venue" class="required">Venue Name</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="venue" name="venue" placeholder="Sova Hall" maxlength="40"/>
 		  </p>
           <p>
-		    <label for="street">Street Address:</label>
+		    <label for="street" class="required">Street Address</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="street" name="address" placeholder="Jalan Sesame Street" maxlength="40"/>
 		  </p>
           <p>
-		    <label for="city">City/Town:</label>
+		    <label for="city" class="required">City/Town</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="city" name="city" placeholder="Kuching" maxlength="20"/>
 		  </p>
           <p>
-		    <label for="code">Postcode:</label>
+		    <label for="code" class="required">Postcode</label>
+            <span class="labelcolon">:</span>
 			<input type="text" id="code" name="postcode" placeholder="93300" maxlength="5"/>
 		  </p>           
       </fieldset>
         
       <fieldset>   
         <legend>Training Course</legend>
-        <p><label>Training Program:</label>
+        <p><label class="required">Training Program</label>
+          <span class="labelcolon">:</span>
           <select name="tcourse" id="tcourse" onchange="programSelection(this)">
               <?php
                     $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
@@ -72,10 +80,11 @@
                     }
               ?>
               <option>Others</option>
-              <input type="text" id="dynamicName" style="display: none;" placeholder="program name">
+              <input type="text" id="dynamicName" style="display: none;" placeholder="program name" value="Example Name">
           </select>
         </p>
-        <p><label>Category:</label>
+        <p><label class="required">Category</label>
+          <span class="labelcolon">:</span>
           <select name="tcats" id="tcats" style="display:none;">
               <?php
                     $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
@@ -94,25 +103,31 @@
           <input type="text" id="category" name="category" placeholder="Sports"/>
         </p>
         <p>
-		  <label for="days">Training Start Date:</label>
+		  <label for="days" class="required">Training Start Date</label>
+          <span class="labelcolon">:</span>
 		  <input type="date" id="Stdays" name="Stdays"/>
         </p>
         <p>
-          <label for="days">End Date:</label>
+          <label for="days" class="required">End Date</label>
+          <span class="labelcolon">:</span>
 		  <input type="date" id="Edays" name="Edays"/>
 		</p>
         <p>
-		  <label for="time">Training Start Time:</label>
+		  <label for="time" class="required">Training Start Time</label>
+          <span class="labelcolon">:</span>
 		  <input type="time" id="Stime" name="Stime"/>
         </p>
         <p>
-          <label for="time">End Time:</label>
+          <label for="time" class="required">End Time</label>
+          <span class="labelcolon">:</span>
 		  <input type="time" id="Etime" name="Etime"/>
 		</p>
         <p>
-		  <label for="template">Training Template:</label>
+		  <label for="template" class="required">Training Template</label>
+          <span class="labelcolon">:</span>
 		  <input type="file" id="template" name="template" placeholder="URL link"/>
 		</p>
+        <p class="hLine1"></p>
         <p>
 		  <label class="comment" for="comment">Remarks</label>
 		  <br/>

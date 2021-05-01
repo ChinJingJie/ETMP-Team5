@@ -385,7 +385,7 @@
 					</div>
 					<div class="form-group">
                         <div class="hLine1"></div>
-						<label for="remarks">Remarks</label>
+						<label for="remarks" class="labelling">Remarks</label>
                         <textarea id="remarks1" name="comment" rows="4" cols="20" placeholder="Enter remarks if any"></textarea>
 					</div>
 					

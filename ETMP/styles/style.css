@@ -213,15 +213,6 @@ input:read-only {
     width: 100%;
 }
 
-.hLine{
-    width:80%; 
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    margin-right: 5vw;
-    height:1px; 
-    background: #000;
-}
-
 .hLine1{
     width:100%; 
     margin-top: 2vw;
@@ -233,7 +224,16 @@ input:read-only {
 
 
 .form-group label.labelling{
+    width: 90%;
+    margin-left: 10%;
     text-align: left;
+}
+
+.form-group textarea{
+    margin-right: 10%;
+    border: 2px solid #000;
+    font-size: 1.3vw;
+    width: 80%;
 }
 
 textarea{

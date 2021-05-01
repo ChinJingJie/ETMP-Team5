@@ -20,7 +20,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <form id="addCourseForm" method="post" enctype="multipart/form-data" action = "trainingdb.php" >
-                    <div class="modal-body left">
+                    <div class="modal-body">
                       <div class="form-group">
                         <label for="addIMG" class="required">Cover Image</label>
                         <span class="labelcolons">:</span>

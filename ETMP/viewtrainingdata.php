@@ -150,11 +150,10 @@
 						<label for="tTemp" class="required">Training Template</label>
                         <span class="labelcolons">:</span>
 						<input type = "text" name = "tTemp" id ="tTemp3" value=""/>
-						
 					</div>  
                       
                     <div class="form-group">
-                        <div class="hLine"></div>
+                        <div class="hLine1"></div>
                         <label class="labelling required" for="tDesc">Description</label>
                         <textarea id="tDesc3" name="tDesc" rows="4" cols="20" placeholder="Enter short description and occupation that suits the course/program"></textarea>
                       </div>

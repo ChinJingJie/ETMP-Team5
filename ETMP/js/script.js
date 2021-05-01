@@ -195,25 +195,66 @@ function validateForm3(){
 
 function validateForm4(){
     "use strict";  
+	alert("hi");
     var isAllOK = false;
+	alert("hi1");
 	gErrorMsg = "";	
 	var addImageOK = chkCoverImage();
+	alert("hi2");
 	var addCourseOK = chkCourseName();
+	alert("hi3");
 	var addDescOK = chkDescription();
+	alert("hi4");
 	var addTempOK = chkTemplate();
+	alert("hi5");
 	
 	if(addImageOK && addCourseOK && addDescOK && addTempOK)
 	{
+		alert("hi6");
 		isAllOK = true;
 	}
 	else
 	{
+		
 	   alert(gErrorMsg); 
        gErrorMsg = "";  
        isAllOK = false;
 	}
-   
     return isAllOK;
+}
+
+function validateForm5(){
+	"use strict"; 
+	var isAllOK = false;
+    gErrorMsg = "";	
+	var StarRatingOK = chkStarRating();
+	var OvrExperienceOK = chkOvrExperience();
+	var ImprovementOK = chkImprovement();
+	var TrainPerformOK = chkTrainerComment();
+	var proceed; 
+	proceed = confirm("Proceed on with current form?");
+	if (proceed == true)
+	{
+		if(OvrExperienceOK && ImprovementOK && TrainPerformOK && StarRatingOK)
+		{
+			isAllOK = true;
+		}
+		
+		else
+		{
+		   alert(gErrorMsg);
+		   gErrorMsg = "";
+		   isAllOK = false;
+		}
+	}
+	
+	else
+	{
+		gErrorMsg = "";  
+        isAllOK = false;
+	}
+	
+	return isAllOK;
 }
 
 function fName() {  //Full Name
@@ -519,60 +560,164 @@ function chkTrainingTemplate() {  //Training Template
 
 function chkCoverImage(){
     //validate there is a file uploaded for adding new training course
-	var tImage = document.getElementById("addIMG").value;
+	var tImage = document.getElementById("addIMG");
+	var tImageV;
 	var cImageOk = true;
-	if(tImage == ""){
-		gErrorMsg = gErrorMsg + "Please upload an Image\n";
-		tImage = false;
-		document.getElementById("addIMG").style.borderColor = "red";
+	if(tImage != null)
+	{
+		tImageV = document.getElementById("addIMG").value;
 	}
+	
+	else
+	{
+		tImage = document.getElementById("picture3");
+		tImageV = document.getElementById("picture3").value;
+	}
+	
+	if(tImageV == ""){
+		gErrorMsg = gErrorMsg + "Please upload an Image\n";
+		cImageOk = false;
+		tImage.style.borderColor = "red";
+	}
+	
 	return cImageOk;
 }
 
 function chkCourseName(){
     //validate name is exist for adding new training course
-    var cName = document.getElementById("addNAME").value;  
+	var cName = document.getElementById("addNAME");
+    var cNameV;  
 	var cNameOk = true;
-	if ((cName.length == 0)){        
+	if(cName != null)
+	{
+		cNameV = document.getElementById("addNAME").value;
+	}
+	
+	else
+	{
+		cName = document.getElementById("tName3");
+		cNameV = document.getElementById("tName3").value;
+	}
+	if ((cNameV.length == 0)){ 
 		gErrorMsg = gErrorMsg + "Please enter a name for the training course\n" 
         cNameOk = false; 
-        document.getElementById("addNAME").style.borderColor = "red";
+        cName.style.borderColor = "red";
 	}
-	if ((cName.length >= 50)){
+	if ((cNameV.length >= 50)){
 		gErrorMsg = gErrorMsg + "Please limit the name for the training course within 50 characters\n"
 		cNameOk = false;
-        document.getElementById("addNAME").style.borderColor = "red";
+        cName.style.borderColor = "red";
 	}
 	return cNameOk;
 }
 
 function chkDescription(){
     //validate description is exist for adding new training course
-    var cDesc = document.getElementById("addDESC").value;  
+    var cDesc = document.getElementById("addDESC");
+	var cDescV;
 	var cDescOk = true;
-	if ((cDesc.length == 0)){        
+	if (cDesc != null)
+	{
+		cDescV = document.getElementById("addDESC").value; 
+	}
+	
+	else
+	{
+		cDesc = document.getElementById("tDesc3")
+		cDescV = document.getElementById("tDesc3").value;
+	}
+	if ((cDescV.length == 0)){        
 		gErrorMsg = gErrorMsg + "Please enter a description for the training course\n" 
         cDescOk = false; 
-        document.getElementById("addDESC").style.borderColor = "red";
+        cDesc.style.borderColor = "red";
 	}
-	if ((cDesc.length >= 200)){
+	if ((cDescV.length >= 200)){
 		gErrorMsg = gErrorMsg + "Please limit the description for the training course within 200 characters\n"
 		cDescOk = false;
-        document.getElementById("addDESC").style.borderColor = "red";
+        cDesc.style.borderColor = "red";
 	}
 	return cDescOk;
 }
 
 function chkTemplate(){
     //validate there is a file uploaded for adding new training course
-	var tTemp = document.getElementById("addTemp").value;
+	var tTemp = document.getElementById("addTemp");
+	var tTempV;
 	var cTempOk = true;
-	if(tTemp == ""){
+	if(tTemp != null)
+	{
+		tTempV = document.getElementById("addTemp").value;
+	}
+	
+	else
+	{
+		tTemp = document.getElementById("tTemp3");
+		tTempV = document.getElementById("tTemp3").value;
+	}
+	if(tTempV == ""){
 		gErrorMsg = gErrorMsg + "Please upload a Template Link\n";
 		tImage = false;
-		document.getElementById("addTemp").style.borderColor = "red";
+		tTemp.style.borderColor = "red";
 	}
 	return cTempOk;
+}
+
+function chkStarRating()
+{
+	var star = document.getElementsByName("star");
+	var fStar = true;
+	
+	if(star[0].checked | star[1].checked | star[2].checked | star[3].checked | star[4].checked)
+	{
+		
+	}
+	
+	else
+	{
+		gErrorMsg = gErrorMsg + "Please rate a rating for your training program\n";
+		fStar = false;
+	}
+	
+	return fStar;
+}
+
+function chkOvrExperience()
+{
+	var val = document.getElementById("experience").value;
+	var fOEOK = true;
+	
+	if (/^\s*$/g.test(val)) {
+        gErrorMsg = gErrorMsg + "Please fill in the Overall Experience Field\n";
+		fOEOK = false;
+		document.getElementById("experience").style.borderColor = "red";
+    }	
+	return fOEOK ;
+}
+
+function chkImprovement()
+{
+	var val = document.getElementById("improvement").value;
+	var fI = true;
+	
+	if (/^\s*$/g.test(val)) {
+        gErrorMsg = gErrorMsg + "Please fill in the Improvement Field\n";
+		fI = false;
+		document.getElementById("improvement").style.borderColor = "red";
+    }	
+	return fI ;
+}
+
+function chkTrainerComment()
+{
+	var val = document.getElementById("TrainPerform").value;
+	var fTC = true;
+	
+	if (/^\s*$/g.test(val)) {
+        gErrorMsg = gErrorMsg + "Please fill in the Comments on Trainer Performance Field\n";
+		fTC = false;
+		document.getElementById("TrainPerform").style.borderColor = "red";
+    }	
+	return fTC ;
 }
 
 function validateInputOnBlur(){
@@ -647,6 +792,15 @@ function validateInputOnBlur(){
 		case "addTemp":
 			isOK = chkTemplate();
 			break;
+		case "experience":
+			isOK = chkOvrExperience();
+			break;
+		case "improvement":
+			isOK = chkImprovement();
+			break;
+		case "TrainPerform":
+			isOK = chkTrainerComment();
+			break;
             }
 	if (!isOk) {
         document.getElementById(objectLostFocus_id).style.borderColor = ""; 
@@ -673,7 +827,15 @@ function registerInputsOnBlur(){
 			if(myForm == null)
 			{
 				myForm = document.getElementById("addCourseForm");
-				
+				if(myForm == null)
+				{
+					myForm = document.getElementById("feedbackForm");
+					if(myForm == null)
+					{
+						myForm = document.getElementById("EditTrainingForm");
+						
+					}
+				}
 			}
 			
 		}
@@ -696,7 +858,15 @@ function registerInputsOnClick(){
 			if(myForm == null)
 			{
 				myForm = document.getElementById("addCourseForm");
-				
+				if(myForm == null)
+				{
+					myForm = document.getElementById("feedbackForm");
+					if(myForm == null)
+					{
+						myForm = document.getElementById("EditTrainingForm");
+						
+					}
+				}
 			}
 			
 		}
@@ -706,6 +876,7 @@ function registerInputsOnClick(){
 		inputElements[i].onclick = resetFormat;
 	}
 }
+
 
 function init() {
     var myForm = document.getElementById("applicationForm");
@@ -738,7 +909,33 @@ function init() {
 		  else
 		  {
 				myForm = document.getElementById("addCourseForm");
-				myForm.onsubmit = validateForm4;
+				if(myForm != null)
+				{
+					myForm.onsubmit = validateForm4;
+				}
+				
+				else
+				{
+					myForm = document.getElementById("feedbackForm");
+					if(myForm != null)
+					{
+						myForm.onsubmit = validateForm5;
+					}
+					
+					else
+					{
+						myForm = document.getElementById("EditTrainingForm");
+						if(myForm != null)
+						{
+							myForm.onsubmit = validateForm4;
+						}
+						
+						else
+						{
+							
+						}
+					}		
+				}	
 		  }
 	  }
    }

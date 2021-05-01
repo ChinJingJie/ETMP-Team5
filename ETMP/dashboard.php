@@ -67,7 +67,11 @@
         <h2>Notifications</h2>
         <div class="notification-space">
             <p>No new updates.</p>
+			<form method="post" action="feedback.php">
+                <input type="submit" name="confirm" value="Feedback Form"/>
+            </form>
         </div>
+		
     </section>
     <div class="sticky">
         <a href="#">

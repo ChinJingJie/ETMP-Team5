@@ -436,6 +436,10 @@ div.sticky a i {
   color: #fff;
 }
 
+div.sticky a i:hover {
+  background-color: #000;
+}
+
 /*collapse or accordin bar*/
 input#chck1, input#chck2, input#chck3, input#chck4, input#chck5, input#chck6{
     position: absolute;

@@ -21,7 +21,7 @@
   <div class="popup-head">
     <div class="popup-head-left pull-left">
       <p>
-        Icon + ReceiverName</p>
+        Icon + Name</p>
     </div>
 	<div class="popup-head-right pull-right">
       <button data-widget="remove" id="closeWindow" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>

@@ -89,12 +89,21 @@ function autoProductName() {
     document.getElementById("tcourse").value = sessionStorage.product;
     if (sessionStorage.product == "Others"){
         document.getElementById("dynamicName").style.display = "";
+        document.getElementById("fileSlt").style.display = "";
     }
     else
     {
         document.getElementById("dynamicName").style.display = "none";
     }
     document.getElementById("category").value = sessionStorage.category;
+}
+
+// Dynamic File Selection Message in Chat by Chin Jing Jie
+function fileSelectionMsg(slt) {
+    sessionStorage.chatUpload = slt;
+    if (sessionStorage.chatUpload == "upload"){
+        document.getElementById("fileSlt").style.display = "block";
+    }
 }
 
 // Registration Form and Training Form Validation by Nicholas Lim Tun Yang and Chin Jing Jie

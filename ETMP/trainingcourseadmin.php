@@ -136,11 +136,9 @@
         ?>
     <p>- End of the list -</p>
     </section>
-    <div class="sticky">
-        <a href="#">
-	       <i class="fa fa-comment"></i>
-        </a>
-    </div>
+    <section>
+        <?php include "chat.php";?>
+    </section>
   <?php include "footer.php"; ?>
   
 </body>

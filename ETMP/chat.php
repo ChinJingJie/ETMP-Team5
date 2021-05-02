@@ -2,13 +2,19 @@
 <script>
     $(function(){
       $("#openChat").click(function () {
-        $('#chatWindow').addClass('popup-box-on');
+        $('#chatWindow').addClass('chat-box-on');
       });
 
       $("#closeChat").click(function () {
-        $('#chatWindow').removeClass('popup-box-on');
+        $('#chatWindow').removeClass('chat-box-on');
       });
     })
+    
+    $(document).ready(function(){
+      var profileName = $('#profileName').text();
+      var intials = $('#profileName').text().charAt(0) + $('#profileName').text().charAt(1);
+      var profileImage = $('#profileImage').text(intials);
+    });
 </script>
 
 <div class="sticky">
@@ -19,9 +25,10 @@
 
 <div class="chat-box" id="chatWindow">
   <div class="chat-head">
-    <div class="popup-head-left pull-left">
-      <p>
-        Icon + Name</p>
+    <div class="popup-head-left pull-left picBg">
+        <span id="profileName" style="display:none;">Kalpesh</span>
+        <div id="profileImage"></div>
+        <span id="displayName">Kalpesh</span>
     </div>
     <div class="pull-right">
       <a href="#" id="minimizeChat">
@@ -33,37 +40,26 @@
     </div>
   </div>
   <div class="chat-messages">
-      <div class="direct-chat-messages">
-		<div class="chat-box-single-line">
-            <abbr class="timestamp">October 8th, 2015</abbr>
-        </div>
-<!-- Message. Default to the left -->
-        <div class="direct-chat-msg doted-border">
-           <div class="direct-chat-info clearfix">
-              <span class="direct-chat-name pull-left">Osahan</span>
-           </div>
-<!-- /.direct-chat-info -->
-           <span>Icon</span><!-- /.direct-chat-img -->
-           <div class="direct-chat-text">Hey bro, how’s everything going ?</div>
-           <div class="direct-chat-info clearfix">
-             <span class="direct-chat-timestamp pull-right">3.36 PM</span>
-           </div>
-<!-- /.direct-chat-text -->
-        </div>
-<!-- /.direct-chat-msg -->
+      <div class="chat-body">
+		<!--body of the chat-->
       </div>
-      <div class="popup-messages-footer">
-          <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
-          <!--working upload paper clip-->
+      
+      <div class="chat-footer">
           <div class="image-upload">
-              <label for="file-input">
-                <i class="glyphicon glyphicon-paperclip"></i>
+              <label for="file-icon">
+                <i class="fa fa-paperclip"></i>
               </label>
 
-              <input id="file-input" type="file" />
+              <input id="file-icon" type="file" />
           </div>
-          <!--not working upload paper clip but better follow this UI design-->
-          <button class="bg_none"><i class="glyphicon glyphicon-paperclip"></i> </button>
+          <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
+          <div class="msg-send">
+              <label for="send-icon">
+                <i class="fa fa-send"></i>
+              </label>
+
+              <input id="send-icon" type="submit" />
+          </div>
       </div>
     </div>
 </div>

@@ -27,4 +27,39 @@ if(isset($_POST["delete"])){
 	header('location: login.php');
 }
 
+if(isset($_POST["confirmpass"])){
+	
+	$name = $_SESSION['name'];
+	$password = $_POST['pwsd'];
+	$newpwsd = $_POST['pwsd2'];
+	$confirmpwsd = $_POST['pwsd3'];
+		
+	if(empty($password)){
+		array_push($errors, "Old Password is required");
+		header('location: profileadmin.php');
+	}
+	if(empty($newpwsd)){
+		array_push($errors, "New Password is required");
+		header('location: profileadmin.php');
+	}
+	if($newpwsd !== $confirmpwsd){
+		array_push($errors, "Password not match");
+		header('location: profileadmin.php');
+	}
+	
+	if(count($errors) == 0){
+		//hashing the password
+		$name = $_SESSION['name'];
+		$password = md5($password);
+		$newpwsd = md5($newpwsd);
+		
+		$sql_2 = "UPDATE users SET password = '$newpwsd' WHERE name='$name' AND password = '$password'" or die($sql_2->error());
+		mysqli_query($conn, $sql_2);
+		header('location: profileadmin.php');
+		$_SESSION['success'] = "Your password is successfully Update";
+	}else{
+		array_push($errors, "Incorrect password");
+	}
+}
+
 ?>

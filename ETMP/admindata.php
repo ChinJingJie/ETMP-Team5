@@ -16,6 +16,7 @@ function getUsersData(){
 		$array['email'] = $user['email'];
 		$array['phone'] = $user['phone'];
 		$array['staffid'] = $user['staffid'];
+		$array['password'] = $user['password'];
 	}
 	return $array;
 	

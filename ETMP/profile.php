@@ -103,9 +103,27 @@
 		
         </div>
 
+        <?php
+		if(isset($_SESSION['name'])){
+			$userData = getUsersData($_SESSION['name']);
+		?>
+
         <div id="Password" class="tabcontent">
-            <p>allow changing of password</p> 
+            <p>Change Password</p>
+			<?php include"errors.php";?>
+			<form id="changepwsd" method="post" action="profileclientfunction.php" novalidate>
+				<input type="text" id="pwsd" name="pwsd" placeholder="old password" maxlength="25"/>
+				<br/>
+				<input type="text" id="pwsd2" name="pwsd2" placeholder="new password" maxlength="25"/>
+				<br/>
+				<input type="text" id="pwsd3" name="pwsd3" placeholder="re-enter new password" maxlength="25"/>
+				<br/>
+				<input type="submit" name="confirmpass" value="Confirm"/>
+			</form>
         </div>
+		<?php
+		}
+		?>
 
         <div id="History" class="tabcontent">
             <p>Display training History</p>

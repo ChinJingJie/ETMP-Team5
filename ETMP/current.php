@@ -218,7 +218,7 @@
             <?php
 			$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
 			$name = $_SESSION['name'];
-			$book_query = "SELECT * FROM application WHERE  name='$name' and isComplete=1";
+			$book_query = "SELECT * FROM application WHERE  name='$name' and isSubmitted=1";
 			$result = mysqli_query($conn, $book_query);
 			?>
 			
@@ -429,7 +429,7 @@
             <?php
 			$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
 			$name = $_SESSION['name'];
-			$book_query = "SELECT * FROM application WHERE  name='$name' and isComplete=0";
+			$book_query = "SELECT * FROM application WHERE  name='$name' and isSubmitted=0";
 			$result = mysqli_query($conn, $book_query);
 			?>
 			

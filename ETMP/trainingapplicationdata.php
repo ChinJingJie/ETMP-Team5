@@ -46,6 +46,17 @@ $conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sq
 		header('location: viewtrainingapplicationdata.php');
 		
 	}	
+	
+	
+	if(isset($_POST["canceltraining"])){
+		$id = $_POST['id'];
+		$user_query = "UPDATE application SET isCancelled = '1' 
+		WHERE id= $id"
+		or die($user_query->error());
+		$result = mysqli_query($conn, $user_query);
+		
+		header('location: dashboard.php');
+	}	
 
 
 ?>

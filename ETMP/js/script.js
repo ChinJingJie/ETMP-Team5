@@ -266,6 +266,28 @@ function validateForm5(){
 	return isAllOK;
 }
 
+function validateForm6(){
+	"use strict"; 
+	var isAllOK = false;
+    gErrorMsg = "";	
+	var oldpassOK = chkoldpass();
+	var newpassOK = chknewpass();
+	var confirmpassOK = chkconfirmpass(); 
+
+	if(oldpassOK && newpassOK && confirmpassOK)
+	{
+		isAllOK = true;
+	}
+		
+	else
+	{
+		alert(gErrorMsg);
+		gErrorMsg = "";
+		isAllOK = false;
+	}
+	return isAllOK;
+}
+
 function fName() {  //Full Name
 	var name = document.getElementById("name").value;
 	var pattern = /^[a-zA-Z ]+$/      
@@ -729,6 +751,51 @@ function chkTrainerComment()
 	return fTC ;
 }
 
+function chkoldpass(){
+	var pwsd = document.getElementById("pwsd").value;     
+	var pwsdOk1 = true;	
+	if ((pwsd.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter the Old Password\n" 
+        pwsdOk1 = false; 
+        document.getElementById("pwsd").style.borderColor = "red";
+	}
+	
+	return pwsdOk1;
+}
+
+function chknewpass(){
+	var pwsd2 = document.getElementById("pwsd2").value;     
+	var pwsdOk2 = true;	
+	if ((pwsd2.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter the New Password\n" 
+        pwsdOk2 = false; 
+        document.getElementById("pwsd2").style.borderColor = "red";
+	}
+	
+	return pwsdOk2;
+}
+
+function chkconfirmpass(){
+	var pwsd3 = document.getElementById("pwsd3").value;
+	var pwsd2 = document.getElementById("pwsd2").value;       
+	var pwsdOk3 = true;	
+	if ((pwsd3.length == 0)){        
+		gErrorMsg = gErrorMsg + "Please enter the New Password again\n" 
+        pwsdOk3 = false; 
+        document.getElementById("pwsd3").style.borderColor = "red";
+	}
+	else {
+		if(pwsd3 != pwsd2)
+		{
+			gErrorMsg = gErrorMsg + "Password not match\n"
+			pwsdOk3 = false;
+		}
+		
+	}
+	
+	return pwsdOk3;
+}
+
 function validateInputOnBlur(){
 	
 	var objectLostFocus_id = this.id;
@@ -810,6 +877,15 @@ function validateInputOnBlur(){
 		case "TrainPerform":
 			isOK = chkTrainerComment();
 			break;
+		case "pwsd":
+			isOK = chkoldpass();
+			break;
+		case "pwsd2":
+			isOK = chknewpass();
+			break;
+		case "pwsd3":
+			isOK = chkconfirmpass();
+			break;
             }
 	if (!isOk) {
         document.getElementById(objectLostFocus_id).style.borderColor = ""; 
@@ -842,6 +918,11 @@ function registerInputsOnBlur(){
 					if(myForm == null)
 					{
 						myForm = document.getElementById("EditTrainingForm");
+						if(myForm == null)
+						{
+							myForm = document.getElementById("changepwsd");
+						
+						}
 						
 					}
 				}
@@ -873,7 +954,11 @@ function registerInputsOnClick(){
 					if(myForm == null)
 					{
 						myForm = document.getElementById("EditTrainingForm");
+						if(myForm == null)
+						{
+							myForm = document.getElementById("changepwsd");
 						
+						}
 					}
 				}
 			}
@@ -941,7 +1026,16 @@ function init() {
 						
 						else
 						{
+							myForm = document.getElementById("changepwsd");
+							if(myForm != null)
+							{
+								myForm.onsubmit = validateForm6;
+							}
+						
+							else
+							{
 							
+							}
 						}
 					}		
 				}	

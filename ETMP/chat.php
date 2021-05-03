@@ -15,7 +15,10 @@
     $(document).ready(function(){
       var profileName = $('#profileName').text();
       var intials = $('#profileName').text().charAt(0) + $('#profileName').text().charAt(1);
+      //use in header
       var profileImage = $('#profileImage').text(intials);
+      //use during conversation
+      var profileImage1 = $('.profileImage1').text(intials);
     });
 </script>
 
@@ -44,7 +47,55 @@
   <div class="chat-messages">
       <div class="chat-body">
 		<!--body of the chat-->
-      </div>
+          <div class="card-body msg_card_body">
+            <div class="d-flex justify-content-start mb-4">
+              <div class="profileImage1"></div>
+              <div class="msg_cotainer">
+                Hi, how are you samim?
+                <span class="msg_time">8:40 AM, Today</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-4">
+              <div class="msg_cotainer_send">
+                Hi Khalid i am good tnx how about you?
+                <span class="msg_time_send">8:55 AM, Today</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+              <div class="profileImage1"></div>
+              <div class="msg_cotainer">
+                I am good too, thank you for your chat template
+                <span class="msg_time">9:00 AM, Today</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-4">
+              <div class="msg_cotainer_send">
+                You are welcome
+                <span class="msg_time_send">9:05 AM, Today</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+              <div class="profileImage1"></div>
+              <div class="msg_cotainer">
+                I am looking for your next templates
+                <span class="msg_time">9:07 AM, Today</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-4">
+              <div class="msg_cotainer_send">
+                Ok, thank you have a good day
+                <span class="msg_time_send">9:10 AM, Today</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+              <div class="profileImage1"></div>
+              <div class="msg_cotainer">
+                Bye, see you
+                <span class="msg_time">9:12 AM, Today</span>
+              </div>
+            </div>
+          </div>
+        </div>
       <div class="chat-file-msg" id="fileSlt">Nothing selected</div>
       <div class="chat-footer">
           <div class="image-upload">

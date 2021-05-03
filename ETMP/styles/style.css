@@ -440,12 +440,12 @@ div.sticky a i:hover {
   background-color: #000;
 }
 
-div.pull-right, div.pull-right a, div.pull-right a i {
+div.pull-right, div.pull-right a, div.pull-right a i,div.pull-left, div.pull-left a, div.pull-left a i {
   color: #fff;
   background-color: #0070ff;
 }
 
-div.pull-right a i:hover {
+div.pull-right a i:hover, div.pull-left a i:hover {
   background-color: #fff;
   color: #0070ff;
   padding: 5px;
@@ -1004,7 +1004,7 @@ label.star:before {
     display: inline-flex;
 }
 
-#displayName{
+#displayName, #chatTitle{
     padding: 0 10px;
     height: 40px;
     line-height: 40px;
@@ -1024,7 +1024,7 @@ label.star:before {
   line-height: 40px;
 }
 
-#minimizeChat{
+#minimizeChat, #minimizeChat1, #backToChat{
     padding: 0 10px;
     line-height: 40px;
 }

@@ -3,11 +3,11 @@
     //open and close chat window
     $(function(){
       $("#openChat").click(function () {
-        $('#chatWindow').addClass('chat-box-on');
+        $('#chatWindow1').addClass('chat-box-on');
       });
 
-      $("#closeChat").click(function () {
-        $('#chatWindow').removeClass('chat-box-on');
+      $("#closeChat1").click(function () {
+        $('#chatWindow1').removeClass('chat-box-on');
       });
     })
     
@@ -31,15 +31,46 @@
 <div class="chat-box" id="chatWindow">
   <div class="chat-head">
     <div class="popup-head-left pull-left picBg">
-        <span id="profileName" style="display:none;">Kalpesh</span>
-        <div id="profileImage"></div>
-        <span id="displayName">Kalpesh</span>
+        <div class="popup-head-left pull-left picBg">
+            <span id="chatTitle">Chat</span>
+        </div>
     </div>
     <div class="pull-right">
       <a href="#" id="minimizeChat">
           <i class="fa fa-window-minimize"></i>
         </a>
         <a href="#" id="closeChat">
+          <i class="fa fa-window-close"></i>
+        </a>
+    </div>
+  </div>
+  <div class="chat-messages">
+      <div class="chat-body">
+		<!--body of the chat-->
+		<!--add a search bar and chart-->
+          
+      </div>
+      <div class="chat-file-msg" id="fileSlt">Nothing selected</div>
+      <div class="chat-footer">
+      </div>
+    </div>
+</div>
+
+<div class="chat-box" id="chatWindow1">
+  <div class="chat-head">
+    <div class="popup-head-left pull-left picBg">
+        <a href="#" id="backToChat1">
+          <i class="fa fa-chevron-circle-left"></i>
+        </a>
+        <span id="profileName" style="display:none;">Kalpesh</span>
+        <div id="profileImage"></div>
+        <span id="displayName">Kalpesh</span>
+    </div>
+    <div class="pull-right">
+        <a href="#" id="minimizeChat1">
+          <i class="fa fa-window-minimize"></i>
+        </a>
+        <a href="#" id="closeChat1">
           <i class="fa fa-window-close"></i>
         </a>
     </div>

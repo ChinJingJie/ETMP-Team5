@@ -10,7 +10,7 @@
         <h1>Training Course</h1>
         <select name="courses" id="courses" style="display: none;">
               <?php
-                    $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+                    $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
                     $db = mysqli_select_db($connection,'sql6405286');
 
                     $query = " SELECT * FROM training ";
@@ -26,7 +26,7 @@
           </select>
         <p>View the course below to apply, if no favourable coure, apply for a self proposed training course <a href="application.php" onclick="storePrograms('none','Others')">here</a>.</p>
         <?php
-            $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+            $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
             $db = mysqli_select_db($connection,'sql6405286');
             
             $query = " SELECT * FROM training ";

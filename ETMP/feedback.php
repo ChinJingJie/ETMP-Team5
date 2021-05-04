@@ -9,7 +9,7 @@
     </header>
     <section>
         <h1>Feedback Form</h1>
-        <form id="feedbackForm" method="post" action = "feedbackprocess.php"novalidate="novalidate" >     
+        <form id="feedbackForm" method="post" action = "feedbackprocess.php" novalidate="novalidate" >     
 	  <?php
 		if(isset($_SESSION['name'])){
 			$applicationData = getApplicationData($_SESSION['name']);
@@ -17,7 +17,7 @@
 	  <fieldset>	
           <p>
 		    <label for="trainingID">Training ID:</label>
-			<input type="text" id="trainingID" name="trainingID" value="<?php echo $applicationData['id']?>" placeholder="Training ID" maxlength="25" readonly/>
+			<input type="text" id="trainingID" name="trainingID" value= IDSelection(this) placeholder="Training ID" maxlength="25" readonly/>
 		  </p>
 		 <p>
 		 <label for="rating" id ="rating">Rating</label>

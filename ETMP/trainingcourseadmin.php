@@ -85,7 +85,7 @@
                         <select name="selection" id="selection">
                             <!-- need to load from database -->
                             <?php
-                                $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+                                $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
                                 $db = mysqli_select_db($connection,'sql6405286');
 
                                 $query = " SELECT * FROM training ";
@@ -112,7 +112,7 @@
         
         <h2>Course Listing</h2>
         <?php
-            $connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+            $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
             $db = mysqli_select_db($connection,'sql6405286');
             
             $query = " SELECT * FROM training ";

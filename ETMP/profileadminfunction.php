@@ -2,7 +2,7 @@
 include "sessionstart.php";
 $errors = array();
 
-$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
+$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 
 
 if(isset($_POST["updateprofile"])){

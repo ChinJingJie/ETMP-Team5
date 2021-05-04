@@ -5,7 +5,7 @@ include "registrationadminprocess.php";
 function getUsersData(){
 	$array = array();
 	
-	$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
+	$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 	$name = $_SESSION['name'];
 	$user_query = "SELECT * FROM admins WHERE name ='$name'";
 	$result = mysqli_query($conn, $user_query);

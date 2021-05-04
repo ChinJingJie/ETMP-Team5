@@ -22,7 +22,7 @@ $remarks = "";
 $errors = array();
 
 
-$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
+$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 
 if (!$conn) {
 	die("Connection failed:" . mysqli_connect_error());
@@ -58,7 +58,7 @@ if(isset($_POST["booking"])){
 	$allowed = array('jpg','jpeg', 'png', 'pdf');
 	
 	$isAccepted = 0;
-	$isComplete = 1;
+	$isSubmitted = 1;
 	
 	if(in_array($templateActualExt, $allowed)){
 		if($templateError === 0){
@@ -129,8 +129,8 @@ if(isset($_POST["booking"])){
 	}
 	
 	if(count($errors) == 0){
-		$query = "INSERT INTO application (isAccepted, isComplete, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
-					VALUES ('$isAccepted', '$isComplete', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
+		$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
+					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
 		
 		mysqli_query($conn, $query);
 		$_SESSION['id'] = $id;
@@ -170,7 +170,7 @@ if(isset($_POST['save'])){
 	$allowed = array('jpg','jpeg', 'png', 'pdf');
 	
 	$isAccepted = 0;
-	$isComplete = 0;
+	$isSubmitted = 0;
 	
 	if(in_array($templateActualExt, $allowed)){
 		if($templateError === 0){
@@ -188,8 +188,8 @@ if(isset($_POST['save'])){
 		array_push($errors, "You cannot upload files of this type");
 	}
 	
-	$query = "INSERT INTO application (isAccepted, isComplete, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
-					VALUES ('$isAccepted', '$isComplete', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
+	$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
+					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
 		
 	mysqli_query($conn, $query);
 	$_SESSION['id'] = $id;
@@ -223,7 +223,7 @@ if(isset($_POST['bookfromsaved'])){
 	
 	$allowed = array('jpg','jpeg', 'png', 'pdf');
 	
-	$isComplete = 1;
+	$isSubmitted = 1;
 	
 	if(in_array($templateActualExt, $allowed)){
 		if($templateError === 0){
@@ -274,7 +274,7 @@ if(isset($_POST['bookfromsaved'])){
 	}
 	
 	if(count($errors) == 0){
-		$query = "UPDATE application SET isComplete='$isComplete', venue='$venue', street='$street', city='$city' , postcode='$postcode' 
+		$query = "UPDATE application SET isSubmitted='$isSubmitted', venue='$venue', street='$street', city='$city' , postcode='$postcode' 
 					, program='$program' , category='$category' , date_start='$date_start' , date_end='$date_end', time_start='$time_start'
 					,time_end='$time_end', template='$templateNewName', remarks='$remarks'  WHERE id='$id'";
 		$result = mysqli_query($conn, $query);

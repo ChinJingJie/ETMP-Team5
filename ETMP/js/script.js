@@ -67,6 +67,15 @@ function programSelection(text) {
     document.getElementById("category").value = sessionStorage.category;
 }
 
+function IDSelection(text){
+	 document.getElementById("trainingID").value = sessionStorage.trid;
+}
+
+
+function storeID(id1){
+	sessionStorage.trid = id1;
+}
+
 //Data transfer between pages by Chin Jing Jie
 function storePrograms(programCat,programName) {
     if (programName == 'Others'){
@@ -204,22 +213,15 @@ function validateForm3(){
 
 function validateForm4(){
     "use strict";  
-	alert("hi");
     var isAllOK = false;
-	alert("hi1");
 	gErrorMsg = "";	
 	var addImageOK = chkCoverImage();
-	alert("hi2");
 	var addCourseOK = chkCourseName();
-	alert("hi3");
 	var addDescOK = chkDescription();
-	alert("hi4");
 	var addTempOK = chkTemplate();
-	alert("hi5");
 	
 	if(addImageOK && addCourseOK && addDescOK && addTempOK)
 	{
-		alert("hi6");
 		isAllOK = true;
 	}
 	else

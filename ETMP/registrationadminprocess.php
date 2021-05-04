@@ -11,7 +11,7 @@ $login_attempts = 0;
 $errors = array();
 
 //connection or link to database
-$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
+$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 
 if (!$conn) {
 	die("Connection failed:" . mysqli_connect_error());

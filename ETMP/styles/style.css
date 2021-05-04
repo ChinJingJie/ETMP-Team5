@@ -273,6 +273,10 @@ button{
     margin-bottom: 10px;
 }
 
+#DMButton{
+	background-color: transparent;
+}
+
 button a, button a:hover{
     background-color: #0070ff;
 	border: none;
@@ -569,6 +573,18 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     transition: 0.3s;
     width: 23%;
     height: 40vw;
+    padding: 1%;
+    background-color: #fff;
+    margin: 1%;
+}
+
+.card1 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position:relative;
+    float: left;
+    transition: 0.3s;
+    width: 23%;
+    height: 20vw;
     padding: 1%;
     background-color: #fff;
     margin: 1%;

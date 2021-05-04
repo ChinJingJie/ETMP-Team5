@@ -109,9 +109,9 @@
 		
                 <?php 
                 //connection or link to database
-                $conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
+                $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
                 $db = mysqli_select_db($conn, 'sql6405286');
-                $sql = "SELECT id, isAccepted, isComplete, name, email, phone, venue, street, city, postcode, program, category,
+                $sql = "SELECT id, isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category,
                 date_start, date_end, time_start, time_end, template, remarks FROM application";
                 $result = $conn->query($sql);	
                 ?>	
@@ -120,8 +120,8 @@
 				while($row = $result->fetch_assoc()) {
 				if(isset($_POST['search'])) {
 					$taname = $_POST['Taname'];
-					$isComplete = 1;
-					$user_check_query = "SELECT * FROM application WHERE name = '$taname' and isComplete = $isComplete";			
+					$isSubmitted = 1;
+					$user_check_query = "SELECT * FROM application WHERE name = '$taname' and isSubmitted = $isSubmitted";			
 					$query_run = mysqli_query($conn, $user_check_query);	
 					
 					while($row = mysqli_fetch_array($query_run))
@@ -173,7 +173,7 @@
 				}
 				else
 				{	
-					if($row['isComplete'] == 1)
+					if($row['isSubmitted'] == 1)
 					{
 						
 					?>
@@ -418,7 +418,7 @@
 						<input type="hidden" id="oriprogram" name="oriprogram" value="">
 						<select name="tcourse" id="tcourse" onchange="dynamicTextBox(this)">
 							  <?php
-									$connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+									$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 									$db = mysqli_select_db($connection,'sql6405286');
 
 									$query = " SELECT * FROM training ";

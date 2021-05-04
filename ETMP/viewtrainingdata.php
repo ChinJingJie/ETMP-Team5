@@ -57,7 +57,7 @@
                 </thead>
 				<?php
 				//connection or link to database
-				$conn = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d');
+				$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 				$db = mysqli_select_db($conn, 'sql6405286');
 				
 				$sql = "SELECT id, pic, tname, tdesc, category, tTemplate FROM training";

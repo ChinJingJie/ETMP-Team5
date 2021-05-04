@@ -38,7 +38,44 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+					$db = mysqli_select_db($connection,'sql6405286');
+							
+					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '0' 
+					and isAccepted = '0' and isCancelled = '0' and isComplete ='0'";
+					$query_run = mysqli_query($connection,$query);
+        
+            while($row = mysqli_fetch_array($query_run)){
+                ?>
+                <div class="card1">
+                  <div class="text">
+                    <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
+                    <div class="scrolls">
+                        <p>Program: <?php echo $row['program']; ?></p>
+                        <p>Start Date: <?php echo $row['date_start']; ?></p>
+                        <p>Start Time: <?php echo $row['time_start']; ?></p>
+                    </div> 
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar1" data-id ="<?php echo $row['id'];?>">
+					View
+					</button>
+					</div>
+                  </div>
+				  <?php };?>
+                </div>
+                </div>
+            </div>
+        </div>
+		<div class="accordion">
+            <div class="progress-tab">
+                <input type="checkbox" id="chck2"/>
+                <label class="progress-label" for="chck2">Training Program Confimation</label>
+                <div class="tab-content">
+                     <?php
+					if(isset($_SESSION['name'])){
+						$userData = getUsersData($_SESSION['name']);
+						$name = $userData['name'];
+					}
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 					$db = mysqli_select_db($connection,'sql6405286');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
@@ -47,7 +84,7 @@
         
             while($row = mysqli_fetch_array($query_run)){
                 ?>
-                <div class="card">
+                <div class="card1">
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
@@ -55,34 +92,36 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar" data-id ="<?php echo $row['id'];?>">
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar2" data-id ="<?php echo $row['id'];?>">
 					View
 					</button>
                   </div>
                 </div>
+				<?php };?>
                 </div>
-			<?php };?>
+                </div>
             </div>
         </div>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck3"/>
                 <label class="progress-label" for="chck3">Payment</label>
+				<div class="tab-content">
                 <?php
 					if(isset($_SESSION['name'])){
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 					$db = mysqli_select_db($connection,'sql6405286');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
-					and isAccepted = '1' and isCancelled = '0' and isComplete ='0'";
+					and isAccepted = '1' and isPaid = '0' and isCancelled = '0' and isComplete ='0'";
 					$query_run = mysqli_query($connection,$query);
         
             while($row = mysqli_fetch_array($query_run)){
                 ?>
-                <div class="card">
+                <div class="card1">
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
@@ -90,13 +129,14 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar" data-id ="<?php echo $row['id'];?>">
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>">
 					View
 					</button>
                   </div>
                 </div>
+				<?php };?>
                 </div>
-			<?php };?>
+                </div>
             </div>
         </div>
         <div class="accordion">
@@ -104,7 +144,35 @@
                 <input type="checkbox" id="chck4"/>
                 <label class="progress-label" for="chck4">To Be Trained</label>
                 <div class="tab-content">
-                    <p>Information of cards waiting for training to start after completing payment</p>
+                    <?php
+					if(isset($_SESSION['name'])){
+						$userData = getUsersData($_SESSION['name']);
+						$name = $userData['name'];
+					}
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+					$db = mysqli_select_db($connection,'sql6405286');
+							
+					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
+					and isPaid ='1' and isAccepted = '1' and isCancelled = '0' and isComplete ='0'";
+					$query_run = mysqli_query($connection,$query);
+        
+            while($row = mysqli_fetch_array($query_run)){
+                ?>
+                <div class="card1">
+                  <div class="text">
+                    <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
+                    <div class="scrolls">
+                        <p>Program: <?php echo $row['program']; ?></p>
+                        <p>Start Date: <?php echo $row['date_start']; ?></p>
+                        <p>Start Time: <?php echo $row['time_start']; ?></p>
+                    </div> 
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar4" data-id ="<?php echo $row['id'];?>">
+					View
+					</button>
+                  </div>
+                </div>
+				<?php };?>
+                </div>
                 </div>
             </div>
         </div>
@@ -118,7 +186,7 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 					$db = mysqli_select_db($connection,'sql6405286');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isComplete = '1'";
@@ -126,7 +194,7 @@
         
             while($row = mysqli_fetch_array($query_run)){
                 ?>
-                <div class="card">
+                <div class="card1">
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
@@ -134,11 +202,14 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-					<button type="button"><a href="feedback.php" onclick="storePrograms('<?php echo $row['id']; ?>')">Apply</a></button>
-                  </div>
+					<button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar5" data-id ="<?php echo $row['id'];?>">
+					 View
+					</button>
+					<button type = "button" class = "btn btn-secondary"><a href = "feedback.php" id ="DMButton" onclick="storeID('4')">Feedback Form</a></button>
                 </div>
                 </div>
-			<?php };?>
+				<?php };?>
+                </div>
                 </div>
             </div>
         </div>
@@ -152,7 +223,7 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect("sql6.freemysqlhosting.net","sql6405286","csc3XZRv7d");
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 					$db = mysqli_select_db($connection,'sql6405286');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isCancelled = '1'";
@@ -160,18 +231,18 @@
         
             while($row = mysqli_fetch_array($query_run)){
                 ?>
-                <div class="card">
+                <div class="card1">
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
-                        <p>Start Time: <?php echo $row['time_start']; ?></p>
+                        <p>Start Time: <?php echo $row['time_start']; ?></p>	
                     </div> 
-                  </div>
+                  </div>			
                 </div>
+				<?php };?>
                 </div>
-			<?php };?>
                 </div>
             </div>
         </div>
@@ -190,7 +261,7 @@
     </section>
   <?php include "footer.php"; ?>
   
-  <div class="modal fade design" id="viewprogressbar" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade design" id="viewprogressbar1" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -198,16 +269,157 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			  </div>
 				  <div class="modal-body">
-				  
+				   <div>
+						<p>Stage: <b>Training Application</b></p>
+				  </div>
+				  <div class="container">
+					  <div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+						  20%
+						</div>
+					  </div>
+				 </div>
+				 <div>
+					<p><br>Training Application has been saved</p>
+				</div>
 					
 				 </div>
 			 
 				  <div class="modal-footer">
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>	
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>		
+					<button type = "submit" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Training Application</a></button>
 				  </div>  
 			</div>
 		  </div>
 	</div>	
+	
+
+	
+	  <div class="modal fade design" id="viewprogressbar2" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <div class="modal-body">
+				   <div>
+						<p>Stage: <b>Training Application Submitted</b></p>
+				  </div>
+				  <div class="container">
+					  <div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+						  40%
+						</div>
+					  </div>
+				 </div>
+				 <div>
+					<p><br>Please Wait for your application to be approved</p>
+				</div>
+					
+				 </div>
+			 
+				  <div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>
+					<button type = "button" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Training Application</a></button>
+				  </div>  
+			</div>
+		  </div>
+	</div>
+	
+	 <div class="modal fade design" id="viewprogressbar3" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <div class="modal-body">
+				   <div>
+						<p>Stage: <b>Payment</b></p>
+				  </div>
+				  <div class="container">
+					  <div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+						  60%
+						</div>
+					  </div>
+				 </div>
+				 <p><br>Please proceed to the payment page below</p>
+				 </div>
+			 
+				  <div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>	
+					<button type = "button" class = "btn btn-secondary"><a href = "payment.php" id ="DMButton">Payment</a></button>
+				  </div>  
+			</div>
+		  </div>
+	</div>
+	
+	<div class="modal fade design" id="viewprogressbar4" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <div class="modal-body">
+				   <div>
+						<p>Stage: <b>To be Trained</b></p>
+				  </div>
+				  <div class="container">
+					  <div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+						  80%
+						</div>
+					  </div>
+				 </div>
+				 <div>
+					<p><br>You have paid for your training applications.<br> See you there</p>
+				</div>
+					
+				 </div>
+			 
+				  <div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>
+					<button type = "button" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Training Application</a></button>	
+				  </div>  
+			</div>
+		  </div>
+	</div>
+	
+	<div class="modal fade design" id="viewprogressbar5" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <div class="modal-body">
+				   <div>
+						<p>Stage: <b>Feedback</b></p>
+				  </div>
+				  <div class="container">
+					  <div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+						  100%
+						</div>
+					  </div>
+				 </div>
+				 <div>
+					<p><br>Congrats for Completing your training course.<br> Please help us fill in the feedback form below<br>Thank You</p>
+					
+				</div>
+					
+				 </div>
+			 
+				  <div class="modal-footer">
+					<button type = "button" class = "btn btn-secondary"><a href = "feedback.php" id ="DMButton" >Feedback Form</a></button>	
+				  </div>  
+			</div>
+		  </div>
+	</div>
+	
 	
 	<div class="modal fade design" id="viewcancelreconfirm" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">

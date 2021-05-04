@@ -73,6 +73,10 @@ h2{
 	display: none;
 }
 
+#hide3{
+	display: none;
+}
+
 /*form*/
 form label.required:after
 {

@@ -13,9 +13,9 @@
         <p>Reset the password and proceed to login again</p>
 		<?php if(isset($msg)){echo $msg;}?>
         <form id="resetpwsdForm" method="post" action="" novalidate="novalidate">
-            <input type="text" id="pwsd" name="pswd" placeholder="new password" maxlength="25"/>
+            <input type="text" id="pwsd" name="pwsd" placeholder="new password" maxlength="25"/>
             <br/>
-            <input type="text" id="pwsd1" name="pswd1" placeholder="re-enter new password" maxlength="25"/>
+            <input type="text" id="pwsd1" name="pwsd1" placeholder="re-enter new password" maxlength="25"/>
             <br/>
             <input type="submit" name="resetbtn" value="Confirm"/>
         </form>

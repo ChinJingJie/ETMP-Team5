@@ -25,6 +25,8 @@
                 $("#tDesc3").val(resu.tdesc);
                 $("#tCat3").val(resu.category);
                 $("#tTemp3").val(resu.tTemplate);
+                $("#addBasePrice3").val(resu.base_price);
+                $("#addDailyPrice3").val(resu.daily_price);
 
                }
 
@@ -60,7 +62,7 @@
 				$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 				$db = mysqli_select_db($conn, 'sql6405286');
 				
-				$sql = "SELECT id, pic, tname, tdesc, category, tTemplate FROM training";
+				$sql = "SELECT id, pic, tname, tdesc, category, tTemplate, base_price, daily_price FROM training";
 				$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 				// output data of each row
@@ -151,7 +153,19 @@
                         <span class="labelcolons">:</span>
 						<input type = "text" name = "tTemp" id ="tTemp3" value=""/>
 					</div>  
-                      
+                     
+					<div class="form-group">
+						<label for="addBaseP" class="required">Training Base Price</label>
+                        <span class="labelcolons">:</span>
+                        <input type="text" name="addBaseP" id="addBasePrice3" placeholder=""/>
+                    </div>
+					  
+					<div class="form-group">
+                        <label for="addDailyP" class="required">Training Daily Price</label>
+                        <span class="labelcolons">:</span>
+                        <input type="text" name="addDailyP" id="addDailyPrice3" placeholder=""/>
+					</div>
+					
                     <div class="form-group">
                         <div class="hLine1"></div>
                         <label class="labelling required" for="tDesc">Description</label>

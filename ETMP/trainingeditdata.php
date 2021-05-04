@@ -15,6 +15,8 @@ while($app = mysqli_fetch_assoc($result)){
 	$array['tdesc'] = $app['tdesc'];
 	$array['category'] = $app['category'];
 	$array['tTemplate'] = $app['tTemplate'];
+	$array['base_price'] = $app['base_price'];
+	$array['daily_price'] = $app['daily_price'];
 }
 
 echo (json_encode($array));	

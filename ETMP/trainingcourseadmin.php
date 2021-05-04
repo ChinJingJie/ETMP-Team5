@@ -50,6 +50,16 @@
                         <span class="labelcolons">:</span>
                         <input type="text" id="addTemp" name="addTemp" placeholder="Template Link"/>
                       </div>
+					  <div class="form-group">
+                        <label for="addBasePrice" class="required">Base Price</label>
+                        <span class="labelcolons">:</span>
+                        <input type="text" id="addBasePrice" name="addBasePrice" placeholder="$ 00.00"/>
+                      </div>
+					  <div class="form-group">
+                        <label for="addDailyPrice" class="required">Daily Price</label>
+                        <span class="labelcolons">:</span>
+                        <input type="text" id="addDailyPrice" name="addDailyPrice" placeholder="$ 00.00"/>
+                      </div>
                       <div class="form-group">
                         <div class="hLine1"></div>
                         <label class="labelling required" for="addDESC">Description</label>

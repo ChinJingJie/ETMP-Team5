@@ -993,11 +993,6 @@ label.star:before {
     width:70%;
 }
 
-.search-form{
-	background-color: #0070ff;
-    width: 100%;
-}
-
 .search{
 	border-radius: 15px !important;
 	background-color: rgba(0,0,0,0.3) !important;

@@ -29,8 +29,8 @@
     
     //generate profile pic with initial
     $(document).ready(function(){
-      var profileName = $('#profileName').text();
-      var intials = $('#profileName').text().charAt(0) + $('#profileName').text().charAt(1);
+      var profileName = $('#profileName1').text();
+      var intials = $('#profileName1').text().charAt(0) + $('#profileName1').text().charAt(1);
       //use in chat lists
       var profileImage0 = $('.profileImage0').text(intials);
       //use in header
@@ -49,16 +49,12 @@
 <div class="chat-box" id="chatWindow">
   <div class="chat-head">
     <div class="popup-head-left pull-left size">
-        <form action="" method="POST" class="search-form">
-            <input type="text" placeholder="Search..." name="search" class="search">
-            <div class="find-msg">
-              <label for="search-icon">
-                <i class="fa fa-search"></i>
-              </label>
-
-              <input id="search-icon" type="submit" />
-            </div>
-        </form>
+        <input type="text" placeholder="Search..." name="userSearch" id="userSearch" class="search">
+        <div class="find-msg">
+          <label for="search-icon">
+            <i class="fa fa-search"></i>
+          </label>
+        </div>
     </div>
     <div class="pull-right">
       <a href="#" id="minimizeChat">
@@ -74,15 +70,16 @@
 		<!--body of the chat list-->
         <div class="contacts_body">
             <ui class="contacts">
-				<li class="chatCardDisplay">
-				    <div class="d-flex bd-highlight chatCard">
-				        <div class="profileImage0"></div>
-				        <div class="chatUser">
-				            <span>Khalid</span>
-				            <p id="chatHistoryDisplay">Start a new chat now</p>
-				        </div>
-				    </div>
-				</li>
+                <li class="chatCardDisplay">
+                    <div class="d-flex bd-highlight chatCard">
+                        <div class="profileImage0"></div>
+                        <div class="chatUser">
+                            <span>Khalid(Default)</span>
+                            <p id="chatHistoryDisplay">Start a new chat now</p>
+                        </div>
+                    </div>
+                </li>
+                <div id="result"></div>
             </ui>
           </div>  
       </div>
@@ -98,7 +95,7 @@
         <a href="#" id="backToChat1">
           <i class="fa fa-chevron-circle-left"></i>
         </a>
-        <span id="profileName" style="display:none;">Kalpesh</span>
+        <span id="profileName1" style="display:none;">Kalpesh</span>
         <div id="profileImage"></div>
         <span id="displayName">Kalpesh</span>
     </div>
@@ -199,4 +196,34 @@
           }
       }
     })
+    
+    //live data search
+    $(document).ready(function(){
+
+         load_data();
+
+         function load_data(query)
+         {
+             $.ajax({
+                 url:"fetch.php",
+                 method:"POST",
+                 data:{query:query},
+                 success:function(data)
+                {
+                $('#result').html(data);
+                }
+            });
+         }
+         $('#userSearch').keyup(function(){
+            var search = $(this).val();
+            if(search != '')
+            {
+                load_data(search);
+            }
+            else
+            {
+                load_data();
+            }
+          });
+    });
 </script>

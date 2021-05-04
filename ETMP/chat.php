@@ -11,17 +11,32 @@
       });
     })
     
-    //close private chat window
+    //close private chat window(default)
     $(function(){
       $("#closeChat1").click(function () {
         $('#chatWindow1').removeClass('chat-box-on');
       });
     })
     
-    //navigate from private chat window to chat window with user list
+    //close private chat window(dynamic)
+    $(function(){
+      $("#closeChat2").click(function () {
+        $('#chatWindow2').removeClass('chat-box-on');
+      });
+    })
+    
+    //navigate from private chat window to chat window with user list(default)
     $(function(){
       $("#backToChat1").click(function () {
         $('#chatWindow1').removeClass('chat-box-on');
+        $('#chatWindow').addClass('chat-box-on');
+      });
+    })
+    
+    //navigate from private chat window to chat window with user list(dynamic)
+    $(function(){
+      $("#backToChat2").click(function () {
+        $('#chatWindow2').removeClass('chat-box-on');
         $('#chatWindow').addClass('chat-box-on');
       });
     })
@@ -82,7 +97,7 @@
                     <div class="d-flex bd-highlight chatCard">
                         <div class="profileImage0"></div>
                         <div class="chatUser">
-                            <span>Khalid(Default)</span>
+                            <span>Khaplesh(Default)</span>
                             <p id="chatHistoryDisplay">Start a new chat now</p>
                         </div>
                     </div>
@@ -193,18 +208,18 @@
 <div class="chat-box" id="chatWindow2">
   <div class="chat-head">
     <div class="popup-head-left pull-left picBg">
-        <a href="#" id="backToChat1">
+        <a href="#" id="backToChat2">
           <i class="fa fa-chevron-circle-left"></i>
         </a>
-        <span id="profileName1" style="display:none;">Dalph</span>
+        <span id="profileName2" style="display:none;">Dalph</span>
         <div id="profileImage"></div>
         <span id="displayName">Dalph</span>
     </div>
     <div class="pull-right">
-        <a href="#" id="minimizeChat1">
+        <a href="#" id="minimizeChat2">
           <i class="fa fa-window-minimize"></i>
         </a>
-        <a href="#" id="closeChat1">
+        <a href="#" id="closeChat2">
           <i class="fa fa-window-close"></i>
         </a>
     </div>

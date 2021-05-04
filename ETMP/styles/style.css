@@ -1079,7 +1079,7 @@ label.star:before {
   line-height: 40px;
 }
 
-#minimizeChat, #minimizeChat1, #backToChat{
+#minimizeChat, #minimizeChat1, #minimizeChat2, #backToChat1, #backToChat2{
     padding: 0 10px;
     line-height: 40px;
 }

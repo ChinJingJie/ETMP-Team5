@@ -1015,6 +1015,7 @@ function init() {
 					myForm = document.getElementById("feedbackForm");
 					if(myForm != null)
 					{
+						IDSelection(this);
 						myForm.onsubmit = validateForm5;
 					}
 					

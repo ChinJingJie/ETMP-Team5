@@ -79,7 +79,7 @@
 					$db = mysqli_select_db($connection,'sql6405286');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
-					and isAccepted = '0' and isCancelled = '0'";
+					and isAccepted = '0' and isCancelled = '0' and isComplete = '0'";
 					$query_run = mysqli_query($connection,$query);
         
             while($row = mysqli_fetch_array($query_run)){
@@ -202,10 +202,8 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-					<button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar5" data-id ="<?php echo $row['id'];?>">
-					 View
-					</button>
-					<button type = "button" class = "btn btn-secondary"><a href = "feedback.php" id ="DMButton" onclick="storeID('4')">Feedback Form</a></button>
+
+					<button type = "button" class = "btn btn-primary"><a href = "feedback.php" id ="DMButton" onclick="storeID('<?php echo $row['id'];?>')">Feedback Form</a></button>
                 </div>
                 </div>
 				<?php };?>
@@ -250,9 +248,7 @@
         <h2>Notifications</h2>
         <div class="notification-space">
             <p>No new updates.</p>
-			<form method="post" action="feedback.php">
-                <input type="submit" name="confirm" value="Feedback Form"/>
-            </form>
+
         </div>
 		
     </section>
@@ -270,7 +266,7 @@
 			  </div>
 				  <div class="modal-body">
 				   <div>
-						<p>Stage: <b>Training Application</b></p>
+						<p>Stage: <b>Training Application Saved</b></p>
 				  </div>
 				  <div class="container">
 					  <div class="progress">
@@ -280,7 +276,8 @@
 					  </div>
 				 </div>
 				 <div>
-					<p><br>Training Application has been saved</p>
+					<p><br>Training Application has been <b>Saved</b> </p>
+					<p>You may proceed to <b>Submit </b>your application</p>
 				</div>
 					
 				 </div>
@@ -314,7 +311,8 @@
 					  </div>
 				 </div>
 				 <div>
-					<p><br>Please Wait for your application to be approved</p>
+					<p><br>Training Application has been <b>Submitted</b> </p>
+					<p>You may proceed to <b>Wait</b>application been approved</p>
 				</div>
 					
 				 </div>
@@ -345,7 +343,8 @@
 						</div>
 					  </div>
 				 </div>
-				 <p><br>Please proceed to the payment page below</p>
+					<p><br>Training Application has been <b>Accepted</b> </p>
+					<p>You may proceed to <b>Pay</b>for the training application</p>
 				 </div>
 			 
 				  <div class="modal-footer">
@@ -375,7 +374,8 @@
 					  </div>
 				 </div>
 				 <div>
-					<p><br>You have paid for your training applications.<br> See you there</p>
+					<p><br>Training Application has been <b>Paid</b> </p>
+					<p>You may proceed to <b>Wait</b>for the start date of the training</p>
 				</div>
 					
 				 </div>
@@ -407,8 +407,8 @@
 					  </div>
 				 </div>
 				 <div>
-					<p><br>Congrats for Completing your training course.<br> Please help us fill in the feedback form below<br>Thank You</p>
-					
+					<p><br>Training Application has been <b>Paid</b> </p>
+					<p>You may proceed to <b>Wait</b>for the start date of the training</p>
 				</div>
 					
 				 </div>

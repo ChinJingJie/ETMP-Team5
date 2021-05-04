@@ -581,7 +581,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 .card1 {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     position:relative;
-    float: left;
+
     transition: 0.3s;
     width: 23%;
     height: 20vw;

@@ -17,7 +17,7 @@
 	  <fieldset>	
           <p>
 		    <label for="trainingID">Training ID:</label>
-			<input type="text" id="trainingID" name="trainingID" value= IDSelection(this) placeholder="Training ID" maxlength="25" readonly/>
+			<input type="text" id="trainingID" name="trainingID" value="" placeholder="Training ID" maxlength="25" readonly/>
 		  </p>
 		 <p>
 		 <label for="rating" id ="rating">Rating</label>

@@ -11,10 +11,28 @@
       });
     })
     
+    //navigate from personal chat screen to list of chat screen
+    $(function(){
+      $("#backToChat1").click(function () {
+        $('#chatWindow1').removeClass('chat-box-on');
+        $('#chatWindow').addClass('chat-box-on');
+      });
+    })
+    
+    //navigate from list of chat screen to personal chat screen
+    $(function(){
+      $(".chatCardDisplay").click(function () {
+        $('#chatWindow').removeClass('chat-box-on');
+        $('#chatWindow1').addClass('chat-box-on');
+      });
+    })
+    
     //generate profile pic with initial
     $(document).ready(function(){
       var profileName = $('#profileName').text();
       var intials = $('#profileName').text().charAt(0) + $('#profileName').text().charAt(1);
+      //use in chat lists
+      var profileImage0 = $('.profileImage0').text(intials);
       //use in header
       var profileImage = $('#profileImage').text(intials);
       //use during conversation
@@ -30,10 +48,17 @@
 
 <div class="chat-box" id="chatWindow">
   <div class="chat-head">
-    <div class="popup-head-left pull-left picBg">
-        <div class="popup-head-left pull-left picBg">
-            <span id="chatTitle">Chat</span>
-        </div>
+    <div class="popup-head-left pull-left size">
+        <form action="" method="POST" class="search-form">
+            <input type="text" placeholder="Search..." name="search" class="search">
+            <div class="find-msg">
+              <label for="search-icon">
+                <i class="fa fa-search"></i>
+              </label>
+
+              <input id="search-icon" type="submit" />
+            </div>
+        </form>
     </div>
     <div class="pull-right">
       <a href="#" id="minimizeChat">
@@ -44,11 +69,22 @@
         </a>
     </div>
   </div>
-  <div class="chat-messages">
+  <div class="chat-messages card_body">
       <div class="chat-body">
-		<!--body of the chat-->
-		<!--add a search bar and chart-->
-          
+		<!--body of the chat list-->
+        <div class="contacts_body">
+            <ui class="contacts">
+				<li class="chatCardDisplay">
+				    <div class="d-flex bd-highlight chatCard">
+				        <div class="profileImage0"></div>
+				        <div class="chatUser">
+				            <span>Khalid</span>
+				            <p id="chatHistoryDisplay">Start a new chat now</p>
+				        </div>
+				    </div>
+				</li>
+            </ui>
+          </div>  
       </div>
       <div class="chat-file-msg" id="fileSlt">Nothing selected</div>
       <div class="chat-footer">

@@ -445,6 +445,10 @@ div.pull-right, div.pull-right a, div.pull-right a i,div.pull-left, div.pull-lef
   background-color: #0070ff;
 }
 
+div.pull-left a{
+    padding: 4px 10px;
+}
+
 div.pull-right a i:hover, div.pull-left a i:hover {
   background-color: #fff;
   color: #0070ff;
@@ -985,6 +989,47 @@ label.star:before {
 }
 
 /*header of the chat*/
+.size{
+    width:70%;
+}
+
+.search-form{
+	background-color: #0070ff;
+    width: 100%;
+}
+
+.search{
+	border-radius: 15px !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+    color:white !important;
+    width: 90% !important;
+}
+
+.search:focus{
+    box-shadow:none !important;
+    outline:0px !important;
+}
+
+.find-msg {
+  width: 50px;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.find-msg label, .find-msg label i{
+  background: none;
+  top: 8px;
+  left: 83px;
+  position: absolute;
+  z-index: 2;
+}
+
+.find-msg>input {
+  display: none;
+}
+
 .chat-box .chat-head {
     background-color: #0070ff;
     clear: both;
@@ -1012,8 +1057,7 @@ label.star:before {
     background-color: #0070ff;
     color: #fff;
 }
-
-#profileImage, .profileImage1 {
+.profileImage0, #profileImage, .profileImage1 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1030,6 +1074,57 @@ label.star:before {
 }
 
 /*body of the chat*/
+.contacts_body{
+    padding:  5px 10px !important;
+    overflow-y: auto;
+    white-space: nowrap;
+    background-color: rgba(0, 112, 255, 0.3);
+}
+
+.chatCardDisplay{
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.contacts{
+    list-style-type: none;
+    padding: 0;
+}
+.contacts li{
+    width: 100% !important;
+    padding: 5px 10px;
+    border-bottom: 1px solid 
+}
+
+.chatCard{
+    background-color: #fff;
+    height: 50px;
+}
+
+.chatUser{
+    width: 100%;
+    background-color: #fff;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: left;
+    margin-left: 10px;
+}
+.chatUser span{
+    background-color: #fff;
+    font-size: 20px;
+}
+.chatUser p{
+    text-align: left;
+    background-color: #fff;
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.chat-box .card_body {
+    background: rgba(0, 112, 255, 0.7) none repeat scroll 0 0;
+    height: 300px;
+    overflow: auto;
+}
+
 .chat-box .chat-messages {
     background: #fff none repeat scroll 0 0;
     height: 300px;

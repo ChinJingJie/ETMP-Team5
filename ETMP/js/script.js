@@ -67,7 +67,7 @@ function programSelection(text) {
     document.getElementById("category").value = sessionStorage.category;
 }
 
-function IDSelection(text){
+function IDSelection(){
 	 document.getElementById("trainingID").value = sessionStorage.trid;
 }
 
@@ -1015,7 +1015,7 @@ function init() {
 					myForm = document.getElementById("feedbackForm");
 					if(myForm != null)
 					{
-						IDSelection(this);
+						IDSelection();
 						myForm.onsubmit = validateForm5;
 					}
 					

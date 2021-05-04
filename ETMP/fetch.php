@@ -1,4 +1,15 @@
 <!--profile pic is not generated when live search -->
+
+<script>
+    //navigate from chat window with user list to private chat window
+    $(function(){
+      $(".chatCardDisplay1").click(function () {
+        $('#chatWindow').removeClass('chat-box-on');
+        $('#chatWindow2').addClass('chat-box-on');
+      });
+    })
+</script>
+
 <?php
     //connection or link to database
     $connect = mysqli_connect('sql6.freemysqlhosting.net','sql6405286','csc3XZRv7d','sql6405286');
@@ -14,8 +25,8 @@
             while($row = mysqli_fetch_array($result))
             {
                 $output .= '
-                <li class="chatCardDisplay">
-                    <div class="d-flex bd-highlight chatCard">
+                <li class="chatCardDisplay1">
+                    <div class="d-flex bd-highlight chatCard">                    
                         <span id="profileName" style="display:none;">' .$row['name'].'</span>
                         <div class="profileImage0"></div>
                         <div class="chatUser">

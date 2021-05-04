@@ -1,17 +1,24 @@
 <!-- Author: Chin Jing Jie -->
 <script>
-    //open and close chat window
+    //open and close chat window with user list
     $(function(){
       $("#openChat").click(function () {
-        $('#chatWindow1').addClass('chat-box-on');
+        $('#chatWindow').addClass('chat-box-on');
       });
 
+      $("#closeChat").click(function () {
+        $('#chatWindow').removeClass('chat-box-on');
+      });
+    })
+    
+    //close private chat window
+    $(function(){
       $("#closeChat1").click(function () {
         $('#chatWindow1').removeClass('chat-box-on');
       });
     })
     
-    //navigate from personal chat screen to list of chat screen
+    //navigate from private chat window to chat window with user list
     $(function(){
       $("#backToChat1").click(function () {
         $('#chatWindow1').removeClass('chat-box-on');
@@ -19,7 +26,7 @@
       });
     })
     
-    //navigate from list of chat screen to personal chat screen
+    //navigate from chat window with user list to private chat window
     $(function(){
       $(".chatCardDisplay").click(function () {
         $('#chatWindow').removeClass('chat-box-on');
@@ -27,7 +34,7 @@
       });
     })
     
-    //generate profile pic with initial
+    //generate profile pic with initial for default user
     $(document).ready(function(){
       var profileName = $('#profileName1').text();
       var intials = $('#profileName1').text().charAt(0) + $('#profileName1').text().charAt(1);
@@ -46,6 +53,7 @@
    </a>
 </div>
 
+<!--chat window with user list-->
 <div class="chat-box" id="chatWindow">
   <div class="chat-head">
     <div class="popup-head-left pull-left size">
@@ -88,7 +96,7 @@
       </div>
     </div>
 </div>
-
+<!--private chat window for default user-->
 <div class="chat-box" id="chatWindow1">
   <div class="chat-head">
     <div class="popup-head-left pull-left picBg">
@@ -156,6 +164,66 @@
               <div class="msg_cotainer">
                 Bye, see you
                 <span class="msg_time">9:12 AM, Today</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="chat-file-msg" id="fileSlt">Nothing selected</div>
+      <div class="chat-footer">
+          <div class="image-upload">
+              <label for="file-icon">
+                <i class="fa fa-paperclip"></i>
+              </label>
+
+              <input id="file-icon" type="file" onclick="fileSelectionMsg('upload')"/>
+          </div>
+          <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
+          <div class="msg-send">
+              <label for="send-icon">
+                <i class="fa fa-send"></i>
+              </label>
+
+              <input id="send-icon" type="submit" />
+          </div>
+      </div>
+    </div>
+</div>
+<!--private chat window for user stored in database-->
+<!--the content is not properly structured yet-->
+<div class="chat-box" id="chatWindow2">
+  <div class="chat-head">
+    <div class="popup-head-left pull-left picBg">
+        <a href="#" id="backToChat1">
+          <i class="fa fa-chevron-circle-left"></i>
+        </a>
+        <span id="profileName1" style="display:none;">Dalph</span>
+        <div id="profileImage"></div>
+        <span id="displayName">Dalph</span>
+    </div>
+    <div class="pull-right">
+        <a href="#" id="minimizeChat1">
+          <i class="fa fa-window-minimize"></i>
+        </a>
+        <a href="#" id="closeChat1">
+          <i class="fa fa-window-close"></i>
+        </a>
+    </div>
+  </div>
+  <div class="chat-messages">
+      <div class="chat-body">
+		<!--body of the chat-->
+          <div class="card-body msg_card_body">
+            <div class="d-flex justify-content-start mb-4">
+              <div class="profileImage1"></div>
+              <div class="msg_cotainer">
+                Hi, how are you samim?
+                <span class="msg_time">8:40 AM, Today</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mb-4">
+              <div class="msg_cotainer_send">
+                Hi Khalid i am good tnx how about you?
+                <span class="msg_time_send">8:55 AM, Today</span>
               </div>
             </div>
           </div>

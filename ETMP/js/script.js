@@ -305,6 +305,25 @@ function validateForm6(){
 	return isAllOK;
 }
 
+function validateForm7(){
+    "use strict";  
+    var isAllOK = false;
+	gErrorMsg = "";	
+	var addPaymentProofOK = chkPaymentProof();
+	
+	if(addPaymentProofOK)
+	{
+		isAllOK = true;
+	}
+	else
+	{	
+	   alert(gErrorMsg); 
+       gErrorMsg = "";  
+       isAllOK = false;
+	}
+    return isAllOK;
+}
+
 function fName() {  //Full Name
 	var name = document.getElementById("name").value;
 	var pattern = /^[a-zA-Z ]+$/      
@@ -631,6 +650,25 @@ function chkCoverImage(){
 	return cImageOk;
 }
 
+function chkPaymentProof(){
+    //validate there is a file uploaded for payment
+	var tProof = document.getElementById("newPayment");
+    var tProofV;
+    var cProofOk = true;
+    
+    if(tProof != null)
+	{
+		tProofV = document.getElementById("newPayment").value;
+	}
+	
+	if(tProofV == ""){
+		gErrorMsg = gErrorMsg + "Please upload a file as proof\n";
+		cProofOk = false;
+		tProof.style.borderColor = "red";
+	}	
+	return cProofOk;
+}
+
 function chkCourseName(){
     //validate name is exist for adding new training course
 	var cName = document.getElementById("addNAME");
@@ -903,6 +941,9 @@ function validateInputOnBlur(){
 		case "pwsd3":
 			isOK = chkconfirmpass();
 			break;
+        case "newPayment":
+			isOK = chkPaymentProof();
+			break;
             }
 	if (!isOk) {
         document.getElementById(objectLostFocus_id).style.borderColor = ""; 
@@ -928,20 +969,24 @@ function registerInputsOnBlur(){
 			myForm = document.getElementById("clientRegistrationForm");
 			if(myForm == null)
 			{
-				myForm = document.getElementById("addCourseForm");
+				myForm = document.getElementById("paymentForm");
 				if(myForm == null)
 				{
-					myForm = document.getElementById("feedbackForm");
-					if(myForm == null)
-					{
-						myForm = document.getElementById("EditTrainingForm");
-						if(myForm == null)
-						{
-							myForm = document.getElementById("changepwsd");
-						
-						}
-						
-					}
+                    myForm = document.getElementById("addCourseForm");
+                    if(myForm == null)
+                    {
+                        myForm = document.getElementById("feedbackForm");
+                        if(myForm == null)
+                        {
+                            myForm = document.getElementById("EditTrainingForm");
+                            if(myForm == null)
+                            {
+                                myForm = document.getElementById("changepwsd");
+
+                            }
+
+                        }
+                    }
 				}
 			}
 			
@@ -964,20 +1009,24 @@ function registerInputsOnClick(){
 			myForm = document.getElementById("clientRegistrationForm");
 			if(myForm == null)
 			{
-				myForm = document.getElementById("addCourseForm");
+                myForm = document.getElementById("paymentForm");
 				if(myForm == null)
 				{
-					myForm = document.getElementById("feedbackForm");
-					if(myForm == null)
-					{
-						myForm = document.getElementById("EditTrainingForm");
-						if(myForm == null)
-						{
-							myForm = document.getElementById("changepwsd");
-						
-						}
-					}
-				}
+                    myForm = document.getElementById("addCourseForm");
+                    if(myForm == null)
+                    {
+                        myForm = document.getElementById("feedbackForm");
+                        if(myForm == null)
+                        {
+                            myForm = document.getElementById("EditTrainingForm");
+                            if(myForm == null)
+                            {
+                                myForm = document.getElementById("changepwsd");
+
+                            }
+                        }
+                    }
+                }
 			}
 			
 		}
@@ -1019,44 +1068,52 @@ function init() {
 			
 		  else
 		  {
-				myForm = document.getElementById("addCourseForm");
+                myForm = document.getElementById("paymentForm");
 				if(myForm != null)
 				{
-					myForm.onsubmit = validateForm4;
+					myForm.onsubmit = validateForm7;
 				}
-				
-				else
-				{
-					myForm = document.getElementById("feedbackForm");
-					if(myForm != null)
-					{
-						IDSelection();
-						myForm.onsubmit = validateForm5;
-					}
-					
-					else
-					{
-						myForm = document.getElementById("EditTrainingForm");
-						if(myForm != null)
-						{
-							myForm.onsubmit = validateForm4;
-						}
-						
-						else
-						{
-							myForm = document.getElementById("changepwsd");
-							if(myForm != null)
-							{
-								myForm.onsubmit = validateForm6;
-							}
-						
-							else
-							{
-							
-							}
-						}
-					}		
-				}	
+              
+                else{
+                    myForm = document.getElementById("addCourseForm");
+                    if(myForm != null)
+                    {
+                        myForm.onsubmit = validateForm4;
+                    }
+
+                    else
+                    {
+                        myForm = document.getElementById("feedbackForm");
+                        if(myForm != null)
+                        {
+                            IDSelection();
+                            myForm.onsubmit = validateForm5;
+                        }
+
+                        else
+                        {
+                            myForm = document.getElementById("EditTrainingForm");
+                            if(myForm != null)
+                            {
+                                myForm.onsubmit = validateForm4;
+                            }
+
+                            else
+                            {
+                                myForm = document.getElementById("changepwsd");
+                                if(myForm != null)
+                                {
+                                    myForm.onsubmit = validateForm6;
+                                }
+
+                                else
+                                {
+
+                                }
+                            }
+                        }		
+                    }
+                }	
 		  }
 	  }
    }

@@ -30,7 +30,7 @@
             </p>
             <script>
                 //print name of file selected to upload and restric size to 25MB
-                const input = document.getElementById('payment')
+                const input = document.getElementById('newPayment')
                 input.addEventListener('change', (event) => {
                   const target = event.target
                     if (target.files && target.files[0]) {
@@ -47,7 +47,7 @@
             </script>
             <div class="button">
                 <input type="submit" name="proof" class="btn btn-primary" value="Submit"/>
-                <input type="submit" name="cancellation" class="btn btn-primary" value="Cancel"/>
+                <button type="button"><a href="dashboard.php">Cancel</a></button>
             </div>
           </fieldset>
         </form>

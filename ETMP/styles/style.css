@@ -124,6 +124,11 @@ label.content{
     margin-right: 5vw;
 }
 
+#paymentErr{
+   background-color: #fff;
+   font-size: 1.5vw; 
+}
+
 fieldset p{
     margin-right: 15%;
     background-color: #fff;

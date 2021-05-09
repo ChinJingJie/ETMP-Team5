@@ -22,17 +22,36 @@
               <span class="labelcolon">:</span>
 			  <input type="text" id="trainingID" name="trainingID" value="" placeholder="Training ID" maxlength="25" readonly/>
 		    </p>
+            <span id="paymentErr"></span>
             <p>
               <label for="payment" class="required">Proof of payment</label>
               <span class="labelcolon">:</span>
               <input type="file" id="payment" name="payment"/>
             </p>
+            <script>
+                //print name of file selected to upload and restric size to 25MB
+                const input = document.getElementById('payment')
+                input.addEventListener('change', (event) => {
+                  const target = event.target
+                    if (target.files && target.files[0]) {
+                      const maxAllowedSize = 25 * 1024 * 1024;
+                      if (target.files[0].size > maxAllowedSize) {
+                        target.value = '';
+                        document.getElementById("paymentErr").style.color = "red";
+                        document.getElementById("paymentErr").textContent="Failed: File size exceed 25MB";        
+                      }else{
+                        document.getElementById("paymentErr").textContent="";
+                      }
+                  }
+                })
+            </script>
             <div class="button">
                 <input type="submit" name="proof" class="btn btn-primary" value="Submit"/>
                 <input type="submit" name="cancellation" class="btn btn-primary" value="Cancel"/>
             </div>
           </fieldset>
         </form>
+    </section>
     <section>
         <?php include "chat.php";?>
     </section>

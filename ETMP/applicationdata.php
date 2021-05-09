@@ -25,6 +25,7 @@ include "applicationprocess.php";
 		$array['date_end'] = $app['date_end'];
 		$array['time_start'] = $app['time_start'];
 		$array['time_end'] = $app['time_end'];
+		$array['total_cost'] = $app['total_cost'];
 		$array['template'] = $app['template'];
 		$array['remarks'] = $app['remarks'];
 	}

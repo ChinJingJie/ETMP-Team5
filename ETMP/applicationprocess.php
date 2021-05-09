@@ -60,6 +60,21 @@ if(isset($_POST["booking"])){
 	$isAccepted = 0;
 	$isSubmitted = 1;
 	
+	$query_payment = "SELECT tra.*,app.* FROM training tra,application app WHERE tra.tname = '$program' AND app.program = '$program'";
+	$result = mysqli_query($conn,$query_payment);
+	
+	while($row = mysqli_fetch_assoc($result))
+	{
+		$start_date = strtotime($row['date_start']);
+		$end_date = strtotime($row['date_end']);
+		$base_price= $row['base_price'];
+		$daily_price= $row['daily_price'];
+		
+		$noOfDays = ($end_date - $start_date)/60/60/24;
+		
+		$total_cost = $base_price + ($daily_price * $noOfDays);
+	}
+	
 	if(in_array($templateActualExt, $allowed)){
 		if($templateError === 0){
 			if($templateSize < 1000000){
@@ -129,8 +144,8 @@ if(isset($_POST["booking"])){
 	}
 	
 	if(count($errors) == 0){
-		$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
-					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
+		$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, total_cost, template, remarks)
+					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$total_cost', '$templateNewName', '$remarks')";
 		
 		mysqli_query($conn, $query);
 		$_SESSION['id'] = $id;
@@ -225,6 +240,23 @@ if(isset($_POST['bookfromsaved'])){
 	
 	$isSubmitted = 1;
 	
+	$query_payment = "SELECT tra.*,app.* FROM training tra,application app WHERE app.id = '$id' AND tra.tname = app.program";
+	$result = mysqli_query($conn,$query_payment);
+	
+	while($row = mysqli_fetch_assoc($result))
+	{
+		$start_date = strtotime($row['date_start']);
+		$end_date = strtotime($row['date_end']);
+		$base_price= $row['base_price'];
+		$daily_price= $row['daily_price'];
+		
+		$noOfDays = ($end_date - $start_date)/60/60/24;
+		
+		$total_cost = $base_price + ($daily_price * $noOfDays);
+	}
+		
+
+	
 	if(in_array($templateActualExt, $allowed)){
 		if($templateError === 0){
 			if($templateSize < 1000000){
@@ -276,7 +308,7 @@ if(isset($_POST['bookfromsaved'])){
 	if(count($errors) == 0){
 		$query = "UPDATE application SET isSubmitted='$isSubmitted', venue='$venue', street='$street', city='$city' , postcode='$postcode' 
 					, program='$program' , category='$category' , date_start='$date_start' , date_end='$date_end', time_start='$time_start'
-					,time_end='$time_end', template='$templateNewName', remarks='$remarks'  WHERE id='$id'";
+					,time_end='$time_end', total_cost='$total_cost', template='$templateNewName', remarks='$remarks'  WHERE id='$id'";
 		$result = mysqli_query($conn, $query);
 		
 		header('location: current.php');
@@ -342,8 +374,6 @@ if(isset($_POST["delete"])){
 	
 	header('location: current.php');
 }
-
-
 
 
 ?>

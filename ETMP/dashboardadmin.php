@@ -46,24 +46,23 @@
 					and isAccepted = '0' and isCancelled = '0' and isComplete = '0'";
 					$query_run = mysqli_query($connection,$query);
         
-            while($row = mysqli_fetch_array($query_run)){
-                ?>
-                <div class="card1">
-                  <div class="text">
-                    <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
-                    <div class="scrolls">
-						<p>Name: <?php echo $row['name']; ?></p>
-                        <p>Program: <?php echo $row['program']; ?></p>
-                        <p>Start Date: <?php echo $row['date_start']; ?></p>
-                        <p>Start Time: <?php echo $row['time_start']; ?></p>
-                    </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar1" data-id ="<?php echo $row['id'];?>">
-					View
-					</button>
-                  </div>
-                </div>
-				<?php };?>
-                </div>
+                    while($row = mysqli_fetch_array($query_run)){
+                        ?>
+                        <div class="card1">
+                          <div class="text">
+                            <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
+                            <div class="scrolls">
+                                <p>Name: <?php echo $row['name']; ?></p>
+                                <p>Program: <?php echo $row['program']; ?></p>
+                                <p>Start Date: <?php echo $row['date_start']; ?></p>
+                                <p>Start Time: <?php echo $row['time_start']; ?></p>
+                            </div> 
+                            <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar1" data-id ="<?php echo $row['id'];?>">
+                            View
+                            </button>
+                          </div>
+                        </div>
+				    <?php };?>
                 </div>
             </div>
         </div>
@@ -100,7 +99,6 @@
                 </div>
                 </div>
             </div>
-        </div>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck4"/>
@@ -163,7 +161,6 @@
                 </div>
                 </div>
             </div>
-        </div>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck6"/>
@@ -196,7 +193,6 @@
                 </div>
                 </div>
             </div>
-        </div>
         <br/>
         <h2>Notifications Sent</h2>
         <p class="newmsg"><a>+ Add new notification</a></p>
@@ -278,8 +274,8 @@
 				 </div>
 			 
 				  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>	
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>	
-					<button type = "button" class = "btn btn-secondary"><a href = "payment.php" id ="DMButton">Payment</a></button>
 				  </div>  
 			</div>
 		  </div>
@@ -353,8 +349,8 @@
 				<h3 class="modal-title" id="exampleModalLabel">Reconfirmation</h3>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			  </div>
-				  <div class="modal-body">
 				  <form id="UpdateTrainingStatus" method="post" action="trainingapplicationdata.php">
+                    <div class="modal-body">
 					<div>Are you sure you want to update the training application to another stage?</div>
 					
 					  	<label for="id">Application ID</label>
@@ -368,6 +364,28 @@
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 					<button type="submit" class="btn btn-secondary" name="updatetraining" class="btn btn-info">Confirm</button>
+				  </div>
+				  </form>
+			</div>
+		  </div>
+		</div>
+    
+    <div class="modal fade design" id="viewproofcheck" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Validate Proof</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <form id="paymentStatus" method="post" action="">
+                    <div class="modal-body">					
+					  	<p>Proof Display:</p>
+                        <p>print pic here</p>
+				  </div>
+				  
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="submit" class="btn btn-secondary" name="updatePayment" class="btn btn-info">Confirm</button>
 				  </div>
 				  </form>
 			</div>

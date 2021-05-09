@@ -21,6 +21,11 @@
 			$("#accept1").val(resu.isAccepted);
 			$("#paid1").val(resu.isPaid);
 			$("#complete1").val(resu.isComplete);
+               
+            $("#id2").val(resu.id);
+			$("#accept2").val(resu.isAccepted);
+			$("#paid2").val(resu.isPaid);
+			$("#complete2").val(resu.isComplete);
 		   }
 		 
 		}});
@@ -369,7 +374,6 @@
 			</div>
 		  </div>
 		</div>
-    
     <div class="modal fade design" id="viewproofcheck" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
@@ -379,7 +383,13 @@
 			  </div>
 				  <form id="paymentStatus" method="post" action="">
                     <div class="modal-body">					
-					  	<p>Proof Display:</p>
+					  	<label for="id">Application ID</label>
+                        <span class="labelcolons">:</span>
+						<input type = "text" id ="id2" name="id" value="" readonly/>
+						<input type = "hidden" id ="accept2" name="accept" value="" readonly/>
+						<input type = "hidden" id ="paid2" name="paid" value="" readonly/>
+						<input type = "hidden" id ="complete2" name="complete" value="" readonly/>
+                        <p>Proof Display:</p>
                         <p>print pic here</p>
 				  </div>
 				  

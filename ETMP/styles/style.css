@@ -50,6 +50,16 @@ h2{
     text-align: left;
 }
 
+.left1{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.white{
+    background-color: #fff;
+}
+
 .desc{
     float: left;
     margin-left: 5vw;
@@ -70,6 +80,10 @@ h2{
 }
 
 #hide1{
+	display: none;
+}
+
+#hide3{
 	display: none;
 }
 
@@ -108,6 +122,11 @@ label.content{
     text-align: left;
 	box-sizing: border-box;
     margin-right: 5vw;
+}
+
+#paymentErr{
+   background-color: #fff;
+   font-size: 1.5vw; 
 }
 
 fieldset p{
@@ -498,6 +517,7 @@ input#chck1, input#chck2, input#chck3, input#chck4, input#chck5, input#chck6{
 }
 
 .tab-content{
+	text-align: left;
     max-height: 0;
     color: #000;
     border-left: dotted #0070ff 1px;
@@ -581,13 +601,13 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
 .card1 {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     position:relative;
-
+	display: inline-flex;
     transition: 0.3s;
     width: 23%;
     height: 20vw;
     padding: 1%;
     background-color: #fff;
-    margin: 1%;
+    margin: 0.7%;
 }
 
 

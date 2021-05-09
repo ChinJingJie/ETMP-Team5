@@ -203,6 +203,11 @@ if(isset($_POST['save'])){
 		array_push($errors, "You cannot upload files of this type");
 	}
 	
+	if($program ="1")
+	{
+		$program = "Others";
+	}
+	
 	$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, template, remarks)
 					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$templateNewName', '$remarks')";
 		
@@ -305,6 +310,11 @@ if(isset($_POST['bookfromsaved'])){
 		array_push($errors, "Please select your ending time");
 	}
 	
+	if($program ="1")
+	{
+		$program = "Others";
+	}
+	
 	if(count($errors) == 0){
 		$query = "UPDATE application SET isSubmitted='$isSubmitted', venue='$venue', street='$street', city='$city' , postcode='$postcode' 
 					, program='$program' , category='$category' , date_start='$date_start' , date_end='$date_end', time_start='$time_start'
@@ -341,6 +351,12 @@ if(isset($_POST['resave'])){
 	$templateActualExt = strtolower(end($templateExt));
 	
 	$allowed = array('jpg','jpeg', 'png', 'pdf');
+	
+		
+	if($program ="1")
+	{
+		$program = "Others";
+	}
 	
 	
 	if(in_array($templateActualExt, $allowed)){

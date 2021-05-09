@@ -32,6 +32,21 @@ function showPwsd(){
 	}
 }
 
+function showPwsd1(){
+	var show1 = document.getElementById("pwsd1");
+	var hidepass1 = document.getElementById("hide3");
+	var hidepass2 = document.getElementById("hide4");
+	if (show1.type == "password") {
+		show1.type = "text";
+		hidepass1.style.display = "block";
+		hidepass2.style.display = "none";
+	} else {
+		show1.type = "password";
+		hidepass1.style.display = "none";
+		hidepass2.style.display = "block";
+	}
+}
+
 //tab content by Chin Jing Jie
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
@@ -67,7 +82,7 @@ function programSelection(text) {
     document.getElementById("category").value = sessionStorage.category;
 }
 
-function IDSelection(text){
+function IDSelection(){
 	 document.getElementById("trainingID").value = sessionStorage.trid;
 }
 
@@ -1015,7 +1030,7 @@ function init() {
 					myForm = document.getElementById("feedbackForm");
 					if(myForm != null)
 					{
-						IDSelection(this);
+						IDSelection();
 						myForm.onsubmit = validateForm5;
 					}
 					

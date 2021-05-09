@@ -200,7 +200,50 @@
             </div>
         <br/>
         <h2>Notifications Sent</h2>
-        <p class="newmsg"><a>+ Add new notification</a></p>
+        <p class="newmsg"><button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">+ New Notification</button></p>
+		<!-- Modal -->
+            <div class="modal fade design" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog box">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title" id="staticBackdropLabel">Add New Notification Message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <form id="newNotificationform" method="post" action = "notificationprocess.php">
+                    <div class="modal-body left">
+                      <div class="form-group">
+                        <label for="Name">Name</label>
+                        <span class="labelcolons">:</span>
+                        <select name="name" id="name">
+                            <!-- need to load from database -->
+                            <?php
+                                $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+                                $db = mysqli_select_db($connection,'sql6405286');
+								
+                                $query = "SELECT * FROM application";
+                                $query_run = mysqli_query($connection,$query);
+
+                                while($row = mysqli_fetch_array($query_run)){
+                                    ?>
+                                    <option><?php echo $row['name']; ?></option>
+                                    <?php
+                                }
+                          ?>
+                          </select>
+						<label class="newmessage" for="newmessage">Message</label>
+						<span class="labelcolons">:</span>
+						<br/>
+						<textarea id="newmessage" name="newmessage" rows="4" cols="50" placeholder="Enter Message"></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <button type="submit" name="send" class="btn btn-primary">Send</button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
         <div class="notification-space">
             <p>No history.</p>
         </div>

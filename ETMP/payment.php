@@ -9,7 +9,7 @@
     </header>
     <section>
         <h1>Payment</h1>
-        <form id="paymentForm" method="post" action = "" novalidate="novalidate">  
+        <form id="paymentForm" method="post" action = "paymentprocess.php" enctype="multipart/form-data"  novalidate="novalidate">
         <fieldset>
             <legend>How to pay?</legend>
             <p class="left1"><b class="white">Step 1:</b> Grab the back account information below and pay the money through Direct Bank In (ATM) or Online Transfer</p>
@@ -26,7 +26,7 @@
             <p>
               <label for="payment" class="required">Proof of payment</label>
               <span class="labelcolon">:</span>
-              <input type="file" id="payment" name="payment" accept="image/jpg,image/png,image/jpeg,application/pdf"/>
+              <input type="file" id="newPayment" name="newPayment" accept="image/jpg,image/png,image/jpeg,application/pdf"/>
             </p>
             <script>
                 //print name of file selected to upload and restric size to 25MB

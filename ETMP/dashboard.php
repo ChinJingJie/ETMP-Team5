@@ -28,6 +28,7 @@
     <section>
         <h1>Welcome to Expert Training Management Portal</h1>
         <h2>Training Requisition in Progress</h2>
+		
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck1"/>
@@ -51,6 +52,7 @@
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
@@ -68,7 +70,7 @@
 		<div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck2"/>
-                <label class="progress-label" for="chck2">Training Program Confimation</label>
+                <label class="progress-label" for="chck2">Training Program Confirmation</label>
                 <div class="tab-content">
                      <?php
 					if(isset($_SESSION['name'])){
@@ -88,6 +90,7 @@
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
@@ -125,6 +128,7 @@
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
@@ -162,6 +166,7 @@
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
@@ -189,7 +194,7 @@
 					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 					$db = mysqli_select_db($connection,'sql6405286');
 							
-					$query = "SELECT * FROM application WHERE name = '$name' and isComplete = '1'";
+					$query = "SELECT * FROM application WHERE name = '$name' and isComplete = '1' and rating ='0'";
 					$query_run = mysqli_query($connection,$query);
         
             while($row = mysqli_fetch_array($query_run)){
@@ -198,6 +203,7 @@
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
@@ -233,6 +239,7 @@
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
                     <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>	
@@ -388,39 +395,7 @@
 		  </div>
 	</div>
 	
-	<div class="modal fade design" id="viewprogressbar5" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-			<div class="modal-content">
-			  <div class="modal-header">
-				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			  </div>
-				  <div class="modal-body">
-				   <div>
-						<p>Stage: <b>Feedback</b></p>
-				  </div>
-				  <div class="container">
-					  <div class="progress">
-						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-						  100%
-						</div>
-					  </div>
-				 </div>
-				 <div>
-					<p><br>Training Application has been <b>Paid</b> </p>
-					<p>You may proceed to <b>Wait</b>for the start date of the training</p>
-				</div>
-					
-				 </div>
-			 
-				  <div class="modal-footer">
-					<button type = "button" class = "btn btn-secondary"><a href = "feedback.php" id ="DMButton" >Feedback Form</a></button>	
-				  </div>  
-			</div>
-		  </div>
-	</div>
-	
-	
+
 	<div class="modal fade design" id="viewcancelreconfirm" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">

@@ -47,7 +47,6 @@ $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql
 		
 	}	
 	
-	
 	if(isset($_POST["canceltraining"])){
 		$id = $_POST['id'];
 		$user_query = "UPDATE application SET isCancelled = '1' 
@@ -56,6 +55,43 @@ $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql
 		$result = mysqli_query($conn, $user_query);
 		
 		header('location: dashboard.php');
+	}	
+	
+	if(isset($_POST["updatetraining"])){
+		$id = $_POST['id'];
+		$isSubmitted = $_POST['submit'];
+		$isAccepted = $_POST['accept'];
+		$isComplete = $_POST['complete'];
+		$isPaid = $_POST['paid'];
+		
+		if ($isAccepted == 0)
+		{
+			$user_query = "UPDATE application SET isAccepted = '1'
+			WHERE id= $id"
+			or die($user_query->error());
+			$result = mysqli_query($conn, $user_query);
+		}
+		
+		else if ($isPaid == 0)
+		{
+			$user_query = "UPDATE application SET isPaid = '1' 
+			WHERE id= $id"
+			or die($user_query->error());
+			$result = mysqli_query($conn, $user_query);
+		}
+		
+		else if ($isComplete == 0)
+		{
+			$user_query = "UPDATE application SET isComplete = '1' 
+			WHERE id= $id"
+			or die($user_query->error());
+			$result = mysqli_query($conn, $user_query);
+		}
+
+		else
+		{}
+		
+		header('location: dashboardadmin.php');
 	}	
 
 

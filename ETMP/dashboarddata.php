@@ -11,6 +11,9 @@ include "applicationprocess.php";
 	
 	while($app = mysqli_fetch_assoc($result)){
 		$array['id'] = $app['id'];
+		$array['isAccepted'] = $app['isAccepted'];
+		$array['isPaid'] = $app['isPaid'];
+		$array['isComplete'] = $app['isComplete'];
 	}
      echo (json_encode($array));	
 

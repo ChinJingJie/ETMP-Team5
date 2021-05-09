@@ -11,11 +11,11 @@
         <h1>Payment</h1>
         <form id="paymentForm" method="post" action = "" novalidate="novalidate">  
         <fieldset>
-            <h2>How to pay?</h2>
-            <p><b>Step 1:</b> Grab the back account information below and pay the money through Direct Bank In (ATM) or Online Transfer</p>
-            <p><b>Bank Account details</b><br/>Account Name	: Swinburne Sarawak Sdn Bhd<br/>Bank Name	: CIMB Bank Berhad<br/>Account Number	: 80-0526998-9</p>
+            <legend>How to pay?</legend>
+            <p class="left1"><b class="white">Step 1:</b> Grab the back account information below and pay the money through Direct Bank In (ATM) or Online Transfer</p>
+            <p class="left"><b class="white">Bank Account details</b><br/>Account Name	: Swinburne Sarawak Sdn Bhd<br/>Bank Name	: CIMB Bank Berhad<br/>Account Number	: 80-0526998-9</p>
             
-            <p><b>Step 2:</b> Upload the proof that the transaction is sucessful.</p>
+            <p class="left1"><b class="white">Step 2:</b> Upload the proof that the transaction is sucessful.</p>
             <p class="hLine1"></p>
             <p>
 		      <label for="trainingID">Training ID</label>

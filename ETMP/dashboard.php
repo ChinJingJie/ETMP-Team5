@@ -134,7 +134,9 @@
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
                     <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>" 
-					onclick="storeInvoiceDetails('<?php echo $row['id'];?>','<?php echo $row['name'];?>','<?php echo $row['program'];?>','<?php echo $row['date_start'];?>','<?php echo $row['date_end'];?>' )">
+					onclick="storeInvoiceDetails('<?php echo $row['id'];?>','<?php echo $row['name'];?>','<?php echo $row['program'];?>',
+					'<?php echo $row['date_start'];?>','<?php echo $row['date_end'];?>','<?php echo $row['base_price'];?>','<?php echo $row['daily_price'];?>',
+					'<?php echo $row['total_cost'];?>' )">
 					View
 					</button>
                   </div>

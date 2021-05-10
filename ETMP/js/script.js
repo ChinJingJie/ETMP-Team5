@@ -92,18 +92,37 @@ function trainingSelection(){
 	 document.getElementById("trainingProgram").innerHTML = "Application Program: " + sessionStorage.trprogram;
 	 document.getElementById("trainingStartDate").innerHTML = "Application Start Date: " + sessionStorage.trstartdate;
 	 document.getElementById("trainingEndDate").innerHTML = "Application End Date: " + sessionStorage.trenddate;
+	 
+	 document.getElementById("trainingProgramPrice").innerHTML = sessionStorage.trbaseprice;
+	 document.getElementById("trainingDailyPrice").innerHTML = sessionStorage.trdailyprice;
+	  document.getElementById("trainingTotalPrice").innerHTML = sessionStorage.trtotalprice;
+	 
+	 document.getElementById("trainingProgram2").innerHTML = "Program: " + sessionStorage.trprogram;
+	 var date1 = new Date(sessionStorage.trstartdate);  
+     var date2 = new Date(sessionStorage.trenddate);  
+	 
+	 // To calculate the time difference of two dates
+	 var Difference_In_Time = date2.getTime() - date1.getTime();
+	  
+	 // To calculate the no. of days between two dates
+	 var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+	
+	 document.getElementById("trainingLength").innerHTML = "Days of Training(Rm 50 per day): "  + Difference_In_Days;
 }
 
 function storeID(id1){
 	sessionStorage.trid = id1;
 }
 
-function storeInvoiceDetails(id1,name1,program1,startdate1,enddate1){
+function storeInvoiceDetails(id1,name1,program1,startdate1,enddate1,baseprice1,dailyprice1,totalprice1){
 	sessionStorage.trid = id1;
 	sessionStorage.tren = name1;
 	sessionStorage.trprogram = program1;
 	sessionStorage.trstartdate = startdate1;
 	sessionStorage.trenddate = enddate1;
+	sessionStorage.trbaseprice = baseprice1;
+	sessionStorage.trdailyprice = dailyprice1;
+	sessionStorage.trtotalprice = totalprice1;
 }
 
 //Data transfer between pages by Chin Jing Jie

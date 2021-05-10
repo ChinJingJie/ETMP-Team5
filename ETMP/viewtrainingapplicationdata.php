@@ -144,7 +144,7 @@
                 //connection or link to database
                 $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
                 $db = mysqli_select_db($conn, 'sql6405286');
-                $sql = "SELECT id, isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category,
+                $sql = "SELECT id, isAccepted, isSubmitted, isSubmitted, isPaid, isComplete, isCancelled, name, email, phone, venue, street, city, postcode, program, category,
                 date_start, date_end, time_start, time_end, template, remarks FROM application";
                 $result = $conn->query($sql);	
                 ?>	
@@ -169,10 +169,26 @@
 				            <td>
 				            <?php 
                             if(($row['isAccepted']) == 0 ){
-								echo "Pending";
+								if(($row['isSubmitted']) == 1 ){
+									$status = "Submitted";
+								}
+								
 				            }else {
-								echo "Accepted";
+								$status = "Accepted";
 				            };
+							
+							if(($row ['isPaid']) == 1 ){
+								$status = "Paid";
+							}
+							
+							if(($row ['isComplete']) == 1 ){
+								$status = "Completed";
+							}
+							
+							if(($row ['isCancelled']) == 1 ){
+								$status = "Cancelled";
+							}
+							echo $status;
 				            ?>
 				            </td>
 				            <td><?php echo $row['name']; ?></td>
@@ -220,11 +236,29 @@
 						echo $row['id']; ?>
 						</td>
 						<td>
-						<?php if(($row['isAccepted']) == 0 ){
-							echo "Pending";
-								}else {
-									echo "Accepted";
-							};
+						<?php 
+						 if(($row['isAccepted']) == 0 ){
+								if(($row['isSubmitted']) == 1 ){
+									$status = "Submitted";
+								}
+								
+				            }else {
+								$status = "Accepted";
+				            };
+							
+							if(($row ['isPaid']) == 1 ){
+								$status = "Paid";
+							}
+							
+							if(($row ['isComplete']) == 1 ){
+								$status = "Completed";
+							}
+							
+							if(($row ['isCancelled']) == 1 ){
+								$status = "Cancelled";
+							}
+							
+							echo $status;
 							?>
 							</td>
 							<td><?php echo $row['name']; ?></td>

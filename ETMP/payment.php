@@ -26,7 +26,8 @@
             <p>
               <label for="payment" class="required">Proof of payment</label>
               <span class="labelcolon">:</span>
-              <input type="file" id="newPayment" name="newPayment" accept="image/jpg,image/png,image/jpeg,application/pdf"/>
+              <input type="file" id="newPayment" name="newPayment" accept="image/jpg,image/png,image/jpeg"/>
+              <!--application/pdf is to accept pdf file inpt, it is excluded as hard to display for admin to view directly -->
             </p>
             <script>
                 //print name of file selected to upload and restric size to 25MB

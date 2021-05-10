@@ -17,15 +17,14 @@
 			// assign result  to each label/ text
 			var resu = JSON.parse(result);
 			
+            $("#id0").val(resu.id);
+               
 			$("#id1").val(resu.id);
 			$("#accept1").val(resu.isAccepted);
 			$("#paid1").val(resu.isPaid);
 			$("#complete1").val(resu.isComplete);
                
             $("#id2").val(resu.id);
-			$("#accept2").val(resu.isAccepted);
-			$("#paid2").val(resu.isPaid);
-			$("#complete2").val(resu.isComplete);
 		   }
 		 
 		}});
@@ -322,7 +321,10 @@
 				 </div>
 			 
 				  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>	
+                    <form id="passDataForm" method="post" action = "" novalidate="novalidate" >
+                        <input type = "text" id ="id0" name="id0" value="" readonly/>
+                        <button type="button" name="passData" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>
+                    </form>	
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>	
 				  </div>  
 			</div>
@@ -428,13 +430,23 @@
                     <div class="modal-body">					
 					  	<label for="id">Application ID</label>
                         <span class="labelcolons">:</span>
-						<input type = "text" id ="id2" name="id" value="" readonly/>
-						<input type = "hidden" id ="accept2" name="accept" value="" readonly/>
-						<input type = "hidden" id ="paid2" name="paid" value="" readonly/>
-						<input type = "hidden" id ="complete2" name="complete" value="" readonly/>
+						<input type = "text" id ="id2" name="id2" value="" readonly/>
+                        <?php
+                            $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+                            $db = mysqli_select_db($connection,'sql6405286');
+
+                            $query = " SELECT * FROM application WHERE id='9'";
+                            $query_run = mysqli_query($connection,$query);
+
+                            while($row = mysqli_fetch_array($query_run)){
+                                ?>
                         <p>Proof Display:</p>
-                        <p>print pic here</p>
-				  </div>
+                        <?php echo '<img src="data:image;base64,'.base64_encode($row['payment_proof']).'" alt="Evidence of payment" class="proof">'; ?>
+                        <p>Click on the image to enlarge it.</p>
+                        <?php
+                            }
+                        ?>
+                </div>
 				  
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

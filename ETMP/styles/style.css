@@ -12,6 +12,11 @@
     background-color: #e7feff;
 }
 
+.proof{
+    max-width: 90%;
+    max-height: 250px;
+}
+
 .error{
     color: red;
 }

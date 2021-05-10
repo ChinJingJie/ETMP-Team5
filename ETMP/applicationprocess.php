@@ -142,10 +142,11 @@ if(isset($_POST["booking"])){
 	if(empty($time_end)) {
 		array_push($errors, "Please select your ending time");
 	}
+	$progress_bar_message = "Your booking has been submitted, Please wait for the admin to approve";
 	
 	if(count($errors) == 0){
-		$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, total_cost, template, remarks)
-					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$total_cost', '$templateNewName', '$remarks')";
+		$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, total_cost, template, remarks, progress_bar_message)
+					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$total_cost', '$templateNewName', '$remarks', '$progress_bar_message')";
 		
 		mysqli_query($conn, $query);
 		$_SESSION['id'] = $id;
@@ -315,10 +316,11 @@ if(isset($_POST['bookfromsaved'])){
 		$program = "Others";
 	}
 	
+	$progress_bar_message = "Your booking has been submitted, Please wait for the admin to approve";
 	if(count($errors) == 0){
 		$query = "UPDATE application SET isSubmitted='$isSubmitted', venue='$venue', street='$street', city='$city' , postcode='$postcode' 
 					, program='$program' , category='$category' , date_start='$date_start' , date_end='$date_end', time_start='$time_start'
-					,time_end='$time_end', total_cost='$total_cost', template='$templateNewName', remarks='$remarks'  WHERE id='$id'";
+					,time_end='$time_end', total_cost='$total_cost', template='$templateNewName', remarks='$remarks', progress_bar_message='$progress_bar_message'  WHERE id='$id'";
 		$result = mysqli_query($conn, $query);
 		
 		header('location: current.php');

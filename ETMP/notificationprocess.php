@@ -16,7 +16,7 @@ if (!$conn) {
 if(isset($_POST["send"])){
 	
 	$id = $_POST['id'];
-	$name = $_POST['name'];
+	$name = $_POST['notify_name'];
 	$notification_message = $_POST['newmessage'];
 	$user_query = "SELECT * FROM application WHERE id='$id' AND name='$name'";
 	
@@ -25,7 +25,7 @@ if(isset($_POST["send"])){
 	}
 	
 	if(count($errors) == 0){
-		$query = "UPDATE application SET notification_message='$notification_message' WHERE name='$name'";
+		$query = "UPDATE application SET notification_message='$notification_message' WHERE id='$id' AND name='$name'";
 		mysqli_query($conn,$query);
 		header('location: dashboardadmin.php'); //redirect to admin dashboard 
 	}

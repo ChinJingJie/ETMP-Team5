@@ -199,7 +199,8 @@
             </div>
         <br/>
         <h2>Notifications Sent</h2>
-        <p class="newmsg"><button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">+ New Notification</button></p>
+		<button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">+ New Notification</button>
+        <p class="newmsg"></p>
 		<!-- Modal -->
             <div class="modal fade design" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog box">
@@ -211,7 +212,7 @@
                   <form id="newNotificationform" method="post" action = "notificationprocess.php">
                     <div class="modal-body left">
                       <div class="form-group">
-                        <label for="Name">Name</label>
+                        <label for="name">Name</label>
                         <span class="labelcolons">:</span>
                         <select name="name" id="name">
                             <!-- need to load from database -->
@@ -219,10 +220,27 @@
                                 $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
                                 $db = mysqli_select_db($connection,'sql6405286');
 								
+                                $user_query = "SELECT * FROM users";
+                                $user_query_run = mysqli_query($connection,$user_query);
+
+                                while($row = mysqli_fetch_array($user_query_run)){
+                                    ?>
+                                    <option><?php echo $row['name']; ?></option>
+                                    <?php
+                                }
+                          ?>
+                          </select>
+						<label for="notify_name">Name</label>
+                        <span class="labelcolons">:</span>
+                        <select name="notify_name" id="notify_name">
+                            <!-- need to load from database -->
+                            <?php
+                                $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+                                $db = mysqli_select_db($connection,'sql6405286');
                                 $query = "SELECT * FROM application";
                                 $query_run = mysqli_query($connection,$query);
-
-                                while($row = mysqli_fetch_array($query_run)){
+								
+								while($row = mysqli_fetch_array($query_run)){
                                     ?>
                                     <option><?php echo $row['name']; ?></option>
                                     <?php

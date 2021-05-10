@@ -254,9 +254,59 @@
         </div>
         <br/>
         <h2>Notifications</h2>
-        <div class="notification-space">
-            <p>No new updates.</p>
-
+		<div class="accordion">
+            <div class="progress-tab">
+                <input type="checkbox" id="chck7"/>
+                <label class="progress-label" for="chck7">Notifications</label>
+                <div class="tab-content">
+				<div class="notification-space">
+					<?php
+				$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+				$db = mysqli_select_db($connection,'sql6405286');
+				
+				$query = "SELECT * FROM application WHERE name='$name'";
+				$query_run = mysqli_query($connection,$query);
+			
+			while($row = mysqli_fetch_array($query_run)){
+			?>
+			<p><?php 
+				echo "Training ID: ";
+				echo $row['id'];
+				echo "<br>";
+				echo $row['notification_message'];
+			?></p>
+			<?php };?>
+                </div>
+                </div>
+            </div>
+        </div>		
+		<br/>
+		<h2>Progress Bar Update Status Notifications</h2>
+		<div class="accordion">
+            <div class="progress-tab">
+                <input type="checkbox" id="chck8"/>
+                <label class="progress-label" for="chck8">Notifications</label>
+                <div class="tab-content">
+				<div class="notification-space">
+					<?php
+				$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+				$db = mysqli_select_db($connection,'sql6405286');
+				
+				$query = "SELECT * FROM application WHERE name='$name'";
+				$query_run = mysqli_query($connection,$query);
+			
+			while($row = mysqli_fetch_array($query_run)){
+			?>
+			<p><?php 
+				echo "Training ID: ";
+				echo $row['id'];
+				echo "<br>";
+				echo $row['progress_bar_message'];
+			?></p>
+			<?php };?>
+                </div>
+                </div>
+            </div>
         </div>
 		
     </section>

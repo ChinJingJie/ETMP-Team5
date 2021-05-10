@@ -86,9 +86,24 @@ function IDSelection(){
 	 document.getElementById("trainingID").value = sessionStorage.trid;
 }
 
+function trainingSelection(){
+	 document.getElementById("trainingID").innerHTML = "Application ID: " + sessionStorage.trid;
+	 document.getElementById("trainingName").innerHTML = "Applicant's Name: " + sessionStorage.tren;
+	 document.getElementById("trainingProgram").innerHTML = "Application Program: " + sessionStorage.trprogram;
+	 document.getElementById("trainingStartDate").innerHTML = "Application Start Date: " + sessionStorage.trstartdate;
+	 document.getElementById("trainingEndDate").innerHTML = "Application End Date: " + sessionStorage.trenddate;
+}
 
 function storeID(id1){
 	sessionStorage.trid = id1;
+}
+
+function storeInvoiceDetails(id1,name1,program1,startdate1,enddate1){
+	sessionStorage.trid = id1;
+	sessionStorage.tren = name1;
+	sessionStorage.trprogram = program1;
+	sessionStorage.trstartdate = startdate1;
+	sessionStorage.trenddate = enddate1;
 }
 
 //Data transfer between pages by Chin Jing Jie
@@ -128,6 +143,14 @@ function fileSelectionMsg(slt) {
     if (sessionStorage.chatUpload == "upload"){
         document.getElementById("fileSlt").style.display = "block";
     }
+}
+
+//Display CurrentDate
+function displayCDate(){
+	var today = new Date();
+	var date = "Created: ";
+	date = date + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	document.getElementById("Cdate").innerHTML = date;
 }
 
 // Registration Form and Training Form Validation by Nicholas Lim Tun Yang and Chin Jing Jie
@@ -1041,6 +1064,12 @@ function registerInputsOnClick(){
 function init() {
     var myForm = document.getElementById("applicationForm");
    
+	if(document.getElementById("Cdate") != null)
+	{
+		displayCDate();
+		trainingSelection();
+	}
+	
 	registerInputsOnBlur();
 	registerInputsOnClick();
    
@@ -1071,6 +1100,7 @@ function init() {
                 myForm = document.getElementById("paymentForm");
 				if(myForm != null)
 				{
+					IDSelection();
 					myForm.onsubmit = validateForm7;
 				}
               

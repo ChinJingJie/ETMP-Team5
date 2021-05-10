@@ -11,7 +11,6 @@ $result = mysqli_query($conn, $app_query);
 	
 while($app = mysqli_fetch_assoc($result)){
 	$array['id'] = $app['id'];
-	$array['accepted'] = $app['isAccepted'];
 	$array['name'] = $app['name'];
 	$array['phone'] = $app['phone'];
 	$array['email'] = $app['email'];

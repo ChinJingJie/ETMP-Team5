@@ -12,6 +12,10 @@ include "applicationprocess.php";
 	while($app = mysqli_fetch_assoc($result)){
 		$array['id'] = $app['id'];
 		$array['accepted'] = $app['isAccepted'];
+		$array['submitted'] = $app['isSubmitted'];
+		$array['paid'] = $app['isPaid'];
+		$array['completed'] = $app['isComplete'];
+		$array['cancelled'] = $app['isCancelled'];
 		$array['name'] = $app['name'];
 		$array['phone'] = $app['phone'];
 		$array['email'] = $app['email'];

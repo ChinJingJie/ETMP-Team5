@@ -133,7 +133,8 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>">
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>" 
+					onclick="storeInvoiceDetails('<?php echo $row['id'];?>','<?php echo $row['name'];?>','<?php echo $row['program'];?>','<?php echo $row['date_start'];?>','<?php echo $row['date_end'];?>' )">
 					View
 					</button>
                   </div>
@@ -319,7 +320,7 @@
 				 </div>
 				 <div>
 					<p><br>Training Application has been <b>Submitted</b> </p>
-					<p>You may proceed to <b>Wait</b>application been approved</p>
+					<p>You may proceed to <b>Wait </b>application been approved</p>
 				</div>
 					
 				 </div>
@@ -351,7 +352,7 @@
 					  </div>
 				 </div>
 					<p><br>Training Application has been <b>Accepted</b> </p>
-					<p>You may proceed to <b>Pay</b>for the training application</p>
+					<p>You may proceed to <b>Pay </b>for the training application</p>
 				 </div>
 			 
 				  <div class="modal-footer">
@@ -382,7 +383,7 @@
 				 </div>
 				 <div>
 					<p><br>Training Application has been <b>Paid</b> </p>
-					<p>You may proceed to <b>Wait</b>for the start date of the training</p>
+					<p>You may proceed to <b>Wait </b>for the start date of the training</p>
 				</div>
 					
 				 </div>

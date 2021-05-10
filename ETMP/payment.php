@@ -16,6 +16,7 @@
             <p class="left"><b class="white">Bank Account details</b><br/>Account Name	: Swinburne Sarawak Sdn Bhd<br/>Bank Name	: CIMB Bank Berhad<br/>Account Number	: 80-0526998-9</p>
             
             <p class="left1"><b class="white">Step 2:</b> Upload the proof that the transaction is sucessful.</p>
+			<button type="button"><a href="invoice.php">Invoice</a></button>
             <p class="hLine1"></p>
             <p>
 		      <label for="trainingID">Training ID</label>

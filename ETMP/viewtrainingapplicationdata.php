@@ -18,11 +18,28 @@
 			var res = JSON.parse(result);
 			
 			$("#id").html(res.id);
-			if (res.accepted == 0) {
-				$("#status").html('pending');
-				}else {
-					$("#status").html('accepted');
-					};
+			if (res.accepted == 1) {
+				$("#status").html('accepteds');
+			}
+			
+			else
+			{
+				$("#status").html('submitteds');
+			};
+			
+			if (res.paid == 1) {
+				$("#status").html('Paids');
+			};
+			
+			if (res.completed == 1) {
+				$("#status").html('Completes');
+			};
+			
+			if (res.cancelled == 1) {
+				$("#status").html('Cancelleds');
+			};
+			
+			
 			$("#name").html(res.name);
 			$("#phone").html(res.phone);
 			$("#email").html(res.email);

@@ -98,6 +98,22 @@
 	  });
 	});
 	
+	$(document).ready(function(){
+	  $(".generate").click(function(){
+		$.ajax({url: "edittrainingapplicationadmindata.php?id="+$(this).data('id'), success: function(result){
+		   //result not empty
+		   if (result) {
+			// assign result  to each label/ text
+			var resu = JSON.parse(result);
+			
+			$("#id2").val(resu.id);
+			
+		   }
+		 
+		}});
+	  });
+	});
+	
 	</script>
     </header>
     <section>
@@ -181,6 +197,9 @@
 								<button type="button" class ="edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editsavedmodal" data-id ="<?php echo $row['id'];?>">
 								Edit
 								</button>
+								<button type="submit" class ="generate" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#generatemodal" data-id ="<?php echo $row['id'];?>">
+								Generate
+								</button>
 				            </td>
 				        </tr>
 				        <?php
@@ -230,6 +249,9 @@
 							</button>
 							<button type="button" class ="edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editsavedmodal" data-id ="<?php echo $row['id'];?>">
 							Edit
+							</button>
+							<button type="submit" class ="generate" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#generatemodal" data-id ="<?php echo $row['id'];?>">
+							Generate
 							</button>
 					</td>
 				</tr>
@@ -507,6 +529,34 @@
 			</div>
 		  </div>
 		</div>
+		
+		<div class="modal fade design" id="generatemodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Generate this application to PDF?</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				<form id="GeneratePDF" method="post" action="generatepdf.php">
+				  <div class="modal-body">
+				  
+					<div class="form-group">
+						<label for="id">Application ID</label>
+                        <span class="labelcolons">:</span>
+						<input type = "text" id ="id2" name="id2" value="" readonly/>
+					</div>
+					
+				  </div>
+				 
+				  <div class="modal-footer">
+					<button type="submit" name="generatepdf" class="btn btn-info">Generate PDF</button>
+				  </div>
+
+				</form>
+			</div>
+		  </div>
+		</div>
+		
         <?php
             $conn->close();
         ?>

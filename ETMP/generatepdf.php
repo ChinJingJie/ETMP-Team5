@@ -51,7 +51,7 @@ if(isset($_POST["generatepdf"]))
 				<hr>
 				<div class="row">
 					<div class ="col-xs-1">
-						<b>Bill To:-</b>
+						<b>To:-</b>
 					</div>
 					
 					<div class="col-xs-6">

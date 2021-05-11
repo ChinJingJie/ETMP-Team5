@@ -239,11 +239,28 @@
 					while($row = mysqli_fetch_assoc($result)): ?>
 						<tr>
 							<td>
-								<?php if(($row['isAccepted']) == 0 ){
-									echo "Pending";
-									}else {
-										echo "Accepted";
-									};
+								<?php 
+								if(($row['isAccepted']) == 0 ){
+								if(($row['isSubmitted']) == 1 ){
+									$status = "Submitted";
+								}
+								
+				            }else {
+								$status = "Accepted";
+				            };
+							
+							if(($row ['isPaid']) == 1 ){
+								$status = "Paid";
+							}
+							
+							if(($row ['isComplete']) == 1 ){
+								$status = "Completed";
+							}
+							
+							if(($row ['isCancelled']) == 1 ){
+								$status = "Cancelled";
+							}
+							echo $status;
 								?>
 							</td>
 							<td><?php echo $row['name'];?></td>
@@ -450,7 +467,7 @@
 					while($row = mysqli_fetch_assoc($result)): ?>
 						<tr>
 							<td>
-								<?php if(($row['isComplete']) == 0 ){
+								<?php if(($row['isSubmitted']) == 0 ){
 									echo "Incomplete";
 									}
 								?>

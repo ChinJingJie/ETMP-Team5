@@ -144,9 +144,25 @@ if(isset($_POST["booking"])){
 	}
 	$progress_bar_message = "Your booking has been submitted, Please wait for the admin to approve";
 	
+	$query_training = "SELECT * FROM training";
+	$results = mysqli_query($conn,$query_training);
+	
+	while($rows = mysqli_fetch_assoc($results))
+	{
+		if($program == $rows['tname'])
+		{
+			$base_price = $rows['base_price'];
+			$daily_price = $rows['daily_price'];
+		}
+	}
+	
+	$total_cost = 0;
+	$total_cost = $base_price + ($daily_price * $noOfDays);
+	
 	if(count($errors) == 0){
-		$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, total_cost, template, remarks, progress_bar_message)
-					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', '$total_cost', '$templateNewName', '$remarks', '$progress_bar_message')";
+		$query = "INSERT INTO application (isAccepted, isSubmitted, name, email, phone, venue, street, city, postcode, program, category, date_start, date_end, time_start, time_end, base_price, daily_price, total_cost, template, remarks, progress_bar_message)
+					VALUES ('$isAccepted', '$isSubmitted', '$name', '$email', '$phone', '$venue', '$street', '$city', '$postcode', '$program', '$category', '$date_start', '$date_end', '$time_start', '$time_end', $base_price, $daily_price, '$total_cost', '$templateNewName', '$remarks', '$progress_bar_message')";
+
 		
 		mysqli_query($conn, $query);
 		$_SESSION['id'] = $id;
@@ -317,10 +333,27 @@ if(isset($_POST['bookfromsaved'])){
 	}
 	
 	$progress_bar_message = "Your booking has been submitted, Please wait for the admin to approve";
+	
+	$query_training = "SELECT * FROM training";
+	$results = mysqli_query($conn,$query_training);
+	
+	while($rows = mysqli_fetch_assoc($results))
+	{
+		if($program == $rows['tname'])
+		{
+			$base_price = $rows['base_price'];
+			$daily_price = $rows['daily_price'];
+		}
+	}
+	
+	$total_cost = 0;
+	$total_cost = $base_price + ($daily_price * $noOfDays);
+	
 	if(count($errors) == 0){
 		$query = "UPDATE application SET isSubmitted='$isSubmitted', venue='$venue', street='$street', city='$city' , postcode='$postcode' 
 					, program='$program' , category='$category' , date_start='$date_start' , date_end='$date_end', time_start='$time_start'
-					,time_end='$time_end', total_cost='$total_cost', template='$templateNewName', remarks='$remarks', progress_bar_message='$progress_bar_message'  WHERE id='$id'";
+					,time_end='$time_end', base_price='$base_price', daily_price='$daily_price', total_cost='$total_cost'
+					, template='$templateNewName', remarks='$remarks', progress_bar_message='$progress_bar_message'  WHERE id='$id'";
 		$result = mysqli_query($conn, $query);
 		
 		header('location: current.php');

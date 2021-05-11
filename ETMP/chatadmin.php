@@ -66,7 +66,7 @@
   include "sessionstart.php";
   $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
   $name = $_SESSION['name'];
-  $sql = mysqli_query($conn, "SELECT * FROM users WHERE name = '$name'");
+  $sql = mysqli_query($conn, "SELECT * FROM admins WHERE name = '$name'");
      if(mysqli_num_rows($sql) > 0){
         $row = mysqli_fetch_assoc($sql);
       }

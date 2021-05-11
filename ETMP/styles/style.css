@@ -1294,6 +1294,13 @@ label.star:before {
     display: flex;
 }
 
+.listfooter{
+    background: #0070ff;
+    color: #fff;
+    padding: 5px;
+    border: 2px solid #fff;
+}
+
 /*Invoice CSS*/
 .invoice-box {
 	max-width: 800px;

@@ -126,7 +126,36 @@
 		?>
 
         <div id="History" class="tabcontent">
-            <p>Display training History</p>
+             <?php
+					if(isset($_SESSION['name'])){
+						$userData = getUsersData($_SESSION['name']);
+						$name = $userData['name'];
+					}
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+					$db = mysqli_select_db($connection,'sql6405286');
+							
+					$query = "SELECT * FROM application WHERE name = '$name' and isComplete = '1' and rating != '0'";
+					$query_run = mysqli_query($connection,$query);
+        
+            while($row = mysqli_fetch_array($query_run)){
+                ?>
+                <div class="card2">
+                  <div class="text">
+                    <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
+						<div class="scroll">
+							<p class="label">Name: <?php echo $row['name']; ?></p>
+							<p class="label">Program: <?php echo $row['program']; ?></p>
+							<p class="label">Category: <?php echo $row['category']; ?></p>
+							<p class="label">Start Date: <?php echo $row['date_start']; ?></p>
+							<p class="label">Start Time: <?php echo $row['time_start']; ?></p>
+							<p class="label">Rating: <?php echo $row['rating']; ?> stars</p>
+							<p class="label">Overall Experience: <?php echo $row['overall_experience']; ?></p>
+							<p class="label">Improvements: <?php echo $row['improvements']; ?></p>
+							<p class="label">Comments on Trainer Performance: <?php echo $row['comments_on_trainer_performance']; ?></p>
+						</div>
+					</div>
+                </div>
+			<?php };?>
         </div>
 		
 		

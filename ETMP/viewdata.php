@@ -55,7 +55,7 @@
         </div>
     </section>
     <section>
-        <?php include "chat.php";?>
+        <?php include "chatadmin.php";?>
     </section>
   <?php include "footer.php"; ?>
   

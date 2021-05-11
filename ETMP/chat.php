@@ -63,7 +63,6 @@
 </script>
 
 <?php 
-  include "sessionstart.php";
   $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
   $name = $_SESSION['name'];
   $sql = mysqli_query($conn, "SELECT * FROM users WHERE name = '$name'");
@@ -81,14 +80,6 @@
 <!--chat window with user list-->
 <div class="chat-box" id="chatWindow">
   <div class="chat-head">
-    <div class="popup-head-left pull-left size">
-        <input type="text" placeholder="Search..." name="userSearch" id="userSearch" class="search">
-        <div class="find-msg">
-          <label for="search-icon">
-            <i class="fa fa-search"></i>
-          </label>
-        </div>
-    </div>
     <div class="pull-right">
       <a href="#" id="minimizeChat">
           <i class="fa fa-window-minimize"></i>
@@ -289,34 +280,4 @@
           }
       }
     })
-    
-    //live data search
-    $(document).ready(function(){
-
-         load_data();
-
-         function load_data(query)
-         {
-             $.ajax({
-                 url:"fetch.php",
-                 method:"POST",
-                 data:{query:query},
-                 success:function(data)
-                {
-                $('#result').html(data);
-                }
-            });
-         }
-         $('#userSearch').keyup(function(){
-            var search = $(this).val();
-            if(search != '')
-            {
-                load_data(search);
-            }
-            else
-            {
-                load_data();
-            }
-          });
-    });
 </script>

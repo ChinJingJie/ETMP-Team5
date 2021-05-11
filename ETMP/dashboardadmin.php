@@ -212,35 +212,18 @@
                   <form id="newNotificationform" method="post" action = "notificationprocess.php">
                     <div class="modal-body left">
                       <div class="form-group">
-                        <label for="name">Name</label>
-                        <span class="labelcolons">:</span>
-                        <select name="name" id="name">
-                            <!-- need to load from database -->
-                            <?php
-                                $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-                                $db = mysqli_select_db($connection,'sql6405286');
-								
-                                $user_query = "SELECT * FROM users";
-                                $user_query_run = mysqli_query($connection,$user_query);
-
-                                while($row = mysqli_fetch_array($user_query_run)){
-                                    ?>
-                                    <option><?php echo $row['name']; ?></option>
-                                    <?php
-                                }
-                          ?>
-                          </select>
-						<label for="notify_name">Name</label>
+                        <label for="notify_name">Name</label>
                         <span class="labelcolons">:</span>
                         <select name="notify_name" id="notify_name">
                             <!-- need to load from database -->
                             <?php
                                 $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
                                 $db = mysqli_select_db($connection,'sql6405286');
-                                $query = "SELECT * FROM application";
-                                $query_run = mysqli_query($connection,$query);
 								
-								while($row = mysqli_fetch_array($query_run)){
+                                $user_query = "SELECT name FROM application";
+                                $user_query_run = mysqli_query($connection,$user_query);
+
+                                while($row = mysqli_fetch_array($user_query_run)){
                                     ?>
                                     <option><?php echo $row['name']; ?></option>
                                     <?php
@@ -262,7 +245,34 @@
               </div>
             </div>
         <div class="notification-space">
-            <p>No history.</p>
+            <p><?php
+				$dayofweek = date("w");
+				
+				switch($dayofweek){
+					case 1:
+						echo "Please send notification to the client";
+						break;
+					case 2:
+						echo "Please send notification to the client";
+						break;
+					case 3:
+						echo "Please send notification to the client";
+						break;
+					case 4:
+						echo "Please send notification to the client";
+						break;
+					case 5:
+						echo "Please send notification to the client";
+						break;
+					case 6:
+						echo "Please send notification to the client";
+						break;
+					case 7:
+						echo "Please send notification to the client";
+						break;
+				}
+			
+			?></p>
         </div>
         <h2>Databases</h2>
         <p class="left">Push the button below to proceed to respective database</p>

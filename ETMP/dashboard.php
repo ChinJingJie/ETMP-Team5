@@ -260,26 +260,28 @@
             <div class="progress-tab">
                 <input type="checkbox" id="chck7"/>
                 <label class="progress-label" for="chck7">Notifications</label>
-                <div class="tab-content">
-				<div class="notification-space">
-					<?php
-				$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-				$db = mysqli_select_db($connection,'sql6405286');
+				<div class="tab-content">
+					<div class="notification-space">
+						<div class="scrolls">
+							<?php
+								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+								$db = mysqli_select_db($connection,'sql6405286');
 				
-				$query = "SELECT * FROM application WHERE name='$name'";
-				$query_run = mysqli_query($connection,$query);
+								$query = "SELECT * FROM application WHERE name='$name'";
+								$query_run = mysqli_query($connection,$query);
 			
-			while($row = mysqli_fetch_array($query_run)){
-			?>
-			<p><?php 
-				echo "Training ID: ";
-				echo $row['id'];
-				echo "<br>";
-				echo $row['notification_message'];
-			?></p>
-			<?php };?>
-                </div>
-                </div>
+							while($row = mysqli_fetch_array($query_run)){
+							?>
+								<p><?php 
+									echo "Training ID: ";
+									echo $row['id'];
+									echo "<br>";
+									echo $row['notification_message'];
+								?></p>
+							<?php };?>
+						</div>
+					</div>
+				</div>
             </div>
         </div>		
 		<br/>
@@ -289,24 +291,26 @@
                 <input type="checkbox" id="chck8"/>
                 <label class="progress-label" for="chck8">Notifications</label>
                 <div class="tab-content">
-				<div class="notification-space">
-					<?php
-				$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-				$db = mysqli_select_db($connection,'sql6405286');
+					<div class="notification-space">
+						<div class="scrolls">
+							<?php
+								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+								$db = mysqli_select_db($connection,'sql6405286');
 				
-				$query = "SELECT * FROM application WHERE name='$name'";
-				$query_run = mysqli_query($connection,$query);
+								$query = "SELECT * FROM application WHERE name='$name'";
+								$query_run = mysqli_query($connection,$query);
 			
-			while($row = mysqli_fetch_array($query_run)){
-			?>
-			<p><?php 
-				echo "Training ID: ";
-				echo $row['id'];
-				echo "<br>";
-				echo $row['progress_bar_message'];
-			?></p>
-			<?php };?>
-                </div>
+							while($row = mysqli_fetch_array($query_run)){
+							?>
+								<p><?php 
+									echo "Training ID: ";
+									echo $row['id'];
+									echo "<br>";
+									echo $row['progress_bar_message'];
+								?></p>
+							<?php };?>
+						</div>
+					</div>
                 </div>
             </div>
         </div>

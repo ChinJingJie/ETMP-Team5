@@ -23,9 +23,9 @@
 								</td>
 
 								<td>
-									Invoice #: 123<br />
+									<p id = "invoiceID"></p>
+										<br />
 									<p id = "Cdate"></p>
-									Due: February 1, 2015
 								</td>
 							</tr>
 						</table>

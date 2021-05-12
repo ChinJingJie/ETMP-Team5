@@ -17,6 +17,7 @@
 			var resu = JSON.parse(result);
 			
 			$("#id1").val(resu.id);
+			$("#id").val(resu.id);
 		   }
 		 
 		}});
@@ -440,6 +441,10 @@
 				 <div>
 					<p><br>Training Application has been <b>Paid</b> </p>
 					<p>You may proceed to <b>Wait </b>for the start date of the training</p>
+					<form id="GenerateReceiptPDF" method="post" action="generatepdf.php">
+						<input type = "hidden" id ="id" name="id" value="" />
+						<button type="submit" name="g" class="btn btn-info" class = "edit">Receipt</button>
+					</form>
 				</div>
 					
 				 </div>

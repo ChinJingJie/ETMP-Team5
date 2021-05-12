@@ -60,21 +60,6 @@ if(isset($_POST["booking"])){
 	$isAccepted = 0;
 	$isSubmitted = 1;
 	
-	$query_payment = "SELECT tra.*,app.* FROM training tra,application app WHERE tra.tname = '$program' AND app.program = '$program'";
-	$result = mysqli_query($conn,$query_payment);
-	
-	while($row = mysqli_fetch_assoc($result))
-	{
-		$start_date = strtotime($row['date_start']);
-		$end_date = strtotime($row['date_end']);
-		$base_price= $row['base_price'];
-		$daily_price= $row['daily_price'];
-		
-		$noOfDays = ($end_date - $start_date)/60/60/24;
-		
-		$total_cost = $base_price + ($daily_price * $noOfDays);
-	}
-	
 	if(in_array($templateActualExt, $allowed)){
 		if($templateError === 0){
 			if($templateSize < 1000000){
@@ -153,9 +138,13 @@ if(isset($_POST["booking"])){
 		{
 			$base_price = $rows['base_price'];
 			$daily_price = $rows['daily_price'];
+			
 		}
 	}
 	
+	$start_date = strtotime($date_start);
+	$end_date = strtotime($date_end);
+	$noOfDays = ($end_date - $start_date)/60/60/24;;
 	$total_cost = 0;
 	$total_cost = $base_price + ($daily_price * $noOfDays);
 	
@@ -167,6 +156,7 @@ if(isset($_POST["booking"])){
 		mysqli_query($conn, $query);
 		$_SESSION['id'] = $id;
 		$_SESSION['success'] = "Your booking has been submitted";
+		$noOfDays = 0;
 		header('location: trainingcourse.php');
 	}
 
@@ -262,23 +252,6 @@ if(isset($_POST['bookfromsaved'])){
 	
 	$isSubmitted = 1;
 	
-	$query_payment = "SELECT tra.*,app.* FROM training tra,application app WHERE app.id = '$id' AND tra.tname = app.program";
-	$result = mysqli_query($conn,$query_payment);
-	
-	while($row = mysqli_fetch_assoc($result))
-	{
-		$start_date = strtotime($row['date_start']);
-		$end_date = strtotime($row['date_end']);
-		$base_price= $row['base_price'];
-		$daily_price= $row['daily_price'];
-		
-		$noOfDays = ($end_date - $start_date)/60/60/24;
-		
-		$total_cost = $base_price + ($daily_price * $noOfDays);
-	}
-		
-
-	
 	if(in_array($templateActualExt, $allowed)){
 		if($templateError === 0){
 			if($templateSize < 1000000){
@@ -330,10 +303,12 @@ if(isset($_POST['bookfromsaved'])){
 	if($program ="1")
 	{
 		$program = "Others";
+		$base_price = "50.00";
+		$daily_price = "50.00";
 	}
 	
 	$progress_bar_message = "Your booking has been submitted, Please wait for the admin to approve";
-	
+		
 	$query_training = "SELECT * FROM training";
 	$results = mysqli_query($conn,$query_training);
 	
@@ -346,6 +321,9 @@ if(isset($_POST['bookfromsaved'])){
 		}
 	}
 	
+	$start_date = strtotime($date_start);
+	$end_date = strtotime($date_end);
+	$noOfDays = ($end_date - $start_date)/60/60/24;;
 	$total_cost = 0;
 	$total_cost = $base_price + ($daily_price * $noOfDays);
 	
@@ -355,7 +333,7 @@ if(isset($_POST['bookfromsaved'])){
 					,time_end='$time_end', base_price='$base_price', daily_price='$daily_price', total_cost='$total_cost'
 					, template='$templateNewName', remarks='$remarks', progress_bar_message='$progress_bar_message'  WHERE id='$id'";
 		$result = mysqli_query($conn, $query);
-		
+		$noOfDays = 0;
 		header('location: current.php');
 	}
 }

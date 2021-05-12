@@ -87,6 +87,7 @@ function IDSelection(){
 }
 
 function trainingSelection(){
+	 document.getElementById("invoiceID").innerHTML = "Invoice ID: 00" + sessionStorage.trid;
 	 document.getElementById("trainingID").innerHTML = "Application ID: " + sessionStorage.trid;
 	 document.getElementById("trainingName").innerHTML = "Applicant's Name: " + sessionStorage.tren;
 	 document.getElementById("trainingProgram").innerHTML = "Application Program: " + sessionStorage.trprogram;

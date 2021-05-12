@@ -93,12 +93,12 @@
                 <li class="chatCardDisplay">
                     <div class="d-flex bd-highlight chatCard">
                         <div class="chatUser">
-                            <span>Kalpesh(default)</span>
+                            <span>ETMP Official</span>
                             <p id="chatHistoryDisplay">Start a new chat now</p>
                         </div>
                     </div>
                 </li>
-                <li class="chatCardDisplay1">
+                <li class="chatCardDisplay1 contacts_body" onclick="storeUser('Sample Admin')">
                     <div class="d-flex bd-highlight chatCard">
                         <div class="chatUser">
                             <span>Sample Admin</span>
@@ -121,7 +121,7 @@
         <a href="#" id="backToChat1">
           <i class="fa fa-chevron-circle-left"></i>
         </a>
-        <span id="displayName">Kalpesh</span>
+        <span id="displayName">ETMP Official</span>
     </div>
     <div class="pull-right">
         <a href="#" id="minimizeChat1">
@@ -138,34 +138,24 @@
           <div class="card-body msg_card_body">
             <div class="d-flex justify-content-start mb-4">
               <div class="msg_cotainer">
-                Hi, how are you samim?
-                <span class="msg_time">8:40 AM, Today</span>
+                Welcome to ETMP, Press 1 to get FAQ.
               </div>
             </div>
             <div class="d-flex justify-content-end mb-4">
               <div class="msg_cotainer_send">
-                Hi Khalid i am good tnx how about you?
-                <span class="msg_time_send">8:55 AM, Today</span>
+                1
               </div>
             </div>
           </div>
         </div>
-      <div class="chat-file-msg" id="fileSlt">Nothing selected</div>
       <div class="chat-footer">
-          <div class="image-upload">
-              <label for="file-icon">
-                <i class="fa fa-paperclip"></i>
-              </label>
-
-              <input id="file-icon" type="file" onclick="fileSelectionMsg('upload')"/>
-          </div>
-          <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
+          <textarea id="status_message0" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
           <div class="msg-send">
-              <label for="send-icon">
+              <label for="send-icon0">
                 <i class="fa fa-send"></i>
               </label>
 
-              <input id="send-icon" type="submit" />
+              <input id="send-icon0" type="submit" />
           </div>
       </div>
     </div>
@@ -216,6 +206,7 @@
 
               <input id="file-icon" type="file" onclick="fileSelectionMsg('upload')"/>
           </div>
+          <!--<input type="text" class="incoming_id" name="incoming_id" value="<?php //echo $user_id; ?>" hidden>-->
           <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
           <div class="msg-send">
               <label for="send-icon">
@@ -229,7 +220,7 @@
 </div>
 
 <script>
-    //print name of file selected to upload and restric size to 25MB
+    //print name of file selected to upload and restric size to 25MB (dynamic)
     const input = document.getElementById('file-icon')
     input.addEventListener('change', (event) => {
       const target = event.target

@@ -1122,16 +1122,6 @@ label.star:before {
     background-color: #0070ff;
     color: #fff;
 }
-.profileImage0, #profileImage, .profileImage1{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ff8f00;
-  font-size: 18px;
-  color: #fff;
-  text-align: center;
-  line-height: 40px;
-}
 
 #minimizeChat, #minimizeChat1, #minimizeChat2, #backToChat1, #backToChat2{
     padding: 0 10px;

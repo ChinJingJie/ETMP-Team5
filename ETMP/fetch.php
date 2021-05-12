@@ -1,5 +1,4 @@
-<!--profile pic is not generated when live search -->
-
+<!--profile pic is not generated when live search should use php not jQuery for this-->
 <script>
     //navigate from chat window with user list to private chat window
     $(function(){
@@ -9,7 +8,6 @@
       });
     })
 </script>
-
 <?php
     //connection or link to database
     $connect = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
@@ -25,7 +23,7 @@
             while($row = mysqli_fetch_array($result))
             {
                 $output .= '
-                <li class="chatCardDisplay1">
+                <li class="chatCardDisplay1 contacts_body">
                     <div class="d-flex bd-highlight chatCard">                    
                         <span id="profileName" style="display:none;">' .$row['name'].'</span>
                         <div class="profileImage0"></div>

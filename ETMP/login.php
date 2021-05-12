@@ -30,7 +30,7 @@ include "registrationclientprocess.php";
 			echo "<p>Please wait for 5 minutes to continue Login</p>";
 		}else{
 	     ?>
-		<input type="submit" name="login" value="Login"/>
+		<input type="submit" name="login" value="Login" />
 	     <?php } ?>
         </form>
         <p class="link">Forget password? <a href="forgetpwsd.php">Reset now</a></p>

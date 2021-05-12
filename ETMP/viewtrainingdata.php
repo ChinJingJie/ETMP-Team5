@@ -1,5 +1,6 @@
 <?php 
 //include "registrationadminprocess.php"; ?>
+<?php include('admindata.php')?>
 
 <!DOCTYPE html>
 <html lang="en">

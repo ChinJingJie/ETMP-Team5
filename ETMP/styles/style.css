@@ -1129,7 +1129,7 @@ label.star:before {
     background-color: rgba(0, 112, 255, 0.3);
 }
 
-.chatCardDisplay{
+.chatCardDisplay, .chatCardDisplay1{
     background-color: #fff;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
 }

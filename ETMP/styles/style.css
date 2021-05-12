@@ -623,7 +623,7 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     width: 30%;
     height: 20vw;
     padding: 1%;
-    background-color: #fff;
+    background-color: #e7feff;
     margin: 0.7%;
 }
 
@@ -643,6 +643,23 @@ input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#ch
     border-bottom: 1px solid #0070ff;
     background: #fff;
     max-height: 9vw;
+    overflow-y: auto;
+}
+
+.scrolls2{
+    padding: 1% 0;
+    border-top: 1px solid #0070ff;
+    border-bottom: 1px solid #0070ff;
+    background: #fff;
+    max-height: 20vw;
+    overflow-y: auto;
+}
+.scrolls3{
+    padding: 1% 0;
+    border-top: 1px solid #0070ff;
+    border-bottom: 1px solid #0070ff;
+    background: #fff;
+    max-height: 14vw;
     overflow-y: auto;
 }
 

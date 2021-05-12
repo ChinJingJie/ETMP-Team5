@@ -142,7 +142,7 @@
                 <div class="card2">
                   <div class="text">
                     <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
-						<div class="scroll">
+						<div class="scrolls3">
 							<p class="label">Name: <?php echo $row['name']; ?></p>
 							<p class="label">Program: <?php echo $row['program']; ?></p>
 							<p class="label">Category: <?php echo $row['category']; ?></p>

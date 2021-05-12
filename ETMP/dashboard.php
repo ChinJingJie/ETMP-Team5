@@ -262,7 +262,7 @@
                 <label class="progress-label" for="chck7">Notifications</label>
 				<div class="tab-content">
 					<div class="notification-space">
-						<div class="scrolls">
+						<div class="scrolls2">
 							<?php
 								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 								$db = mysqli_select_db($connection,'sql6405286');
@@ -292,7 +292,7 @@
                 <label class="progress-label" for="chck8">Notifications</label>
                 <div class="tab-content">
 					<div class="notification-space">
-						<div class="scrolls">
+						<div class="scrolls2">
 							<?php
 								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 								$db = mysqli_select_db($connection,'sql6405286');

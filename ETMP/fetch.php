@@ -26,8 +26,6 @@
                 ?>
                 <li class="chatCardDisplay1 contacts_body" onclick="storeUser('<?php echo $row['name'];?>')">
                     <div class="d-flex bd-highlight chatCard">                    
-                        <span id="profileName" style="display:none;"><?php echo $row['name'];?></span>
-                        <div class="profileImage0"></div>
                         <div class="chatUser">
                             <span><?php echo $row['name'];?></span>
                             <p id="chatHistoryDisplay">Start a new chat now</p>

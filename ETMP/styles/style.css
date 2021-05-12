@@ -1122,7 +1122,7 @@ label.star:before {
     background-color: #0070ff;
     color: #fff;
 }
-.profileImage0, #profileImage, .profileImage1 {
+.profileImage0, #profileImage, .profileImage1{
   width: 40px;
   height: 40px;
   border-radius: 50%;

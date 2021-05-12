@@ -49,17 +49,13 @@
       });
     })
     
-    //generate profile pic with initial for default user
-    $(document).ready(function(){
-      var profileName = $('#profileName1').text();
-      var intials = $('#profileName1').text().charAt(0) + $('#profileName1').text().charAt(1);
-      //use in chat lists
-      var profileImage0 = $('.profileImage0').text(intials);
-      //use in header
-      var profileImage = $('#profileImage').text(intials);
-      //use during conversation
-      var profileImage1 = $('.profileImage1').text(intials);
-    });
+    $(function(){
+      $(".chatCardDisplay1").click(function () {
+        $('#chatWindow').removeClass('chat-box-on');
+        $('#chatWindow2').addClass('chat-box-on');
+        $('#displayName2').text(sessionStorage.receiver);
+      });
+    })
 </script>
 
 <?php 
@@ -96,14 +92,20 @@
             <ui class="contacts">
                 <li class="chatCardDisplay">
                     <div class="d-flex bd-highlight chatCard">
-                        <div class="profileImage0"></div>
                         <div class="chatUser">
                             <span>Kalpesh(default)</span>
                             <p id="chatHistoryDisplay">Start a new chat now</p>
                         </div>
                     </div>
                 </li>
-                <div id="result"></div>
+                <li class="chatCardDisplay1">
+                    <div class="d-flex bd-highlight chatCard">
+                        <div class="chatUser">
+                            <span>Sample Admin</span>
+                            <p id="chatHistoryDisplay">Start a new chat now</p>
+                        </div>
+                    </div>
+                </li>
             </ui>
           </div>  
       </div>
@@ -119,8 +121,6 @@
         <a href="#" id="backToChat1">
           <i class="fa fa-chevron-circle-left"></i>
         </a>
-        <span id="profileName1" style="display:none;">Kalpesh</span>
-        <div id="profileImage"></div>
         <span id="displayName">Kalpesh</span>
     </div>
     <div class="pull-right">
@@ -137,7 +137,6 @@
 		<!--body of the chat-->
           <div class="card-body msg_card_body">
             <div class="d-flex justify-content-start mb-4">
-              <div class="profileImage1"></div>
               <div class="msg_cotainer">
                 Hi, how are you samim?
                 <span class="msg_time">8:40 AM, Today</span>
@@ -147,39 +146,6 @@
               <div class="msg_cotainer_send">
                 Hi Khalid i am good tnx how about you?
                 <span class="msg_time_send">8:55 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="profileImage1"></div>
-              <div class="msg_cotainer">
-                I am good too, thank you for your chat template
-                <span class="msg_time">9:00 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                You are welcome
-                <span class="msg_time_send">9:05 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="profileImage1"></div>
-              <div class="msg_cotainer">
-                I am looking for your next templates
-                <span class="msg_time">9:07 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                Ok, thank you have a good day
-                <span class="msg_time_send">9:10 AM, Today</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-start mb-4">
-              <div class="profileImage1"></div>
-              <div class="msg_cotainer">
-                Bye, see you
-                <span class="msg_time">9:12 AM, Today</span>
               </div>
             </div>
           </div>
@@ -212,9 +178,7 @@
         <a href="#" id="backToChat2">
           <i class="fa fa-chevron-circle-left"></i>
         </a>
-        <span id="profileName2" style="display:none;">Dalph</span>
-        <div id="profileImage"></div>
-        <span id="displayName">Dalph</span>
+        <span id="displayName2"></span>
     </div>
     <div class="pull-right">
         <a href="#" id="minimizeChat2">
@@ -230,7 +194,6 @@
 		<!--body of the chat-->
           <div class="card-body msg_card_body">
             <div class="d-flex justify-content-start mb-4">
-              <div class="profileImage1"></div>
               <div class="msg_cotainer">
                 Hi, how are you samim?
                 <span class="msg_time">8:40 AM, Today</span>

@@ -222,7 +222,7 @@
         </a>
         <span id="profileName2" style="display:none;">Dalph</span>
         <div id="profileImage"></div>
-        <span id="displayName">Dalph</span>
+        <span id="displayName2"></span>
     </div>
     <div class="pull-right">
         <a href="#" id="minimizeChat2">

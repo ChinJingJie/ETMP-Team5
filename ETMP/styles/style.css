@@ -1114,7 +1114,7 @@ label.star:before {
     display: inline-flex;
 }
 
-#displayName, #chatTitle{
+#displayName, #chatTitle, #displayName2{
     padding: 0 10px;
     height: 40px;
     line-height: 40px;

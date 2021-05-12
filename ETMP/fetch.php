@@ -5,6 +5,7 @@
       $(".chatCardDisplay1").click(function () {
         $('#chatWindow').removeClass('chat-box-on');
         $('#chatWindow2').addClass('chat-box-on');
+        $('#displayName2').text(sessionStorage.receiver);
       });
     })
 </script>
@@ -22,20 +23,19 @@
         {
             while($row = mysqli_fetch_array($result))
             {
-                $output .= '
-                <li class="chatCardDisplay1 contacts_body">
+                ?>
+                <li class="chatCardDisplay1 contacts_body" onclick="storeUser('<?php echo $row['name'];?>')">
                     <div class="d-flex bd-highlight chatCard">                    
-                        <span id="profileName" style="display:none;">' .$row['name'].'</span>
+                        <span id="profileName" style="display:none;"><?php echo $row['name'];?></span>
                         <div class="profileImage0"></div>
                         <div class="chatUser">
-                            <span>' .$row['name'].'</span>
+                            <span><?php echo $row['name'];?></span>
                             <p id="chatHistoryDisplay">Start a new chat now</p>
                         </div>
                     </div>
                 </li>
-            ';
+            <?php
             }
-            echo $output;
         }
         else
         {

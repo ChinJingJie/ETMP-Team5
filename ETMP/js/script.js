@@ -114,6 +114,11 @@ function storeID(id1){
 	sessionStorage.trid = id1;
 }
 
+//store chat selected receiver name by Chin Jing Jie
+function storeUser(id1){
+	sessionStorage.receiver = id1;
+}
+
 function storeInvoiceDetails(id1,name1,program1,startdate1,enddate1,baseprice1,dailyprice1,totalprice1){
 	sessionStorage.trid = id1;
 	sessionStorage.tren = name1;

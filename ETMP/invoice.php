@@ -13,18 +13,18 @@
 		<br><br>
 		
         <div class="invoice-box">
-			<table cellpadding="0" cellspacing="0">
-				<tr class="top">
-					<td colspan="2">
-						<table>
-							<tr>
+			<table cellpadding="0" cellspacing="0" >
+				<tr class="top" >
+					<td colspan="2" class = "invoiceTablePart1">
+						<table class = "invoiceFirstTable">
+							<tr class = "ITopTable">
 								<td class="title">
 									<img src="images/company_logo.png" style="width: 100%; max-width: 300px" />
 								</td>
 
-								<td>
+								<td class = "iDetails">
+									<br>
 									<p id = "invoiceID"></p>
-										<br />
 									<p id = "Cdate"></p>
 								</td>
 							</tr>
@@ -33,13 +33,14 @@
 				</tr>
 
 				<tr class="information">
-					<td colspan="2">
-						<table>
+					<td colspan="2" class = "invoiceTablePart2">
+						<table >
 							<tr>
 								<td>
-									Swinburne University of Technology<br />
-									Jalan Simpang Tiga<br />
-									93350 Kuching, Sarawak, Malaysia
+								<br>
+									<p id= "invLoc1">Swinburne University of Technology</p>
+									<p id= "invLoc2">Jalan Simpang Tiga<p/>
+									<p id= "invLoc3">93350 Kuching, Sarawak, Malaysia</p>
 								</td>
 
 								<td>
@@ -70,7 +71,7 @@
 					<td id = "trainingDailyPrice"></td>
 				</tr>
 				<tr class="total">
-					<td></td>
+					<td id = "EmptyInvoiceBox"></td>
 					<td id ="trainingTotalPrice"></td>
 				</tr>
 			</table>

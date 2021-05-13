@@ -1,18 +1,13 @@
-<?php include ('userdata.php');?>
+<?php include('admindata.php')?>
 <?php
     $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
     $sender = $_SESSION['name'];
     $receiver = $_POST['receiver_name'];
-    $message = $_POST['msg'];
 
     $data = array(
         ':receiver_name' => $receiver,
         ':sender_name' => $sender,
-        ':msg' => $message
     );
-
-    $query = "INSERT INTO messages(sender_name,receiver_name,msg)VALUES('$sender','$receiver','$message')";
-    mysqli_query($conn,$query);
 
     //display message
     $query_display = "SELECT * FROM messages WHERE (sender_name = '".$sender."' AND receiver_name = '".$receiver."') OR (sender_name = '".$receiver."' AND receiver_name = '".$sender."') ORDER BY msg_id ASC";

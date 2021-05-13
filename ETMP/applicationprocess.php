@@ -140,6 +140,12 @@ if(isset($_POST["booking"])){
 			$daily_price = $rows['daily_price'];
 			
 		}
+		
+		if($program == "Others")
+		{
+			$base_price = 50.00;
+			$daily_price = 50.00;
+		}
 	}
 	
 	$start_date = strtotime($date_start);
@@ -318,6 +324,12 @@ if(isset($_POST['bookfromsaved'])){
 		{
 			$base_price = $rows['base_price'];
 			$daily_price = $rows['daily_price'];
+		}
+		
+		if($program == "Others")
+		{
+			$base_price = 50.00;
+			$daily_price = 50.00;
 		}
 	}
 	

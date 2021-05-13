@@ -45,4 +45,23 @@
         }
     }
     ?>
+    <button type="button" class="loadchat">Update Chat</button>
     </div>
+
+<script>
+ //display message
+    $(document).ready(function(){
+        $(document).on('click', '.loadchat', function(){
+          var receiver_name = sessionStorage.receiver;
+          $.ajax({
+           url:"fetchChatHistory.php",
+           method:"POST",
+           data:{receiver_name:receiver_name},
+           success:function(data)
+           {
+            $('#chat-body').html(data);
+           }
+          })
+         });
+     });
+</script>

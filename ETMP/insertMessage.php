@@ -39,25 +39,25 @@
      $output .= '</ul>';
      return $output;
     }
-*/ 
-    session_start();
-    /*
+
     $data = array(
         ':receiver_name' => $_POST['receiver'],
         ':sender_name' => $_SESSION['name'],
         ':msg' => $_POST['status_message']
-    );*/
-    $data = array(
-        ':receiver_name' => "Sample Client",
-        ':sender_name' => $_SESSION['name'],
-        ':msg' => "Hi Sample Client"
     );
+    $data = array(
+        ':sender_name' => "Sample Admin",
+        ':receiver_name' => "Sample Client",
+        ':msg' => "Hi Sample Client"
+    );*/
 
-    $query = "INSERT INTO messages(sender_name,receiver_name,msg)VALUES(:sender_name,:receiver_name,:msg)";
+    $query = "INSERT INTO messages(sender_name,receiver_name,msg)VALUES('Sample Client','Sample Admin','Hi Admin')";
+    mysqli_query($conn,$query);
 
-    $statement = $connect->prepare($query);
+    //$statement = $connect->prepare($query);
     
 if($statement->execute($data)){
-    echo fetch_user_chat_history($_SESSION['name'], $_POST['receiver'], $conn);
+    echo "Hi!";
+    //echo fetch_user_chat_history($_SESSION['name'], $_POST['receiver'], $conn);
 }
 ?>

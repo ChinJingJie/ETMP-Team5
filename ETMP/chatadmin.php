@@ -148,13 +148,7 @@
           <!-- identify reeiver in the following input -->
           <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
           <input type="text" id="receiver" name="receiver" value="" hidden/>
-          <div class="msg-send">
-              <label for="send-icon">
-                <i class="fa fa-send"></i>
-              </label>
-
-              <input id="send-icon" type="submit" />
-          </div>
+          <button type="button" class="sendbtnchat"><i class="fa fa-send"></i></button>
       </div>
     </div>
 </div>
@@ -209,8 +203,8 @@
     
     //send message
     $(document).ready(function(){
-        $(document).on('click', '#send-icon', function(){
-          var receiver_name = $('#displayName2').text(sessionStorage.receiver);
+        $(document).on('click', '.sendbtnchat', function(){
+          var receiver_name = "Sample Admin";
           var msg = $('#status_message'+receiver_name).val();
           $.ajax({
            url:"insertMessage.php",
@@ -221,6 +215,7 @@
             //clear text area field value
             $('#status_message'+receiver_name).val('');
             $('#chat-body'+receiver_name).html(data);
+            $('.sendbtnchat').css("display", "none");
            }
           })
          });

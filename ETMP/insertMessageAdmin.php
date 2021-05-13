@@ -1,4 +1,4 @@
-<?php include ('userdata.php');?>
+<?php include('admindata.php')?>
 <?php
     $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
     $sender = $_SESSION['name'];

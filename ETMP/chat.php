@@ -218,14 +218,11 @@
 
               <input id="file-icon" type="file" onclick="fileSelectionMsg('upload')"/>
           </div>
-          <!--<input type="text" class="incoming_id" name="incoming_id" value="<?php //echo $user_id; ?>" hidden>-->
           <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
           <div class="msg-send">
               <label for="send-icon">
-                <i class="fa fa-send"></i>
+                <i class="fa fa-send sendbtnchat"></i>
               </label>
-
-              <input id="send-icon" type="submit" />
           </div>
       </div>
     </div>
@@ -249,9 +246,9 @@
     
     //send message
     $(document).ready(function(){
-        $(document).on('click', '#send-icon', function(){
-          var receiver_name = $('#displayName2').text(sessionStorage.receiver);
-          var msg = $('#status_message'+receiver_name).val();
+        $(document).on('click', '.sendbtnchat', function(){
+          var receiver_name = sessionStorage.receiver;
+          var msg = $('#status_message').val();
           $.ajax({
            url:"insertMessage.php",
            method:"POST",
@@ -259,8 +256,9 @@
            success:function(data)
            {
             //clear text area field value
-            $('#status_message'+receiver_name).val('');
-            $('#chat-body'+receiver_name).html(data);
+            $('#status_message').val('');
+            $('#chat-body').html(data);
+            $('.sendbtnchat').css("display", "none");
            }
           })
          });

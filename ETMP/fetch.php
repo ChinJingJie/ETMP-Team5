@@ -6,7 +6,6 @@
         $('#chatWindow').removeClass('chat-box-on');
         $('#chatWindow2').addClass('chat-box-on');
         $('#displayName2').text(sessionStorage.receiver);
-        $('#receiver').val(sessionStorage.receiver);
       });
     })
 </script>

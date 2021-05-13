@@ -172,8 +172,8 @@
       </div>
     </div>
 </div>
+
 <!--private chat window for user stored in database-->
-<!--the content is not properly structured yet-->
 <div class="chat-box" id="chatWindow2">
   <div class="chat-head">
     <div class="popup-head-left pull-left picBg">
@@ -246,4 +246,23 @@
           }
       }
     })
+    
+    //send message
+    $(document).ready(function(){
+        $(document).on('click', '#send-icon', function(){
+          var receiver_name = $('#displayName2').text(sessionStorage.receiver);
+          var msg = $('#status_message'+receiver_name).val();
+          $.ajax({
+           url:"insertMessage.php",
+           method:"POST",
+           data:{receiver_name:receiver_name, msg:msg},
+           success:function(data)
+           {
+            //clear text area field value
+            $('#status_message'+receiver_name).val('');
+            $('#chat-body'+receiver_name).html(data);
+           }
+          })
+         });
+     });
 </script>

@@ -120,7 +120,7 @@
 					$db = mysqli_select_db($connection,'sql6405286');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
-					and isAccepted = '1' and isPaid = '0' and isCancelled = '0' and isComplete ='0'";
+					and isAccepted = '1' and itinerary_confirm = '1' and isPaid = '0' and isCancelled = '0' and isComplete ='0'";
 					$query_run = mysqli_query($connection,$query);
         
             while($row = mysqli_fetch_array($query_run)){

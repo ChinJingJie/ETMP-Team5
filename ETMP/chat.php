@@ -194,18 +194,7 @@
   <div class="chat-messages">
       <div class="chat-body" id="chat-body">
 		<!--body of the chat-->
-          <div class="card-body msg_card_body">
-            <div class="d-flex justify-content-start mb-4">
-              <div class="msg_cotainer">
-                Hi, how are you samim?
-              </div>
-            </div>
-            <div class="d-flex justify-content-end mb-4">
-              <div class="msg_cotainer_send">
-                Hi Khalid i am good tnx how about you?
-              </div>
-            </div>
-          </div>
+          <button type="button" class="loadchat">Previous Chat</button>
         </div>
       <div class="chat-file-msg" id="fileSlt">Nothing selected</div>
       <div class="chat-footer">
@@ -241,6 +230,22 @@
           }
       }
     })
+    
+    //display message
+    $(document).ready(function(){
+        $(document).on('click', '.loadchat', function(){
+          var receiver_name = sessionStorage.receiver;
+          $.ajax({
+           url:"fetchChatHistory.php",
+           method:"POST",
+           data:{receiver_name:receiver_name},
+           success:function(data)
+           {
+            $('#chat-body').html(data);
+           }
+          })
+         });
+     });
     
     //send message
     $(document).ready(function(){

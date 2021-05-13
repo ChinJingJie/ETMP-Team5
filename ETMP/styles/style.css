@@ -1322,27 +1322,32 @@ label.star:before {
 
 /*Invoice CSS*/
 .invoice-box {
-	max-width: 800px;
+	max-width: 1000px;
 	margin: auto;
 	padding: 30px;
 	border: 1px solid #eee;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 10px #0070ff;
 	font-size: 16px;
 	line-height: 24px;
 	font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-	color: #555;
+	color: #000000;
 }
 
+.ITopTable{
+	text-align: right;
+	border-color: #000000;
+}
 
 .invoice-box table {
 	width: 100%;
 	line-height: inherit;
-	text-align: left;
+	
 }
 
 .invoice-box table td {
 	padding: 5px;
 	vertical-align: top;
+	text-align:left;
 }
 
 .invoice-box table tr td:nth-child(2) {
@@ -1350,31 +1355,43 @@ label.star:before {
 }
 
 .invoice-box table tr.top table td {
+	padding-top: 10px;
 	padding-bottom: 20px;
+	background-color: #e7feff;
+	border-color: #000000;
+	
 }
 
 .invoice-box table tr.top table td.title {
 	font-size: 45px;
 	line-height: 45px;
-	color: #333;
+	color: #e7feff;
+	text-align: left;
+}
+
+.invoice-box table tr.top table td.iDetails {
+	color: #000000;
+	margin-right: auto;
+	text-align: right;
 }
 
 .invoice-box table tr.information table td {
+	padding-top: 40px;
 	padding-bottom: 40px;
+	background-color: #e7feff;
+	border-color: #000000;
 }
 
 .invoice-box table tr.heading td {
-	background: #eee;
+	background: #e7feff;
 	border-bottom: 1px solid #ddd;
 	font-weight: bold;
-}
-
-.invoice-box table tr.details td {
-	padding-bottom: 20px;
+	
 }
 
 .invoice-box table tr.item td {
 	border-bottom: 1px solid #eee;
+	background-color: #e7feff;
 }
 
 .invoice-box table tr.item.last td {
@@ -1383,7 +1400,9 @@ label.star:before {
 
 .invoice-box table tr.total td:nth-child(2) {
 	border-top: 2px solid #eee;
+	border-color: #000000;
 	font-weight: bold;
+	background-color: #e7feff;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1411,5 +1430,30 @@ label.star:before {
 }
 
 .invoice-box.rtl table tr td:nth-child(2) {
+	text-align: right;
+}
+
+.invoicelocation {
 	text-align: left;
+}
+
+#invoiceID, #Cdate, #trainingID,#trainingName, #trainingProgram, #trainingStartDate, #trainingEndDate {
+	text-align: right;
+}
+
+
+#invLoc1, #invLoc2, #invLoc3 {
+	text-align: left;
+}
+
+#EmptyInvoiceBox {
+	background-color: #e7feff ;
+}
+
+.invoiceTablePart2 {
+	background-color: #e7feff;
+}
+
+.invoiceTablePart1{
+	background-color: #e7feff;
 }

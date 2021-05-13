@@ -4,63 +4,45 @@
     $sender = $_SESSION['name'];
     $receiver = $_POST['receiver_name'];
     $message = $_POST['msg'];
-/*
-    function fetch_user_chat_history($from_user_id, $to_user_id, $connect)
-    {
-     $query = "
-     SELECT * FROM chat_message 
-     WHERE (from_user_id = '".$from_user_id."' 
-     AND to_user_id = '".$to_user_id."') 
-     OR (from_user_id = '".$to_user_id."' 
-     AND to_user_id = '".$from_user_id."') 
-     ORDER BY timestamp DESC
-     ";
-     $statement = $connect->prepare($query);
-     $statement->execute();
-     $result = $statement->fetchAll();
-     $output = '<ul class="list-unstyled">';
-     foreach($result as $row)
-     {
-      $user_name = '';
-      if($row["from_user_id"] == $from_user_id)
-      {
-       $user_name = '<b class="text-success">You</b>';
-      }
-      else
-      {
-       $user_name = '<b class="text-danger">'.get_user_name($row['from_user_id'], $connect).'</b>';
-      }
-      $output .= '
-      <li style="border-bottom:1px dotted #ccc">
-       <p>'.$user_name.' - '.$row["chat_message"].'
-        <div align="right">
-         - <small><em>'.$row['timestamp'].'</em></small>
-        </div>
-       </p>
-      </li>
-      ';
-     }
-     $output .= '</ul>';
-     return $output;
-    }
 
     $data = array(
-        ':receiver_name' => $_POST['receiver'],
-        ':sender_name' => $_SESSION['name'],
-        ':msg' => $_POST['status_message']
+        ':receiver_name' => $receiver,
+        ':sender_name' => $sender,
+        ':msg' => $message
     );
-    $data = array(
-        ':sender_name' => "Sample Admin",
-        ':receiver_name' => "Nicholas",
-        ':msg' => "Hi Nicholas"
-    );*/
 
     $query = "INSERT INTO messages(sender_name,receiver_name,msg)VALUES('$sender','$receiver','$message')";
     mysqli_query($conn,$query);
-    /*$statement = $conn->prepare($query);
-    
-if($statement->execute($data)){
-    echo "Hi!";
-    //echo fetch_user_chat_history($_SESSION['name'], $_POST['receiver'], $conn);
-}*/
-?>
+
+    //display message
+    $query_display = "SELECT * FROM messages WHERE (sender_name = '".$sender."' AND receiver_name = '".$receiver."') OR (sender_name = '".$receiver."' AND receiver_name = '".$sender."') ORDER BY msg_id ASC";
+    $result = mysqli_query($conn,$query_display);
+    ?>     
+    <div class="card-body msg_card_body">
+    <?php
+    if(mysqli_num_rows($result) > 0)
+    {
+    while($row = mysqli_fetch_array($result))
+    {
+        if($row["sender_name"] == $sender)
+        {
+            ?>
+            <div class="d-flex justify-content-end mb-4">
+                <div class="msg_cotainer_send"><?php echo $row['msg'];?></div>
+            </div>
+        <?php
+        }
+        else
+        {
+            ?>
+            <div class="d-flex justify-content-start mb-4">
+                <div class="msg_cotainer"><?php echo $row['msg'];?></div>
+            </div>
+        <?php
+        }
+        ?>
+    <?php
+        }
+    }
+    ?>
+    </div>

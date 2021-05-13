@@ -95,7 +95,7 @@
                     <div class="d-flex bd-highlight chatCard">
                         <div class="chatUser">
                             <span>ETMP Official</span>
-                            <p id="chatHistoryDisplay">Start a new chat now</p>
+                            <p id="chatHistoryDisplay">Chat with official account for FAQ</p>
                         </div>
                     </div>
                 </li>
@@ -110,7 +110,7 @@
                             <div class="d-flex bd-highlight chatCard">                    
                                 <div class="chatUser">
                                     <span><?php echo $row1['name'];?></span>
-                                    <p id="chatHistoryDisplay">Start a new chat now</p>
+                                    <p id="chatHistoryDisplay">Chat with <?php echo $row1['name'];?> now</p>
                                 </div>
                             </div>
                         </li>
@@ -192,19 +192,17 @@
     </div>
   </div>
   <div class="chat-messages">
-      <div class="chat-body">
+      <div class="chat-body" id="chat-body">
 		<!--body of the chat-->
           <div class="card-body msg_card_body">
             <div class="d-flex justify-content-start mb-4">
               <div class="msg_cotainer">
                 Hi, how are you samim?
-                <span class="msg_time">8:40 AM, Today</span>
               </div>
             </div>
             <div class="d-flex justify-content-end mb-4">
               <div class="msg_cotainer_send">
                 Hi Khalid i am good tnx how about you?
-                <span class="msg_time_send">8:55 AM, Today</span>
               </div>
             </div>
           </div>
@@ -255,10 +253,9 @@
            data:{receiver_name:receiver_name, msg:msg},
            success:function(data)
            {
-            //clear text area field value
-            $('#status_message').val('');
+            $('#status_message').val(''); //clear text area field value
             $('#chat-body').html(data);
-            $('.sendbtnchat').css("display", "none");
+            $('#fileSlt').css("display", "none");
            }
           })
          });

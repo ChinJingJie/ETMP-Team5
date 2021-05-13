@@ -11,13 +11,6 @@
       });
     })
     
-    //close private chat window(default)
-    $(function(){
-      $("#closeChat1").click(function () {
-        $('#chatWindow1').removeClass('chat-box-on');
-      });
-    })
-    
     //close private chat window(dynamic)
     $(function(){
       $("#closeChat2").click(function () {
@@ -25,13 +18,6 @@
       });
     })
     
-    //navigate from private chat window to chat window with user list(default)
-    $(function(){
-      $("#backToChat1").click(function () {
-        $('#chatWindow1').removeClass('chat-box-on');
-        $('#chatWindow').addClass('chat-box-on');
-      });
-    })
     
     //navigate from private chat window to chat window with user list(dynamic)
     $(function(){
@@ -40,18 +26,6 @@
         $('#chatWindow').addClass('chat-box-on');
       });
     })
-    
-    /*generate profile pic with initial for default user
-    $(document).ready(function(){
-      var profileName = $('#profileName1').text();
-      var intials = $('#profileName1').text().charAt(0) + $('#profileName1').text().charAt(1);
-      //use in chat lists
-      var profileImage0 = $('.profileImage0').text(intials);
-      //use in header
-      var profileImage = $('#profileImage').text(intials);
-      //use during conversation
-      var profileImage1 = $('.profileImage1').text(intials);
-    });*/
 </script>
 
 <?php 
@@ -61,6 +35,7 @@
   if(mysqli_num_rows($sql) > 0){
     $row = mysqli_fetch_assoc($sql);
   }
+  $sql1 = mysqli_query($conn, "SELECT * FROM users");
 ?>
 
 <div class="sticky">
@@ -94,6 +69,27 @@
 		<!--body of the chat list-->
         <div class="contacts_body">
             <ui class="contacts">
+                <div id="result0">
+                    <?php
+                    if(mysqli_num_rows($sql1) > 0)
+                    {
+                        while($row1 = mysqli_fetch_array($sql1))
+                        {
+                            ?>
+                            <li class="chatCardDisplay1 contacts_body" onclick="storeUser('<?php echo $row1['name'];?>')">
+                                <input type="text" class="receiver_name" name="receiver_name" value="<?php echo $row1['name'];?>" hidden>
+                                <div class="d-flex bd-highlight chatCard">                    
+                                    <div class="chatUser">
+                                        <span><?php echo $row1['name'];?></span>
+                                        <p id="chatHistoryDisplay">Start a new chat now</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <?php
+                            }
+                        }
+                     ?>
+                </div>
                 <div id="result"></div>
             </ui>
           </div>  
@@ -103,8 +99,8 @@
       </div>
     </div>
 </div>
+
 <!--private chat window for user stored in database-->
-<!--the content is not properly structured yet-->
 <div class="chat-box" id="chatWindow2">
   <div class="chat-head">
     <div class="popup-head-left pull-left picBg">
@@ -123,7 +119,7 @@
     </div>
   </div>
   <div class="chat-messages">
-      <div class="chat-body">
+      <div class="chat-body" id="chat-body">
 		<!--body of the chat-->
           <div class="card-body msg_card_body">
             <div class="d-flex justify-content-start mb-4">
@@ -150,7 +146,6 @@
               <input id="file-icon" type="file" onclick="fileSelectionMsg('upload')"/>
           </div>
           <!-- identify reeiver in the following input -->
-          <input type="text" class="receiver_name" name="receiver_name" value="" hidden> 
           <textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
           <div class="msg-send">
               <label for="send-icon">
@@ -163,7 +158,7 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
     //print name of file selected to upload and restric size to 25MB
     const input = document.getElementById('file-icon')
     input.addEventListener('change', (event) => {
@@ -200,12 +195,30 @@
             var search = $(this).val();
             if(search != '')
             {
+                $('#result0').css("display", "none");
                 load_data(search);
             }
             else
             {
                 load_data();
+                $('#result0').css("display", "block");
             }
           });
     });
+    
+    //send message
+     $(document).on('click', '#send-icon', function(){
+      var receiver_name = $(sessionStorage.receiver);
+      var msg = $('#status_message'+receiver_name).val();
+      $.ajax({
+       url:"insertMessage.php",
+       method:"POST",
+       data:{receiver_name:receiver_name, msg:msg},
+       success:function(data)
+       {
+        $('#status_message'+receiver_name).val('');
+        $('#chat-body'+receiver_name).html(data);
+       }
+      })
+     });
 </script>

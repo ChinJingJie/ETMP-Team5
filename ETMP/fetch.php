@@ -6,14 +6,12 @@
         $('#chatWindow').removeClass('chat-box-on');
         $('#chatWindow2').addClass('chat-box-on');
         $('#displayName2').text(sessionStorage.receiver);
-        $('.receiver_name').val(sessionStorage.receiver);
       });
     })
 </script>
 <?php
     //connection or link to database
     $connect = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-    $output = '';
     
     if(isset($_POST['query'])) {
         $search = mysqli_real_escape_string($connect, $_POST["query"]);
@@ -26,6 +24,7 @@
             {
                 ?>
                 <li class="chatCardDisplay1 contacts_body" onclick="storeUser('<?php echo $row['name'];?>')">
+                    <input type="text" class="receiver_name" name="receiver_name" value="<?php echo $row['name'];?>" hidden>
                     <div class="d-flex bd-highlight chatCard">                    
                         <div class="chatUser">
                             <span><?php echo $row['name'];?></span>

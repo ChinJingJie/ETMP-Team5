@@ -65,6 +65,7 @@
   if(mysqli_num_rows($sql) > 0){
     $row = mysqli_fetch_assoc($sql);
   }
+  $sql1 = mysqli_query($conn, "SELECT * FROM admins");
 ?>
 
 <div class="sticky">
@@ -98,14 +99,25 @@
                         </div>
                     </div>
                 </li>
-                <li class="chatCardDisplay1 contacts_body" onclick="storeUser('Sample Admin')">
-                    <div class="d-flex bd-highlight chatCard">
-                        <div class="chatUser">
-                            <span>Sample Admin</span>
-                            <p id="chatHistoryDisplay">Start a new chat now</p>
-                        </div>
-                    </div>
-                </li>
+                <?php
+                if(mysqli_num_rows($sql1) > 0)
+                {
+                    while($row1 = mysqli_fetch_array($sql1))
+                    {
+                        ?>
+                        <li class="chatCardDisplay1 contacts_body" onclick="storeUser('<?php echo $row1['name'];?>')">
+                            <input type="text" class="receiver_name" name="receiver_name" value="<?php echo $row1['name'];?>" hidden>
+                            <div class="d-flex bd-highlight chatCard">                    
+                                <div class="chatUser">
+                                    <span><?php echo $row1['name'];?></span>
+                                    <p id="chatHistoryDisplay">Start a new chat now</p>
+                                </div>
+                            </div>
+                        </li>
+                        <?php
+                        }
+                    }
+                 ?>
             </ui>
           </div>  
       </div>

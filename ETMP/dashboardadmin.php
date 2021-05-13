@@ -26,6 +26,7 @@
 			$("#complete1").val(resu.isComplete);
                
             $("#id2").val(resu.id);
+			$("#id3").val(resu.id);
 		   }
 		 
 		}});
@@ -159,7 +160,10 @@
                         <p>Program: <?php echo $row['program']; ?></p>
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
-                    </div> 
+                    </div>
+				<button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewmessage" data-id ="<?php echo $row['id'];?>">
+					Message
+				</button>
                 </div>
                 </div>
 				<?php };?>
@@ -199,52 +203,9 @@
                 </div>
             </div>
         <br/>
-        <h2>Notifications Sent</h2>
-		<button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">+ New Notification</button>
-        <p class="newmsg"></p>
-		<!-- Modal -->
-            <div class="modal fade design" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog box">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title" id="staticBackdropLabel">Add New Notification Message</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <form id="newNotificationform" method="post" action = "notificationprocess.php">
-                    <div class="modal-body left">
-                      <div class="form-group">
-                        <label for="notify_name">Name</label>
-                        <span class="labelcolons">:</span>
-                        <select name="notify_name" id="notify_name">
-                            <!-- need to load from database -->
-                            <?php
-                                $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-                                $db = mysqli_select_db($connection,'sql6405286');
-								
-                                $user_query = "SELECT name FROM application";
-                                $user_query_run = mysqli_query($connection,$user_query);
-
-                                while($row = mysqli_fetch_array($user_query_run)){
-                                    ?>
-                                    <option><?php echo $row['name']; ?></option>
-                                    <?php
-                                }
-                          ?>
-                          </select>
-						<label class="newmessage" for="newmessage">Message</label>
-						<span class="labelcolons">:</span>
-						<br/>
-						<textarea id="newmessage" name="newmessage" rows="4" cols="50" placeholder="Enter Message"></textarea>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                      <button type="submit" name="send" class="btn btn-primary">Send</button>
-                  </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+        <h2>Notifications</h2>
+		<p class="left">Send the notification message through accordian card to specific client</p>
+		
         <div class="notification-space">
             <p><?php
 				$dayofweek = date("w");
@@ -320,6 +281,7 @@
 				 </div>
 			 
 				  <div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>
 					<button type = "button" class = "btn btn-secondary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>
 				  </div>  
@@ -354,6 +316,7 @@
                         <input type = "text" id ="id0" name="id0" value="" readonly/>
                         <button type="button" name="passData" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>
                     </form>	
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>	
 				  </div>  
 			</div>
@@ -386,6 +349,7 @@
 				 </div>
 			 
 				  <div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>
 					<button type = "button" class = "btn btn-secondary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>	
 				  </div>  
@@ -414,7 +378,9 @@
 				 <div>
 					<p><br><b>Please</b> refer to the <b>Training Application</b> database to<br><b>Check</b> the feedback</p>
 				</div>
-					
+					<div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>	
+				  </div>
 				 </div>
 			</div>
 		  </div>
@@ -448,6 +414,34 @@
 			</div>
 		  </div>
 		</div>
+		
+		<div class="modal fade design" id="viewmessage" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h3 class="modal-title" id="exampleModalLabel">Message</h3>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+				<form id="newNotificationform" method="post" action = "notificationprocess.php">
+					<div class="modal-body">
+					<div>What Message you want to send to the application below?</div>
+					
+					  	<label for="id">Application ID</label>
+                        <span class="labelcolons">:</span>
+						<input type = "text" id ="id3" name="id" value="" readonly/>
+						<textarea id="newmessage" name="newmessage" rows="4" cols="50" placeholder="Enter Message"></textarea>
+				  </div>
+				  
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="submit" class="btn btn-secondary" name="send" class="btn btn-info">Confirm</button>
+				  </div>
+				  </form>
+			</div>
+		</div>
+	</div>
+		
+		
     <div class="modal fade design" id="viewproofcheck" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">

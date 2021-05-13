@@ -12,7 +12,6 @@
         <div class="tab">
             <button class="tablinks" onclick="openTab(event, 'Info')">Basic Information</button>
             <button class="tablinks" onclick="openTab(event, 'Password')">Password</button>
-            <button class="tablinks" onclick="openTab(event, 'History')">Training History</button>
 			<button class="tablinks" onclick="openTab(event, 'Delete')">Delete Account</button>
         </div>
 		

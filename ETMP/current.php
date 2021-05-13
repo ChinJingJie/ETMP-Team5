@@ -46,6 +46,23 @@
 	});
 	
 	$(document).ready(function(){
+	  $(".itinerary").click(function(){
+		$.ajax({url: "applicationdata.php?id="+$(this).data('id'), success: function(result){
+		   //result not empty
+		   if (result) {
+			// assign result  to each label/ text
+			console.log(result);
+			var res = JSON.parse(result);
+	
+			$("#id2").val(res.id);
+			
+		   }
+		 
+		}});
+	  });
+	});
+	
+	$(document).ready(function(){
 	  $(".edit").click(function(){
 		$.ajax({url: "savedapplicationdata.php?id="+$(this).data('id'), success: function(result){
 		   //result not empty
@@ -215,6 +232,33 @@
 			</div>
 		  </div>
 		</div>
+		
+		<div class="modal fade design" id="itinerarymodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title" id="exampleModalLabel">Itinerary</h3>
+				</div>
+				<form id="itinerary" method="post" action = "generatepdf.php" enctype="multipart/form-data" >
+					<div class="modal-body">
+					Please confirm the itinerary details are correct!
+					<div class="form-group">
+						<label for="id" class="required">Application ID</label>
+                        <span class="labelcolons">:</span>
+						<input type = "text" id ="id2" name="id2" value="" readonly/>
+					</div>
+					<button type="submit" name="generatepdf" class="btn btn-primary" >Itinerary PDF</button>
+					</div>
+				
+					<div class="modal-footer">
+						<button type="submit" name="itineraryconf" class="btn btn-primary" >Yes</button>
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+					</div>
+				</form>
+			</div>
+		  </div>
+		</div>
+		
             <?php
 			$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
 			$name = $_SESSION['name'];
@@ -270,6 +314,9 @@
 							<td>
 							<button type="button" class="view" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewbookingmodal" data-id ="<?php echo $row['id'];?>">
 							  View
+							</button>
+							<button type="button" class="itinerary" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itinerarymodal" data-id ="<?php echo $row['id'];?>">
+							  Itinerary
 							</button>
 							</td>
 						</tr>

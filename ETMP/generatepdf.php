@@ -364,7 +364,15 @@ if(isset($_POST["g"]))
 	}
 }
 
-
+if(isset($_POST["itineraryconf"])){
+	$id = $_POST['id2'];
+	$itinerary_confirm = 1;
+	
+	$query = "UPDATE application SET itinerary_confirm = '$itinerary_confirm'  WHERE id='$id'";
+	$result = mysqli_query($conn, $query);
+	
+	header('location: current.php');
+}
 
 
 

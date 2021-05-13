@@ -404,7 +404,6 @@ if(isset($_POST["delete"])){
 	header('location: current.php');
 }
 
-
 ?>
 
 

@@ -454,6 +454,34 @@
 			</div>
 		  </div>
 	</div>
+	
+	<div class="modal fade design" id="viewupdatereconfirm" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Reconfirmation</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <form id="UpdateTrainingStatus" method="post" action="trainingapplicationdata.php">
+                    <div class="modal-body">
+					<div>Are you sure you want to update the training application to another stage?</div>
+					
+					  	<label for="id">Application ID</label>
+                        <span class="labelcolons">:</span>
+						<input type = "text" id ="id1" name="id" value="" readonly/>
+						<input type = "hidden" id ="accept1" name="accept" value="" readonly/>
+						<input type = "hidden" id ="paid1" name="paid" value="" readonly/>
+						<input type = "hidden" id ="complete1" name="complete" value="" readonly/>
+				  </div>
+				  
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+					<button type="submit" class="btn btn-secondary" name="updatetraining" class="btn btn-info">Confirm</button>
+				  </div>
+				  </form>
+			</div>
+		  </div>
+		</div>
 		
 		<div class="modal fade design" id="viewmessage" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">

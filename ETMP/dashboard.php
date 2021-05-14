@@ -106,6 +106,44 @@
                 </div>
             </div>
         </div>
+		<div class="accordion">
+            <div class="progress-tab">
+                <input type="checkbox" id="chck10"/>
+                <label class="progress-label" for="chck10">Itinerary Confirmation</label>
+                <div class="tab-content">
+                     <?php
+					if(isset($_SESSION['name'])){
+						$userData = getUsersData($_SESSION['name']);
+						$name = $userData['name'];
+					}
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+					$db = mysqli_select_db($connection,'sql6405286');
+							
+					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
+					and isAccepted = '1' and itinerary_confirm = '0' and isCancelled = '0' and isComplete = '0'";
+					$query_run = mysqli_query($connection,$query);
+        
+            while($row = mysqli_fetch_array($query_run)){
+                ?>
+                <div class="card1">
+                  <div class="text">
+                    <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
+                    <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
+                        <p>Program: <?php echo $row['program']; ?></p>
+                        <p>Start Date: <?php echo $row['date_start']; ?></p>
+                        <p>Start Time: <?php echo $row['time_start']; ?></p>
+                    </div> 
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>">
+					View
+					</button>
+                  </div>
+                </div>
+				<?php };?>
+                </div>
+                </div>
+            </div>
+        </div>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck3"/>
@@ -134,7 +172,7 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>" 
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar4" data-id ="<?php echo $row['id'];?>" 
 					onclick="storeInvoiceDetails('<?php echo $row['id'];?>','<?php echo $row['name'];?>','<?php echo $row['program'];?>',
 					'<?php echo $row['date_start'];?>','<?php echo $row['date_end'];?>','<?php echo $row['base_price'];?>','<?php echo $row['daily_price'];?>',
 					'<?php echo $row['total_cost'];?>' )">
@@ -147,6 +185,7 @@
                 </div>
             </div>
         </div>
+		
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck4"/>
@@ -175,7 +214,7 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar4" data-id ="<?php echo $row['id'];?>">
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar5" data-id ="<?php echo $row['id'];?>">
 					View
 					</button>
                   </div>
@@ -331,12 +370,12 @@
 			  </div>
 				  <div class="modal-body">
 				   <div>
-						<p>Stage: <b>Training Application Saved</b></p>
+						<p>Stage: <b>Training Program Application</b></p>
 				  </div>
 				  <div class="container">
 					  <div class="progress">
-						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-						  20%
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+						  0%
 						</div>
 					  </div>
 				 </div>
@@ -366,18 +405,19 @@
 			  </div>
 				  <div class="modal-body">
 				   <div>
-						<p>Stage: <b>Training Application Submitted</b></p>
+						<p>Stage: <b>Training Program Confirmation</b></p>
 				  </div>
 				  <div class="container">
 					  <div class="progress">
-						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-						  40%
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+						  20%
 						</div>
 					  </div>
 				 </div>
 				 <div>
 					<p><br>Training Application has been <b>Submitted</b> </p>
 					<p>You may proceed to <b>Wait </b>application been approved</p>
+					<p> </p>
 				</div>
 					
 				 </div>
@@ -390,7 +430,40 @@
 		  </div>
 	</div>
 	
-	 <div class="modal fade design" id="viewprogressbar3" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade design" id="viewprogressbar3" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <div class="modal-body">
+				   <div>
+						<p>Stage: <b>Itinerary Confirmation</b></p>
+				  </div>
+				  <div class="container">
+					  <div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+						  40%
+						</div>
+					  </div>
+				 </div>
+				 <div>
+					<p><br>Training Application has been <b>Approved</b> </p>
+					<p>You may proceed to <b>Confirm </b>your itinerary at <b>Current</b> page</p>
+				</div>
+					
+				 </div>
+			 
+				  <div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>
+					<button type = "button" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Current</a></button>	
+				  </div>  
+			</div>
+		  </div>
+	</div>
+	
+	 <div class="modal fade design" id="viewprogressbar4" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -420,7 +493,7 @@
 		  </div>
 	</div>
 	
-	<div class="modal fade design" id="viewprogressbar4" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade design" id="viewprogressbar5" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -439,7 +512,7 @@
 					  </div>
 				 </div>
 				 <div>
-					<p><br>Training Application has been <b>Paid</b> </p>
+					<p><br>Training Application is officially <b>Ongoing</b> </p>
 					<p>You may proceed to <b>Wait </b>for the start date of the training</p>
 					<form id="GenerateReceiptPDF" method="post" action="generatepdf.php">
 						<input type = "hidden" id ="id" name="id" value="" />

@@ -484,7 +484,7 @@ div.pull-right a i:hover, div.pull-left a i:hover {
 }
 
 /*collapse or accordin bar*/
-input#chck1, input#chck2, input#chck3, input#chck4, input#chck5, input#chck6, input#chck7, input#chck8{
+input#chck1, input#chck2, input#chck3, input#chck4, input#chck5, input#chck6, input#chck7, input#chck8, input#chck9, input#chck10{
     position: absolute;
     opacity: 0;
 }
@@ -541,7 +541,8 @@ input#chck1, input#chck2, input#chck3, input#chck4, input#chck5, input#chck6, in
     padding: 2% 0;
 }
 
-input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#chck3:checked ~ .tab-content, input#chck4:checked ~ .tab-content, input#chck5:checked ~ .tab-content, input#chck6:checked ~ .tab-content, input#chck7:checked ~ .tab-content, input#chck8:checked ~ .tab-content{
+input#chck1:checked ~ .tab-content, input#chck2:checked ~ .tab-content, input#chck3:checked ~ .tab-content, input#chck4:checked ~ .tab-content, input#chck5:checked ~ .tab-content, input#chck6:checked ~ .tab-content, input#chck7:checked ~ .tab-content,
+ input#chck8:checked ~ .tab-content, input#chck9:checked ~ .tab-content, input#chck10:checked ~ .tab-content{
     max-height: 100vw;
 }
 

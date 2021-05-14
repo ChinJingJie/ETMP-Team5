@@ -40,7 +40,7 @@
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck2"/>
-                <label class="progress-label" for="chck2">Training Program Confirmation</label>
+                <label class="progress-label" for="chck2">Training Program Submitted</label>
                 <div class="tab-content">
                      <?php
 					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
@@ -70,6 +70,44 @@
                 </div>
             </div>
         </div>
+		<div class="accordion">
+            <div class="progress-tab">
+                <input type="checkbox" id="chck9"/>
+                <label class="progress-label" for="chck9">Itinerary Confirmation</label>
+                <div class="tab-content">
+                     <?php
+					if(isset($_SESSION['name'])){
+						$userData = getUsersData($_SESSION['name']);
+						$name = $userData['name'];
+					}
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+					$db = mysqli_select_db($connection,'sql6405286');
+							
+					$query = "SELECT * FROM application WHERE isSubmitted = '1' 
+					and isAccepted = '1' and itinerary_confirm = '0' and isCancelled = '0' and isComplete = '0'";
+					$query_run = mysqli_query($connection,$query);
+        
+            while($row = mysqli_fetch_array($query_run)){
+                ?>
+                <div class="card1">
+                  <div class="text">
+                    <p>Training ID: <b><?php echo $row['id']; ?></b></p> 
+                    <div class="scrolls">
+						<p>Name: <?php echo $row['name']; ?></p>
+                        <p>Program: <?php echo $row['program']; ?></p>
+                        <p>Start Date: <?php echo $row['date_start']; ?></p>
+                        <p>Start Time: <?php echo $row['time_start']; ?></p>
+                    </div> 
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar2" data-id ="<?php echo $row['id'];?>">
+					View
+					</button>
+                  </div>
+                </div>
+				<?php };?>
+                </div>
+                </div>
+            </div>
+        </div>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck3"/>
@@ -94,7 +132,7 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar2" data-id ="<?php echo $row['id'];?>">
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>">
 					View
 					</button>
                   </div>
@@ -127,7 +165,7 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>
                     </div> 
-                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar3" data-id ="<?php echo $row['id'];?>">
+                    <button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar4" data-id ="<?php echo $row['id'];?>">
 					View
 					</button>
                   </div>
@@ -191,7 +229,7 @@
                         <p>Start Date: <?php echo $row['date_start']; ?></p>
                         <p>Start Time: <?php echo $row['time_start']; ?></p>	
                     </div> 
-					<button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar4" data-id ="<?php echo $row['id'];?>">
+					<button type="button" class = "edit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewprogressbar5" data-id ="<?php echo $row['id'];?>">
 					View
 					</button>
                   </div>			
@@ -253,7 +291,7 @@
   
 </body>
   
-	  <div class="modal fade design" id="viewprogressbar1" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	  <div class="modal fade design" id="viewprogressbar1" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -266,8 +304,8 @@
 				  </div>
 				  <div class="container">
 					  <div class="progress">
-						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-						  40%
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+						  20%
 						</div>
 					  </div>
 				 </div>
@@ -287,7 +325,40 @@
 		  </div>
 	</div>
 	
-	 <div class="modal fade design" id="viewprogressbar2" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade design" id="viewprogressbar2" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+				  <div class="modal-body">
+				   <div>
+						<p>Stage: <b>Itinerary Confirmation</b></p>
+				  </div>
+				  <div class="container">
+					  <div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+						  40%
+						</div>
+					  </div>
+				 </div>
+				 <div>
+					<p><br>Training Application has been <b>Approved</b> </p>
+					<p>Please <b>Wait </b>for client to <b>Confirm</b> the itinerary</p>
+				</div>
+					
+				 </div>
+			 
+				  <div class="modal-footer">
+					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
+					<button type = "button" class = "btn btn-secondary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>
+				  </div>  
+			</div>
+		  </div>
+	</div>
+	
+	 <div class="modal fade design" id="viewprogressbar3" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -311,7 +382,7 @@
 			 
 				  <div class="modal-footer">
                     <form id="passDataForm" method="post" action = "" novalidate="novalidate" >
-                        <input type = "text" id ="id0" name="id0" value="" readonly hidden/>
+                        <input type = "text" id ="id0" name="id0" value="" readonly/>
                         <button type="button" name="passData" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>
                     </form>	
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
@@ -321,7 +392,7 @@
 		  </div>
 	</div>
 	
-	<div class="modal fade design" id="viewprogressbar3" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade design" id="viewprogressbar4" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -355,7 +426,7 @@
 		  </div>
 	</div>
 	
-	<div class="modal fade design" id="viewprogressbar4" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade design" id="viewprogressbar5" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 			<div class="modal-content">
 			  <div class="modal-header">
@@ -383,35 +454,6 @@
 			</div>
 		  </div>
 	</div>
-	
-	
-	<div class="modal fade design" id="viewupdatereconfirm" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-			<div class="modal-content">
-			  <div class="modal-header">
-				<h3 class="modal-title" id="exampleModalLabel">Reconfirmation</h3>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			  </div>
-				  <form id="UpdateTrainingStatus" method="post" action="trainingapplicationdata.php">
-                    <div class="modal-body">
-					<div>Are you sure you want to update the training application to another stage?</div>
-					
-					  	<label for="id">Application ID</label>
-                        <span class="labelcolons">:</span>
-						<input type = "text" id ="id1" name="id" value="" readonly/>
-						<input type = "hidden" id ="accept1" name="accept" value="" readonly/>
-						<input type = "hidden" id ="paid1" name="paid" value="" readonly/>
-						<input type = "hidden" id ="complete1" name="complete" value="" readonly/>
-				  </div>
-				  
-				  <div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-secondary" name="updatetraining" class="btn btn-info">Confirm</button>
-				  </div>
-				  </form>
-			</div>
-		  </div>
-		</div>
 		
 		<div class="modal fade design" id="viewmessage" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">

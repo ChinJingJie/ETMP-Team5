@@ -41,7 +41,7 @@ if(isset($_POST["feedbacksubmit"])){
 	
 	if(count($errors) == 0){
 		$query = "UPDATE application SET rating='$rating', overall_experience='$experience',
-		improvements='$improvement', comments_on_trainer_performance='$trainperform'  
+		improvements='$improvement', comments_on_trainer_performance='$trainperform', progress_bar_message = 'Thanks for filling in the Feedback Form, you may view your History Training in Profile Page'  
 				  WHERE id='$id'";
 		
 		$result = mysqli_query($conn, $query);

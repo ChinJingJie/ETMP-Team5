@@ -49,7 +49,7 @@ $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql
 	
 	if(isset($_POST["canceltraining"])){
 		$id = $_POST['id'];
-		$user_query = "UPDATE application SET isCancelled = '1' 
+		$user_query = "UPDATE application SET isCancelled = '1', progress_bar_message = 'You have cancel the training program'
 		WHERE id= $id"
 		or die($user_query->error());
 		$result = mysqli_query($conn, $user_query);
@@ -66,7 +66,7 @@ $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql
 		
 		if ($isAccepted == 0)
 		{
-			$user_query = "UPDATE application SET isAccepted = '1'
+			$user_query = "UPDATE application SET isAccepted = '1', progress_bar_message = 'Your booking has been Accepted, You may need to accept the Itinerary in Current Page and Proceed to the Payment Stage'
 			WHERE id= $id"
 			or die($user_query->error());
 			$result = mysqli_query($conn, $user_query);
@@ -74,7 +74,7 @@ $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql
 		
 		else if ($isPaid == 0)
 		{
-			$user_query = "UPDATE application SET isPaid = '1' 
+			$user_query = "UPDATE application SET isPaid = '1', progress_bar_message = 'Payment made is successful, Thanks for joining us. Current Stage is To Be Trained'
 			WHERE id= $id"
 			or die($user_query->error());
 			$result = mysqli_query($conn, $user_query);
@@ -82,7 +82,7 @@ $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql
 		
 		else if ($isComplete == 0)
 		{
-			$user_query = "UPDATE application SET isComplete = '1' 
+			$user_query = "UPDATE application SET isComplete = '1', progress_bar_message = 'Congratulation, you have completed the training, Please fill up the feedback form. Thanks'
 			WHERE id= $id"
 			or die($user_query->error());
 			$result = mysqli_query($conn, $user_query);

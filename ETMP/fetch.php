@@ -6,6 +6,8 @@
         $('#chatWindow').removeClass('chat-box-on');
         $('#chatWindow2').addClass('chat-box-on');
         $('#displayName2').text(sessionStorage.receiver);
+        var private_content = '<button type="button" class="loadchat">Previous Chat</button>';
+        $('#chat-body').html(private_content);
       });
     })
 </script>

@@ -28,11 +28,9 @@
             $("#id2").val(resu.id);
 			$("#id3").val(resu.id);
 		   }
-		 
 		}});
 	  });
 	});
-
 	</script>
     </header>
     <section>
@@ -313,7 +311,7 @@
 			 
 				  <div class="modal-footer">
                     <form id="passDataForm" method="post" action = "" novalidate="novalidate" >
-                        <input type = "text" id ="id0" name="id0" value="" readonly/>
+                        <input type = "text" id ="id0" name="id0" value="" readonly hidden/>
                         <button type="button" name="passData" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>
                     </form>	
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
@@ -454,29 +452,31 @@
 					  	<label for="id">Application ID</label>
                         <span class="labelcolons">:</span>
 						<input type = "text" id ="id2" name="id2" value="" readonly/>
-                        <?php
-                            $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-                            $db = mysqli_select_db($connection,'sql6405286');
-
-                            $query = " SELECT * FROM application WHERE id='9'";
-                            $query_run = mysqli_query($connection,$query);
-
-                            while($row = mysqli_fetch_array($query_run)){
-                                ?>
-                        <p>Proof Display:</p>
-                        <?php echo '<img src="data:image;base64,'.base64_encode($row['payment_proof']).'" alt="Evidence of payment" class="proof">'; ?>
-                        <p>Click on the image to enlarge it.</p>
-                        <?php
-                            }
-                        ?>
+                        <button type="button" class="proofloading">Reload Proof</button>
+                        <div id="proofDisplayArea"></div>
                 </div>
 				  
 				  <div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-secondary" name="updatePayment" class="btn btn-info">Confirm</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" class="proofModal">Cancel</button>
 				  </div>
 				  </form>
 			</div>
 		  </div>
 		</div>
 </html>
+<script>
+    $(document).ready(function(){
+        $(document).on('click', '.proofloading', function(){
+          var application = $('#id2').val();
+          $.ajax({
+           url:"loadingPicture.php",
+           method:"POST",
+           data:{application:application},
+           success:function(data)
+           {
+            $('#proofDisplayArea').html(data);
+           }
+          })
+         });
+     });
+</script>

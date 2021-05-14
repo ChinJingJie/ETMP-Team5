@@ -10,10 +10,10 @@
         ':sender_name' => $sender,
         ':msg' => $message
     );
-
+    if ($message != null){
     $query = "INSERT INTO messages(sender_name,receiver_name,msg)VALUES('$sender','$receiver','$message')";
     mysqli_query($conn,$query);
-
+    }
     //display message
     $query_display = "SELECT * FROM messages WHERE (sender_name = '".$sender."' AND receiver_name = '".$receiver."') OR (sender_name = '".$receiver."' AND receiver_name = '".$sender."') ORDER BY msg_id ASC";
     $result = mysqli_query($conn,$query_display);
@@ -47,8 +47,7 @@
     ?>
     <button type="button" class="loadchat">Update Chat</button>
     </div>
-
-<script>
+    <script>
  //display message
     $(document).ready(function(){
         $(document).on('click', '.loadchat', function(){
@@ -65,3 +64,6 @@
          });
      });
 </script>
+
+    
+

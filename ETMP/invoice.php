@@ -8,8 +8,7 @@
         <?php include "navigation.php";?>
     </header>
     <section>
-        <h1>Welcome to Expert Training Management Portal</h1>
-        <h2>Training Requisition in Progress</h2>
+        <h1>Invoice</h1>
 		<br><br>
 		
         <div class="invoice-box">

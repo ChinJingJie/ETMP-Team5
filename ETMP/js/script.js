@@ -95,8 +95,8 @@ function trainingSelection(){
 	 document.getElementById("trainingEndDate").innerHTML = "Application End Date: " + sessionStorage.trenddate;
 	 
 	 document.getElementById("trainingProgramPrice").innerHTML = sessionStorage.trbaseprice;
-	 document.getElementById("trainingDailyPrice").innerHTML = sessionStorage.trdailyprice;
-	  document.getElementById("trainingTotalPrice").innerHTML = sessionStorage.trtotalprice;
+	 
+	 document.getElementById("trainingTotalPrice").innerHTML = sessionStorage.trtotalprice;
 	 
 	 document.getElementById("trainingProgram2").innerHTML = "Program: " + sessionStorage.trprogram;
 	 var date1 = new Date(sessionStorage.trstartdate);  
@@ -109,6 +109,7 @@ function trainingSelection(){
 	 var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 	
 	 document.getElementById("trainingLength").innerHTML = "Days of Training(Rm 50 per day): "  + Difference_In_Days;
+	 document.getElementById("trainingDailyPrice").innerHTML = sessionStorage.trdailyprice * Difference_In_Days;
 }
 
 function storeID(id1){

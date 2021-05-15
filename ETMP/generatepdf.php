@@ -239,7 +239,7 @@ if(isset($_POST["generateReceipt"]))
 			<div class="container">
 				<div class="row">
 					<div class ="col-xs-12">
-						<h3 align="center"><b>ITINERARY</b></h3>
+						<h3 align="center"><b>RECEIPT</b></h3>
 					</div>
 				</div>
                 <div class="row">

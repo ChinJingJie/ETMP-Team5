@@ -19,10 +19,10 @@ include "registrationclientprocess.php";
             <input type="text" id="name" name="name" placeholder="username" maxlength="25"/>
             <br/>
             <input type="password" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
-	    <span class ="eye" onclick="showPwsd()">
-			<i id="hide1" class="fa fa-eye"></i>
-			<i id="hide2" class="fa fa-eye-slash"></i>
-	    </span>
+            <span class ="eye" onclick="showPwsd()">
+                <i id="hide1" class="fa fa-eye"></i>
+                <i id="hide2" class="fa fa-eye-slash"></i>
+            </span>
             <br/>
 	    <?php
 		if ($_SESSION['login_attempts'] > 5) { // numbers of attempts to Login

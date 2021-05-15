@@ -16,13 +16,14 @@
 			?>
 	  <fieldset>	
           <p>
-		    <label for="trainingID">Training ID:</label>
-			<input type="text" id="trainingID" name="trainingID" value="" placeholder="Training ID" maxlength="25" readonly/>
+		    <label for="trainingID">Training ID</label>
+            <span class="labelcolon">:</span>
+			<input type="text" id="trainingID" name="trainingID" class="text-center" value="" placeholder="Training ID" maxlength="25" readonly/>
 		  </p>
 		 <p>
-		 <label for="rating" id ="rating">Rating</label>
+		 <label for="rating" id ="rating" class="text-center aline">Rating</label>
 		 </p>
-		<div class="stars">
+		<div class="stars aline2">
 			<input class="star star-1" id="star-1" type="radio" name="star" value = "5"/>
 			<label class="star star-1" for="star-1"></label>
 			<input class="star star-2" id="star-2" type="radio" name="star" value = "4"/>
@@ -35,16 +36,16 @@
 			<label class="star star-5" for="star-5"></label>
 		</div>
           <p>
-		    <label for="experience">Overall Experience</label>
-			<textarea id="experience" name="experience" rows="4" cols="50" placeholder="Describe the Attractive and Uninteresting parts of the training"></textarea>
+		    <label for="experience" class="text-center aline">Overall Experience</label>
+			<textarea id="experience" name="experience" class="aline1" rows="4" cols="50" placeholder="Describe the Attractive and Uninteresting parts of the training"></textarea>
 		  </p>
           <p>
-		    <label for="improvement">Improvements</label>
-			<textarea id="improvement" name="improvement" rows="4" cols="50" placeholder="Suggestions for improvements in future training"></textarea>
+		    <label for="improvement" class="text-center aline">Improvements</label>
+			<textarea id="improvement" name="improvement" class="aline1" rows="4" cols="50" placeholder="Suggestions for improvements in future training"></textarea>
 		  </p>
           <p>
-		    <label for="TrainPerform">Comments on Trainer Performance</label>
-			<textarea id="TrainPerform" name="TrainPerform" rows="4" cols="50" placeholder="What do you think about your trainer's performance"></textarea>
+		    <label for="TrainPerform" class="text-center aline">Comments on Trainer Performance</label>
+			<textarea id="TrainPerform" name="TrainPerform" class="aline1" rows="4" cols="50" placeholder="What do you think about your trainer's performance"></textarea>
 		  </p>  
 	  <?php
 		}

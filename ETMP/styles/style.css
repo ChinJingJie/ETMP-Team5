@@ -92,6 +92,17 @@ h2{
 	display: none;
 }
 
+#hide5{
+	display: none;
+}
+
+.eye2{
+	position: absolute;
+	cursor: pointer;
+	margin-top: 1.6vw;
+	left: 64vw;
+}
+
 /*form*/
 form label.required:after
 {
@@ -171,6 +182,18 @@ fieldset p label{
     margin-left: 10%;
     width:90%;
     text-align: left;
+}
+
+.aline{
+    width: 100%;
+}
+
+.aline1{
+    margin-left: 8vw;
+}
+
+.aline2{
+    margin-left: 2vw;
 }
 
 p label.labeldetails{
@@ -267,6 +290,14 @@ textarea{
     width: 90%;
 }
 
+.newmessage{
+    border: 2px solid #000;
+    font-size: 1.3vw;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 input[type=submit], input[type=reset]{
 	background-color: #0070ff;
 	border: none;
@@ -289,6 +320,36 @@ button{
 	border: none;
 	color: white;
 	padding: 1vw 5vw;
+	text-decoration: none;
+	margin: 1vw;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 1vw;
+    margin-bottom: 10px;
+}
+
+#GenerateReceiptPDF{
+    background: #fff;
+}
+
+.generate{
+	background-color: #0070ff;
+	border: none;
+	color: white;
+	padding: 1vw 4vw;
+	text-decoration: none;
+	margin: 1vw;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 1vw;
+    margin-bottom: 10px;
+}
+
+.itinerary, .delete{
+	background-color: #0070ff;
+	border: none;
+	color: white;
+	padding: 1vw 4.2vw;
 	text-decoration: none;
 	margin: 1vw;
 	cursor: pointer;

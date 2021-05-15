@@ -33,12 +33,20 @@
                 <p>
                     <label for="pwsd" class="required">Password</label>
                     <span class="labelcolon">:</span>
-                    <input type="text" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
+                    <input type="password" id="pwsd" name="pwsd" placeholder="password" maxlength="25"/>
+                    <span class ="eye2" onclick="showPwsd()">
+                        <i id="hide1" class="fa fa-eye"></i>
+                        <i id="hide2" class="fa fa-eye-slash"></i>
+                    </span>
                 </p>
                 <p>
                     <label for="pwsd1" class="required">Re-confirm Password</label>
                     <span class="labelcolon">:</span>
-                    <input type="text" id="pwsd1" name="pwsd1" placeholder="re-enter password" maxlength="25"/>
+                    <input type="password" id="pwsd1" name="pwsd1" placeholder="re-enter password" maxlength="25"/>
+                    <span class ="eye2" onclick="showPwsd1()">
+                        <i id="hide3" class="fa fa-eye"></i>
+                        <i id="hide4" class="fa fa-eye-slash"></i>
+                    </span>
                 </p>
                 <p class="chklink">
                     <input type="checkbox" id = "t&c"/>

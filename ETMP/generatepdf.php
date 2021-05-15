@@ -33,20 +33,19 @@ if(isset($_POST["generatepdf"]))
 			<div class="container">
 				<div class="row">
 					<div class ="col-xs-12">
-						<h5 align="center">ITINERARY</h5>
+						<h3 align="center"><b>ITINERARY</b></h3>
 					</div>
 				</div>
 				<div class="row">
-					<div class ="col-xs-3">
-						<img src="images/company_logo.png" alt="logo"/>
-					</div>
-					<div class ="col-xs-9">
-						<h3>Expert.com</h3>
-						<p>address : </p>
-						<p>Email : </p>
-						<p>Mobile : </p>
-						<p>Website : </p>
-					</div>
+                      <div class ="col-xs-3">
+                          <img src="images/company_logo.png" alt="logo"/>
+				      </div>
+					  					  
+					  <div class="column" style = "float: left; width: 50%;" >
+					  Address : 163, First Floor,The Spring Kuching <br> <br>
+					  Email : expertdotcome@gmail.com</div>
+					  
+					  <div class="column" style = "float: left; width: 50%; " >Website : www.etmp.epizy.com/ETMP-Team5/ETMP/login.php</div>
 				</div>
 				<hr>
 				<div class="row">
@@ -164,7 +163,12 @@ if(isset($_POST["generatepdf"]))
 						</table>
 					</div>
 				</div>
-				</hr>
+                <hr>
+                <div class="row">
+                    <div class ="col-xs-12">
+                        <address align="center">&#169; ETMP 2021. All rights reserved</address>
+                    </div>
+                </div>
 			</div>
 		</body>
 		</html>';
@@ -192,7 +196,7 @@ if(isset($_POST["generatepdf"]))
 		
 		$mpdf->WriteHTML($html);
 		
-		$mpdf->Output('myfile.pdf','D');
+		$mpdf->Output('itinerary.pdf','D');
 		
 	}
 }
@@ -232,24 +236,19 @@ if(isset($_POST["g"]))
 			<div class="container">
 				<div class="row">
 					<div class ="col-xs-12">
-						<h5 align="center">RECEIPT</h5>
+						<h3 align="center"><b>RECEIPT</b></h5>
 					</div>
 				</div>
 				<div class="row">
-					  <h3 style = "text-align: center">Expert.com <br> 
-					  <img src="images/company_logo.png" alt="logo"/></h3>
-					  	
-					  
-					  <div></div>
-					  
+                      <div class ="col-xs-3">
+                          <img src="images/company_logo.png" alt="logo"/>
+				      </div>
+					  					  
 					  <div class="column" style = "float: left; width: 50%;" >
-					  Address : Swinburne University of Technology <br>Jalan Simpang Tiga, <br>
-					  93350 Kuching, Sarawak, Malaysia, <br> <br>
-					  Mobile : 0189573241</div>
+					  Address : 163, First Floor,The Spring Kuching <br> <br>
+					  Email : expertdotcome@gmail.com</div>
 					  
-					  <div class="column" style = "float: left; width: 50%; " >
-					  Email : ExpertMalaysia@gmail.com  <br> <br> <br> <br>
-					  Website : www.Expert.com</div>
+					  <div class="column" style = "float: left; width: 50%; " >Website : www.etmp.epizy.com/ETMP-Team5/ETMP/login.php</div>
 				</div>
 				<hr>
 				<div class="row">
@@ -331,8 +330,13 @@ if(isset($_POST["g"]))
 						</table>
 					</div>
 				</div>
-				</hr>
-			</div>
+                <hr>
+                <div class="row">
+                    <div class ="col-xs-12">
+                        <address align="center">&#169; ETMP 2021. All rights reserved</address>
+                    </div>
+                </div>
+            </div>
 		</body>
 		</html>';
 		$mpdf = new \Mpdf\Mpdf();

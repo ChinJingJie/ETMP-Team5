@@ -14,7 +14,7 @@
             <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Add course</button>
             <!-- Modal -->
             <div class="modal fade design" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog box">
+              <div class="modal-dialog box modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title" id="staticBackdropLabel">Add New Training Course Details</h1>
@@ -82,7 +82,7 @@
             <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">- Delete course</button>
             <!-- Modal -->
             <div class="modal fade design" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog box">
+              <div class="modal-dialog box modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title" id="staticBackdropLabel">Delete Existing Training Course</h1>

@@ -22,7 +22,7 @@
 			?>
         <div id="Info" class="tabcontent">	
 		<div class="modal fade design" id="editprofilemodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Edit Profile</h3>
@@ -112,11 +112,23 @@
             <p>Change Password</p>
 			<?php include"errors.php";?>
 			<form id="changepwsd" method="post" action="profileclientfunction.php" novalidate>
-				<input type="text" id="pwsd" name="pwsd" placeholder="old password" maxlength="25"/>
+				<input type="password" id="pwsd" name="pwsd" placeholder="old password" maxlength="25"/>
+                <span class ="eye" onclick="showPwsd()">
+                    <i id="hide1" class="fa fa-eye"></i>
+                    <i id="hide2" class="fa fa-eye-slash"></i>
+                </span>
 				<br/>
-				<input type="text" id="pwsd2" name="pwsd2" placeholder="new password" maxlength="25"/>
+				<input type="password" id="pwsd2" name="pwsd2" placeholder="new password" maxlength="25"/>
+                <span class ="eye" onclick="showPwsd2()">
+                    <i id="hide3" class="fa fa-eye"></i>
+                    <i id="hide4" class="fa fa-eye-slash"></i>
+                </span>
 				<br/>
-				<input type="text" id="pwsd3" name="pwsd3" placeholder="re-enter new password" maxlength="25"/>
+				<input type="password" id="pwsd3" name="pwsd3" placeholder="re-enter new password" maxlength="25"/>
+                <span class ="eye" onclick="showPwsd3()">
+                    <i id="hide5" class="fa fa-eye"></i>
+                    <i id="hide6" class="fa fa-eye-slash"></i>
+                </span>
 				<br/>
 				<input type="submit" name="confirmpass" value="Confirm"/>
 			</form>
@@ -166,7 +178,7 @@
 		<div id="Delete" class="tabcontent">
 		
 		<div class="modal fade design" id="deleteprofilemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" >
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Delete Account</h3>

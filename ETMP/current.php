@@ -121,7 +121,7 @@
 			?>
 		<div id="Booking" class="tabcontent">
 		<div class="modal fade design" id="viewbookingmodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Booking</h3>
@@ -234,10 +234,11 @@
 		</div>
 		
 		<div class="modal fade design" id="itinerarymodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h3 class="modal-title" id="exampleModalLabel">Itinerary</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<form id="itinerary" method="post" action = "generatepdf.php" enctype="multipart/form-data" >
 					<div class="modal-body">
@@ -247,10 +248,10 @@
                         <span class="labelcolons">:</span>
 						<input type = "text" id ="id2" name="id2" value="" readonly/>
 					</div>
-					<button type="submit" name="generatepdf" class="btn btn-primary" >Itinerary PDF</button>
 					</div>
 				
 					<div class="modal-footer">
+                        <button type="submit" name="generatepdf" class="btn btn-primary" >Itinerary PDF</button>
 						<button type="submit" name="itineraryconf" class="btn btn-primary" >Yes</button>
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
 					</div>
@@ -332,7 +333,7 @@
         <div id="Saved" class="tabcontent">
 
 		<div class="modal fade design" id="editsavedmodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Saved Application</h3>
@@ -467,7 +468,7 @@
 		
 		
 		<div class="modal fade design" id="deletesavedmodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Delete Saved Application</h3>

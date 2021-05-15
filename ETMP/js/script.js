@@ -33,9 +33,39 @@ function showPwsd(){
 }
 
 function showPwsd1(){
-	var show1 = document.getElementById("pwsd1");
+	var show = document.getElementById("pwsd1");
 	var hidepass1 = document.getElementById("hide3");
 	var hidepass2 = document.getElementById("hide4");
+	if (show.type == "password") {
+		show.type = "text";
+		hidepass1.style.display = "block";
+		hidepass2.style.display = "none";
+	} else {
+		show.type = "password";
+		hidepass1.style.display = "none";
+		hidepass2.style.display = "block";
+	}
+}
+
+function showPwsd2(){
+	var show1 = document.getElementById("pwsd2");
+	var hidepass1 = document.getElementById("hide3");
+	var hidepass2 = document.getElementById("hide4");
+	if (show1.type == "password") {
+		show1.type = "text";
+		hidepass1.style.display = "block";
+		hidepass2.style.display = "none";
+	} else {
+		show1.type = "password";
+		hidepass1.style.display = "none";
+		hidepass2.style.display = "block";
+	}
+}
+
+function showPwsd3(){
+	var show1 = document.getElementById("pwsd3");
+	var hidepass1 = document.getElementById("hide5");
+	var hidepass2 = document.getElementById("hide6");
 	if (show1.type == "password") {
 		show1.type = "text";
 		hidepass1.style.display = "block";

@@ -4,12 +4,7 @@
 <!-- The logo is originally illustrated and designed -->
   <ul>
     <a href="dashboardadmin.php"><img src="images/company_logo.png" alt="logo"/></a>
-    <li class="parent"><a href="#">Course</a>
-      <ul class="child">
-        <li><a href="trainingcourseadmin.php">Training</a></li>
-        <li><a href="#">Current</a></li>
-      </ul>
-    </li>
+    <li class="parent"><a href="trainingcourseadmin.php">Course</a></li>
     <li class="parent"><a href="profileadmin.php">Profile</a></li>
     <li class="parent"><a href="#" onclick = "box()">Logout</a></li>
   </ul>

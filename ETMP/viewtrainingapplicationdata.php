@@ -303,7 +303,7 @@
 		?>
 		
 	<div class="modal fade design" id="viewapplicationmodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">View</h3>
@@ -424,7 +424,7 @@
 		</div>
 		
 		<div class="modal fade design" id="editsavedmodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Edit</h3>
@@ -566,7 +566,7 @@
 		</div>
 		
 		<div class="modal fade design" id="generatemodal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Generate this application to PDF?</h3>

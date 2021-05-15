@@ -17,9 +17,7 @@
 		   if (result) {
 			// assign result  to each label/ text
 			var resu = JSON.parse(result);
-			
-            $("#id0").val(resu.id);
-               
+			               
 			$("#id1").val(resu.id);
 			$("#accept1").val(resu.isAccepted);
 			$("#paid1").val(resu.isPaid);
@@ -107,7 +105,6 @@
                 </div>
                 </div>
             </div>
-        </div>
         <div class="accordion">
             <div class="progress-tab">
                 <input type="checkbox" id="chck3"/>
@@ -292,7 +289,7 @@
 </body>
   
 	  	  <div class="modal fade design" id="viewprogressbar1" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -317,16 +314,16 @@
 				 </div>
 			 
 				  <div class="modal-footer">
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>
-					<button type = "button" class = "btn btn-secondary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>
+					<button type = "button" class = "btn btn-primary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>
 				  </div>  
 			</div>
 		  </div>
 	</div>
 	
 	<div class="modal fade design" id="viewprogressbar2" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -351,15 +348,15 @@
 				 </div>
 			 
 				  <div class="modal-footer">
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
-					<button type = "button" class = "btn btn-secondary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
+					<button type = "button" class = "btn btn-primary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>
 				  </div>  
 			</div>
 		  </div>
 	</div>
 	
 	 <div class="modal fade design" id="viewprogressbar3" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -381,19 +378,16 @@
 				 </div>
 			 
 				  <div class="modal-footer">
-                    <form id="passDataForm" method="post" action = "" novalidate="novalidate" >
-                        <input type = "text" id ="id0" name="id0" value="" readonly/>
-                        <button type="button" name="passData" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>
-                    </form>	
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>	
+                    <button type="button" name="passData" class="btn btn-info" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewproofcheck">Payment Proof</button>
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>	
 				  </div>  
 			</div>
 		  </div>
 	</div>
 	
 	<div class="modal fade design" id="viewprogressbar4" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -418,16 +412,16 @@
 				 </div>
 			 
 				  <div class="modal-footer">
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>
-					<button type = "button" class = "btn btn-secondary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>	
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewupdatereconfirm">Update</button>
+					<button type = "button" class = "btn btn-primary"><a href = "viewtrainingapplicationdata.php" id ="DMButton">Training Application</a></button>	
 				  </div>  
 			</div>
 		  </div>
 	</div>
 	
 	<div class="modal fade design" id="viewprogressbar5" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -447,16 +441,16 @@
 				 <div>
 					<p><br><b>Please</b> refer to the <b>Training Application</b> database to<br><b>Check</b> the feedback</p>
 				</div>
-					<div class="modal-footer">
-					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>	
+                </div>
+				  <div class="modal-footer">
+					<button type="submit" class="btn btn-primary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewmessage">Message</button>	
 				  </div>
-				 </div>
 			</div>
 		  </div>
 	</div>
 	
 	<div class="modal fade design" id="viewupdatereconfirm" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Reconfirmation</h3>
@@ -476,7 +470,7 @@
 				  
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-secondary" name="updatetraining" class="btn btn-info">Confirm</button>
+					<button type="submit" class="btn btn-primary" name="updatetraining" class="btn btn-info">Confirm</button>
 				  </div>
 				  </form>
 			</div>
@@ -484,7 +478,7 @@
 		</div>
 		
 		<div class="modal fade design" id="viewmessage" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
+	  <div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 			<h3 class="modal-title" id="exampleModalLabel">Message</h3>
@@ -497,12 +491,12 @@
 					  	<label for="id">Application ID</label>
                         <span class="labelcolons">:</span>
 						<input type = "text" id ="id3" name="id" value="" readonly/>
-						<textarea id="newmessage" name="newmessage" rows="4" cols="50" placeholder="Enter Message"></textarea>
+						<textarea id="newmessage" name="newmessage" class="newmessage" rows="4" cols="50" placeholder="Enter Message"></textarea>
 				  </div>
 				  
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-secondary" name="send" class="btn btn-info">Confirm</button>
+					<button type="submit" class="btn btn-primary" name="send" class="btn btn-info">Confirm</button>
 				  </div>
 				  </form>
 			</div>
@@ -511,7 +505,7 @@
 		
 		
     <div class="modal fade design" id="viewproofcheck" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Validate Proof</h3>

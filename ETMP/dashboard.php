@@ -362,7 +362,7 @@
   <?php include "footer.php"; ?>
   
   <div class="modal fade design" id="viewprogressbar1" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -388,7 +388,7 @@
 			 
 				  <div class="modal-footer">
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>		
-					<button type = "submit" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Training Application</a></button>
+					<button type = "submit" class = "btn btn-primary"><a href = "current.php" id ="DMButton">Training Application</a></button>
 				  </div>  
 			</div>
 		  </div>
@@ -397,7 +397,7 @@
 
 	
 	  <div class="modal fade design" id="viewprogressbar2" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -424,14 +424,14 @@
 			 
 				  <div class="modal-footer">
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>
-					<button type = "button" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Training Application</a></button>
+					<button type = "button" class = "btn btn-primary"><a href = "current.php" id ="DMButton">Training Application</a></button>
 				  </div>  
 			</div>
 		  </div>
 	</div>
 	
 	<div class="modal fade design" id="viewprogressbar3" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -457,14 +457,14 @@
 			 
 				  <div class="modal-footer">
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>
-					<button type = "button" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Current</a></button>	
+					<button type = "button" class = "btn btn-primary"><a href = "current.php" id ="DMButton">Current</a></button>	
 				  </div>  
 			</div>
 		  </div>
 	</div>
 	
 	 <div class="modal fade design" id="viewprogressbar4" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -487,14 +487,14 @@
 			 
 				  <div class="modal-footer">
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>	
-					<button type = "button" class = "btn btn-secondary"><a href = "payment.php" id ="DMButton">Payment</a></button>
+					<button type = "button" class = "btn btn-primary"><a href = "payment.php" id ="DMButton">Payment</a></button>
 				  </div>  
 			</div>
 		  </div>
 	</div>
 	
 	<div class="modal fade design" id="viewprogressbar5" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Progress Bar</h3>
@@ -514,17 +514,16 @@
 				 <div>
 					<p><br>Training Application is officially <b>Ongoing</b> </p>
 					<p>You may proceed to <b>Wait </b>for the start date of the training</p>
+				</div>
 					<form id="GenerateReceiptPDF" method="post" action="generatepdf.php">
 						<input type = "hidden" id ="id" name="id" value="" />
-						<button type="submit" name="g" class="btn btn-info" class = "edit">Receipt</button>
+						<button type="submit" name="g" class="btn-info" class = "edit">Receipt</button>
 					</form>
-				</div>
-					
 				 </div>
 			 
 				  <div class="modal-footer">
 					<button type="submit" class="btn btn-secondary" class = "edit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#viewcancelreconfirm">Cancel Training</button>
-					<button type = "button" class = "btn btn-secondary"><a href = "current.php" id ="DMButton">Training Application</a></button>	
+					<button type = "button" class = "btn btn-primary"><a href = "current.php" id ="DMButton">Training Application</a></button>	
 				  </div>  
 			</div>
 		  </div>
@@ -532,14 +531,14 @@
 	
 
 	<div class="modal fade design" id="viewcancelreconfirm" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h3 class="modal-title" id="exampleModalLabel">Reconfirmation</h3>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			  </div>
+                <form id="EditTrainingApplicationForm" method="post" action="trainingapplicationdata.php">
 				  <div class="modal-body">
-				  <form id="EditTrainingApplicationForm" method="post" action="trainingapplicationdata.php">
 					<div>Are you sure you want to cancel your training application?</div>
 					
 					  	<label for="id">Application ID</label>
@@ -550,7 +549,7 @@
 				  
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-secondary" name="canceltraining" class="btn btn-info">Confirm</button>
+					<button type="submit" class="btn btn-primary" name="canceltraining" class="btn btn-info">Confirm</button>
 				  </div>
 				  </form>
 			</div>

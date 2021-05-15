@@ -12,16 +12,17 @@
         <form id="paymentForm" method="post" action = "paymentprocess.php" enctype="multipart/form-data"  novalidate="novalidate">
         <fieldset>
             <legend>How to pay?</legend>
-            <p class="left1"><b class="white">Step 1:</b> Grab the back account information below and pay the money through Direct Bank In (ATM) or Online Transfer</p>
-            <p class="left"><b class="white">Bank Account details</b><br/>Account Name	: Swinburne Sarawak Sdn Bhd<br/>Bank Name	: CIMB Bank Berhad<br/>Account Number	: 80-0526998-9</p>
+            <p class="left1"><b class="white">Step 1:</b> Grab the bank account information below and pay the money through Direct Bank In (ATM) or Online Transfer</p>
+            <p class="left"><b class="white">Bank Account details</b><br/>Account Name	: Expert Sdn Bhd<br/>Bank Name	: CIMB Bank Berhad<br/>Account Number	: 80-0537445-7</p>
             
             <p class="left1"><b class="white">Step 2:</b> Upload the proof that the transaction is sucessful.</p>
+            <p class="hLine1"></p>
 			<button type="button"><a href="invoice.php">Invoice</a></button>
             <p class="hLine1"></p>
             <p>
 		      <label for="trainingID">Training ID</label>
               <span class="labelcolon">:</span>
-			  <input type="text" id="trainingID" name="trainingID" value="" placeholder="Training ID" maxlength="25" readonly/>
+			  <input type="text" id="trainingID" name="trainingID" class="text-center" value="" placeholder="Training ID" maxlength="25" readonly/>
 		    </p>
             <span id="paymentErr"></span>
             <p>

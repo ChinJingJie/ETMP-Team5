@@ -20,7 +20,7 @@ if(isset($_POST['forgetbtn'])){
 	$emailData = $data['email'];
 	$nameData = $data['name'];
 	
-	$url = 'http://'.$_SERVER['SERVER_NAME'].'/ETMP-Team5/ETMP/resetpwsd.php?id='.$idData.'&email='.$emailData;
+	$url = 'http://'.$_SERVER['SERVER_NAME'].'/ETMP/resetpwsd.php?id='.$idData.'&email='.$emailData;
 	
 	$output = 'Click the link to change your password.<br>'.$url;
 	

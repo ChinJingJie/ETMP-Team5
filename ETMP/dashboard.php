@@ -517,7 +517,7 @@
 				</div>
 					<form id="GenerateReceiptPDF" method="post" action="generatepdf.php">
 						<input type = "hidden" id ="id" name="id" value="" />
-						<button type="submit" name="g" class="btn-info" class = "edit">Receipt</button>
+						<button type="submit" name="generateReceipt" class="btn-info" class = "edit">Receipt</button>
 					</form>
 				 </div>
 			 

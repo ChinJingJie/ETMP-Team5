@@ -37,12 +37,15 @@ if(isset($_POST["generatepdf"]))
 					</div>
 				</div>
 				<div class="row">
-                      <div class ="col-xs-3">
-                          <img src="images/company_logo.png" alt="logo"/>
-				      </div>
-					  					  
+					<div class ="col-xs-12">
+                        <img src="images/company_logo.png" alt="logo" style="width:20%"/>
+                        <br><br>
+				    </div>
+				</div>
+				<div class="row">
+				      <div></div>
 					  <div class="column" style = "float: left; width: 50%;" >
-					  Address : 163, First Floor,The Spring Kuching <br> <br>
+					  Address : 163, First Floor, <br> The Spring Kuching <br> <br>
 					  Email : expertdotcome@gmail.com</div>
 					  
 					  <div class="column" style = "float: left; width: 50%; " >Website : www.etmp.epizy.com/ETMP-Team5/ETMP/login.php</div>
@@ -201,7 +204,7 @@ if(isset($_POST["generatepdf"]))
 	}
 }
 
-if(isset($_POST["g"]))
+if(isset($_POST["generateReceipt"]))
 {
 	$id = $_POST['id'];
 	$receiptid = 0;
@@ -236,16 +239,19 @@ if(isset($_POST["g"]))
 			<div class="container">
 				<div class="row">
 					<div class ="col-xs-12">
-						<h3 align="center"><b>RECEIPT</b></h5>
+						<h3 align="center"><b>ITINERARY</b></h3>
 					</div>
 				</div>
+                <div class="row">
+					<div class ="col-xs-12">
+                        <img src="images/company_logo.png" alt="logo" style="width:20%"/>
+                        <br><br>
+				    </div>
+				</div>
 				<div class="row">
-                      <div class ="col-xs-3">
-                          <img src="images/company_logo.png" alt="logo"/>
-				      </div>
-					  					  
+				      <div></div>
 					  <div class="column" style = "float: left; width: 50%;" >
-					  Address : 163, First Floor,The Spring Kuching <br> <br>
+					  Address : 163, First Floor, <br> The Spring Kuching <br> <br>
 					  Email : expertdotcome@gmail.com</div>
 					  
 					  <div class="column" style = "float: left; width: 50%; " >Website : www.etmp.epizy.com/ETMP-Team5/ETMP/login.php</div>

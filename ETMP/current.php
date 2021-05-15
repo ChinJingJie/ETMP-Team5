@@ -251,7 +251,7 @@
 					</div>
 				
 					<div class="modal-footer">
-                        <button type="submit" name="generatepdf" class="btn btn-primary" >Itinerary PDF</button>
+                        <button type="submit" name="generatepdf" class="btn btn-info" >Itinerary PDF</button>
 						<button type="submit" name="itineraryconf" class="btn btn-primary" >Yes</button>
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
 					</div>

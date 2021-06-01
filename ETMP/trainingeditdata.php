@@ -4,7 +4,7 @@
 
 $array = array();
 	
-$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+$conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
 $id = $_REQUEST['id'];
 $app_query = "SELECT * FROM training WHERE id='$id'";
 $result = mysqli_query($conn, $app_query);

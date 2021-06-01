@@ -261,7 +261,7 @@
 		</div>
 		
             <?php
-			$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+			$conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
 			$name = $_SESSION['name'];
 			$book_query = "SELECT * FROM application WHERE  name='$name' and isSubmitted=1";
 			$result = mysqli_query($conn, $book_query);
@@ -396,8 +396,8 @@
                         <span class="labelcolons">:</span>
 						<select name="tcourse" id="tcourse" onchange="dynamicTextBox(this)">
 							  <?php
-									$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-									$db = mysqli_select_db($connection,'sql6405286');
+									$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+									$db = mysqli_select_db($connection,'sql6416331');
 
 									$query = " SELECT * FROM training ";
 									$query_run = mysqli_query($connection,$query);
@@ -492,7 +492,7 @@
 		</div>
 		
             <?php
-			$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+			$conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
 			$name = $_SESSION['name'];
 			$book_query = "SELECT * FROM application WHERE  name='$name' and isSubmitted=0";
 			$result = mysqli_query($conn, $book_query);

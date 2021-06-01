@@ -1,6 +1,6 @@
 <?php include('admindata.php')?>
 <?php
-    $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+    $conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
     $sender = $_SESSION['name'];
     $receiver = $_POST['receiver_name'];
     $message = $_POST['msg'];

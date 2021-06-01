@@ -28,7 +28,7 @@
 </script>
 
 <?php 
-  $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+  $conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
   $admins = $_SESSION['name'];
   $sql = mysqli_query($conn, "SELECT * FROM admins WHERE name = '$admins'");
   if(mysqli_num_rows($sql) > 0){

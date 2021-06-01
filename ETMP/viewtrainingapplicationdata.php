@@ -143,8 +143,8 @@
 		
                 <?php 
                 //connection or link to database
-                $conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-                $db = mysqli_select_db($conn, 'sql6405286');
+                $conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+                $db = mysqli_select_db($conn, 'sql6416331');
                 $sql = "SELECT id, isAccepted, isSubmitted, isSubmitted, isPaid, isComplete, isCancelled, name, email, phone, venue, street, city, postcode, program, category,
                 date_start, date_end, time_start, time_end, template, remarks FROM application";
                 $result = $conn->query($sql);	
@@ -492,8 +492,8 @@
 						<input type="hidden" id="oriprogram" name="oriprogram" value="">
 						<select name="tcourse" id="tcourse" onchange="dynamicTextBox(this)">
 							  <?php
-									$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-									$db = mysqli_select_db($connection,'sql6405286');
+									$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+									$db = mysqli_select_db($connection,'sql6416331');
 
 									$query = " SELECT * FROM training ";
 									$query_run = mysqli_query($connection,$query);

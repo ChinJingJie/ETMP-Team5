@@ -22,7 +22,7 @@ $remarks = "";
 $errors = array();
 
 
-$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+$conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
 
 if (!$conn) {
 	die("Connection failed:" . mysqli_connect_error());

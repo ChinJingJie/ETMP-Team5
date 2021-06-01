@@ -143,8 +143,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isComplete = '1' and rating != '0'";
 					$query_run = mysqli_query($connection,$query);

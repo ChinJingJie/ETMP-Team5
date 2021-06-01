@@ -41,8 +41,8 @@
                 <label class="progress-label" for="chck2">Training Program Submitted</label>
                 <div class="tab-content">
                      <?php
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE isSubmitted = '1' 
 					and isAccepted = '0' and isCancelled = '0' and isComplete = '0'";
@@ -78,8 +78,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE isSubmitted = '1' 
 					and isAccepted = '1' and itinerary_confirm = '0' and isCancelled = '0' and isComplete = '0'";
@@ -111,8 +111,8 @@
                 <label class="progress-label" for="chck3">Payment</label>
                 <div class="tab-content">
                 <?php
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE isSubmitted = '1' 
 					and isAccepted = '1' and itinerary_confirm = '1' and isPaid = '0' and isCancelled = '0' and isComplete ='0'";
@@ -144,8 +144,8 @@
                 <label class="progress-label" for="chck4">To Be Trained</label>
                 <div class="tab-content">
                     <?php
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE isSubmitted = '1' 
 					and isPaid ='1' and isAccepted = '1' and isCancelled = '0' and isComplete ='0'";
@@ -177,8 +177,8 @@
                 <label class="progress-label" for="chck5">Feedback</label>
                 <div class="tab-content">
                     <?php
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE isComplete = '1' and rating = '0'";
 					$query_run = mysqli_query($connection,$query);
@@ -209,8 +209,8 @@
                 <label class="progress-label" for="chck6">Completed Training</label>
                 <div class="tab-content">
 					<?php
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE isComplete = '1' and rating > '0'";
 					$query_run = mysqli_query($connection,$query);

@@ -6,7 +6,7 @@ include 'sessionstart.php';
 require 'PHPMailer/vendor/autoload.php';
 include 'registrationclientprocess.php';
 
-$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
+$conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
 
 if(isset($_POST['forgetbtn'])){
 

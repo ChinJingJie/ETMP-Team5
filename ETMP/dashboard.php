@@ -40,8 +40,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '0' 
 					and isAccepted = '0' and isCancelled = '0' and isComplete ='0'";
@@ -78,8 +78,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
 					and isAccepted = '0' and isCancelled = '0' and isComplete = '0'";
@@ -116,8 +116,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
 					and isAccepted = '1' and itinerary_confirm = '0' and isCancelled = '0' and isComplete = '0'";
@@ -154,8 +154,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
 					and isAccepted = '1' and itinerary_confirm = '1' and isPaid = '0' and isCancelled = '0' and isComplete ='0'";
@@ -196,8 +196,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isSubmitted = '1' 
 					and isPaid ='1' and isAccepted = '1' and isCancelled = '0' and isComplete ='0'";
@@ -234,8 +234,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isComplete = '1' and rating ='0'";
 					$query_run = mysqli_query($connection,$query);
@@ -270,8 +270,8 @@
 						$userData = getUsersData($_SESSION['name']);
 						$name = $userData['name'];
 					}
-					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-					$db = mysqli_select_db($connection,'sql6405286');
+					$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+					$db = mysqli_select_db($connection,'sql6416331');
 							
 					$query = "SELECT * FROM application WHERE name = '$name' and isCancelled = '1'";
 					$query_run = mysqli_query($connection,$query);
@@ -304,8 +304,8 @@
 					<div class="notification-space">
 						<div class="scrolls2">
 							<?php
-								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-								$db = mysqli_select_db($connection,'sql6405286');
+								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+								$db = mysqli_select_db($connection,'sql6416331');
 				
 								$query = "SELECT * FROM application WHERE name='$name'";
 								$query_run = mysqli_query($connection,$query);
@@ -334,8 +334,8 @@
 					<div class="notification-space">
 						<div class="scrolls2">
 							<?php
-								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-								$db = mysqli_select_db($connection,'sql6405286');
+								$connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+								$db = mysqli_select_db($connection,'sql6416331');
 				
 								$query = "SELECT * FROM application WHERE name='$name'";
 								$query_run = mysqli_query($connection,$query);

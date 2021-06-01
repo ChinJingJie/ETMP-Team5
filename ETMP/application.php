@@ -67,8 +67,8 @@
           <span class="labelcolon">:</span>
           <select name="tcourse" id="tcourse" onchange="programSelection(this)">
               <?php
-                    $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-                    $db = mysqli_select_db($connection,'sql6405286');
+                    $connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+                    $db = mysqli_select_db($connection,'sql6416331');
 
                     $query = " SELECT * FROM training ";
                     $query_run = mysqli_query($connection,$query);
@@ -87,8 +87,8 @@
           <span class="labelcolon">:</span>
           <select name="tcats" id="tcats" style="display:none;">
               <?php
-                    $connection = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-                    $db = mysqli_select_db($connection,'sql6405286');
+                    $connection = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+                    $db = mysqli_select_db($connection,'sql6416331');
 
                     $query = " SELECT * FROM training ";
                     $query_run = mysqli_query($connection,$query);

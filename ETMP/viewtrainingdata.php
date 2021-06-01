@@ -60,8 +60,8 @@
                 </thead>
 				<?php
 				//connection or link to database
-				$conn = mysqli_connect('sql6.freesqldatabase.com','sql6410152','BpVpCG11xT','sql6410152');
-				$db = mysqli_select_db($conn, 'sql6405286');
+				$conn = mysqli_connect('sql6.freesqldatabase.com','sql6416331','WBlQPE6vKx','sql6416331');
+				$db = mysqli_select_db($conn, 'sql6416331');
 				
 				$sql = "SELECT id, pic, tname, tdesc, category, tTemplate, base_price, daily_price FROM training";
 				$result = $conn->query($sql);
